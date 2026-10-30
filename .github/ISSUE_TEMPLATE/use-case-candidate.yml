@@ -1,0 +1,79 @@
+name: Use-case candidate
+description: Propose a business use case in which verifiable data is exchanged
+title: "[Use case] "
+labels: ["use-case", "stage: signal"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for proposing a use case. Plain prose is fine; a curator will help
+        turn it into a structured entry (see [GOVERNANCE.md](https://github.com/DIDAS-swiss/use-case-repository/blob/main/GOVERNANCE.md)).
+        Please first check the [published use cases](https://github.com/DIDAS-swiss/use-case-repository/blob/main/use-cases/README.md)
+        and the [open candidates](https://github.com/DIDAS-swiss/use-case-repository/issues?q=is%3Aissue+label%3Ause-case) for duplicates.
+  - type: input
+    id: title
+    attributes:
+      label: Use case
+      description: A short name for the outcome, not the organisation
+      placeholder: e.g. Vehicle leasing
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Situation and outcome
+      description: What happens today, which decision is taken, and what must be proven to take it?
+    validations:
+      required: true
+  - type: textarea
+    id: actors
+    attributes:
+      label: Actors
+      description: Who holds, who verifies, who issues? Name organisations where you can.
+      placeholder: |
+        Holder: lessee (person)
+        Verifier: leasing company
+        Issuers: road traffic office, insurer, ...
+    validations:
+      required: true
+  - type: textarea
+    id: credentials
+    attributes:
+      label: Credentials needed
+      description: Which facts or documents does the verifier need? Mark those you know already exist, or are already used in another use case.
+    validations:
+      required: true
+  - type: checkboxes
+    id: ambition
+    attributes:
+      label: Ambition level(s)
+      description: "AL1: e-ID · AL2: credentials from public authorities · AL3: credentials from private and other non-state actors"
+      options:
+        - label: AL1
+        - label: AL2
+        - label: AL3
+  - type: input
+    id: sectors
+    attributes:
+      label: Sector(s)
+      placeholder: e.g. mobility, insurance, health, education, public administration
+  - type: textarea
+    id: governance
+    attributes:
+      label: Legal basis and governance (optional)
+      description: Laws, regulations, sector frameworks or supervisory bodies that apply.
+  - type: textarea
+    id: demand
+    attributes:
+      label: Demand and value (optional)
+      description: Who would rely on it, how often, and what would it improve?
+  - type: input
+    id: organisation
+    attributes:
+      label: Proposed on behalf of (optional)
+      description: Organisation, if any. Leave empty to propose as an individual.
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources (optional)
+      description: Links to process descriptions, studies, legal texts.

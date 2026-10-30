@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: DIDAS Glossary
+    url: https://github.com/DIDAS-swiss/didas-glossary
+    about: Propose a term a use case needs
+  - name: DIDAS website
+    url: https://www.didas.swiss/
+    about: General questions about DIDAS and the swiyu ecosystem

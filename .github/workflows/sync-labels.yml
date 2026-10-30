@@ -1,0 +1,44 @@
+# Creates or updates the labels GOVERNANCE.md defines. Run it once from the
+# Actions tab after the repository is set up, and again after editing the list.
+name: Sync labels
+
+on:
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const labels = [
+              ['use-case', '1971c2', 'Use-case candidate or change'],
+              ['credential-need', 'd9480f', 'Demand signal: a credential is needed (gap board)'],
+              ['credential-supply', '2f9e44', 'Supply signal: an organisation could issue a credential'],
+              ['change', 'adb5bd', 'Change to an existing entry'],
+              ['stage: signal', 'e9ecef', 'Lifecycle: submitted'],
+              ['stage: candidate', 'd0ebff', 'Lifecycle: reviewed for clarity, completeness, duplication'],
+              ['stage: qualified', '74c0fc', 'Lifecycle: demand and governance context clear'],
+              ['stage: active', '40c057', 'Lifecycle: used in a pilot or in operation'],
+              ['stage: maintained', '2b8a3e', 'Lifecycle: maintained in an external pathway (I14Y, eCH, sector)'],
+              ['stage: deprecated', '868e96', 'Lifecycle: no longer recommended'],
+              ['AL1', 'f3d9fa', 'Ambition level 1: e-ID'],
+              ['AL2', 'e5dbff', 'Ambition level 2: public-sector credentials'],
+              ['AL3', 'd0bfff', 'Ambition level 3: private and other non-state credentials'],
+              ['cross-domain', 'fab005', 'Spans more than one domain; curator approves'],
+              ['needs-work', 'fd7e14', 'Triage: more information needed'],
+              ['duplicate', 'ced4da', 'Triage: already covered'],
+              ['out-of-scope', '495057', 'Triage: no verifiable data exchange involved'],
+            ];
+            for (const [name, color, description] of labels) {
+              try {
+                await github.rest.issues.updateLabel({ ...context.repo, name, color, description });
+              } catch (e) {
+                if (e.status !== 404) throw e;
+                await github.rest.issues.createLabel({ ...context.repo, name, color, description });
+              }
+            }

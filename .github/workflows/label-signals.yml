@@ -1,0 +1,32 @@
+# Issue forms cannot set labels from a dropdown, so this sorts credential
+# signals into the gap board (credential-need) or the supply side
+# (credential-supply) from the answer to the form's "Signal" question.
+name: Label credential signals
+
+on:
+  issues:
+    types: [opened, edited]
+
+permissions:
+  issues: write
+
+jobs:
+  label:
+    if: startsWith(github.event.issue.title, '[Credential]')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const body = context.payload.issue.body || '';
+            const match = body.match(/### Signal\s+(Need|Supply)/);
+            if (!match) return;
+            const add = match[1] === 'Need' ? 'credential-need' : 'credential-supply';
+            const drop = add === 'credential-need' ? 'credential-supply' : 'credential-need';
+            const issue = { ...context.repo, issue_number: context.payload.issue.number };
+            await github.rest.issues.addLabels({ ...issue, labels: [add] });
+            try {
+              await github.rest.issues.removeLabel({ ...issue, name: drop });
+            } catch (e) {
+              if (e.status !== 404) throw e;
+            }

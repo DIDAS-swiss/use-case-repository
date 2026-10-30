@@ -1,0 +1,7 @@
+# Entries require curator review (see GOVERNANCE.md).
+# NOTE: create the use-case-curators team in the DIDAS-swiss org and grant it
+# write access for this to take effect; until then the named user applies.
+*                 @DIDAS-swiss/use-case-curators @daniel-didas
+/GOVERNANCE.md    @daniel-didas
+/STEWARDS.md      @daniel-didas
+/.github/         @daniel-didas

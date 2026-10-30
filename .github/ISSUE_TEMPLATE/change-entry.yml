@@ -1,0 +1,47 @@
+name: Change to an entry
+description: Correct or extend a use case or credential, or propose a stage transition
+title: "[Change] "
+labels: ["change"]
+body:
+  - type: input
+    id: entry
+    attributes:
+      label: Entry
+      description: Link to the use-case or credential file
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind of change
+      options:
+        - Correction or addition
+        - Stage transition
+        - Deprecation
+    validations:
+      required: true
+  - type: dropdown
+    id: stage
+    attributes:
+      label: Proposed stage (stage transitions only)
+      description: See the stage criteria in GOVERNANCE.md
+      options:
+        - "n/a"
+        - candidate
+        - qualified
+        - active
+        - maintained
+        - deprecated
+  - type: textarea
+    id: change
+    attributes:
+      label: Proposed change
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and sources
+      description: For a stage transition, which criteria are met and where the evidence is.
+    validations:
+      required: true
