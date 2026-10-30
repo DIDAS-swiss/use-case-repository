@@ -9,4 +9,5 @@ To document a change, add a new dated file here as part of the same pull request
 
 ## Entries
 
+- [2026-10-30: Published as a GitHub Pages site](2026-10-30-github-pages.md)
 - [2026-10-30: Initial structure and seed use cases](2026-10-30-initial-structure.md)

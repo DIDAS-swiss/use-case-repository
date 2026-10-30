@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- assign page_title = page.title | default: site.title -%}
+  <title>{% if page_title != site.title %}{{ page_title }} · {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ site.description | strip }}">
+  <script>
+    /* Applied before first paint so the page does not flash the wrong theme.
+       The key is shared with the other DIDAS sites on this origin. */
+    (function () {
+      var t = 'auto';
+      try { t = localStorage.getItem('theme') || 'auto'; } catch (e) {}
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="stylesheet" href="{{ '/assets/site.css' | relative_url }}">
+</head>
+<body>
+  <header class="site-masthead">
+    <div class="bar">
+      <div class="id">
+        <a class="didas" href="https://www.didas.swiss" target="_blank" rel="noopener">
+          <img src="https://www.didas.swiss/wp-content/uploads/2021/02/logo.png" alt="DIDAS">
+        </a>
+        <p class="eyebrow">Use Case Repository · swiyu trust ecosystem</p>
+      </div>
+      <div class="tools">
+        <div class="seg" role="group" aria-label="Colour theme">
+          <button type="button" data-theme-value="light" aria-pressed="false" title="Light" aria-label="Light theme"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/></svg></button>
+          <button type="button" data-theme-value="dark" aria-pressed="false" title="Dark" aria-label="Dark theme"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/></svg></button>
+          <button type="button" data-theme-value="auto" aria-pressed="true" title="Match the system" aria-label="Match the system theme"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/></svg></button>
+        </div>
+        <div class="seg text" role="group" aria-label="Text size">
+          <button type="button" data-font-step="-1" title="Decrease text size" aria-label="Decrease text size">A</button>
+          <button type="button" data-font-step="1" title="Increase text size" aria-label="Increase text size">A</button>
+        </div>
+        <a class="repolink" href="https://github.com/{{ site.repository }}" target="_blank" rel="noopener">
+          <svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+          <span>Source on GitHub</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <nav class="site-nav" aria-label="Sections">
+    <div class="inner">
+      <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>Overview</a>
+      <a href="{{ '/use-cases/' | relative_url }}"{% if page.kind == 'use-case' %} aria-current="page"{% endif %}>Use cases</a>
+      <a href="{{ '/credentials/' | relative_url }}"{% if page.kind == 'credential' %} aria-current="page"{% endif %}>Credentials &amp; gap board</a>
+      <a href="{{ '/GOVERNANCE.html' | relative_url }}"{% if page.url == '/GOVERNANCE.html' %} aria-current="page"{% endif %}>Governance</a>
+      <a href="{{ '/VISION.html' | relative_url }}"{% if page.url == '/VISION.html' %} aria-current="page"{% endif %}>Vision</a>
+      <a class="cta" href="https://github.com/{{ site.repository }}/issues/new/choose">Propose a use case</a>
+    </div>
+  </nav>
+
+  <main class="content">
+    {%- if page.stage -%}
+    <dl class="facts">
+      <div><dt>Stage</dt><dd><span class="pill stage-{{ page.stage }}">{{ page.stage }}</span></dd></div>
+      {%- if page.supply %}<div><dt>Supply</dt><dd><span class="pill supply-{{ page.supply }}">{{ page.supply }}</span></dd></div>{% endif -%}
+      {%- if page.ambition_levels %}<div><dt>Ambition levels</dt><dd>{{ page.ambition_levels | join: ', ' }}</dd></div>{% endif -%}
+      {%- if page.ambition_level %}<div><dt>Ambition level</dt><dd>{{ page.ambition_level }}</dd></div>{% endif -%}
+      {%- if page.sectors %}<div><dt>Sectors</dt><dd>{{ page.sectors | join: ', ' }}</dd></div>{% endif -%}
+      {%- if page.likely_issuer %}<div class="wide"><dt>Likely issuer</dt><dd>{{ page.likely_issuer }}</dd></div>{% endif -%}
+      {%- if page.domain_steward %}<div><dt>Domain steward</dt><dd>{{ page.domain_steward }}</dd></div>{% endif -%}
+      {%- if page.title_de or page.title_fr or page.title_it %}<div class="wide"><dt>DE · FR · IT</dt><dd>{{ page.title_de }} · {{ page.title_fr }} · {{ page.title_it }}</dd></div>{% endif -%}
+      <div><dt>Updated</dt><dd>{{ page.updated }}</dd></div>
+    </dl>
+    {%- endif -%}
+    {{ content }}
+    <p class="edit">
+      <a href="https://github.com/{{ site.repository }}/blob/main/{{ page.path }}">View this page's source on GitHub</a>
+      ·
+      <a href="https://github.com/{{ site.repository }}/issues/new?template=change-entry.yml">Propose a change</a>
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="inner">
+      Content <a href="https://github.com/{{ site.repository }}/blob/main/LICENSE-CONTENT">CC BY 4.0</a>
+      · DIDAS — Digital Identity and Data Sovereignty Association
+      · Vocabulary: <a href="https://didas-swiss.github.io/didas-glossary/">DIDAS Glossary</a>
+    </div>
+  </footer>
+
+  <script src="{{ '/assets/site.js' | relative_url }}"></script>
+</body>
+</html>

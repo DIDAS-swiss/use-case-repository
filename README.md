@@ -10,9 +10,12 @@ Our aim is for this repository to grow into an early, working version of the
 discovery layer proposed in the DPSS pre-study of June 2026. See
 [VISION.md](VISION.md) for how the two relate.
 
+**📖 Published: https://didas-swiss.github.io/use-case-repository/**
+
 Everything runs on GitHub itself, with no website or build step. Entries are
 Markdown files that GitHub renders, intake runs through issue forms, and the
-lifecycle is tracked with labels and pull requests. Two small GitHub Actions only
+lifecycle is tracked with labels and pull requests. GitHub Pages publishes the same
+files as a browsable site with its built-in Jekyll, and two small GitHub Actions
 manage labels.
 
 ## Browse

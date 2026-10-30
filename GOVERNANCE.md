@@ -123,3 +123,6 @@ These are configured in GitHub settings, not in files:
   listed above. The **Label credential signals** workflow then sorts credential
   issues into `credential-need` and `credential-supply`.
 - Enable GitHub Discussions for escalation.
+- Pages: *Settings → Pages → Build and deployment*, source **Deploy from a
+  branch**, branch `main`, folder `/ (root)`. The site then rebuilds on every
+  merge to `main`.

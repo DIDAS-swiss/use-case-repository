@@ -1,3 +1,7 @@
+---
+title: Contributing
+---
+
 # Contributing
 
 You do not need to write an entry to contribute. A *Use-case candidate* or
@@ -9,7 +13,7 @@ structure it. This guide is for anyone who opens the pull request.
 | | Use case | Credential |
 |---|---|---|
 | Folder | `use-cases/` | `credentials/` |
-| Template | [`use-cases/_template.md`](use-cases/_template.md) | [`credentials/_template.md`](credentials/_template.md) |
+| Template | [`use-cases/_template.md`](https://github.com/DIDAS-swiss/use-case-repository/blob/main/use-cases/_template.md) | [`credentials/_template.md`](https://github.com/DIDAS-swiss/use-case-repository/blob/main/credentials/_template.md) |
 | Answers | What must be proven, by whom, with which credentials, under which rules | What a credential attests, who could issue it, and whether anyone does yet |
 | Index | [`use-cases/README.md`](use-cases/README.md) | [`credentials/README.md`](credentials/README.md) |
 

@@ -1,0 +1,42 @@
+# GitHub Pages builds this site from the Markdown in the repository with its
+# built-in Jekyll; there is no separate build step. The plugins GitHub Pages
+# enables by default do the rest: README.md becomes each folder's index page,
+# files without front matter are still rendered, titles come from the first
+# heading, and links to .md files are rewritten to the rendered pages.
+title: DIDAS Use Case Repository
+description: >-
+  Business use cases for the Swiss verifiable data ecosystem. An early version
+  of the use-case section of the Swiss Ecosystem Discovery Catalog.
+repository: DIDAS-swiss/use-case-repository
+baseurl: /use-case-repository
+url: https://didas-swiss.github.io
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: use-cases
+    values:
+      kind: use-case
+  - scope:
+      path: credentials
+    values:
+      kind: credential
+
+# CONTRIBUTING.md carries a one-line front matter because the optional-front-
+# matter plugin skips it otherwise.
+optional_front_matter:
+  remove_originals: true
+readme_index:
+  remove_originals: true
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
