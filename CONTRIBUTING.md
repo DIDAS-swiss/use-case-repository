@@ -46,7 +46,7 @@ detail belongs in the body.
 | `title_de`, `title_fr`, `title_it` | no | the title in the other working languages |
 | `stage` | yes | `signal` · `candidate` · `qualified` · `active` · `maintained` · `deprecated` |
 | `ambition_levels` | yes | one or more of `AL1`, `AL2`, `AL3` |
-| `sectors` | yes | for example `mobility`, `insurance`, `finance`, `health`, `education`, `public-administration` |
+| `sectors` | yes | ISIC Rev. 5 ids from [`_data/sectors.csv`](https://github.com/DIDAS-swiss/use-case-repository/blob/main/_data/sectors.csv), for example `ISIC-65`, `ISIC-84`. See *Sectors* below |
 | `domain_steward` | yes | a name from [STEWARDS.md](STEWARDS.md), or `vacant` |
 | `proposed_by` | yes | person or organisation |
 | `intake_issue` | no | issue number of the candidate |
@@ -72,6 +72,29 @@ detail belongs in the body.
 | `used_by` | yes | use-case ids |
 | `demand_issues` | no | `credential-need` issue numbers |
 | `created`, `updated` | yes | `YYYY-MM-DD` |
+
+## Sectors
+
+Sectors use **ISIC Rev. 5**, exactly as the
+[DIDAS Industry Function Graph](https://github.com/DIDAS-swiss/industry-function-graph)
+does, so a use case here and a use case pattern there can be joined on the same
+code.
+
+- Use the graph's ids: `ISIC-L` for a section, `ISIC-65` for a division,
+  `ISIC-6512` for a class. Divisions and classes drop the section letter,
+  because letters moved between ISIC revisions while the numbers held.
+- Pick the most specific level that is on the list. A section is fine where no
+  division fits.
+- List every sector the use case **applies to**, which can be broader than where
+  it has been piloted.
+- The list in `_data/sectors.csv` is a copy of the graph's `data/sectors.csv`.
+  If a code is missing, propose it in the graph first, then refresh the copy here.
+  Do not add codes only here.
+- Sector is context, not identity: the same use case in two sectors stays one
+  entry with two sector codes.
+
+The division number is also the join key to NOGA 2025, the Swiss implementation
+of NACE Rev. 2.1, at section and division level.
 
 ## The body
 

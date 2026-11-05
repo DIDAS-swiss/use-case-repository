@@ -6,7 +6,7 @@ title_fr: Traitement des sinistres de véhicules à moteur
 title_it: Gestione dei sinistri di veicoli a motore
 stage: signal
 ambition_levels: [AL1, AL2, AL3]
-sectors: [insurance, mobility, public-safety]
+sectors: [ISIC-6512, ISIC-84]
 domain_steward: vacant
 proposed_by: DIDAS (seeded from the DPSS pre-study flow work)
 intake_issue:

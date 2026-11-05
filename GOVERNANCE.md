@@ -59,8 +59,8 @@ provisional stewardship until one is confirmed (pre-study §7.3).
 1. **Intake**: the proposer files a *Use-case candidate* issue (label `use-case`,
    `stage: signal`).
 2. **Triage** within two weeks: a curator checks scope (does verifiable data play a
-   role?), looks for duplicates, and adds ambition-level (`AL2`, `AL3`) and
-   `sector:` labels. The curator may also apply `needs-work`, `duplicate` or
+   role?), looks for duplicates, checks the ISIC sector labels the form applied and adds
+   ambition-level labels (`AL2`, `AL3`). The curator may also apply `needs-work`, `duplicate` or
    `out-of-scope`, with reasons.
 3. **Drafting**: the proposer, a curator or a volunteer opens a pull request adding
    `use-cases/<id>.md` at stage `signal` and a row in `use-cases/README.md`, with
@@ -96,7 +96,7 @@ provisional stewardship until one is confirmed (pre-study §7.3).
 | `credential-need` / `credential-supply` | Demand or supply signal (the gap board) |
 | `stage: signal` … `stage: deprecated` | Lifecycle stage of the entry the issue concerns |
 | `AL1`, `AL2`, `AL3` | Ambition level |
-| `sector: …` | Sector, for example `sector: mobility` or `sector: insurance` |
+| `ISIC A` … `ISIC V` | Sector, as ISIC Rev. 5 section. Applied automatically from the sectors chosen in the issue form |
 | `needs-work`, `duplicate`, `out-of-scope` | Triage outcomes |
 | `cross-domain` | Spans more than one domain, so the curator approves |
 

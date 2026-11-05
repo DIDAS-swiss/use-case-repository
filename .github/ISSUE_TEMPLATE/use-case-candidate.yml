@@ -52,11 +52,58 @@ body:
         - label: AL1
         - label: AL2
         - label: AL3
-  - type: input
+  - type: dropdown
     id: sectors
     attributes:
       label: Sector(s)
-      placeholder: e.g. mobility, insurance, health, education, public administration
+      description: >-
+        ISIC Rev. 5, as used by the DIDAS Industry Function Graph. Pick the most
+        specific level that fits; a section (letter) is fine where no division is listed.
+        Missing a division? Name it under "Situation and outcome".
+      multiple: true
+      options:
+        - "ISIC-A · Agriculture, forestry and fishing"
+        - "ISIC-B · Mining and quarrying"
+        - "ISIC-C · Manufacturing"
+        - "— ISIC-21 · Manufacture of basic pharmaceutical products and pharmaceutical preparations"
+        - "— — ISIC-2100 · Manufacture of pharmaceuticals, medicinal chemical and botanical products"
+        - "— ISIC-30 · Manufacture of other transport equipment"
+        - "— — ISIC-3030 · Manufacture of air and spacecraft and related machinery"
+        - "ISIC-D · Electricity, gas, steam and air conditioning supply"
+        - "ISIC-E · Water supply; sewerage, waste management and remediation activities"
+        - "ISIC-F · Construction"
+        - "ISIC-G · Wholesale and retail trade"
+        - "— ISIC-47 · Retail trade"
+        - "— — ISIC-4711 · Non-specialized retail sale with food, beverages or tobacco predominating"
+        - "ISIC-H · Transportation and storage"
+        - "ISIC-I · Accommodation and food service activities"
+        - "— ISIC-56 · Food and beverage service activities"
+        - "— — ISIC-5610 · Restaurants and mobile food service activities"
+        - "ISIC-J · Publishing, broadcasting, and content production and distribution activities"
+        - "ISIC-K · Telecommunications, computer programming, consultancy, computing infrastructure, and other information service activities"
+        - "— ISIC-62 · Computer programming, consultancy and related activities"
+        - "ISIC-L · Financial and insurance activities"
+        - "— ISIC-64 · Financial service activities, except insurance and pension funding"
+        - "— — ISIC-6419 · Other monetary intermediation"
+        - "— ISIC-65 · Insurance, reinsurance and pension funding, except compulsory social security"
+        - "— — ISIC-6512 · Non-life insurance"
+        - "ISIC-M · Real estate activities"
+        - "ISIC-N · Professional, scientific and technical activities"
+        - "ISIC-O · Administrative and support service activities"
+        - "ISIC-P · Public administration and defence; compulsory social security"
+        - "— ISIC-84 · Public administration and defence; compulsory social security"
+        - "— — ISIC-8411 · General public administration activities"
+        - "ISIC-Q · Education"
+        - "— ISIC-85 · Education"
+        - "— — ISIC-8531 · General secondary education"
+        - "— — ISIC-8540 · Tertiary education"
+        - "ISIC-R · Human health and social work activities"
+        - "— ISIC-86 · Human health activities"
+        - "— — ISIC-8610 · Hospital activities"
+        - "ISIC-S · Arts, sports and recreation"
+        - "ISIC-T · Other service activities"
+        - "ISIC-U · Activities of households as employers; undifferentiated goods- and services-producing activities of households for own use"
+        - "ISIC-V · Activities of extraterritorial organizations and bodies"
   - type: textarea
     id: governance
     attributes:

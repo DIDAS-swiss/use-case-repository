@@ -6,7 +6,7 @@ title_fr:
 title_it:
 stage: signal
 ambition_levels: [AL2]
-sectors: []
+sectors: []   # ISIC Rev. 5 ids from _data/sectors.csv, e.g. [ISIC-65, ISIC-84]
 domain_steward: vacant
 proposed_by:
 intake_issue:

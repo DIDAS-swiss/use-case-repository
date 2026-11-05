@@ -1,0 +1,43 @@
+id,level,notation,label,broader
+ISIC-A,section,A,"Agriculture, forestry and fishing",
+ISIC-B,section,B,Mining and quarrying,
+ISIC-C,section,C,Manufacturing,
+ISIC-D,section,D,"Electricity, gas, steam and air conditioning supply",
+ISIC-E,section,E,"Water supply; sewerage, waste management and remediation activities",
+ISIC-F,section,F,Construction,
+ISIC-G,section,G,Wholesale and retail trade,
+ISIC-H,section,H,Transportation and storage,
+ISIC-I,section,I,Accommodation and food service activities,
+ISIC-J,section,J,"Publishing, broadcasting, and content production and distribution activities",
+ISIC-K,section,K,"Telecommunications, computer programming, consultancy, computing infrastructure, and other information service activities",
+ISIC-L,section,L,Financial and insurance activities,
+ISIC-M,section,M,Real estate activities,
+ISIC-N,section,N,"Professional, scientific and technical activities",
+ISIC-O,section,O,Administrative and support service activities,
+ISIC-P,section,P,Public administration and defence; compulsory social security,
+ISIC-Q,section,Q,Education,
+ISIC-R,section,R,Human health and social work activities,
+ISIC-S,section,S,"Arts, sports and recreation",
+ISIC-T,section,T,Other service activities,
+ISIC-U,section,U,Activities of households as employers; undifferentiated goods- and services-producing activities of households for own use,
+ISIC-V,section,V,Activities of extraterritorial organizations and bodies,
+ISIC-21,division,21,Manufacture of basic pharmaceutical products and pharmaceutical preparations,ISIC-C
+ISIC-2100,class,2100,"Manufacture of pharmaceuticals, medicinal chemical and botanical products",ISIC-21
+ISIC-30,division,30,Manufacture of other transport equipment,ISIC-C
+ISIC-3030,class,3030,Manufacture of air and spacecraft and related machinery,ISIC-30
+ISIC-47,division,47,Retail trade,ISIC-G
+ISIC-4711,class,4711,"Non-specialized retail sale with food, beverages or tobacco predominating",ISIC-47
+ISIC-56,division,56,Food and beverage service activities,ISIC-I
+ISIC-5610,class,5610,Restaurants and mobile food service activities,ISIC-56
+ISIC-62,division,62,"Computer programming, consultancy and related activities",ISIC-K
+ISIC-64,division,64,"Financial service activities, except insurance and pension funding",ISIC-L
+ISIC-6419,class,6419,Other monetary intermediation,ISIC-64
+ISIC-65,division,65,"Insurance, reinsurance and pension funding, except compulsory social security",ISIC-L
+ISIC-6512,class,6512,Non-life insurance,ISIC-65
+ISIC-84,division,84,Public administration and defence; compulsory social security,ISIC-P
+ISIC-8411,class,8411,General public administration activities,ISIC-84
+ISIC-85,division,85,Education,ISIC-Q
+ISIC-8531,class,8531,General secondary education,ISIC-85
+ISIC-8540,class,8540,Tertiary education,ISIC-85
+ISIC-86,division,86,Human health activities,ISIC-R
+ISIC-8610,class,8610,Hospital activities,ISIC-86

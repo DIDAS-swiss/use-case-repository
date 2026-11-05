@@ -157,3 +157,15 @@ a { color: var(--accent); }
 .site-footer { border-top: 1px solid var(--rule); color: var(--muted); font-size: 0.85rem; }
 .site-footer .inner { padding-block: 18px; }
 .site-footer a { color: var(--muted); }
+
+/* Sector names in the facts panel, and the selector above sector tables. */
+.facts .sector { display: block; }
+.sector-filter {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px;
+  margin: 16px 0 4px; font-size: 0.9rem; color: var(--muted);
+}
+.sector-filter select {
+  max-width: 100%; padding: 5px 8px; font: inherit; color: var(--ink);
+  background: var(--bg); border: 1px solid var(--rule); border-radius: 4px;
+}
+.sector-count { font-variant-numeric: tabular-nums; }

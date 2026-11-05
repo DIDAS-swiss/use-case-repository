@@ -6,7 +6,7 @@ title_fr: Leasing de véhicules
 title_it: Leasing di veicoli
 stage: signal
 ambition_levels: [AL1, AL2, AL3]
-sectors: [mobility, finance, insurance]
+sectors: [ISIC-64, ISIC-65, ISIC-84]
 domain_steward: vacant
 proposed_by: DIDAS (seeded from the DPSS pre-study flow work)
 intake_issue:

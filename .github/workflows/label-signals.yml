@@ -1,17 +1,19 @@
-# Issue forms cannot set labels from a dropdown, so this sorts credential
-# signals into the gap board (credential-need) or the supply side
-# (credential-supply) from the answer to the form's "Signal" question.
-name: Label credential signals
+# Issue forms cannot set labels from a dropdown, so this applies them from the
+# answers: credential signals go to the gap board (credential-need) or the
+# supply side (credential-supply), and use-case candidates get one `ISIC <letter>`
+# label per ISIC Rev. 5 section their chosen sectors fall under.
+name: Label from issue forms
 
 on:
   issues:
     types: [opened, edited]
 
 permissions:
+  contents: read
   issues: write
 
 jobs:
-  label:
+  credential-signal:
     if: startsWith(github.event.issue.title, '[Credential]')
     runs-on: ubuntu-latest
     steps:
@@ -30,3 +32,47 @@ jobs:
             } catch (e) {
               if (e.status !== 404) throw e;
             }
+
+  use-case-sectors:
+    if: startsWith(github.event.issue.title, '[Use case]')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: _data
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            // Minimal CSV reader: fields may be quoted, quotes doubled inside.
+            const parse = line => {
+              const out = []; let cur = '', q = false;
+              for (let i = 0; i < line.length; i++) {
+                const c = line[i];
+                if (q) {
+                  if (c === '"' && line[i + 1] === '"') { cur += '"'; i++; }
+                  else if (c === '"') q = false;
+                  else cur += c;
+                } else if (c === '"') q = true;
+                else if (c === ',') { out.push(cur); cur = ''; }
+                else cur += c;
+              }
+              out.push(cur);
+              return out;
+            };
+            // id,level,notation,label,broader
+            const rows = fs.readFileSync('_data/sectors.csv', 'utf8').trim().split('\n').slice(1).map(parse);
+            const broader = Object.fromEntries(rows.map(r => [r[0], r[4]]));
+            const section = id => (broader[id] ? section(broader[id]) : id);
+
+            const body = context.payload.issue.body || '';
+            const block = (body.split('### Sector(s)')[1] || '').split('\n### ')[0];
+            const ids = [...block.matchAll(/ISIC-[A-Z0-9]+/g)].map(m => m[0]).filter(id => id in broader);
+            const wanted = new Set(ids.map(id => 'ISIC ' + section(id).replace('ISIC-', '')));
+
+            const issue = { ...context.repo, issue_number: context.payload.issue.number };
+            const current = context.payload.issue.labels.map(l => l.name).filter(n => /^ISIC [A-Z]$/.test(n));
+            for (const name of current) {
+              if (!wanted.has(name)) await github.rest.issues.removeLabel({ ...issue, name });
+            }
+            if (wanted.size) await github.rest.issues.addLabels({ ...issue, labels: [...wanted] });

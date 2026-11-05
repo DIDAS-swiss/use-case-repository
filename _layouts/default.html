@@ -65,7 +65,12 @@
       {%- if page.supply %}<div><dt>Supply</dt><dd><span class="pill supply-{{ page.supply }}">{{ page.supply }}</span></dd></div>{% endif -%}
       {%- if page.ambition_levels %}<div><dt>Ambition levels</dt><dd>{{ page.ambition_levels | join: ', ' }}</dd></div>{% endif -%}
       {%- if page.ambition_level %}<div><dt>Ambition level</dt><dd>{{ page.ambition_level }}</dd></div>{% endif -%}
-      {%- if page.sectors %}<div><dt>Sectors</dt><dd>{{ page.sectors | join: ', ' }}</dd></div>{% endif -%}
+      {%- if page.sectors and page.sectors.size > 0 %}<div class="wide"><dt>Sectors · ISIC Rev. 5</dt><dd>
+        {%- for id in page.sectors -%}
+          {%- assign sector = site.data.sectors | where: "id", id | first -%}
+          <span class="sector" title="{{ id }}">{{ id | remove: 'ISIC-' }} {{ sector.label | default: id }}</span>
+        {%- endfor -%}
+      </dd></div>{% endif -%}
       {%- if page.likely_issuer %}<div class="wide"><dt>Likely issuer</dt><dd>{{ page.likely_issuer }}</dd></div>{% endif -%}
       {%- if page.domain_steward %}<div><dt>Domain steward</dt><dd>{{ page.domain_steward }}</dd></div>{% endif -%}
       {%- if page.title_de or page.title_fr or page.title_it %}<div class="wide"><dt>DE · FR · IT</dt><dd>{{ page.title_de }} · {{ page.title_fr }} · {{ page.title_it }}</dd></div>{% endif -%}
@@ -88,6 +93,9 @@
     </div>
   </footer>
 
+  <script id="sector-data" type="application/json">
+    [{%- for s in site.data.sectors -%}{"id":{{ s.id | jsonify }},"level":{{ s.level | jsonify }},"label":{{ s.label | jsonify }},"broader":{{ s.broader | default: "" | jsonify }}}{% unless forloop.last %},{% endunless %}{%- endfor -%}]
+  </script>
   <script src="{{ '/assets/site.js' | relative_url }}"></script>
 </body>
 </html>
