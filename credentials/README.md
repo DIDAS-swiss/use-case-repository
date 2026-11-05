@@ -26,6 +26,7 @@ To offer to issue one, open a
 | [Salary and employment confirmation](salary-employment-confirmation.md) | missing | Employers / sector body | 1: [leasing](../use-cases/vehicle-leasing.md) |
 | [Accident report](accident-report.md) | missing | Cantonal police | 1: [claims](../use-cases/motor-vehicle-claims-processing.md) |
 | [Repair assessment](repair-assessment.md) | missing | Certified garage or expert | 1: [claims](../use-cases/motor-vehicle-claims-processing.md) |
+| [Immunization record](immunization-record.md) | emerging | The vaccinator that administered the dose | 1: [vaccination](../use-cases/vaccination-record.md) |
 | [Residence confirmation](residence-confirmation.md) ([I14Y](https://www.i14y.admin.ch/de/catalog/datasets/urn:vct:ch.egovernment.residency-permit-simple/description)) | emerging | Municipal residents' office | 1: [leasing](../use-cases/vehicle-leasing.md) |
 | [Debt enforcement register extract](debt-enforcement-extract.md) | emerging | Debt enforcement office | 1: [leasing](../use-cases/vehicle-leasing.md) |
 | [Swiss e-ID](swiss-e-id.md) | emerging | fedpol | 2: [leasing](../use-cases/vehicle-leasing.md), [claims](../use-cases/motor-vehicle-claims-processing.md) |
@@ -37,6 +38,7 @@ To offer to issue one, open a
 | [Accident report](accident-report.md) | AL2 | cantonal | missing | signal | 1 | not published |
 | [Beta-ID](beta-id.md) (test credential) | AL1 | federal | available (Public Beta) | candidate | test stand-in for the e-ID | [`urn:vct:ch.admin.bcs.betaid`](https://www.i14y.admin.ch/de/catalog/datasets/urn:vct:ch.admin.bcs.betaid/description) · [schema](../federation/i14y/beta-id/) |
 | [Debt enforcement register extract](debt-enforcement-extract.md) | AL2 | cantonal | emerging | signal | 1 | not published |
+| [Immunization record](immunization-record.md) | AL3 | private | emerging | signal | 1 | not published; showcase type `urn:vct:ch.didas.health.immunization:1.0` |
 | [Motor vehicle liability insurance confirmation](motor-vehicle-liability-insurance-confirmation.md) | AL3 | private | missing | signal | 2 | not published |
 | [Repair assessment](repair-assessment.md) | AL3 | private | missing | signal | 1 | not published |
 | [Residence confirmation](residence-confirmation.md) | AL2 | municipal | emerging | signal | 1 | [`urn:vct:ch.egovernment.residency-permit-simple`](https://www.i14y.admin.ch/de/catalog/datasets/urn:vct:ch.egovernment.residency-permit-simple/description) · [schema](../federation/i14y/residence-confirmation/) |

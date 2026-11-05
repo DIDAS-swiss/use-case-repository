@@ -106,12 +106,14 @@
     label.htmlFor = select.id;
     label.appendChild(document.createTextNode('Sector (ISIC Rev. 5) '));
     select.appendChild(new Option('All sectors', ''));
-    sectors.forEach(function (s) {
+    // Each section, then the divisions and classes under it, indented.
+    function add(s, depth) {
       if (!used[s.id]) return;
-      var depth = s.level === 'section' ? 0 : s.level === 'division' ? 1 : 2;
       var text = '\u00a0\u00a0\u00a0'.repeat(depth) + s.id.replace('ISIC-', '') + ' \u2014 ' + s.label;
       select.appendChild(new Option(text, s.id));
-    });
+      sectors.forEach(function (c) { if (c.broader === s.id) add(c, depth + 1); });
+    }
+    sectors.forEach(function (s) { if (!s.broader) add(s, 0); });
     label.appendChild(select);
 
     var count = document.createElement('span');

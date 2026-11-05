@@ -14,6 +14,7 @@ insurance activities* also finds the divisions and classes inside it.
 |---|---|---|---|---|---|
 | [Motor vehicle claims processing](motor-vehicle-claims-processing.md) | signal | AL1, AL2, AL3 | ISIC-6512 Non-life insurance; ISIC-84 Public administration | 3 · 2 · 3 | vacant |
 | [Vehicle leasing](vehicle-leasing.md) | signal | AL1, AL2, AL3 | ISIC-64 Financial services; ISIC-65 Insurance; ISIC-84 Public administration | 1 · 5 · 0 | vacant |
+| [Vaccination record and evidence of doses](vaccination-record.md) | signal | AL3 | ISIC-86 Human health; ISIC-47 Retail trade (pharmacies) | 0 · 1 · 2 | vacant |
 
 Stages: `signal` → `candidate` → `qualified` → `active` → `maintained`, or
 `deprecated`. See [GOVERNANCE.md](../GOVERNANCE.md#lifecycle-stages).
