@@ -1,0 +1,2849 @@
+[
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id",
+  "@type": [
+   "http://www.w3.org/ns/shacl#NodeShape",
+   "http://purl.org/linked-data/cube#DataStructureDefinition",
+   "http://www.w3.org/2000/01/rdf-schema#Class"
+  ],
+  "http://i14y-schema/extension#coord_x": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "0"
+   }
+  ],
+  "http://i14y-schema/extension#coord_y": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "15"
+   }
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "it",
+    "@value": "Beta-ID"
+   },
+   {
+    "@language": "fr",
+    "@value": "Beta-ID"
+   },
+   {
+    "@language": "en",
+    "@value": "Beta-ID"
+   },
+   {
+    "@language": "de",
+    "@value": "Beta-ID"
+   }
+  ],
+  "http://purl.org/pav/version": [
+   {
+    "@value": "1.0.0"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#label": [
+   {
+    "@language": "de",
+    "@value": "Beta-ID"
+   },
+   {
+    "@language": "en",
+    "@value": "Beta-ID"
+   },
+   {
+    "@language": "fr",
+    "@value": "Beta-ID"
+   },
+   {
+    "@language": "it",
+    "@value": "Beta-ID"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#property": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/verification_type"
+   },
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/verification_organization"
+   },
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/sex"
+   },
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/referende_id_expiry_date"
+   },
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/reference_id_type"
+   },
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/portrait"
+   },
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/place_of_origin"
+   },
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/personal_administrative_number"
+   },
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/nationality"
+   },
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/issuing_country"
+   },
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/issuing_authority"
+   },
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/issuance_date"
+   },
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/given_name"
+   },
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/family_name"
+   },
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/additional_person_info"
+   },
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/age_birth_year"
+   },
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/age_over_16"
+   },
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/age_over_18"
+   },
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/age_over_65"
+   },
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/birth_date"
+   },
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/birth_place"
+   },
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/document_number"
+   },
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/expiry_date"
+   }
+  ],
+  "https://schema.org/validFrom": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#date",
+    "@value": "2025-02-17"
+   }
+  ],
+  "https://schema.org/version": [
+   {
+    "@value": "1.0.0"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/additional_person_info",
+  "@type": [
+   "http://www.w3.org/ns/shacl#PropertyShape",
+   "http://www.w3.org/2002/07/owl#DatatypeProperty",
+   "http://purl.org/linked-data/cube#AttributeProperty"
+  ],
+  "http://purl.org/dc/terms/conformsTo": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/concept/PID_ADDITIONAL_PERSON_INFORMATION/version/1.0.0"
+   }
+  ],
+  "http://purl.org/dc/terms/description": [
+   {
+    "@language": "de",
+    "@value": "Zusätzliche Angaben zur Person im Ausweisdokument (IDK, Pass, Ausländerausweis)"
+   },
+   {
+    "@language": "en",
+    "@value": "Additional personal details on the identity document (ID card, passport, foreigner's identity card)"
+   },
+   {
+    "@language": "fr",
+    "@value": "Données supplémentaires de la personne dans le document d'identité (Carte d'identité, Passeport, Titre de séjour)"
+   },
+   {
+    "@language": "it",
+    "@value": "Informazioni supplementari sulla persona contenute nel documento d'identità (carta d'identità, passaporto, permesso di soggiorno)"
+   }
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "it",
+    "@value": "Informazioni supplementari sulla persona"
+   },
+   {
+    "@language": "fr",
+    "@value": "Mentions supplémentaires concernant la personne"
+   },
+   {
+    "@language": "en",
+    "@value": "Additional information about the person"
+   },
+   {
+    "@language": "de",
+    "@value": "Zusätzliche Angaben zur Person"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#comment": [
+   {
+    "@language": "it",
+    "@value": "Informazioni supplementari sulla persona contenute nel documento d'identità (carta d'identità, passaporto, permesso di soggiorno)"
+   },
+   {
+    "@language": "fr",
+    "@value": "Données supplémentaires de la personne dans le document d'identité (Carte d'identité, Passeport, Titre de séjour)"
+   },
+   {
+    "@language": "en",
+    "@value": "Additional personal details on the identity document (ID card, passport, foreigner's identity card)"
+   },
+   {
+    "@language": "de",
+    "@value": "Zusätzliche Angaben zur Person im Ausweisdokument (IDK, Pass, Ausländerausweis)"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#label": [
+   {
+    "@language": "de",
+    "@value": "Zusätzliche Angaben zur Person"
+   },
+   {
+    "@language": "en",
+    "@value": "Additional information about the person"
+   },
+   {
+    "@language": "fr",
+    "@value": "Mentions supplémentaires concernant la personne"
+   },
+   {
+    "@language": "it",
+    "@value": "Informazioni supplementari sulla persona"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#datatype": [
+   {
+    "@id": "http://www.w3.org/2001/XMLSchema#string"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#description": [
+   {
+    "@language": "it",
+    "@value": "Informazioni supplementari sulla persona contenute nel documento d'identità (carta d'identità, passaporto, permesso di soggiorno)"
+   },
+   {
+    "@language": "fr",
+    "@value": "Données supplémentaires de la personne dans le document d'identité (Carte d'identité, Passeport, Titre de séjour)"
+   },
+   {
+    "@language": "en",
+    "@value": "Additional personal details on the identity document (ID card, passport, foreigner's identity card)"
+   },
+   {
+    "@language": "de",
+    "@value": "Zusätzliche Angaben zur Person im Ausweisdokument (IDK, Pass, Ausländerausweis)"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "de",
+    "@value": "Zusätzliche Angaben zur Person"
+   },
+   {
+    "@language": "en",
+    "@value": "Additional information about the person"
+   },
+   {
+    "@language": "fr",
+    "@value": "Mentions supplémentaires concernant la personne"
+   },
+   {
+    "@language": "it",
+    "@value": "Informazioni supplementari sulla persona"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#order": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "14"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/additional_person_info"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/age_birth_year",
+  "@type": [
+   "http://www.w3.org/ns/shacl#PropertyShape",
+   "http://www.w3.org/2002/07/owl#DatatypeProperty",
+   "http://purl.org/linked-data/cube#AttributeProperty"
+  ],
+  "http://purl.org/dc/terms/conformsTo": [
+   {
+    "@id": "https://www.i14y.admin.ch/catalog/concepts/08dd6a9d-53dd-71d4-a3e7-852ff5503f7c/description"
+   }
+  ],
+  "http://purl.org/dc/terms/description": [
+   {
+    "@language": "de",
+    "@value": "Geburtsjahr der Person. Von Geburtsdatum abgeleiteter Wert, bei welchem nur das Jahr (YYYY) beibehalten wird."
+   },
+   {
+    "@language": "en",
+    "@value": "Year of birth of the person. Value derived from the date of birth, where only the year (YYYY) is retained."
+   },
+   {
+    "@language": "fr",
+    "@value": "Année de naissance de la personne. Valeur dérivée de la date de naissance, dont seule l'année (YYYY) est conservée."
+   },
+   {
+    "@language": "it",
+    "@value": "Anno di nascita della persona. Valore derivato dalla data di nascita, in cui viene mantenuto solo l'anno (YYYY)."
+   }
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "it",
+    "@value": "Annata"
+   },
+   {
+    "@language": "fr",
+    "@value": "Né(e) en"
+   },
+   {
+    "@language": "en",
+    "@value": "Born in"
+   },
+   {
+    "@language": "de",
+    "@value": "Geburtsjahr"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#comment": [
+   {
+    "@language": "it",
+    "@value": "Anno di nascita della persona. Valore derivato dalla data di nascita, in cui viene mantenuto solo l'anno (YYYY)."
+   },
+   {
+    "@language": "fr",
+    "@value": "Année de naissance de la personne. Valeur dérivée de la date de naissance, dont seule l'année (YYYY) est conservée."
+   },
+   {
+    "@language": "en",
+    "@value": "Year of birth of the person. Value derived from the date of birth, where only the year (YYYY) is retained."
+   },
+   {
+    "@language": "de",
+    "@value": "Geburtsjahr der Person. Von Geburtsdatum abgeleiteter Wert, bei welchem nur das Jahr (YYYY) beibehalten wird."
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#label": [
+   {
+    "@language": "de",
+    "@value": "Geburtsjahr"
+   },
+   {
+    "@language": "en",
+    "@value": "Born in"
+   },
+   {
+    "@language": "fr",
+    "@value": "Né(e) en"
+   },
+   {
+    "@language": "it",
+    "@value": "Annata"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#datatype": [
+   {
+    "@id": "http://www.w3.org/2001/XMLSchema#decimal"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#description": [
+   {
+    "@language": "it",
+    "@value": "Anno di nascita della persona. Valore derivato dalla data di nascita, in cui viene mantenuto solo l'anno (YYYY)."
+   },
+   {
+    "@language": "fr",
+    "@value": "Année de naissance de la personne. Valeur dérivée de la date de naissance, dont seule l'année (YYYY) est conservée."
+   },
+   {
+    "@language": "en",
+    "@value": "Year of birth of the person. Value derived from the date of birth, where only the year (YYYY) is retained."
+   },
+   {
+    "@language": "de",
+    "@value": "Geburtsjahr der Person. Von Geburtsdatum abgeleiteter Wert, bei welchem nur das Jahr (YYYY) beibehalten wird."
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "de",
+    "@value": "Geburtsjahr"
+   },
+   {
+    "@language": "en",
+    "@value": "Born in"
+   },
+   {
+    "@language": "fr",
+    "@value": "Né(e) en"
+   },
+   {
+    "@language": "it",
+    "@value": "Annata"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#order": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "7"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/age_birth_year"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/age_over_16",
+  "@type": [
+   "http://www.w3.org/ns/shacl#PropertyShape",
+   "http://www.w3.org/2002/07/owl#DatatypeProperty",
+   "http://purl.org/linked-data/cube#CodedProperty",
+   "http://purl.org/linked-data/cube#AttributeProperty"
+  ],
+  "http://purl.org/dc/terms/conformsTo": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/concept/PID_AGE_OVER_16/version/1.0.0"
+   }
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "de",
+    "@value": "Älter als 16 Jahre"
+   },
+   {
+    "@language": "en",
+    "@value": "Over the age of 16"
+   },
+   {
+    "@language": "fr",
+    "@value": "Age plus de 16 ans"
+   },
+   {
+    "@language": "it",
+    "@value": "Età superiore a 16 anni"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#comment": [
+   {
+    "@language": "it",
+    "@value": "Dichiarazione che attesti che la persona ha compiuto 16 anni."
+   },
+   {
+    "@language": "fr",
+    "@value": "Déclaration indiquant si la personne a atteint l'âge de 16 ans révolus."
+   },
+   {
+    "@language": "en",
+    "@value": "Declaration that the person has reached the age of 16."
+   },
+   {
+    "@language": "de",
+    "@value": "Aussage, ob die Person ihr 16. Altersjahr vollendet hat."
+   }
+  ],
+  "http://www.w3.org/ns/shacl#datatype": [
+   {
+    "@id": "http://www.w3.org/2001/XMLSchema#string"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#description": [
+   {
+    "@language": "de",
+    "@value": "Aussage, ob die Person ihr 15. Lebensjahr vollendet hat."
+   },
+   {
+    "@language": "it",
+    "@value": "Dichiarazione che attesti che la persona ha compiuto 16 anni."
+   },
+   {
+    "@language": "fr",
+    "@value": "Déclaration indiquant si la personne a atteint l'âge de 16 ans révolus."
+   },
+   {
+    "@language": "en",
+    "@value": "Declaration that the person has reached the age of 16."
+   }
+  ],
+  "http://www.w3.org/ns/shacl#in": [
+   {
+    "@list": [
+     {
+      "@value": "false"
+     },
+     {
+      "@value": "true"
+     }
+    ]
+   }
+  ],
+  "http://www.w3.org/ns/shacl#maxLength": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "5"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#minLength": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "4"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "de",
+    "@value": "Älter als 16 Jahre"
+   },
+   {
+    "@language": "en",
+    "@value": "Over the age of 16"
+   },
+   {
+    "@language": "fr",
+    "@value": "Age plus de 16 ans"
+   },
+   {
+    "@language": "it",
+    "@value": "Età superiore a 16 anni"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#order": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "4"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/age_over_16"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/age_over_18",
+  "@type": [
+   "http://www.w3.org/ns/shacl#PropertyShape",
+   "http://www.w3.org/2002/07/owl#DatatypeProperty",
+   "http://purl.org/linked-data/cube#CodedProperty",
+   "http://purl.org/linked-data/cube#AttributeProperty"
+  ],
+  "http://purl.org/dc/terms/description": [
+   {
+    "@language": "de",
+    "@value": "Aussage, ob die Person ihr 18. Altersjahr vollendet hat."
+   },
+   {
+    "@language": "en",
+    "@value": "Declaration that the person has reached the age of 18."
+   },
+   {
+    "@language": "fr",
+    "@value": "Déclaration indiquant si la personne a atteint l'âge de 18 ans révolus."
+   },
+   {
+    "@language": "it",
+    "@value": "Dichiarazione che attesti che la persona ha compiuto 18 anni."
+   }
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "it",
+    "@value": "Età superiore a 18 anni"
+   },
+   {
+    "@language": "fr",
+    "@value": "Age plus de 18 ans"
+   },
+   {
+    "@language": "en",
+    "@value": "Over the age of 18"
+   },
+   {
+    "@language": "de",
+    "@value": "Älter als 18 Jahre"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#comment": [
+   {
+    "@language": "it",
+    "@value": "Dichiarazione che attesti che la persona ha compiuto 18 anni."
+   },
+   {
+    "@language": "fr",
+    "@value": "Déclaration indiquant si la personne a atteint l'âge de 18 ans révolus."
+   },
+   {
+    "@language": "en",
+    "@value": "Declaration that the person has reached the age of 18."
+   },
+   {
+    "@language": "de",
+    "@value": "Aussage, ob die Person ihr 18. Altersjahr vollendet hat."
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#label": [
+   {
+    "@language": "de",
+    "@value": "Älter als 18 Jahre"
+   },
+   {
+    "@language": "en",
+    "@value": "Over the age of 18"
+   },
+   {
+    "@language": "fr",
+    "@value": "Age plus de 18 ans"
+   },
+   {
+    "@language": "it",
+    "@value": "Età superiore a 18 anni"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#description": [
+   {
+    "@language": "it",
+    "@value": "Dichiarazione che attesti che la persona ha compiuto 18 anni."
+   },
+   {
+    "@language": "fr",
+    "@value": "Déclaration indiquant si la personne a atteint l'âge de 18 ans révolus."
+   },
+   {
+    "@language": "en",
+    "@value": "Declaration that the person has reached the age of 18."
+   },
+   {
+    "@language": "de",
+    "@value": "Aussage, ob die Person ihr 18. Altersjahr vollendet hat."
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "de",
+    "@value": "Älter als 18 Jahre"
+   },
+   {
+    "@language": "en",
+    "@value": "Over the age of 18"
+   },
+   {
+    "@language": "fr",
+    "@value": "Age plus de 18 ans"
+   },
+   {
+    "@language": "it",
+    "@value": "Età superiore a 18 anni"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#order": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "5"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/age_over_18"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/age_over_65",
+  "@type": [
+   "http://www.w3.org/ns/shacl#PropertyShape",
+   "http://www.w3.org/2002/07/owl#DatatypeProperty",
+   "http://purl.org/linked-data/cube#CodedProperty",
+   "http://purl.org/linked-data/cube#AttributeProperty"
+  ],
+  "http://purl.org/dc/terms/description": [
+   {
+    "@language": "de",
+    "@value": "Aussage, ob die Person ihr 65. Altersjahr vollendet hat."
+   },
+   {
+    "@language": "en",
+    "@value": "Declaration that the person has reached the age of 65."
+   },
+   {
+    "@language": "fr",
+    "@value": "Déclaration indiquant si la personne a atteint l'âge de 65 ans révolus."
+   },
+   {
+    "@language": "it",
+    "@value": "Dichiarazione che attesti che la persona ha compiuto 65 anni."
+   }
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "it",
+    "@value": "Età superiore a 65 anni"
+   },
+   {
+    "@language": "fr",
+    "@value": "Age plus de 65 ans"
+   },
+   {
+    "@language": "en",
+    "@value": "Over the age of 65"
+   },
+   {
+    "@language": "de",
+    "@value": "Älter als 65 Jahre"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#comment": [
+   {
+    "@language": "it",
+    "@value": "Dichiarazione che attesti che la persona ha compiuto 65 anni."
+   },
+   {
+    "@language": "fr",
+    "@value": "Déclaration indiquant si la personne a atteint l'âge de 65 ans révolus."
+   },
+   {
+    "@language": "en",
+    "@value": "Declaration that the person has reached the age of 65."
+   },
+   {
+    "@language": "de",
+    "@value": "Aussage, ob die Person ihr 65. Altersjahr vollendet hat."
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#label": [
+   {
+    "@language": "de",
+    "@value": "Älter als 65 Jahre"
+   },
+   {
+    "@language": "en",
+    "@value": "Over the age of 65"
+   },
+   {
+    "@language": "fr",
+    "@value": "Age plus de 65 ans"
+   },
+   {
+    "@language": "it",
+    "@value": "Età superiore a 65 anni"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#description": [
+   {
+    "@language": "it",
+    "@value": "Dichiarazione che attesti che la persona ha compiuto 65 anni."
+   },
+   {
+    "@language": "fr",
+    "@value": "Déclaration indiquant si la personne a atteint l'âge de 65 ans révolus."
+   },
+   {
+    "@language": "en",
+    "@value": "Declaration that the person has reached the age of 65."
+   },
+   {
+    "@language": "de",
+    "@value": "Aussage, ob die Person ihr 65. Altersjahr vollendet hat."
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "de",
+    "@value": "Älter als 65 Jahre"
+   },
+   {
+    "@language": "en",
+    "@value": "Over the age of 65"
+   },
+   {
+    "@language": "fr",
+    "@value": "Age plus de 65 ans"
+   },
+   {
+    "@language": "it",
+    "@value": "Età superiore a 65 anni"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#order": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "6"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/age_over_65"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/birth_date",
+  "@type": [
+   "http://www.w3.org/ns/shacl#PropertyShape",
+   "http://www.w3.org/2002/07/owl#DatatypeProperty",
+   "http://purl.org/linked-data/cube#AttributeProperty"
+  ],
+  "http://purl.org/dc/terms/conformsTo": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/concept/dateOfBirth/version/1.0.0"
+   }
+  ],
+  "http://purl.org/dc/terms/description": [
+   {
+    "@language": "de",
+    "@value": "Geburtsdatum der Person"
+   },
+   {
+    "@language": "en",
+    "@value": "Geburtsdatum der Person"
+   },
+   {
+    "@language": "fr",
+    "@value": "Date de naissance de la personne"
+   },
+   {
+    "@language": "it",
+    "@value": "Geburtsdatum der Person"
+   }
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "en",
+    "@value": "Date of birth"
+   },
+   {
+    "@language": "it",
+    "@value": "Data di nascita"
+   },
+   {
+    "@language": "fr",
+    "@value": "Date de naissance"
+   },
+   {
+    "@language": "de",
+    "@value": "Geburtsdatum"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#comment": [
+   {
+    "@language": "it",
+    "@value": "Geburtsdatum der Person"
+   },
+   {
+    "@language": "fr",
+    "@value": "Date de naissance de la personne"
+   },
+   {
+    "@language": "en",
+    "@value": "Geburtsdatum der Person"
+   },
+   {
+    "@language": "de",
+    "@value": "Geburtsdatum der Person"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#label": [
+   {
+    "@language": "de",
+    "@value": "Geburtsdatum"
+   },
+   {
+    "@language": "fr",
+    "@value": "Date de naissance"
+   },
+   {
+    "@language": "it",
+    "@value": "Data di nascita"
+   },
+   {
+    "@language": "en",
+    "@value": "Date of birth"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#datatype": [
+   {
+    "@id": "http://www.w3.org/2001/XMLSchema#date"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#description": [
+   {
+    "@language": "it",
+    "@value": "Geburtsdatum der Person"
+   },
+   {
+    "@language": "fr",
+    "@value": "Date de naissance de la personne"
+   },
+   {
+    "@language": "en",
+    "@value": "Geburtsdatum der Person"
+   },
+   {
+    "@language": "de",
+    "@value": "Geburtsdatum der Person"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "de",
+    "@value": "Geburtsdatum"
+   },
+   {
+    "@language": "fr",
+    "@value": "Date de naissance"
+   },
+   {
+    "@language": "it",
+    "@value": "Data di nascita"
+   },
+   {
+    "@language": "en",
+    "@value": "Date of birth"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#order": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "3"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/birth_date"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/birth_place",
+  "@type": [
+   "http://www.w3.org/ns/shacl#PropertyShape",
+   "http://www.w3.org/2002/07/owl#DatatypeProperty",
+   "http://purl.org/linked-data/cube#AttributeProperty"
+  ],
+  "http://purl.org/dc/terms/conformsTo": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/concept/PID_PLACE_OF_BIRTH/version/1.0.0"
+   }
+  ],
+  "http://purl.org/dc/terms/description": [
+   {
+    "@language": "de",
+    "@value": "Geburt in der Schweiz: Gemeinde inkl. Kantons-Kürzel, in welcher die Person geboren ist. Geburt im Ausland: Ort, Land der Geburt gemäss amtlichen Ausweispapieren."
+   },
+   {
+    "@language": "en",
+    "@value": "Birth in Switzerland: municipality including canton code where the person was born. Birth abroad: place and country of birth as stated on official identity documents."
+   },
+   {
+    "@language": "fr",
+    "@value": "Naissance en Suisse : commune, y compris le code cantonal, dans laquelle la personne est née. Naissance à l'étranger : lieu et pays de naissance selon les documents d'identité officiels."
+   },
+   {
+    "@language": "it",
+    "@value": "Nascita in Svizzera: comune, compreso il codice cantonale, in cui è nata la persona. Nascita all'estero: luogo e Paese di nascita secondo i documenti d'identità ufficiali."
+   }
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "it",
+    "@value": "Luogo di nascita"
+   },
+   {
+    "@language": "fr",
+    "@value": "Lieu de naissance"
+   },
+   {
+    "@language": "en",
+    "@value": "Place of birth"
+   },
+   {
+    "@language": "de",
+    "@value": "Geburtsort"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#comment": [
+   {
+    "@language": "it",
+    "@value": "Nascita in Svizzera: comune, compreso il codice cantonale, in cui è nata la persona. Nascita all'estero: luogo e Paese di nascita secondo i documenti d'identità ufficiali."
+   },
+   {
+    "@language": "fr",
+    "@value": "Naissance en Suisse : commune, y compris le code cantonal, dans laquelle la personne est née. Naissance à l'étranger : lieu et pays de naissance selon les documents d'identité officiels."
+   },
+   {
+    "@language": "en",
+    "@value": "Birth in Switzerland: municipality including canton code where the person was born. Birth abroad: place and country of birth as stated on official identity documents."
+   },
+   {
+    "@language": "de",
+    "@value": "Geburt in der Schweiz: Gemeinde inkl. Kantons-Kürzel, in welcher die Person geboren ist. Geburt im Ausland: Ort, Land der Geburt gemäss amtlichen Ausweispapieren."
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#label": [
+   {
+    "@language": "de",
+    "@value": "Geburtsort"
+   },
+   {
+    "@language": "en",
+    "@value": "Place of birth"
+   },
+   {
+    "@language": "fr",
+    "@value": "Lieu de naissance"
+   },
+   {
+    "@language": "it",
+    "@value": "Luogo di nascita"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#datatype": [
+   {
+    "@id": "http://www.w3.org/2001/XMLSchema#string"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#description": [
+   {
+    "@language": "de",
+    "@value": "Geburt in der Schweiz: Gemeinde inkl. Kantons-Kürzel, in welcher die Person geboren ist. Geburt im Ausland: Ort, Land der Geburt gemäss amtlichen Ausweispapieren"
+   },
+   {
+    "@language": "it",
+    "@value": "Nascita in Svizzera: comune, compreso il codice cantonale, in cui è nata la persona. Nascita all'estero: luogo e Paese di nascita secondo i documenti d'identità ufficiali."
+   },
+   {
+    "@language": "fr",
+    "@value": "Naissance en Suisse : commune, y compris le code cantonal, dans laquelle la personne est née. Naissance à l'étranger : lieu et pays de naissance selon les documents d'identité officiels."
+   },
+   {
+    "@language": "en",
+    "@value": "Birth in Switzerland: municipality including canton code where the person was born. Birth abroad: place and country of birth as stated on official identity documents."
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "de",
+    "@value": "Geburtsort"
+   },
+   {
+    "@language": "en",
+    "@value": "Place of birth"
+   },
+   {
+    "@language": "fr",
+    "@value": "Lieu de naissance"
+   },
+   {
+    "@language": "it",
+    "@value": "Luogo di nascita"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#order": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "10"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/birth_place"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/document_number",
+  "@type": [
+   "http://www.w3.org/ns/shacl#PropertyShape",
+   "http://www.w3.org/2002/07/owl#DatatypeProperty",
+   "http://purl.org/linked-data/cube#AttributeProperty"
+  ],
+  "http://purl.org/dc/terms/conformsTo": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/concept/EID_NUMBER/version/1.0.0"
+   }
+  ],
+  "http://purl.org/dc/terms/description": [
+   {
+    "@language": "de",
+    "@value": "Eindeutige Nummer der Beta-ID"
+   },
+   {
+    "@language": "en",
+    "@value": "Unique number of Beta-ID"
+   },
+   {
+    "@language": "fr",
+    "@value": "Numéro unique de Beta-ID"
+   },
+   {
+    "@language": "it",
+    "@value": "Numero univoco della Beta-ID"
+   }
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "it",
+    "@value": "Numero di Beta-ID"
+   },
+   {
+    "@language": "fr",
+    "@value": "Numéro de Beta-ID"
+   },
+   {
+    "@language": "en",
+    "@value": "Beta-ID Number"
+   },
+   {
+    "@language": "de",
+    "@value": "Beta-ID-Nummer"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#comment": [
+   {
+    "@language": "it",
+    "@value": "Numero univoco della Beta-ID"
+   },
+   {
+    "@language": "fr",
+    "@value": "Numéro unique de Beta-ID"
+   },
+   {
+    "@language": "en",
+    "@value": "Unique number of Beta-ID"
+   },
+   {
+    "@language": "de",
+    "@value": "Eindeutige Nummer der Beta-ID"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#label": [
+   {
+    "@language": "de",
+    "@value": "Beta-ID-Nummer"
+   },
+   {
+    "@language": "en",
+    "@value": "Beta-ID Number"
+   },
+   {
+    "@language": "fr",
+    "@value": "Numéro de Beta-ID"
+   },
+   {
+    "@language": "it",
+    "@value": "Numero di Beta-ID"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#datatype": [
+   {
+    "@id": "http://www.w3.org/2001/XMLSchema#string"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#description": [
+   {
+    "@language": "it",
+    "@value": "Numero univoco della Beta-ID"
+   },
+   {
+    "@language": "fr",
+    "@value": "Numéro unique de Beta-ID"
+   },
+   {
+    "@language": "en",
+    "@value": "Unique number of Beta-ID"
+   },
+   {
+    "@language": "de",
+    "@value": "Eindeutige Nummer der Beta-ID"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "de",
+    "@value": "Beta-ID-Nummer"
+   },
+   {
+    "@language": "en",
+    "@value": "Beta-ID Number"
+   },
+   {
+    "@language": "fr",
+    "@value": "Numéro de Beta-ID"
+   },
+   {
+    "@language": "it",
+    "@value": "Numero di Beta-ID"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#order": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "15"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/document_number"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/expiry_date",
+  "@type": [
+   "http://www.w3.org/ns/shacl#PropertyShape",
+   "http://www.w3.org/2002/07/owl#DatatypeProperty",
+   "http://purl.org/linked-data/cube#AttributeProperty"
+  ],
+  "http://purl.org/dc/terms/conformsTo": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/concept/EID_EXPIRY_DATE/version/1.0.0"
+   }
+  ],
+  "http://purl.org/dc/terms/description": [
+   {
+    "@language": "de",
+    "@value": "Datum, bis und mit zu welchem die Beta-ID als gültig gilt. Ein Überschreiten des Datums ist nicht gleichgesetzt mit einem Widerruf der Beta-ID."
+   },
+   {
+    "@language": "en",
+    "@value": "Date until which a Beta-ID is valid. Exceeding this date does not automatically revoke the Beta-ID."
+   },
+   {
+    "@language": "fr",
+    "@value": "Date jusqu'à laquelle la Beta-ID est valide. Le dépassement de cette date n'entraîne pas la révocation de la Beta-ID."
+   },
+   {
+    "@language": "it",
+    "@value": "Data fino alla quale la Beta-ID è valida. Il superamento di tale data non comporta automaticamente la revoca della Beta-ID."
+   }
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "it",
+    "@value": "Data di scadenza"
+   },
+   {
+    "@language": "fr",
+    "@value": "Date d'expiration"
+   },
+   {
+    "@language": "en",
+    "@value": "Date of expiry"
+   },
+   {
+    "@language": "de",
+    "@value": "Gültig bis"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#comment": [
+   {
+    "@language": "de",
+    "@value": "Datum, bis und mit zu welchem eine Beta-ID als gültig gilt. Ein Überschreiten des Datums ist nicht gleichgesetzt mit einem Widerruf der Beta-ID."
+   },
+   {
+    "@language": "it",
+    "@value": "Data fino alla quale la Beta-ID è valida. Il superamento di tale data non comporta automaticamente la revoca della Beta-ID."
+   },
+   {
+    "@language": "fr",
+    "@value": "Date jusqu'à laquelle la Beta-ID est valide. Le dépassement de cette date n'entraîne pas la révocation de la Beta-ID."
+   },
+   {
+    "@language": "en",
+    "@value": "Date until which a Beta-ID is valid. Exceeding this date does not automatically revoke the Beta-ID."
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#label": [
+   {
+    "@language": "de",
+    "@value": "Gültig bis"
+   },
+   {
+    "@language": "en",
+    "@value": "Date of expiry"
+   },
+   {
+    "@language": "fr",
+    "@value": "Date d'expiration"
+   },
+   {
+    "@language": "it",
+    "@value": "Data di scadenza"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#datatype": [
+   {
+    "@id": "http://www.w3.org/2001/XMLSchema#date"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#description": [
+   {
+    "@language": "de",
+    "@value": "Datum, bis und mit zu welchem eine Beta-ID als gültig gilt. Ein Überschreiten des Datums ist nicht gleichgesetzt mit einem Widerruf der Beta-ID."
+   },
+   {
+    "@language": "it",
+    "@value": "Data fino alla quale la Beta-ID è valida. Il superamento di tale data non comporta automaticamente la revoca della Beta-ID."
+   },
+   {
+    "@language": "fr",
+    "@value": "Date jusqu'à laquelle la Beta-ID est valide. Le dépassement de cette date n'entraîne pas la révocation de la Beta-ID."
+   },
+   {
+    "@language": "en",
+    "@value": "Date until which a Beta-ID is valid. Exceeding this date does not automatically revoke the Beta-ID."
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "de",
+    "@value": "Gültig bis"
+   },
+   {
+    "@language": "en",
+    "@value": "Date of expiry"
+   },
+   {
+    "@language": "fr",
+    "@value": "Date d'expiration"
+   },
+   {
+    "@language": "it",
+    "@value": "Data di scadenza"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#order": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "17"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/expiry_date"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/family_name",
+  "@type": [
+   "http://www.w3.org/ns/shacl#PropertyShape",
+   "http://www.w3.org/2002/07/owl#DatatypeProperty",
+   "http://purl.org/linked-data/cube#AttributeProperty"
+  ],
+  "http://purl.org/dc/terms/conformsTo": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/concept/personOfficialName/version/1.0.0"
+   }
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "it",
+    "@value": "Cognome"
+   },
+   {
+    "@language": "fr",
+    "@value": "Nom"
+   },
+   {
+    "@language": "de",
+    "@value": "Familienname"
+   },
+   {
+    "@language": "en",
+    "@value": "Surname"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#label": [
+   {
+    "@language": "de",
+    "@value": "Familienname"
+   },
+   {
+    "@language": "en",
+    "@value": "Surname"
+   },
+   {
+    "@language": "fr",
+    "@value": "Nom"
+   },
+   {
+    "@language": "it",
+    "@value": "Cognome"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#datatype": [
+   {
+    "@id": "http://www.w3.org/2001/XMLSchema#string"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "de",
+    "@value": "Familienname"
+   },
+   {
+    "@language": "en",
+    "@value": "Surname"
+   },
+   {
+    "@language": "fr",
+    "@value": "Nom"
+   },
+   {
+    "@language": "it",
+    "@value": "Cognome"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#order": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/family_name"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/given_name",
+  "@type": [
+   "http://www.w3.org/ns/shacl#PropertyShape",
+   "http://www.w3.org/2002/07/owl#DatatypeProperty",
+   "http://purl.org/linked-data/cube#AttributeProperty"
+  ],
+  "http://purl.org/dc/terms/conformsTo": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/concept/personFirstName/version/1.0.0"
+   }
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "it",
+    "@value": "Nom(i)"
+   },
+   {
+    "@language": "fr",
+    "@value": "Prénom(s)"
+   },
+   {
+    "@language": "de",
+    "@value": "Vorname(n)"
+   },
+   {
+    "@language": "en",
+    "@value": "Given name(s)"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#label": [
+   {
+    "@language": "de",
+    "@value": "Vorname(n)"
+   },
+   {
+    "@language": "en",
+    "@value": "Given name(s)"
+   },
+   {
+    "@language": "fr",
+    "@value": "Prénom(s)"
+   },
+   {
+    "@language": "it",
+    "@value": "Nom(i)"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#datatype": [
+   {
+    "@id": "http://www.w3.org/2001/XMLSchema#string"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "de",
+    "@value": "Vorname(n)"
+   },
+   {
+    "@language": "en",
+    "@value": "Given name(s)"
+   },
+   {
+    "@language": "fr",
+    "@value": "Prénom(s)"
+   },
+   {
+    "@language": "it",
+    "@value": "Nom(i)"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#order": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "2"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/given_name"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/issuance_date",
+  "@type": [
+   "http://www.w3.org/ns/shacl#PropertyShape",
+   "http://www.w3.org/2002/07/owl#DatatypeProperty",
+   "http://purl.org/linked-data/cube#AttributeProperty"
+  ],
+  "http://purl.org/dc/terms/conformsTo": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/concept/EID_ISSUANCE_DATE/version/1.0.0"
+   }
+  ],
+  "http://purl.org/dc/terms/description": [
+   {
+    "@language": "de",
+    "@value": "Ausstellungsdatum der Beta-ID"
+   },
+   {
+    "@language": "en",
+    "@value": "Date of issuance of Beta-ID"
+   },
+   {
+    "@language": "fr",
+    "@value": "Date de délivrance de Beta-ID"
+   },
+   {
+    "@language": "it",
+    "@value": "Data di emissione della Beta-ID"
+   }
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "it",
+    "@value": "Rilasciato il"
+   },
+   {
+    "@language": "fr",
+    "@value": "Délivré le"
+   },
+   {
+    "@language": "en",
+    "@value": "Date of issuance"
+   },
+   {
+    "@language": "de",
+    "@value": "Ausstellungsdatum"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#comment": [
+   {
+    "@language": "it",
+    "@value": "Data di emissione della Beta-ID"
+   },
+   {
+    "@language": "fr",
+    "@value": "Date de délivrance de Beta-ID"
+   },
+   {
+    "@language": "en",
+    "@value": "Date of issuance of Beta-ID"
+   },
+   {
+    "@language": "de",
+    "@value": "Ausstellungsdatum der Beta-ID"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#label": [
+   {
+    "@language": "de",
+    "@value": "Ausstellungsdatum"
+   },
+   {
+    "@language": "en",
+    "@value": "Date of issuance"
+   },
+   {
+    "@language": "fr",
+    "@value": "Délivré le"
+   },
+   {
+    "@language": "it",
+    "@value": "Rilasciato il"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#datatype": [
+   {
+    "@id": "http://www.w3.org/2001/XMLSchema#date"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#description": [
+   {
+    "@language": "it",
+    "@value": "Data di emissione della Beta-ID"
+   },
+   {
+    "@language": "fr",
+    "@value": "Date de délivrance de Beta-ID"
+   },
+   {
+    "@language": "en",
+    "@value": "Date of issuance of Beta-ID"
+   },
+   {
+    "@language": "de",
+    "@value": "Ausstellungsdatum der Beta-ID"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "de",
+    "@value": "Ausstellungsdatum"
+   },
+   {
+    "@language": "en",
+    "@value": "Date of issuance"
+   },
+   {
+    "@language": "fr",
+    "@value": "Délivré le"
+   },
+   {
+    "@language": "it",
+    "@value": "Rilasciato il"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#order": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "16"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/issuance_date"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/issuing_authority",
+  "@type": [
+   "http://www.w3.org/ns/shacl#PropertyShape",
+   "http://www.w3.org/2002/07/owl#DatatypeProperty",
+   "http://purl.org/linked-data/cube#AttributeProperty"
+  ],
+  "http://purl.org/dc/terms/conformsTo": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/concept/GENERAL_TEXT_MEDIUM/version/1.0.0"
+   }
+  ],
+  "http://purl.org/dc/terms/description": [
+   {
+    "@language": "de",
+    "@value": "Ausgabestelle der Beta-ID"
+   },
+   {
+    "@language": "en",
+    "@value": "Issuing authority of Beta-ID"
+   },
+   {
+    "@language": "fr",
+    "@value": "Autorité de délivrance de la Beta-ID"
+   },
+   {
+    "@language": "it",
+    "@value": "Autorità di emissione della Beta-ID"
+   }
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "it",
+    "@value": "Autorità di emissione"
+   },
+   {
+    "@language": "fr",
+    "@value": "Autorité de délivrance"
+   },
+   {
+    "@language": "en",
+    "@value": "Issuing authority"
+   },
+   {
+    "@language": "de",
+    "@value": "Ausgabestelle"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#comment": [
+   {
+    "@language": "it",
+    "@value": "Autorità di emissione della Beta-ID"
+   },
+   {
+    "@language": "fr",
+    "@value": "Autorité de délivrance de la Beta-ID"
+   },
+   {
+    "@language": "en",
+    "@value": "Issuing authority of Beta-ID"
+   },
+   {
+    "@language": "de",
+    "@value": "Ausgabestelle der Beta-ID"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#label": [
+   {
+    "@language": "de",
+    "@value": "Ausgabestelle"
+   },
+   {
+    "@language": "en",
+    "@value": "Issuing authority"
+   },
+   {
+    "@language": "fr",
+    "@value": "Autorité de délivrance"
+   },
+   {
+    "@language": "it",
+    "@value": "Autorità di emissione"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#datatype": [
+   {
+    "@id": "http://www.w3.org/2001/XMLSchema#string"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#description": [
+   {
+    "@language": "it",
+    "@value": "Autorità di emissione della Beta-ID"
+   },
+   {
+    "@language": "fr",
+    "@value": "Autorité de délivrance de la Beta-ID"
+   },
+   {
+    "@language": "en",
+    "@value": "Issuing authority of Beta-ID"
+   },
+   {
+    "@language": "de",
+    "@value": "Ausgabestelle der Beta-ID"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "de",
+    "@value": "Ausgabestelle"
+   },
+   {
+    "@language": "en",
+    "@value": "Issuing authority"
+   },
+   {
+    "@language": "fr",
+    "@value": "Autorité de délivrance"
+   },
+   {
+    "@language": "it",
+    "@value": "Autorità di emissione"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#order": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "22"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/issuing_authority"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/issuing_country",
+  "@type": [
+   "http://www.w3.org/ns/shacl#PropertyShape",
+   "http://www.w3.org/2002/07/owl#DatatypeProperty",
+   "http://purl.org/linked-data/cube#CodedProperty",
+   "http://purl.org/linked-data/cube#AttributeProperty"
+  ],
+  "http://purl.org/dc/terms/conformsTo": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/concept/ST_ISO_3166_ALPHA_2_2024/version/1.0.0"
+   }
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "de",
+    "@value": "Ausstellungsland"
+   },
+   {
+    "@language": "it",
+    "@value": "Paese di emissione"
+   },
+   {
+    "@language": "en",
+    "@value": "Issuing country"
+   },
+   {
+    "@language": "fr",
+    "@value": "Pays d'émission"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#label": [
+   {
+    "@language": "de",
+    "@value": "Herausgebender Staat"
+   },
+   {
+    "@language": "en",
+    "@value": "Issuing country"
+   },
+   {
+    "@language": "fr",
+    "@value": "Pays d'émission"
+   },
+   {
+    "@language": "it",
+    "@value": "Paese di emissione"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "de",
+    "@value": "Herausgebender Staat"
+   },
+   {
+    "@language": "en",
+    "@value": "Issuing country"
+   },
+   {
+    "@language": "fr",
+    "@value": "Pays d'émission"
+   },
+   {
+    "@language": "it",
+    "@value": "Paese di emissione"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#order": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "23"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/issuing_country"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/nationality",
+  "@type": [
+   "http://www.w3.org/ns/shacl#PropertyShape",
+   "http://www.w3.org/2002/07/owl#DatatypeProperty",
+   "http://purl.org/linked-data/cube#CodedProperty",
+   "http://purl.org/linked-data/cube#AttributeProperty"
+  ],
+  "http://purl.org/dc/terms/conformsTo": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/concept/ST_ISO_3166_ALPHA_2_2024/version/1.0.0"
+   }
+  ],
+  "http://purl.org/dc/terms/description": [
+   {
+    "@language": "de",
+    "@value": "Nationalität der Person (Einzelwert) im Format ISO 3166-1 Alpha 2"
+   },
+   {
+    "@language": "en",
+    "@value": "Nationality of the person (single value) in ISO 3166-1 Alpha 2 format"
+   },
+   {
+    "@language": "fr",
+    "@value": "Nationalité de la personne (valeur unique) au format ISO 3166-1 Alpha 2"
+   },
+   {
+    "@language": "it",
+    "@value": "Nazionalità della persona (valore singolo) nel formato ISO 3166-1 Alpha 2"
+   }
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "it",
+    "@value": "Cittadinanza"
+   },
+   {
+    "@language": "en",
+    "@value": "Nationality"
+   },
+   {
+    "@language": "de",
+    "@value": "Nationalität"
+   },
+   {
+    "@language": "fr",
+    "@value": "Nationalité"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#comment": [
+   {
+    "@language": "it",
+    "@value": "Nazionalità della persona (valore singolo) nel formato ISO 3166-1 Alpha 2"
+   },
+   {
+    "@language": "fr",
+    "@value": "Nationalité de la personne (valeur unique) au format ISO 3166-1 Alpha 2"
+   },
+   {
+    "@language": "en",
+    "@value": "Nationality of the person (single value) in ISO 3166-1 Alpha 2 format"
+   },
+   {
+    "@language": "de",
+    "@value": "Nationalität der Person (Einzelwert) im Format ISO 3166-1 Alpha 2"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#label": [
+   {
+    "@language": "fr",
+    "@value": "Nationalité"
+   },
+   {
+    "@language": "de",
+    "@value": "Nationalität"
+   },
+   {
+    "@language": "en",
+    "@value": "Nationality"
+   },
+   {
+    "@language": "it",
+    "@value": "Cittadinanza"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#description": [
+   {
+    "@language": "it",
+    "@value": "Nazionalità della persona (valore singolo) nel formato ISO 3166-1 Alpha 2"
+   },
+   {
+    "@language": "fr",
+    "@value": "Nationalité de la personne (valeur unique) au format ISO 3166-1 Alpha 2"
+   },
+   {
+    "@language": "en",
+    "@value": "Nationality of the person (single value) in ISO 3166-1 Alpha 2 format"
+   },
+   {
+    "@language": "de",
+    "@value": "Nationalität der Person (Einzelwert) im Format ISO 3166-1 Alpha 2"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "fr",
+    "@value": "Nationalité"
+   },
+   {
+    "@language": "de",
+    "@value": "Nationalität"
+   },
+   {
+    "@language": "en",
+    "@value": "Nationality"
+   },
+   {
+    "@language": "it",
+    "@value": "Cittadinanza"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#order": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "11"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/nationality"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/personal_administrative_number",
+  "@type": [
+   "http://www.w3.org/ns/shacl#PropertyShape",
+   "http://www.w3.org/2002/07/owl#DatatypeProperty",
+   "http://purl.org/linked-data/cube#AttributeProperty"
+  ],
+  "http://purl.org/dc/terms/conformsTo": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/concept/AHVN13/version/1.0.0"
+   }
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "fr",
+    "@value": "Numéro AVS"
+   },
+   {
+    "@language": "it",
+    "@value": "Numero AVS"
+   },
+   {
+    "@language": "de",
+    "@value": "AHV-Nummer"
+   },
+   {
+    "@language": "en",
+    "@value": "Insurance number"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#datatype": [
+   {
+    "@id": "http://www.w3.org/2001/XMLSchema#string"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#maxCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#maxLength": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "16"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#minCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#minLength": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "16"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "fr",
+    "@value": "Numéro AVS"
+   },
+   {
+    "@language": "it",
+    "@value": "Numero AVS"
+   },
+   {
+    "@language": "de",
+    "@value": "AHV-Nummer"
+   },
+   {
+    "@language": "en",
+    "@value": "Insurance number"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#order": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "13"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/personal_administrative_number"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#pattern": [
+   {
+    "@value": "\\d{3}\\.\\d{4}\\.\\d{4}\\.\\d{2}"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/place_of_origin",
+  "@type": [
+   "http://www.w3.org/ns/shacl#PropertyShape",
+   "http://www.w3.org/2002/07/owl#DatatypeProperty",
+   "http://purl.org/linked-data/cube#AttributeProperty"
+  ],
+  "http://purl.org/dc/terms/conformsTo": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/concept/PID_PLACE_OF_ORIGIN/version/1.0.0"
+   }
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "it",
+    "@value": "Luogo di attinenza"
+   },
+   {
+    "@language": "fr",
+    "@value": "Lieu d'origine"
+   },
+   {
+    "@language": "de",
+    "@value": "Heimatort"
+   },
+   {
+    "@language": "en",
+    "@value": "Place of origin"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#label": [
+   {
+    "@language": "de",
+    "@value": "Heimatort"
+   },
+   {
+    "@language": "en",
+    "@value": "Place of origin"
+   },
+   {
+    "@language": "fr",
+    "@value": "Lieu d'origine"
+   },
+   {
+    "@language": "it",
+    "@value": "Luogo di attinenza"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#datatype": [
+   {
+    "@id": "http://www.w3.org/2001/XMLSchema#string"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "de",
+    "@value": "Heimatort"
+   },
+   {
+    "@language": "en",
+    "@value": "Place of origin"
+   },
+   {
+    "@language": "fr",
+    "@value": "Lieu d'origine"
+   },
+   {
+    "@language": "it",
+    "@value": "Luogo di attinenza"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#order": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "9"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/place_of_origin"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/portrait",
+  "@type": [
+   "http://www.w3.org/ns/shacl#PropertyShape",
+   "http://www.w3.org/2002/07/owl#DatatypeProperty",
+   "http://purl.org/linked-data/cube#AttributeProperty"
+  ],
+  "http://purl.org/dc/terms/conformsTo": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/concept/PID_FACIAL_IMAGE/version/1.0.0"
+   }
+  ],
+  "http://purl.org/dc/terms/description": [
+   {
+    "@language": "de",
+    "@value": "Gesichtsbild (Portrait) der Person im Format image/png base46 encoded"
+   },
+   {
+    "@language": "en",
+    "@value": "Face image (portrait) of the person in image/png base46 encoded format"
+   },
+   {
+    "@language": "fr",
+    "@value": "Portrait de la personne au format image/png base46 encoded"
+   },
+   {
+    "@language": "it",
+    "@value": "Immagine del volto (ritratto) della persona in formato immagine/png base46 encoded"
+   }
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "it",
+    "@value": "Immagine facciale"
+   },
+   {
+    "@language": "fr",
+    "@value": "Image faciale"
+   },
+   {
+    "@language": "en",
+    "@value": "Face image"
+   },
+   {
+    "@language": "de",
+    "@value": "Gesichtsbild"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#comment": [
+   {
+    "@language": "it",
+    "@value": "Immagine del volto (ritratto) della persona in formato immagine/png base46 encoded"
+   },
+   {
+    "@language": "fr",
+    "@value": "Portrait de la personne au format image/png base46 encoded"
+   },
+   {
+    "@language": "en",
+    "@value": "Face image (portrait) of the person in image/png base46 encoded format"
+   },
+   {
+    "@language": "de",
+    "@value": "Gesichtsbild (Portrait) der Person im Format image/png base46 encoded"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#label": [
+   {
+    "@language": "de",
+    "@value": "Gesichtsbild"
+   },
+   {
+    "@language": "en",
+    "@value": "Face image"
+   },
+   {
+    "@language": "fr",
+    "@value": "Image faciale"
+   },
+   {
+    "@language": "it",
+    "@value": "Immagine facciale"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#datatype": [
+   {
+    "@id": "http://www.w3.org/2001/XMLSchema#string"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#description": [
+   {
+    "@language": "it",
+    "@value": "Immagine del volto (ritratto) della persona in formato immagine/png base46 encoded"
+   },
+   {
+    "@language": "fr",
+    "@value": "Portrait de la personne au format image/png base46 encoded"
+   },
+   {
+    "@language": "en",
+    "@value": "Face image (portrait) of the person in image/png base46 encoded format"
+   },
+   {
+    "@language": "de",
+    "@value": "Gesichtsbild (Portrait) der Person im Format image/png base46 encoded"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "de",
+    "@value": "Gesichtsbild"
+   },
+   {
+    "@language": "en",
+    "@value": "Face image"
+   },
+   {
+    "@language": "fr",
+    "@value": "Image faciale"
+   },
+   {
+    "@language": "it",
+    "@value": "Immagine facciale"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#order": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "12"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/portrait"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/reference_id_type",
+  "@type": [
+   "http://www.w3.org/ns/shacl#PropertyShape",
+   "http://www.w3.org/2002/07/owl#DatatypeProperty",
+   "http://purl.org/linked-data/cube#CodedProperty",
+   "http://purl.org/linked-data/cube#AttributeProperty"
+  ],
+  "http://purl.org/dc/terms/conformsTo": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/concept/EID_REFERENCE_ID_TYPE/version/1.0.0"
+   }
+  ],
+  "http://purl.org/dc/terms/description": [
+   {
+    "@language": "de",
+    "@value": "Ausweistyp des Referenzdokuments, welches bei der Beantragung für die Beta-ID genutzt wurde und der Beta-ID zu Grunde liegt."
+   },
+   {
+    "@language": "en",
+    "@value": "Type of identification document used when applying for the Beta-ID and on which the Beta-ID is based."
+   },
+   {
+    "@language": "fr",
+    "@value": "Type de document d'identité utilisée lors de la demande de Beta-ID et sur laquelle se base la Beta-ID."
+   },
+   {
+    "@language": "it",
+    "@value": "Tipo di documento di identità utilizzato per richiedere la Beta-ID e su cui si basa la Beta-ID."
+   }
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "it",
+    "@value": "Tipo di documento"
+   },
+   {
+    "@language": "fr",
+    "@value": "Type de document d'identité"
+   },
+   {
+    "@language": "en",
+    "@value": "Identification document type"
+   },
+   {
+    "@language": "de",
+    "@value": "Ausweistyp"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#comment": [
+   {
+    "@language": "it",
+    "@value": "Tipo di documento di identità utilizzato per richiedere la Beta-ID e su cui si basa la Beta-ID."
+   },
+   {
+    "@language": "fr",
+    "@value": "Type de document d'identité utilisée lors de la demande de Beta-ID et sur laquelle se base la Beta-ID."
+   },
+   {
+    "@language": "en",
+    "@value": "Type of identification document used when applying for the Beta-ID and on which the Beta-ID is based."
+   },
+   {
+    "@language": "de",
+    "@value": "Ausweistyp des Referenzdokuments, welches bei der Beantragung für die Beta-ID genutzt wurde und der Beta-ID zu Grunde liegt."
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#label": [
+   {
+    "@language": "de",
+    "@value": "Ausweistyp"
+   },
+   {
+    "@language": "en",
+    "@value": "Identification document type"
+   },
+   {
+    "@language": "fr",
+    "@value": "Type de document d'identité"
+   },
+   {
+    "@language": "it",
+    "@value": "Tipo di documento"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#description": [
+   {
+    "@language": "it",
+    "@value": "Tipo di documento di identità utilizzato per richiedere la Beta-ID e su cui si basa la Beta-ID."
+   },
+   {
+    "@language": "fr",
+    "@value": "Type de document d'identité utilisée lors de la demande de Beta-ID et sur laquelle se base la Beta-ID."
+   },
+   {
+    "@language": "en",
+    "@value": "Type of identification document used when applying for the Beta-ID and on which the Beta-ID is based."
+   },
+   {
+    "@language": "de",
+    "@value": "Ausweistyp des Referenzdokuments, welches bei der Beantragung für die Beta-ID genutzt wurde und der Beta-ID zu Grunde liegt."
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "de",
+    "@value": "Ausweistyp"
+   },
+   {
+    "@language": "en",
+    "@value": "Identification document type"
+   },
+   {
+    "@language": "fr",
+    "@value": "Type de document d'identité"
+   },
+   {
+    "@language": "it",
+    "@value": "Tipo di documento"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#order": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "18"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/reference_id_type"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/referende_id_expiry_date",
+  "@type": [
+   "http://www.w3.org/ns/shacl#PropertyShape",
+   "http://www.w3.org/2002/07/owl#DatatypeProperty",
+   "http://purl.org/linked-data/cube#AttributeProperty"
+  ],
+  "http://purl.org/dc/terms/conformsTo": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/concept/EID_REFERENCE_ID_EXPIRY_DATE/version/1.0.0"
+   }
+  ],
+  "http://purl.org/dc/terms/identifier": [
+   {
+    "@value": "reference_id_expiry_date"
+   }
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "de",
+    "@value": "Ablaufdatum des Ausweises"
+   },
+   {
+    "@language": "en",
+    "@value": "Identification document date of expiry"
+   },
+   {
+    "@language": "fr",
+    "@value": "Date d'expiration du document"
+   },
+   {
+    "@language": "it",
+    "@value": "Data di scadenza del documento"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#comment": [
+   {
+    "@language": "de",
+    "@value": "Ablaufdatum des Referenzdokuments, welches bei der Ausstellung einer Beta-ID beigezogen wurde."
+   },
+   {
+    "@language": "it",
+    "@value": "Data di scadenza del documento di riferimento utilizzato per il rilascio della Beta-ID."
+   },
+   {
+    "@language": "en",
+    "@value": "Expiry date of the reference document that was used when issuing the Beta-ID."
+   },
+   {
+    "@language": "fr",
+    "@value": "Date d'expiration du document de référence utilisé lors de la délivrance de la Beta-ID."
+   }
+  ],
+  "http://www.w3.org/ns/shacl#datatype": [
+   {
+    "@id": "http://www.w3.org/2001/XMLSchema#date"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#description": [
+   {
+    "@language": "de",
+    "@value": "Ablaufdatum des Referenzdokuments, welches bei der Ausstellung einer Beta-ID beigezogen wurde."
+   },
+   {
+    "@language": "it",
+    "@value": "Data di scadenza del documento di riferimento utilizzato per il rilascio della Beta-ID."
+   },
+   {
+    "@language": "fr",
+    "@value": "Date d'expiration du document de référence utilisé lors de la délivrance de la Beta-ID."
+   },
+   {
+    "@language": "en",
+    "@value": "Expiry date of the reference document that was used when issuing the Beta-ID."
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "de",
+    "@value": "Ablaufdatum des Ausweises"
+   },
+   {
+    "@language": "en",
+    "@value": "Identification document date of expiry"
+   },
+   {
+    "@language": "fr",
+    "@value": "Date d'expiration du document"
+   },
+   {
+    "@language": "it",
+    "@value": "Data di scadenza del documento"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#order": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "19"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/referende_id_expiry_date"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/sex",
+  "@type": [
+   "http://www.w3.org/ns/shacl#PropertyShape",
+   "http://www.w3.org/2002/07/owl#DatatypeProperty",
+   "http://purl.org/linked-data/cube#CodedProperty",
+   "http://purl.org/linked-data/cube#AttributeProperty"
+  ],
+  "http://purl.org/dc/terms/conformsTo": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/concept/DV_SEXE/version/2.0.0"
+   }
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "it",
+    "@value": "Sesso"
+   },
+   {
+    "@language": "fr",
+    "@value": "Sexe"
+   },
+   {
+    "@language": "de",
+    "@value": "Geschlecht"
+   },
+   {
+    "@language": "en",
+    "@value": "Sex"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#label": [
+   {
+    "@language": "de",
+    "@value": "Geschlecht"
+   },
+   {
+    "@language": "en",
+    "@value": "Sex"
+   },
+   {
+    "@language": "fr",
+    "@value": "Sexe"
+   },
+   {
+    "@language": "it",
+    "@value": "Sesso"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "de",
+    "@value": "Geschlecht"
+   },
+   {
+    "@language": "en",
+    "@value": "Sex"
+   },
+   {
+    "@language": "fr",
+    "@value": "Sexe"
+   },
+   {
+    "@language": "it",
+    "@value": "Sesso"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#order": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "8"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/sex"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/verification_organization",
+  "@type": [
+   "http://www.w3.org/ns/shacl#PropertyShape",
+   "http://www.w3.org/2002/07/owl#DatatypeProperty",
+   "http://purl.org/linked-data/cube#AttributeProperty"
+  ],
+  "http://purl.org/dc/terms/conformsTo": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/concept/GENERAL_TEXT_MEDIUM/version/1.0.0"
+   }
+  ],
+  "http://purl.org/dc/terms/description": [
+   {
+    "@language": "de",
+    "@value": "Organisation, welche für die Identitätsprüfung zuständig war."
+   },
+   {
+    "@language": "en",
+    "@value": "Organisation responsible for identity verification."
+   },
+   {
+    "@language": "fr",
+    "@value": "Organisation chargée de vérifier l'identité."
+   },
+   {
+    "@language": "it",
+    "@value": "Organizzazione responsabile della verifica dell'identità."
+   }
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "it",
+    "@value": "Procedura di verifica del'identità tramite"
+   },
+   {
+    "@language": "fr",
+    "@value": "Vérification d'identité par"
+   },
+   {
+    "@language": "en",
+    "@value": "Identity verification by"
+   },
+   {
+    "@language": "de",
+    "@value": "Identitätsprüfung durch"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#comment": [
+   {
+    "@language": "de",
+    "@value": "Organisation, welche für die Identitätsprüfung zuständig war"
+   },
+   {
+    "@language": "it",
+    "@value": "Organizzazione responsabile della verifica dell'identità."
+   },
+   {
+    "@language": "fr",
+    "@value": "Organisation chargée de vérifier l'identité."
+   },
+   {
+    "@language": "en",
+    "@value": "Organisation responsible for identity verification."
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#label": [
+   {
+    "@language": "de",
+    "@value": "Identitätsprüfung durch"
+   },
+   {
+    "@language": "en",
+    "@value": "Identity verification by"
+   },
+   {
+    "@language": "fr",
+    "@value": "Vérification d'identité par"
+   },
+   {
+    "@language": "it",
+    "@value": "Procedura di verifica del'identità tramite"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#datatype": [
+   {
+    "@id": "http://www.w3.org/2001/XMLSchema#string"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#description": [
+   {
+    "@language": "de",
+    "@value": "Organisation, welche für die Identitätsprüfung zuständig war"
+   },
+   {
+    "@language": "it",
+    "@value": "Organizzazione responsabile della verifica dell'identità."
+   },
+   {
+    "@language": "fr",
+    "@value": "Organisation chargée de vérifier l'identité."
+   },
+   {
+    "@language": "en",
+    "@value": "Organisation responsible for identity verification."
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "de",
+    "@value": "Identitätsprüfung durch"
+   },
+   {
+    "@language": "en",
+    "@value": "Identity verification by"
+   },
+   {
+    "@language": "fr",
+    "@value": "Vérification d'identité par"
+   },
+   {
+    "@language": "it",
+    "@value": "Procedura di verifica del'identità tramite"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#order": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "21"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/verification_organization"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/verification_type",
+  "@type": [
+   "http://www.w3.org/ns/shacl#PropertyShape",
+   "http://www.w3.org/2002/07/owl#DatatypeProperty",
+   "http://purl.org/linked-data/cube#CodedProperty",
+   "http://purl.org/linked-data/cube#AttributeProperty"
+  ],
+  "http://purl.org/dc/terms/conformsTo": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/concept/EID_VERIFICATION_TYPE/version/1.0.0"
+   }
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "it",
+    "@value": "Procedura di verifica del'identità"
+   },
+   {
+    "@language": "fr",
+    "@value": "Processus de vérificaiton d'identité"
+   },
+   {
+    "@language": "de",
+    "@value": "Identitätsprüfungsart"
+   },
+   {
+    "@language": "en",
+    "@value": "Identity verification process"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#label": [
+   {
+    "@language": "de",
+    "@value": "Identitätsprüfungsart"
+   },
+   {
+    "@language": "en",
+    "@value": "Identity verification process"
+   },
+   {
+    "@language": "fr",
+    "@value": "Processus de vérificaiton d'identité"
+   },
+   {
+    "@language": "it",
+    "@value": "Procedura di verifica del'identità"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "de",
+    "@value": "Identitätsprüfungsart"
+   },
+   {
+    "@language": "en",
+    "@value": "Identity verification process"
+   },
+   {
+    "@language": "fr",
+    "@value": "Processus de vérificaiton d'identité"
+   },
+   {
+    "@language": "it",
+    "@value": "Procedura di verifica del'identità"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#order": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "20"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/verification_type"
+   }
+  ]
+ }
+]

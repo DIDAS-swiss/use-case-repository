@@ -1,0 +1,669 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix dcat: <http://www.w3.org/ns/dcat#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix i14y_schema: <http://i14y-schema/extension#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix qudt: <http://qudt.org/schema/qudt/>.
+@prefix schema: <http://schema.org/#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix unit: <http://qudt.org/vocab/unit/>.
+
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id> a <http://purl.org/linked-data/cube#DataStructureDefinition>,
+                                                                                                     rdfs:Class,
+                                                                                                     sh:NodeShape;
+                                                                                                   i14y_schema:coord_x 0 ;
+                                                                                                   i14y_schema:coord_y 15 ;
+                                                                                                   dcterms:title "Beta-ID"@de,
+                                                                                                                 "Beta-ID"@en,
+                                                                                                                 "Beta-ID"@fr,
+                                                                                                                 "Beta-ID"@it;
+                                                                                                   <http://purl.org/pav/version> "1.0.0";
+                                                                                                   rdfs:label "Beta-ID"@de,
+                                                                                                              "Beta-ID"@en,
+                                                                                                              "Beta-ID"@fr,
+                                                                                                              "Beta-ID"@it;
+                                                                                                   sh:property <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/family_name>,
+                                                                                                               <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/given_name>,
+                                                                                                               <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/birth_date>,
+                                                                                                               <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/age_over_16>,
+                                                                                                               <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/age_over_18>,
+                                                                                                               <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/age_over_65>,
+                                                                                                               <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/age_birth_year>,
+                                                                                                               <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/sex>,
+                                                                                                               <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/place_of_origin>,
+                                                                                                               <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/birth_place>,
+                                                                                                               <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/nationality>,
+                                                                                                               <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/portrait>,
+                                                                                                               <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/personal_administrative_number>,
+                                                                                                               <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/additional_person_info>,
+                                                                                                               <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/document_number>,
+                                                                                                               <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/issuance_date>,
+                                                                                                               <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/expiry_date>,
+                                                                                                               <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/reference_id_type>,
+                                                                                                               <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/referende_id_expiry_date>,
+                                                                                                               <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/verification_type>,
+                                                                                                               <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/verification_organization>,
+                                                                                                               <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/issuing_authority>,
+                                                                                                               <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/issuing_country>;
+                                                                                                   <https://schema.org/validFrom> "2025-02-17"^^xsd:date;
+                                                                                                   <https://schema.org/version> "1.0.0".
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/family_name> a <http://purl.org/linked-data/cube#AttributeProperty>,
+                                                                                                                 owl:DatatypeProperty,
+                                                                                                                 sh:PropertyShape;
+                                                                                                               dcterms:conformsTo <https://register.ld.admin.ch/i14y/concept/personOfficialName/version/1.0.0>;
+                                                                                                               dcterms:title "Cognome"@it,
+                                                                                                                             "Familienname"@de,
+                                                                                                                             "Nom"@fr,
+                                                                                                                             "Surname"@en;
+                                                                                                               rdfs:label "Cognome"@it,
+                                                                                                                          "Familienname"@de,
+                                                                                                                          "Nom"@fr,
+                                                                                                                          "Surname"@en;
+                                                                                                               sh:datatype xsd:string;
+                                                                                                               sh:name "Cognome"@it,
+                                                                                                                       "Familienname"@de,
+                                                                                                                       "Nom"@fr,
+                                                                                                                       "Surname"@en;
+                                                                                                               sh:order 1 ;
+                                                                                                               sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/family_name>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/given_name> a <http://purl.org/linked-data/cube#AttributeProperty>,
+                                                                                                                owl:DatatypeProperty,
+                                                                                                                sh:PropertyShape;
+                                                                                                              dcterms:conformsTo <https://register.ld.admin.ch/i14y/concept/personFirstName/version/1.0.0>;
+                                                                                                              dcterms:title "Given name(s)"@en,
+                                                                                                                            "Nom(i)"@it,
+                                                                                                                            "Prénom(s)"@fr,
+                                                                                                                            "Vorname(n)"@de;
+                                                                                                              rdfs:label "Given name(s)"@en,
+                                                                                                                         "Nom(i)"@it,
+                                                                                                                         "Prénom(s)"@fr,
+                                                                                                                         "Vorname(n)"@de;
+                                                                                                              sh:datatype xsd:string;
+                                                                                                              sh:name "Given name(s)"@en,
+                                                                                                                      "Nom(i)"@it,
+                                                                                                                      "Prénom(s)"@fr,
+                                                                                                                      "Vorname(n)"@de;
+                                                                                                              sh:order 2 ;
+                                                                                                              sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/given_name>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/birth_date> a <http://purl.org/linked-data/cube#AttributeProperty>,
+                                                                                                                owl:DatatypeProperty,
+                                                                                                                sh:PropertyShape;
+                                                                                                              dcterms:conformsTo <https://register.ld.admin.ch/i14y/concept/dateOfBirth/version/1.0.0>;
+                                                                                                              dcterms:description "Date de naissance de la personne"@fr,
+                                                                                                                                  "Geburtsdatum der Person"@de,
+                                                                                                                                  "Geburtsdatum der Person"@en,
+                                                                                                                                  "Geburtsdatum der Person"@it;
+                                                                                                              dcterms:title "Data di nascita"@it,
+                                                                                                                            "Date de naissance"@fr,
+                                                                                                                            "Date of birth"@en,
+                                                                                                                            "Geburtsdatum"@de;
+                                                                                                              rdfs:comment "Date de naissance de la personne"@fr,
+                                                                                                                           "Geburtsdatum der Person"@de,
+                                                                                                                           "Geburtsdatum der Person"@en,
+                                                                                                                           "Geburtsdatum der Person"@it;
+                                                                                                              rdfs:label "Data di nascita"@it,
+                                                                                                                         "Date de naissance"@fr,
+                                                                                                                         "Date of birth"@en,
+                                                                                                                         "Geburtsdatum"@de;
+                                                                                                              sh:datatype xsd:date;
+                                                                                                              sh:description "Date de naissance de la personne"@fr,
+                                                                                                                             "Geburtsdatum der Person"@de,
+                                                                                                                             "Geburtsdatum der Person"@en,
+                                                                                                                             "Geburtsdatum der Person"@it;
+                                                                                                              sh:name "Data di nascita"@it,
+                                                                                                                      "Date de naissance"@fr,
+                                                                                                                      "Date of birth"@en,
+                                                                                                                      "Geburtsdatum"@de;
+                                                                                                              sh:order 3 ;
+                                                                                                              sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/birth_date>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/age_over_16> a <http://purl.org/linked-data/cube#AttributeProperty>,
+                                                                                                                 <http://purl.org/linked-data/cube#CodedProperty>,
+                                                                                                                 owl:DatatypeProperty,
+                                                                                                                 sh:PropertyShape;
+                                                                                                               dcterms:conformsTo <https://register.ld.admin.ch/i14y/concept/PID_AGE_OVER_16/version/1.0.0>;
+                                                                                                               dcterms:title "Age plus de 16 ans"@fr,
+                                                                                                                             "Età superiore a 16 anni"@it,
+                                                                                                                             "Over the age of 16"@en,
+                                                                                                                             "Älter als 16 Jahre"@de;
+                                                                                                               rdfs:comment "Aussage, ob die Person ihr 16. Altersjahr vollendet hat."@de,
+                                                                                                                            "Declaration that the person has reached the age of 16."@en,
+                                                                                                                            "Dichiarazione che attesti che la persona ha compiuto 16 anni."@it,
+                                                                                                                            "Déclaration indiquant si la personne a atteint l'âge de 16 ans révolus."@fr;
+                                                                                                               sh:datatype xsd:string;
+                                                                                                               sh:description "Aussage, ob die Person ihr 15. Lebensjahr vollendet hat."@de,
+                                                                                                                              "Declaration that the person has reached the age of 16."@en,
+                                                                                                                              "Dichiarazione che attesti che la persona ha compiuto 16 anni."@it,
+                                                                                                                              "Déclaration indiquant si la personne a atteint l'âge de 16 ans révolus."@fr;
+                                                                                                               sh:in ("false"
+                                                                                                                      "true");
+                                                                                                               sh:maxLength 5 ;
+                                                                                                               sh:minLength 4 ;
+                                                                                                               sh:name "Age plus de 16 ans"@fr,
+                                                                                                                       "Età superiore a 16 anni"@it,
+                                                                                                                       "Over the age of 16"@en,
+                                                                                                                       "Älter als 16 Jahre"@de;
+                                                                                                               sh:order 4 ;
+                                                                                                               sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/age_over_16>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/age_over_18> a <http://purl.org/linked-data/cube#AttributeProperty>,
+                                                                                                                 <http://purl.org/linked-data/cube#CodedProperty>,
+                                                                                                                 owl:DatatypeProperty,
+                                                                                                                 sh:PropertyShape;
+                                                                                                               dcterms:description "Aussage, ob die Person ihr 18. Altersjahr vollendet hat."@de,
+                                                                                                                                   "Declaration that the person has reached the age of 18."@en,
+                                                                                                                                   "Dichiarazione che attesti che la persona ha compiuto 18 anni."@it,
+                                                                                                                                   "Déclaration indiquant si la personne a atteint l'âge de 18 ans révolus."@fr;
+                                                                                                               dcterms:title "Age plus de 18 ans"@fr,
+                                                                                                                             "Età superiore a 18 anni"@it,
+                                                                                                                             "Over the age of 18"@en,
+                                                                                                                             "Älter als 18 Jahre"@de;
+                                                                                                               rdfs:comment "Aussage, ob die Person ihr 18. Altersjahr vollendet hat."@de,
+                                                                                                                            "Declaration that the person has reached the age of 18."@en,
+                                                                                                                            "Dichiarazione che attesti che la persona ha compiuto 18 anni."@it,
+                                                                                                                            "Déclaration indiquant si la personne a atteint l'âge de 18 ans révolus."@fr;
+                                                                                                               rdfs:label "Age plus de 18 ans"@fr,
+                                                                                                                          "Età superiore a 18 anni"@it,
+                                                                                                                          "Over the age of 18"@en,
+                                                                                                                          "Älter als 18 Jahre"@de;
+                                                                                                               sh:description "Aussage, ob die Person ihr 18. Altersjahr vollendet hat."@de,
+                                                                                                                              "Declaration that the person has reached the age of 18."@en,
+                                                                                                                              "Dichiarazione che attesti che la persona ha compiuto 18 anni."@it,
+                                                                                                                              "Déclaration indiquant si la personne a atteint l'âge de 18 ans révolus."@fr;
+                                                                                                               sh:name "Age plus de 18 ans"@fr,
+                                                                                                                       "Età superiore a 18 anni"@it,
+                                                                                                                       "Over the age of 18"@en,
+                                                                                                                       "Älter als 18 Jahre"@de;
+                                                                                                               sh:order 5 ;
+                                                                                                               sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/age_over_18>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/age_over_65> a <http://purl.org/linked-data/cube#AttributeProperty>,
+                                                                                                                 <http://purl.org/linked-data/cube#CodedProperty>,
+                                                                                                                 owl:DatatypeProperty,
+                                                                                                                 sh:PropertyShape;
+                                                                                                               dcterms:description "Aussage, ob die Person ihr 65. Altersjahr vollendet hat."@de,
+                                                                                                                                   "Declaration that the person has reached the age of 65."@en,
+                                                                                                                                   "Dichiarazione che attesti che la persona ha compiuto 65 anni."@it,
+                                                                                                                                   "Déclaration indiquant si la personne a atteint l'âge de 65 ans révolus."@fr;
+                                                                                                               dcterms:title "Age plus de 65 ans"@fr,
+                                                                                                                             "Età superiore a 65 anni"@it,
+                                                                                                                             "Over the age of 65"@en,
+                                                                                                                             "Älter als 65 Jahre"@de;
+                                                                                                               rdfs:comment "Aussage, ob die Person ihr 65. Altersjahr vollendet hat."@de,
+                                                                                                                            "Declaration that the person has reached the age of 65."@en,
+                                                                                                                            "Dichiarazione che attesti che la persona ha compiuto 65 anni."@it,
+                                                                                                                            "Déclaration indiquant si la personne a atteint l'âge de 65 ans révolus."@fr;
+                                                                                                               rdfs:label "Age plus de 65 ans"@fr,
+                                                                                                                          "Età superiore a 65 anni"@it,
+                                                                                                                          "Over the age of 65"@en,
+                                                                                                                          "Älter als 65 Jahre"@de;
+                                                                                                               sh:description "Aussage, ob die Person ihr 65. Altersjahr vollendet hat."@de,
+                                                                                                                              "Declaration that the person has reached the age of 65."@en,
+                                                                                                                              "Dichiarazione che attesti che la persona ha compiuto 65 anni."@it,
+                                                                                                                              "Déclaration indiquant si la personne a atteint l'âge de 65 ans révolus."@fr;
+                                                                                                               sh:name "Age plus de 65 ans"@fr,
+                                                                                                                       "Età superiore a 65 anni"@it,
+                                                                                                                       "Over the age of 65"@en,
+                                                                                                                       "Älter als 65 Jahre"@de;
+                                                                                                               sh:order 6 ;
+                                                                                                               sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/age_over_65>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/age_birth_year> a <http://purl.org/linked-data/cube#AttributeProperty>,
+                                                                                                                    owl:DatatypeProperty,
+                                                                                                                    sh:PropertyShape;
+                                                                                                                  dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08dd6a9d-53dd-71d4-a3e7-852ff5503f7c/description>;
+                                                                                                                  dcterms:description "Anno di nascita della persona. Valore derivato dalla data di nascita, in cui viene mantenuto solo l'anno (YYYY)."@it,
+                                                                                                                                      "Année de naissance de la personne. Valeur dérivée de la date de naissance, dont seule l'année (YYYY) est conservée."@fr,
+                                                                                                                                      "Geburtsjahr der Person. Von Geburtsdatum abgeleiteter Wert, bei welchem nur das Jahr (YYYY) beibehalten wird."@de,
+                                                                                                                                      "Year of birth of the person. Value derived from the date of birth, where only the year (YYYY) is retained."@en;
+                                                                                                                  dcterms:title "Annata"@it,
+                                                                                                                                "Born in"@en,
+                                                                                                                                "Geburtsjahr"@de,
+                                                                                                                                "Né(e) en"@fr;
+                                                                                                                  rdfs:comment "Anno di nascita della persona. Valore derivato dalla data di nascita, in cui viene mantenuto solo l'anno (YYYY)."@it,
+                                                                                                                               "Année de naissance de la personne. Valeur dérivée de la date de naissance, dont seule l'année (YYYY) est conservée."@fr,
+                                                                                                                               "Geburtsjahr der Person. Von Geburtsdatum abgeleiteter Wert, bei welchem nur das Jahr (YYYY) beibehalten wird."@de,
+                                                                                                                               "Year of birth of the person. Value derived from the date of birth, where only the year (YYYY) is retained."@en;
+                                                                                                                  rdfs:label "Annata"@it,
+                                                                                                                             "Born in"@en,
+                                                                                                                             "Geburtsjahr"@de,
+                                                                                                                             "Né(e) en"@fr;
+                                                                                                                  sh:datatype xsd:decimal;
+                                                                                                                  sh:description "Anno di nascita della persona. Valore derivato dalla data di nascita, in cui viene mantenuto solo l'anno (YYYY)."@it,
+                                                                                                                                 "Année de naissance de la personne. Valeur dérivée de la date de naissance, dont seule l'année (YYYY) est conservée."@fr,
+                                                                                                                                 "Geburtsjahr der Person. Von Geburtsdatum abgeleiteter Wert, bei welchem nur das Jahr (YYYY) beibehalten wird."@de,
+                                                                                                                                 "Year of birth of the person. Value derived from the date of birth, where only the year (YYYY) is retained."@en;
+                                                                                                                  sh:name "Annata"@it,
+                                                                                                                          "Born in"@en,
+                                                                                                                          "Geburtsjahr"@de,
+                                                                                                                          "Né(e) en"@fr;
+                                                                                                                  sh:order 7 ;
+                                                                                                                  sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/age_birth_year>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/sex> a <http://purl.org/linked-data/cube#AttributeProperty>,
+                                                                                                         <http://purl.org/linked-data/cube#CodedProperty>,
+                                                                                                         owl:DatatypeProperty,
+                                                                                                         sh:PropertyShape;
+                                                                                                       dcterms:conformsTo <https://register.ld.admin.ch/i14y/concept/DV_SEXE/version/2.0.0>;
+                                                                                                       dcterms:title "Geschlecht"@de,
+                                                                                                                     "Sesso"@it,
+                                                                                                                     "Sex"@en,
+                                                                                                                     "Sexe"@fr;
+                                                                                                       rdfs:label "Geschlecht"@de,
+                                                                                                                  "Sesso"@it,
+                                                                                                                  "Sex"@en,
+                                                                                                                  "Sexe"@fr;
+                                                                                                       sh:name "Geschlecht"@de,
+                                                                                                               "Sesso"@it,
+                                                                                                               "Sex"@en,
+                                                                                                               "Sexe"@fr;
+                                                                                                       sh:order 8 ;
+                                                                                                       sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/sex>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/place_of_origin> a <http://purl.org/linked-data/cube#AttributeProperty>,
+                                                                                                                     owl:DatatypeProperty,
+                                                                                                                     sh:PropertyShape;
+                                                                                                                   dcterms:conformsTo <https://register.ld.admin.ch/i14y/concept/PID_PLACE_OF_ORIGIN/version/1.0.0>;
+                                                                                                                   dcterms:title "Heimatort"@de,
+                                                                                                                                 "Lieu d'origine"@fr,
+                                                                                                                                 "Luogo di attinenza"@it,
+                                                                                                                                 "Place of origin"@en;
+                                                                                                                   rdfs:label "Heimatort"@de,
+                                                                                                                              "Lieu d'origine"@fr,
+                                                                                                                              "Luogo di attinenza"@it,
+                                                                                                                              "Place of origin"@en;
+                                                                                                                   sh:datatype xsd:string;
+                                                                                                                   sh:name "Heimatort"@de,
+                                                                                                                           "Lieu d'origine"@fr,
+                                                                                                                           "Luogo di attinenza"@it,
+                                                                                                                           "Place of origin"@en;
+                                                                                                                   sh:order 9 ;
+                                                                                                                   sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/place_of_origin>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/birth_place> a <http://purl.org/linked-data/cube#AttributeProperty>,
+                                                                                                                 owl:DatatypeProperty,
+                                                                                                                 sh:PropertyShape;
+                                                                                                               dcterms:conformsTo <https://register.ld.admin.ch/i14y/concept/PID_PLACE_OF_BIRTH/version/1.0.0>;
+                                                                                                               dcterms:description "Birth in Switzerland: municipality including canton code where the person was born. Birth abroad: place and country of birth as stated on official identity documents."@en,
+                                                                                                                                   "Geburt in der Schweiz: Gemeinde inkl. Kantons-Kürzel, in welcher die Person geboren ist. Geburt im Ausland: Ort, Land der Geburt gemäss amtlichen Ausweispapieren."@de,
+                                                                                                                                   "Naissance en Suisse : commune, y compris le code cantonal, dans laquelle la personne est née. Naissance à l'étranger : lieu et pays de naissance selon les documents d'identité officiels."@fr,
+                                                                                                                                   "Nascita in Svizzera: comune, compreso il codice cantonale, in cui è nata la persona. Nascita all'estero: luogo e Paese di nascita secondo i documenti d'identità ufficiali."@it;
+                                                                                                               dcterms:title "Geburtsort"@de,
+                                                                                                                             "Lieu de naissance"@fr,
+                                                                                                                             "Luogo di nascita"@it,
+                                                                                                                             "Place of birth"@en;
+                                                                                                               rdfs:comment "Birth in Switzerland: municipality including canton code where the person was born. Birth abroad: place and country of birth as stated on official identity documents."@en,
+                                                                                                                            "Geburt in der Schweiz: Gemeinde inkl. Kantons-Kürzel, in welcher die Person geboren ist. Geburt im Ausland: Ort, Land der Geburt gemäss amtlichen Ausweispapieren."@de,
+                                                                                                                            "Naissance en Suisse : commune, y compris le code cantonal, dans laquelle la personne est née. Naissance à l'étranger : lieu et pays de naissance selon les documents d'identité officiels."@fr,
+                                                                                                                            "Nascita in Svizzera: comune, compreso il codice cantonale, in cui è nata la persona. Nascita all'estero: luogo e Paese di nascita secondo i documenti d'identità ufficiali."@it;
+                                                                                                               rdfs:label "Geburtsort"@de,
+                                                                                                                          "Lieu de naissance"@fr,
+                                                                                                                          "Luogo di nascita"@it,
+                                                                                                                          "Place of birth"@en;
+                                                                                                               sh:datatype xsd:string;
+                                                                                                               sh:description "Birth in Switzerland: municipality including canton code where the person was born. Birth abroad: place and country of birth as stated on official identity documents."@en,
+                                                                                                                              "Geburt in der Schweiz: Gemeinde inkl. Kantons-Kürzel, in welcher die Person geboren ist. Geburt im Ausland: Ort, Land der Geburt gemäss amtlichen Ausweispapieren"@de,
+                                                                                                                              "Naissance en Suisse : commune, y compris le code cantonal, dans laquelle la personne est née. Naissance à l'étranger : lieu et pays de naissance selon les documents d'identité officiels."@fr,
+                                                                                                                              "Nascita in Svizzera: comune, compreso il codice cantonale, in cui è nata la persona. Nascita all'estero: luogo e Paese di nascita secondo i documenti d'identità ufficiali."@it;
+                                                                                                               sh:name "Geburtsort"@de,
+                                                                                                                       "Lieu de naissance"@fr,
+                                                                                                                       "Luogo di nascita"@it,
+                                                                                                                       "Place of birth"@en;
+                                                                                                               sh:order 10 ;
+                                                                                                               sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/birth_place>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/nationality> a <http://purl.org/linked-data/cube#AttributeProperty>,
+                                                                                                                 <http://purl.org/linked-data/cube#CodedProperty>,
+                                                                                                                 owl:DatatypeProperty,
+                                                                                                                 sh:PropertyShape;
+                                                                                                               dcterms:conformsTo <https://register.ld.admin.ch/i14y/concept/ST_ISO_3166_ALPHA_2_2024/version/1.0.0>;
+                                                                                                               dcterms:description "Nationality of the person (single value) in ISO 3166-1 Alpha 2 format"@en,
+                                                                                                                                   "Nationalität der Person (Einzelwert) im Format ISO 3166-1 Alpha 2"@de,
+                                                                                                                                   "Nationalité de la personne (valeur unique) au format ISO 3166-1 Alpha 2"@fr,
+                                                                                                                                   "Nazionalità della persona (valore singolo) nel formato ISO 3166-1 Alpha 2"@it;
+                                                                                                               dcterms:title "Cittadinanza"@it,
+                                                                                                                             "Nationality"@en,
+                                                                                                                             "Nationalität"@de,
+                                                                                                                             "Nationalité"@fr;
+                                                                                                               rdfs:comment "Nationality of the person (single value) in ISO 3166-1 Alpha 2 format"@en,
+                                                                                                                            "Nationalität der Person (Einzelwert) im Format ISO 3166-1 Alpha 2"@de,
+                                                                                                                            "Nationalité de la personne (valeur unique) au format ISO 3166-1 Alpha 2"@fr,
+                                                                                                                            "Nazionalità della persona (valore singolo) nel formato ISO 3166-1 Alpha 2"@it;
+                                                                                                               rdfs:label "Cittadinanza"@it,
+                                                                                                                          "Nationality"@en,
+                                                                                                                          "Nationalität"@de,
+                                                                                                                          "Nationalité"@fr;
+                                                                                                               sh:description "Nationality of the person (single value) in ISO 3166-1 Alpha 2 format"@en,
+                                                                                                                              "Nationalität der Person (Einzelwert) im Format ISO 3166-1 Alpha 2"@de,
+                                                                                                                              "Nationalité de la personne (valeur unique) au format ISO 3166-1 Alpha 2"@fr,
+                                                                                                                              "Nazionalità della persona (valore singolo) nel formato ISO 3166-1 Alpha 2"@it;
+                                                                                                               sh:name "Cittadinanza"@it,
+                                                                                                                       "Nationality"@en,
+                                                                                                                       "Nationalität"@de,
+                                                                                                                       "Nationalité"@fr;
+                                                                                                               sh:order 11 ;
+                                                                                                               sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/nationality>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/portrait> a <http://purl.org/linked-data/cube#AttributeProperty>,
+                                                                                                              owl:DatatypeProperty,
+                                                                                                              sh:PropertyShape;
+                                                                                                            dcterms:conformsTo <https://register.ld.admin.ch/i14y/concept/PID_FACIAL_IMAGE/version/1.0.0>;
+                                                                                                            dcterms:description "Face image (portrait) of the person in image/png base46 encoded format"@en,
+                                                                                                                                "Gesichtsbild (Portrait) der Person im Format image/png base46 encoded"@de,
+                                                                                                                                "Immagine del volto (ritratto) della persona in formato immagine/png base46 encoded"@it,
+                                                                                                                                "Portrait de la personne au format image/png base46 encoded"@fr;
+                                                                                                            dcterms:title "Face image"@en,
+                                                                                                                          "Gesichtsbild"@de,
+                                                                                                                          "Image faciale"@fr,
+                                                                                                                          "Immagine facciale"@it;
+                                                                                                            rdfs:comment "Face image (portrait) of the person in image/png base46 encoded format"@en,
+                                                                                                                         "Gesichtsbild (Portrait) der Person im Format image/png base46 encoded"@de,
+                                                                                                                         "Immagine del volto (ritratto) della persona in formato immagine/png base46 encoded"@it,
+                                                                                                                         "Portrait de la personne au format image/png base46 encoded"@fr;
+                                                                                                            rdfs:label "Face image"@en,
+                                                                                                                       "Gesichtsbild"@de,
+                                                                                                                       "Image faciale"@fr,
+                                                                                                                       "Immagine facciale"@it;
+                                                                                                            sh:datatype xsd:string;
+                                                                                                            sh:description "Face image (portrait) of the person in image/png base46 encoded format"@en,
+                                                                                                                           "Gesichtsbild (Portrait) der Person im Format image/png base46 encoded"@de,
+                                                                                                                           "Immagine del volto (ritratto) della persona in formato immagine/png base46 encoded"@it,
+                                                                                                                           "Portrait de la personne au format image/png base46 encoded"@fr;
+                                                                                                            sh:name "Face image"@en,
+                                                                                                                    "Gesichtsbild"@de,
+                                                                                                                    "Image faciale"@fr,
+                                                                                                                    "Immagine facciale"@it;
+                                                                                                            sh:order 12 ;
+                                                                                                            sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/portrait>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/personal_administrative_number> a <http://purl.org/linked-data/cube#AttributeProperty>,
+                                                                                                                                    owl:DatatypeProperty,
+                                                                                                                                    sh:PropertyShape;
+                                                                                                                                  dcterms:conformsTo <https://register.ld.admin.ch/i14y/concept/AHVN13/version/1.0.0>;
+                                                                                                                                  dcterms:title "AHV-Nummer"@de,
+                                                                                                                                                "Insurance number"@en,
+                                                                                                                                                "Numero AVS"@it,
+                                                                                                                                                "Numéro AVS"@fr;
+                                                                                                                                  sh:datatype xsd:string;
+                                                                                                                                  sh:maxCount 1 ;
+                                                                                                                                  sh:maxLength 16 ;
+                                                                                                                                  sh:minCount 1 ;
+                                                                                                                                  sh:minLength 16 ;
+                                                                                                                                  sh:name "AHV-Nummer"@de,
+                                                                                                                                          "Insurance number"@en,
+                                                                                                                                          "Numero AVS"@it,
+                                                                                                                                          "Numéro AVS"@fr;
+                                                                                                                                  sh:order 13 ;
+                                                                                                                                  sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/personal_administrative_number>;
+                                                                                                                                  sh:pattern "\\d{3}\\.\\d{4}\\.\\d{4}\\.\\d{2}".
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/additional_person_info> a <http://purl.org/linked-data/cube#AttributeProperty>,
+                                                                                                                            owl:DatatypeProperty,
+                                                                                                                            sh:PropertyShape;
+                                                                                                                          dcterms:conformsTo <https://register.ld.admin.ch/i14y/concept/PID_ADDITIONAL_PERSON_INFORMATION/version/1.0.0>;
+                                                                                                                          dcterms:description "Additional personal details on the identity document (ID card, passport, foreigner's identity card)"@en,
+                                                                                                                                              "Données supplémentaires de la personne dans le document d'identité (Carte d'identité, Passeport, Titre de séjour)"@fr,
+                                                                                                                                              "Informazioni supplementari sulla persona contenute nel documento d'identità (carta d'identità, passaporto, permesso di soggiorno)"@it,
+                                                                                                                                              "Zusätzliche Angaben zur Person im Ausweisdokument (IDK, Pass, Ausländerausweis)"@de;
+                                                                                                                          dcterms:title "Additional information about the person"@en,
+                                                                                                                                        "Informazioni supplementari sulla persona"@it,
+                                                                                                                                        "Mentions supplémentaires concernant la personne"@fr,
+                                                                                                                                        "Zusätzliche Angaben zur Person"@de;
+                                                                                                                          rdfs:comment "Additional personal details on the identity document (ID card, passport, foreigner's identity card)"@en,
+                                                                                                                                       "Données supplémentaires de la personne dans le document d'identité (Carte d'identité, Passeport, Titre de séjour)"@fr,
+                                                                                                                                       "Informazioni supplementari sulla persona contenute nel documento d'identità (carta d'identità, passaporto, permesso di soggiorno)"@it,
+                                                                                                                                       "Zusätzliche Angaben zur Person im Ausweisdokument (IDK, Pass, Ausländerausweis)"@de;
+                                                                                                                          rdfs:label "Additional information about the person"@en,
+                                                                                                                                     "Informazioni supplementari sulla persona"@it,
+                                                                                                                                     "Mentions supplémentaires concernant la personne"@fr,
+                                                                                                                                     "Zusätzliche Angaben zur Person"@de;
+                                                                                                                          sh:datatype xsd:string;
+                                                                                                                          sh:description "Additional personal details on the identity document (ID card, passport, foreigner's identity card)"@en,
+                                                                                                                                         "Données supplémentaires de la personne dans le document d'identité (Carte d'identité, Passeport, Titre de séjour)"@fr,
+                                                                                                                                         "Informazioni supplementari sulla persona contenute nel documento d'identità (carta d'identità, passaporto, permesso di soggiorno)"@it,
+                                                                                                                                         "Zusätzliche Angaben zur Person im Ausweisdokument (IDK, Pass, Ausländerausweis)"@de;
+                                                                                                                          sh:name "Additional information about the person"@en,
+                                                                                                                                  "Informazioni supplementari sulla persona"@it,
+                                                                                                                                  "Mentions supplémentaires concernant la personne"@fr,
+                                                                                                                                  "Zusätzliche Angaben zur Person"@de;
+                                                                                                                          sh:order 14 ;
+                                                                                                                          sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/additional_person_info>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/document_number> a <http://purl.org/linked-data/cube#AttributeProperty>,
+                                                                                                                     owl:DatatypeProperty,
+                                                                                                                     sh:PropertyShape;
+                                                                                                                   dcterms:conformsTo <https://register.ld.admin.ch/i14y/concept/EID_NUMBER/version/1.0.0>;
+                                                                                                                   dcterms:description "Eindeutige Nummer der Beta-ID"@de,
+                                                                                                                                       "Numero univoco della Beta-ID"@it,
+                                                                                                                                       "Numéro unique de Beta-ID"@fr,
+                                                                                                                                       "Unique number of Beta-ID"@en;
+                                                                                                                   dcterms:title "Beta-ID Number"@en,
+                                                                                                                                 "Beta-ID-Nummer"@de,
+                                                                                                                                 "Numero di Beta-ID"@it,
+                                                                                                                                 "Numéro de Beta-ID"@fr;
+                                                                                                                   rdfs:comment "Eindeutige Nummer der Beta-ID"@de,
+                                                                                                                                "Numero univoco della Beta-ID"@it,
+                                                                                                                                "Numéro unique de Beta-ID"@fr,
+                                                                                                                                "Unique number of Beta-ID"@en;
+                                                                                                                   rdfs:label "Beta-ID Number"@en,
+                                                                                                                              "Beta-ID-Nummer"@de,
+                                                                                                                              "Numero di Beta-ID"@it,
+                                                                                                                              "Numéro de Beta-ID"@fr;
+                                                                                                                   sh:datatype xsd:string;
+                                                                                                                   sh:description "Eindeutige Nummer der Beta-ID"@de,
+                                                                                                                                  "Numero univoco della Beta-ID"@it,
+                                                                                                                                  "Numéro unique de Beta-ID"@fr,
+                                                                                                                                  "Unique number of Beta-ID"@en;
+                                                                                                                   sh:name "Beta-ID Number"@en,
+                                                                                                                           "Beta-ID-Nummer"@de,
+                                                                                                                           "Numero di Beta-ID"@it,
+                                                                                                                           "Numéro de Beta-ID"@fr;
+                                                                                                                   sh:order 15 ;
+                                                                                                                   sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/document_number>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/issuance_date> a <http://purl.org/linked-data/cube#AttributeProperty>,
+                                                                                                                   owl:DatatypeProperty,
+                                                                                                                   sh:PropertyShape;
+                                                                                                                 dcterms:conformsTo <https://register.ld.admin.ch/i14y/concept/EID_ISSUANCE_DATE/version/1.0.0>;
+                                                                                                                 dcterms:description "Ausstellungsdatum der Beta-ID"@de,
+                                                                                                                                     "Data di emissione della Beta-ID"@it,
+                                                                                                                                     "Date de délivrance de Beta-ID"@fr,
+                                                                                                                                     "Date of issuance of Beta-ID"@en;
+                                                                                                                 dcterms:title "Ausstellungsdatum"@de,
+                                                                                                                               "Date of issuance"@en,
+                                                                                                                               "Délivré le"@fr,
+                                                                                                                               "Rilasciato il"@it;
+                                                                                                                 rdfs:comment "Ausstellungsdatum der Beta-ID"@de,
+                                                                                                                              "Data di emissione della Beta-ID"@it,
+                                                                                                                              "Date de délivrance de Beta-ID"@fr,
+                                                                                                                              "Date of issuance of Beta-ID"@en;
+                                                                                                                 rdfs:label "Ausstellungsdatum"@de,
+                                                                                                                            "Date of issuance"@en,
+                                                                                                                            "Délivré le"@fr,
+                                                                                                                            "Rilasciato il"@it;
+                                                                                                                 sh:datatype xsd:date;
+                                                                                                                 sh:description "Ausstellungsdatum der Beta-ID"@de,
+                                                                                                                                "Data di emissione della Beta-ID"@it,
+                                                                                                                                "Date de délivrance de Beta-ID"@fr,
+                                                                                                                                "Date of issuance of Beta-ID"@en;
+                                                                                                                 sh:name "Ausstellungsdatum"@de,
+                                                                                                                         "Date of issuance"@en,
+                                                                                                                         "Délivré le"@fr,
+                                                                                                                         "Rilasciato il"@it;
+                                                                                                                 sh:order 16 ;
+                                                                                                                 sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/issuance_date>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/expiry_date> a <http://purl.org/linked-data/cube#AttributeProperty>,
+                                                                                                                 owl:DatatypeProperty,
+                                                                                                                 sh:PropertyShape;
+                                                                                                               dcterms:conformsTo <https://register.ld.admin.ch/i14y/concept/EID_EXPIRY_DATE/version/1.0.0>;
+                                                                                                               dcterms:description "Data fino alla quale la Beta-ID è valida. Il superamento di tale data non comporta automaticamente la revoca della Beta-ID."@it,
+                                                                                                                                   "Date jusqu'à laquelle la Beta-ID est valide. Le dépassement de cette date n'entraîne pas la révocation de la Beta-ID."@fr,
+                                                                                                                                   "Date until which a Beta-ID is valid. Exceeding this date does not automatically revoke the Beta-ID."@en,
+                                                                                                                                   "Datum, bis und mit zu welchem die Beta-ID als gültig gilt. Ein Überschreiten des Datums ist nicht gleichgesetzt mit einem Widerruf der Beta-ID."@de;
+                                                                                                               dcterms:title "Data di scadenza"@it,
+                                                                                                                             "Date d'expiration"@fr,
+                                                                                                                             "Date of expiry"@en,
+                                                                                                                             "Gültig bis"@de;
+                                                                                                               rdfs:comment "Data fino alla quale la Beta-ID è valida. Il superamento di tale data non comporta automaticamente la revoca della Beta-ID."@it,
+                                                                                                                            "Date jusqu'à laquelle la Beta-ID est valide. Le dépassement de cette date n'entraîne pas la révocation de la Beta-ID."@fr,
+                                                                                                                            "Date until which a Beta-ID is valid. Exceeding this date does not automatically revoke the Beta-ID."@en,
+                                                                                                                            "Datum, bis und mit zu welchem eine Beta-ID als gültig gilt. Ein Überschreiten des Datums ist nicht gleichgesetzt mit einem Widerruf der Beta-ID."@de;
+                                                                                                               rdfs:label "Data di scadenza"@it,
+                                                                                                                          "Date d'expiration"@fr,
+                                                                                                                          "Date of expiry"@en,
+                                                                                                                          "Gültig bis"@de;
+                                                                                                               sh:datatype xsd:date;
+                                                                                                               sh:description "Data fino alla quale la Beta-ID è valida. Il superamento di tale data non comporta automaticamente la revoca della Beta-ID."@it,
+                                                                                                                              "Date jusqu'à laquelle la Beta-ID est valide. Le dépassement de cette date n'entraîne pas la révocation de la Beta-ID."@fr,
+                                                                                                                              "Date until which a Beta-ID is valid. Exceeding this date does not automatically revoke the Beta-ID."@en,
+                                                                                                                              "Datum, bis und mit zu welchem eine Beta-ID als gültig gilt. Ein Überschreiten des Datums ist nicht gleichgesetzt mit einem Widerruf der Beta-ID."@de;
+                                                                                                               sh:name "Data di scadenza"@it,
+                                                                                                                       "Date d'expiration"@fr,
+                                                                                                                       "Date of expiry"@en,
+                                                                                                                       "Gültig bis"@de;
+                                                                                                               sh:order 17 ;
+                                                                                                               sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/expiry_date>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/reference_id_type> a <http://purl.org/linked-data/cube#AttributeProperty>,
+                                                                                                                       <http://purl.org/linked-data/cube#CodedProperty>,
+                                                                                                                       owl:DatatypeProperty,
+                                                                                                                       sh:PropertyShape;
+                                                                                                                     dcterms:conformsTo <https://register.ld.admin.ch/i14y/concept/EID_REFERENCE_ID_TYPE/version/1.0.0>;
+                                                                                                                     dcterms:description "Ausweistyp des Referenzdokuments, welches bei der Beantragung für die Beta-ID genutzt wurde und der Beta-ID zu Grunde liegt."@de,
+                                                                                                                                         "Tipo di documento di identità utilizzato per richiedere la Beta-ID e su cui si basa la Beta-ID."@it,
+                                                                                                                                         "Type de document d'identité utilisée lors de la demande de Beta-ID et sur laquelle se base la Beta-ID."@fr,
+                                                                                                                                         "Type of identification document used when applying for the Beta-ID and on which the Beta-ID is based."@en;
+                                                                                                                     dcterms:title "Ausweistyp"@de,
+                                                                                                                                   "Identification document type"@en,
+                                                                                                                                   "Tipo di documento"@it,
+                                                                                                                                   "Type de document d'identité"@fr;
+                                                                                                                     rdfs:comment "Ausweistyp des Referenzdokuments, welches bei der Beantragung für die Beta-ID genutzt wurde und der Beta-ID zu Grunde liegt."@de,
+                                                                                                                                  "Tipo di documento di identità utilizzato per richiedere la Beta-ID e su cui si basa la Beta-ID."@it,
+                                                                                                                                  "Type de document d'identité utilisée lors de la demande de Beta-ID et sur laquelle se base la Beta-ID."@fr,
+                                                                                                                                  "Type of identification document used when applying for the Beta-ID and on which the Beta-ID is based."@en;
+                                                                                                                     rdfs:label "Ausweistyp"@de,
+                                                                                                                                "Identification document type"@en,
+                                                                                                                                "Tipo di documento"@it,
+                                                                                                                                "Type de document d'identité"@fr;
+                                                                                                                     sh:description "Ausweistyp des Referenzdokuments, welches bei der Beantragung für die Beta-ID genutzt wurde und der Beta-ID zu Grunde liegt."@de,
+                                                                                                                                    "Tipo di documento di identità utilizzato per richiedere la Beta-ID e su cui si basa la Beta-ID."@it,
+                                                                                                                                    "Type de document d'identité utilisée lors de la demande de Beta-ID et sur laquelle se base la Beta-ID."@fr,
+                                                                                                                                    "Type of identification document used when applying for the Beta-ID and on which the Beta-ID is based."@en;
+                                                                                                                     sh:name "Ausweistyp"@de,
+                                                                                                                             "Identification document type"@en,
+                                                                                                                             "Tipo di documento"@it,
+                                                                                                                             "Type de document d'identité"@fr;
+                                                                                                                     sh:order 18 ;
+                                                                                                                     sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/reference_id_type>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/referende_id_expiry_date> a <http://purl.org/linked-data/cube#AttributeProperty>,
+                                                                                                                              owl:DatatypeProperty,
+                                                                                                                              sh:PropertyShape;
+                                                                                                                            dcterms:conformsTo <https://register.ld.admin.ch/i14y/concept/EID_REFERENCE_ID_EXPIRY_DATE/version/1.0.0>;
+                                                                                                                            dcterms:identifier "reference_id_expiry_date";
+                                                                                                                            dcterms:title "Ablaufdatum des Ausweises"@de,
+                                                                                                                                          "Data di scadenza del documento"@it,
+                                                                                                                                          "Date d'expiration du document"@fr,
+                                                                                                                                          "Identification document date of expiry"@en;
+                                                                                                                            rdfs:comment "Ablaufdatum des Referenzdokuments, welches bei der Ausstellung einer Beta-ID beigezogen wurde."@de,
+                                                                                                                                         "Data di scadenza del documento di riferimento utilizzato per il rilascio della Beta-ID."@it,
+                                                                                                                                         "Date d'expiration du document de référence utilisé lors de la délivrance de la Beta-ID."@fr,
+                                                                                                                                         "Expiry date of the reference document that was used when issuing the Beta-ID."@en;
+                                                                                                                            sh:datatype xsd:date;
+                                                                                                                            sh:description "Ablaufdatum des Referenzdokuments, welches bei der Ausstellung einer Beta-ID beigezogen wurde."@de,
+                                                                                                                                           "Data di scadenza del documento di riferimento utilizzato per il rilascio della Beta-ID."@it,
+                                                                                                                                           "Date d'expiration du document de référence utilisé lors de la délivrance de la Beta-ID."@fr,
+                                                                                                                                           "Expiry date of the reference document that was used when issuing the Beta-ID."@en;
+                                                                                                                            sh:name "Ablaufdatum des Ausweises"@de,
+                                                                                                                                    "Data di scadenza del documento"@it,
+                                                                                                                                    "Date d'expiration du document"@fr,
+                                                                                                                                    "Identification document date of expiry"@en;
+                                                                                                                            sh:order 19 ;
+                                                                                                                            sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/referende_id_expiry_date>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/verification_type> a <http://purl.org/linked-data/cube#AttributeProperty>,
+                                                                                                                       <http://purl.org/linked-data/cube#CodedProperty>,
+                                                                                                                       owl:DatatypeProperty,
+                                                                                                                       sh:PropertyShape;
+                                                                                                                     dcterms:conformsTo <https://register.ld.admin.ch/i14y/concept/EID_VERIFICATION_TYPE/version/1.0.0>;
+                                                                                                                     dcterms:title "Identity verification process"@en,
+                                                                                                                                   "Identitätsprüfungsart"@de,
+                                                                                                                                   "Procedura di verifica del'identità"@it,
+                                                                                                                                   "Processus de vérificaiton d'identité"@fr;
+                                                                                                                     rdfs:label "Identity verification process"@en,
+                                                                                                                                "Identitätsprüfungsart"@de,
+                                                                                                                                "Procedura di verifica del'identità"@it,
+                                                                                                                                "Processus de vérificaiton d'identité"@fr;
+                                                                                                                     sh:name "Identity verification process"@en,
+                                                                                                                             "Identitätsprüfungsart"@de,
+                                                                                                                             "Procedura di verifica del'identità"@it,
+                                                                                                                             "Processus de vérificaiton d'identité"@fr;
+                                                                                                                     sh:order 20 ;
+                                                                                                                     sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/verification_type>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/verification_organization> a <http://purl.org/linked-data/cube#AttributeProperty>,
+                                                                                                                               owl:DatatypeProperty,
+                                                                                                                               sh:PropertyShape;
+                                                                                                                             dcterms:conformsTo <https://register.ld.admin.ch/i14y/concept/GENERAL_TEXT_MEDIUM/version/1.0.0>;
+                                                                                                                             dcterms:description "Organisation chargée de vérifier l'identité."@fr,
+                                                                                                                                                 "Organisation responsible for identity verification."@en,
+                                                                                                                                                 "Organisation, welche für die Identitätsprüfung zuständig war."@de,
+                                                                                                                                                 "Organizzazione responsabile della verifica dell'identità."@it;
+                                                                                                                             dcterms:title "Identity verification by"@en,
+                                                                                                                                           "Identitätsprüfung durch"@de,
+                                                                                                                                           "Procedura di verifica del'identità tramite"@it,
+                                                                                                                                           "Vérification d'identité par"@fr;
+                                                                                                                             rdfs:comment "Organisation chargée de vérifier l'identité."@fr,
+                                                                                                                                          "Organisation responsible for identity verification."@en,
+                                                                                                                                          "Organisation, welche für die Identitätsprüfung zuständig war"@de,
+                                                                                                                                          "Organizzazione responsabile della verifica dell'identità."@it;
+                                                                                                                             rdfs:label "Identity verification by"@en,
+                                                                                                                                        "Identitätsprüfung durch"@de,
+                                                                                                                                        "Procedura di verifica del'identità tramite"@it,
+                                                                                                                                        "Vérification d'identité par"@fr;
+                                                                                                                             sh:datatype xsd:string;
+                                                                                                                             sh:description "Organisation chargée de vérifier l'identité."@fr,
+                                                                                                                                            "Organisation responsible for identity verification."@en,
+                                                                                                                                            "Organisation, welche für die Identitätsprüfung zuständig war"@de,
+                                                                                                                                            "Organizzazione responsabile della verifica dell'identità."@it;
+                                                                                                                             sh:name "Identity verification by"@en,
+                                                                                                                                     "Identitätsprüfung durch"@de,
+                                                                                                                                     "Procedura di verifica del'identità tramite"@it,
+                                                                                                                                     "Vérification d'identité par"@fr;
+                                                                                                                             sh:order 21 ;
+                                                                                                                             sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/verification_organization>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/issuing_authority> a <http://purl.org/linked-data/cube#AttributeProperty>,
+                                                                                                                       owl:DatatypeProperty,
+                                                                                                                       sh:PropertyShape;
+                                                                                                                     dcterms:conformsTo <https://register.ld.admin.ch/i14y/concept/GENERAL_TEXT_MEDIUM/version/1.0.0>;
+                                                                                                                     dcterms:description "Ausgabestelle der Beta-ID"@de,
+                                                                                                                                         "Autorità di emissione della Beta-ID"@it,
+                                                                                                                                         "Autorité de délivrance de la Beta-ID"@fr,
+                                                                                                                                         "Issuing authority of Beta-ID"@en;
+                                                                                                                     dcterms:title "Ausgabestelle"@de,
+                                                                                                                                   "Autorità di emissione"@it,
+                                                                                                                                   "Autorité de délivrance"@fr,
+                                                                                                                                   "Issuing authority"@en;
+                                                                                                                     rdfs:comment "Ausgabestelle der Beta-ID"@de,
+                                                                                                                                  "Autorità di emissione della Beta-ID"@it,
+                                                                                                                                  "Autorité de délivrance de la Beta-ID"@fr,
+                                                                                                                                  "Issuing authority of Beta-ID"@en;
+                                                                                                                     rdfs:label "Ausgabestelle"@de,
+                                                                                                                                "Autorità di emissione"@it,
+                                                                                                                                "Autorité de délivrance"@fr,
+                                                                                                                                "Issuing authority"@en;
+                                                                                                                     sh:datatype xsd:string;
+                                                                                                                     sh:description "Ausgabestelle der Beta-ID"@de,
+                                                                                                                                    "Autorità di emissione della Beta-ID"@it,
+                                                                                                                                    "Autorité de délivrance de la Beta-ID"@fr,
+                                                                                                                                    "Issuing authority of Beta-ID"@en;
+                                                                                                                     sh:name "Ausgabestelle"@de,
+                                                                                                                             "Autorità di emissione"@it,
+                                                                                                                             "Autorité de délivrance"@fr,
+                                                                                                                             "Issuing authority"@en;
+                                                                                                                     sh:order 22 ;
+                                                                                                                     sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/issuing_authority>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/issuing_country> a <http://purl.org/linked-data/cube#AttributeProperty>,
+                                                                                                                     <http://purl.org/linked-data/cube#CodedProperty>,
+                                                                                                                     owl:DatatypeProperty,
+                                                                                                                     sh:PropertyShape;
+                                                                                                                   dcterms:conformsTo <https://register.ld.admin.ch/i14y/concept/ST_ISO_3166_ALPHA_2_2024/version/1.0.0>;
+                                                                                                                   dcterms:title "Ausstellungsland"@de,
+                                                                                                                                 "Issuing country"@en,
+                                                                                                                                 "Paese di emissione"@it,
+                                                                                                                                 "Pays d'émission"@fr;
+                                                                                                                   rdfs:label "Herausgebender Staat"@de,
+                                                                                                                              "Issuing country"@en,
+                                                                                                                              "Paese di emissione"@it,
+                                                                                                                              "Pays d'émission"@fr;
+                                                                                                                   sh:name "Herausgebender Staat"@de,
+                                                                                                                           "Issuing country"@en,
+                                                                                                                           "Paese di emissione"@it,
+                                                                                                                           "Pays d'émission"@fr;
+                                                                                                                   sh:order 23 ;
+                                                                                                                   sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/issuing_country>.

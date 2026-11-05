@@ -1,0 +1,35 @@
+| I14Y dataset | [`urn:vct:ch.admin.bcs.betaid`](https://www.i14y.admin.ch/de/catalog/datasets/urn:vct:ch.admin.bcs.betaid/description) |
+|---|---|
+| Title | Beta-ID |
+| Publisher | Federal Office of Polizei (fedpol) (`CH_FEDPOL`) |
+| Registration status | Recorded |
+| Access rights | Restricted |
+| Personal data | Contains particularly sensitive personal data |
+| Structure version | 1.0.0, valid from 2025-02-17 |
+| Last modified on I14Y | 2026-01-23 |
+
+| Attribute | Label (EN · DE · FR · IT) | Type | Card. | I14Y concept |
+|---|---|---|---|---|
+| `family_name` | Surname · Familienname · Nom · Cognome | string | 0..n | [personOfficialName 1.0.0](https://www.i14y.admin.ch/de/catalog/concepts/5fd27bff-8bd7-49d9-a4e3-c68e4f791cef/description) |
+| `given_name` | Given name(s) · Vorname(n) · Prénom(s) · Nom(i) | string | 0..n | [personFirstName 1.0.0](https://www.i14y.admin.ch/de/catalog/concepts/aecd306b-91c0-4854-a508-00dc570cb64b/description) |
+| `birth_date` | Date of birth · Geburtsdatum · Date de naissance · Data di nascita | date | 0..n | [dateOfBirth 1.0.0](https://www.i14y.admin.ch/de/catalog/concepts/cba34e18-bbed-4119-ae1a-3cf49d3a22ac/description) |
+| `age_over_16` | Over the age of 16 · Älter als 16 Jahre · Age plus de 16 ans · Età superiore a 16 anni | string (`false`, `true`) | 0..n | [PID_AGE_OVER_16 1.0.0](https://www.i14y.admin.ch/de/catalog/concepts/08dd4ce2-e77f-9b1f-9373-c73daf9e6a3b/description) |
+| `age_over_18` | Over the age of 18 · Älter als 18 Jahre · Age plus de 18 ans · Età superiore a 18 anni |  | 0..n |  |
+| `age_over_65` | Over the age of 65 · Älter als 65 Jahre · Age plus de 65 ans · Età superiore a 65 anni |  | 0..n |  |
+| `age_birth_year` | Born in · Geburtsjahr · Né(e) en · Annata | decimal | 0..n |  |
+| `sex` | Sex · Geschlecht · Sexe · Sesso |  | 0..n | [DV_SEXE 2.0.0](https://www.i14y.admin.ch/de/catalog/concepts/08dae1d6-4aab-d80c-96cc-4400b6cdae38/description) |
+| `place_of_origin` | Place of origin · Heimatort · Lieu d'origine · Luogo di attinenza | string | 0..n | PID_PLACE_OF_ORIGIN 1.0.0 |
+| `birth_place` | Place of birth · Geburtsort · Lieu de naissance · Luogo di nascita | string | 0..n | PID_PLACE_OF_BIRTH 1.0.0 |
+| `nationality` | Nationality · Nationalität · Nationalité · Cittadinanza |  | 0..n | [ST_ISO_3166_ALPHA_2_2024 1.0.0](https://www.i14y.admin.ch/de/catalog/concepts/08dc79aa-981b-7d9b-a00c-63519522b3c3/description) |
+| `portrait` | Face image · Gesichtsbild · Image faciale · Immagine facciale | string | 0..n | PID_FACIAL_IMAGE 1.0.0 |
+| `personal_administrative_number` | Insurance number · AHV-Nummer · Numéro AVS · Numero AVS | string | 1..1 | [AHVN13 1.0.0](https://www.i14y.admin.ch/de/catalog/concepts/08dbcbbc-6826-fad6-973d-c76ab6ff6579/description) |
+| `additional_person_info` | Additional information about the person · Zusätzliche Angaben zur Person · Mentions supplémentaires concernant la personne · Informazioni supplementari sulla persona | string | 0..n | PID_ADDITIONAL_PERSON_INFORMATION 1.0.0 |
+| `document_number` | Beta-ID Number · Beta-ID-Nummer · Numéro de Beta-ID · Numero di Beta-ID | string | 0..n | EID_NUMBER 1.0.0 |
+| `issuance_date` | Date of issuance · Ausstellungsdatum · Délivré le · Rilasciato il | date | 0..n | EID_ISSUANCE_DATE 1.0.0 |
+| `expiry_date` | Date of expiry · Gültig bis · Date d'expiration · Data di scadenza | date | 0..n | EID_EXPIRY_DATE 1.0.0 |
+| `reference_id_type` | Identification document type · Ausweistyp · Type de document d'identité · Tipo di documento |  | 0..n | EID_REFERENCE_ID_TYPE 1.0.0 |
+| `referende_id_expiry_date` | Identification document date of expiry · Ablaufdatum des Ausweises · Date d'expiration du document · Data di scadenza del documento | date | 0..n | EID_REFERENCE_ID_EXPIRY_DATE 1.0.0 |
+| `verification_type` | Identity verification process · Identitätsprüfungsart · Processus de vérificaiton d'identité · Procedura di verifica del'identità |  | 0..n | EID_VERIFICATION_TYPE 1.0.0 |
+| `verification_organization` | Identity verification by · Identitätsprüfung durch · Vérification d'identité par · Procedura di verifica del'identità tramite | string | 0..n | GENERAL_TEXT_MEDIUM 1.0.0 |
+| `issuing_authority` | Issuing authority · Ausgabestelle · Autorité de délivrance · Autorità di emissione | string | 0..n | GENERAL_TEXT_MEDIUM 1.0.0 |
+| `issuing_country` | Issuing country · Herausgebender Staat · Pays d'émission · Paese di emissione |  | 0..n | [ST_ISO_3166_ALPHA_2_2024 1.0.0](https://www.i14y.admin.ch/de/catalog/concepts/08dc79aa-981b-7d9b-a00c-63519522b3c3/description) |

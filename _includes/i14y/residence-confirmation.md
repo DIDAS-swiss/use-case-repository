@@ -1,0 +1,61 @@
+| I14Y dataset | [`urn:vct:ch.egovernment.residency-permit-simple`](https://www.i14y.admin.ch/de/catalog/datasets/urn:vct:ch.egovernment.residency-permit-simple/description) |
+|---|---|
+| Title | Einfache Wohnsitzbestätigung |
+| Publisher | Digital Public Services Switzerland (DPS) (`CH_DVS`) |
+| Registration status | Candidate |
+| Access rights | Restricted |
+| Personal data | Contains personal data |
+| Structure version | 1.0.0, valid from 2026-07-01 |
+| Last modified on I14Y | 2026-07-02 |
+
+| Attribute | Label (EN · DE · FR · IT) | Type | Card. | I14Y concept |
+|---|---|---|---|---|
+| `dwellingAddress` | dwellingAddress | → `dwellingAddressType` | 1..1 |  |
+| `issuingMunicipality` | issuingMunicipality | → `issuingMunicipalityType` | 1..1 |  |
+| `moveData` | moveData | → `moveDataType` | 1..1 |  |
+| `personInformation` | personInformation | → `personInformationType` | 1..1 |  |
+| `simpleProofOfResidence` | simpleProofOfResidence | → `simpleProofOfResidenceType` | 1..1 |  |
+
+**dwellingAddressType** (in `imported_dataset`)
+
+| Attribute | Label (EN · DE · FR · IT) | Type | Card. | I14Y concept |
+|---|---|---|---|---|
+| `street` | Street · Strasse · Rue · Strada | string | 1..1 | [STRNAME 1.0.0](https://www.i14y.admin.ch/de/catalog/concepts/08d9993d-6898-4ef8-a1dc-51cdf305804c/description) |
+| `EGID` | EGID · Gebäudeidentifikator (EGID) · Identificateur de bâtiment (EGID) · Identificatore dell'edificio (EGID) | number | 1..1 | [EGID 1.0.0](https://www.i14y.admin.ch/de/catalog/concepts/08d9994b-6516-1cdb-bb6c-5636efad4a24/description) |
+| `EWID` | EWID · Wohnungsidentifikator (EWID) · Indentificateur de logement (EWID) · Identificatore dell'abitazione (EWID) | number | 1..1 | [EWID 1.0.0](https://www.i14y.admin.ch/de/catalog/concepts/08da6fdd-4701-50a2-8fd7-29137b5cb91f/description) |
+| `house_number` | house number · Hausnummer · Numéro · numero civico | string | 1..1 | [DEINR 1.0.0](https://www.i14y.admin.ch/de/catalog/concepts/08d9993e-b805-51f2-9d9d-5b426f9bee96/description) |
+| `locality` | locality · Ortschaft · Localité · Località | string | 1..1 | [DPLZNAME 1.0.0](https://www.i14y.admin.ch/de/catalog/concepts/08d99949-1d50-9ad2-b9d2-d0fb35d25b71/description) |
+| `zip_code` | zip code · Postleitzahl · code postal · numero postale | string | 1..1 |  |
+
+**issuingMunicipalityType** (in `imported_dataset`)
+
+| Attribute | Label (EN · DE · FR · IT) | Type | Card. | I14Y concept |
+|---|---|---|---|---|
+| `municipality_id` | Municipality ID · ID Gemeinde · ID de la commune · Identificatore comune | number | 1..1 | [GGDEID 1.0.0](https://www.i14y.admin.ch/de/catalog/concepts/08dacca8-bfc1-79ef-b856-5d40afba9b92/description) |
+| `municipality_name` | Municipality Name · Gemeindename · Nom de la commune · nome del comune | string | 0..1 |  |
+
+**moveDataType** (in `imported_dataset`)
+
+| Attribute | Label (EN · DE · FR · IT) | Type | Card. | I14Y concept |
+|---|---|---|---|---|
+| `arrival_date` | Arrival Date · Zuzugsdatum · Date d'arrivée · Data di arrivo | date | 1..1 | [residenceArrivalDate 1.0.0](https://www.i14y.admin.ch/de/catalog/concepts/394d39ea-7922-43d2-9a06-3a23c85dd174/description) |
+| `comesFrom` | comes from · Herkunftsort · Lieu de provenance · Luogo di provenienza | string | 0..1 |  |
+| `departure_date` | Departure Date · Wegzugsdatum · Date de départ · data di partenza | date | 0..1 | [residenceDepartureDate 1.0.0](https://www.i14y.admin.ch/de/catalog/concepts/4523f32f-a9fc-49a0-b1e9-755eb728500b/description) |
+| `goes_to` | goes to · Zielort · Lieu de destination · Luogo di destinazione | string | 0..1 |  |
+
+**personInformationType** (in `imported_dataset`)
+
+| Attribute | Label (EN · DE · FR · IT) | Type | Card. | I14Y concept |
+|---|---|---|---|---|
+| `official_name` | Official Name · Amtlicher Name · Nom officiel · Cognome ufficiale | string | 1..1 | [personOfficialName 1.0.0](https://www.i14y.admin.ch/de/catalog/concepts/5fd27bff-8bd7-49d9-a4e3-c68e4f791cef/description) |
+| `first_name` | official First Name · Amtliche Vornamen(n) · Prénoms officiels(s) · Nomi ufficiali | string | 1..1 | [personFirstName 1.0.0](https://www.i14y.admin.ch/de/catalog/concepts/aecd306b-91c0-4854-a508-00dc570cb64b/description) |
+| `date_of_birth` | Date of Birth · Geburtsdatum · Date de naissance · Data di nascita | date | 1..1 | [dateOfBirth 1.0.0](https://www.i14y.admin.ch/de/catalog/concepts/cba34e18-bbed-4119-ae1a-3cf49d3a22ac/description) |
+| `place_of_origin` | Place of origin · Heimatort · Lieu d’origine · Luoghi di origine | string | 1..n | [placeOfOriginName 1.0.0](https://www.i14y.admin.ch/de/catalog/concepts/61397a31-cfae-4e8a-bc8b-44227ea4f6cc/description) |
+| `nationality` | Nationality · Nationalität · Nationalité · Cittadinanza | string | 0..1 | [ST_ISO_3166_ALPHA_2_2024 1.0.0](https://www.i14y.admin.ch/de/catalog/concepts/08dc79aa-981b-7d9b-a00c-63519522b3c3/description) |
+
+**simpleProofOfResidenceType** (in `imported_dataset`)
+
+| Attribute | Label (EN · DE · FR · IT) | Type | Card. | I14Y concept |
+|---|---|---|---|---|
+| `issue_date` | Issue Date · Ausstelldatum · Date de délivrance · Rilasciato il | date | 1..1 | [issuanceDate 1.0.0](https://www.i14y.admin.ch/de/catalog/concepts/2c8ecd25-db10-4c33-933d-f629e2d91127/description) |
+| `issuing_authority` | Issuing Authority · Ausstellende Behörde · Autorité d'établissement · Autorità di emissione | token | 1..1 | [issuingAuthority 1.0.0](https://www.i14y.admin.ch/de/catalog/concepts/2281e447-0d31-470b-927d-3a2cfccf7b3e/description) |

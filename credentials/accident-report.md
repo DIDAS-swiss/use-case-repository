@@ -13,7 +13,7 @@ schema_refs: []
 used_by: [motor-vehicle-claims-processing]
 demand_issues: []
 created: 2026-10-30
-updated: 2026-10-30
+updated: 2026-11-05
 ---
 
 # Accident report
@@ -39,7 +39,9 @@ a sectoral repository, not here.
 
 ## Schema and semantic references
 
-None published yet.
+Not published on [I14Y](https://www.i14y.admin.ch/) (checked 2026-11-05). Once a
+schema is published there, set `i14y_dataset` and `i14y_id` and the schema is
+federated into this repository.
 
 ## Supply status
 

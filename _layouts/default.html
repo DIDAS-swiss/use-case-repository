@@ -74,10 +74,24 @@
       {%- if page.likely_issuer %}<div class="wide"><dt>Likely issuer</dt><dd>{{ page.likely_issuer }}</dd></div>{% endif -%}
       {%- if page.domain_steward %}<div><dt>Domain steward</dt><dd>{{ page.domain_steward }}</dd></div>{% endif -%}
       {%- if page.title_de or page.title_fr or page.title_it %}<div class="wide"><dt>DE · FR · IT</dt><dd>{{ page.title_de }} · {{ page.title_fr }} · {{ page.title_it }}</dd></div>{% endif -%}
+      {%- if page.i14y_dataset %}<div class="wide"><dt>I14Y</dt><dd><a href="https://www.i14y.admin.ch/de/catalog/datasets/{{ page.i14y_dataset }}/description"><code>{{ page.i14y_dataset }}</code></a></dd></div>{% endif -%}
       <div><dt>Updated</dt><dd>{{ page.updated }}</dd></div>
     </dl>
     {%- endif -%}
     {{ content }}
+    {%- if page.i14y_id -%}
+    {%- assign cred = page.name | remove: '.md' -%}
+    {%- capture federated %}{% include i14y/{{ cred }}.md %}{% endcapture %}
+    <section class="federated" aria-labelledby="federated-schema">
+      <h2 id="federated-schema">Schema · federated from I14Y</h2>
+      <p class="note">Generated from the public I14Y API; I14Y is the authoritative source.
+        Exports:
+        <a href="{{ '/federation/i14y/' | append: cred | append: '/structure.ttl' | relative_url }}">SHACL (Turtle)</a> ·
+        <a href="{{ '/federation/i14y/' | append: cred | append: '/structure.jsonld' | relative_url }}">JSON-LD</a> ·
+        <a href="{{ '/federation/i14y/' | append: cred | append: '/schema.json' | relative_url }}">compact JSON</a></p>
+      {{ federated | markdownify }}
+    </section>
+    {%- endif %}
     <p class="edit">
       <a href="https://github.com/{{ site.repository }}/blob/main/{{ page.path }}">View this page's source on GitHub</a>
       ·

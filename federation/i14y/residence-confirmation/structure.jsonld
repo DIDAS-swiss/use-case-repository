@@ -1,0 +1,2373 @@
+[
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/dwellingAddressType",
+  "@type": [
+   "http://www.w3.org/2000/01/rdf-schema#Class",
+   "http://www.w3.org/ns/shacl#NodeShape"
+  ],
+  "http://i14y-schema/extension#coord_x": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "812"
+   }
+  ],
+  "http://i14y-schema/extension#coord_y": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "12"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "de",
+    "@value": "dwellingAddress"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#property": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/dwellingAddressType/locality"
+   },
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/dwellingAddressType/EGID"
+   },
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/dwellingAddressType/EWID"
+   },
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/dwellingAddressType/house_number"
+   },
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/dwellingAddressType/street"
+   },
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/dwellingAddressType/zip_code"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#targetClass": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/dwellingAddressType"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/dwellingAddressType/EGID",
+  "@type": [
+   "http://www.w3.org/ns/shacl#PropertyShape",
+   "http://www.w3.org/2002/07/owl#DatatypeProperty"
+  ],
+  "http://purl.org/dc/terms/conformsTo": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/concept/EGID/version/1.0.0"
+   }
+  ],
+  "http://purl.org/dc/terms/identifier": [
+   {
+    "@value": "EGID"
+   }
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "it",
+    "@value": "Identificatore dell'edificio (EGID)"
+   },
+   {
+    "@language": "fr",
+    "@value": "Identificateur de bâtiment (EGID)"
+   },
+   {
+    "@language": "en",
+    "@value": "EGID"
+   },
+   {
+    "@language": "de",
+    "@value": "Gebäudeidentifikator (EGID)"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#comment": [
+   {
+    "@language": "fr",
+    "@value": "Identifiant de bâtiment"
+   },
+   {
+    "@language": "de",
+    "@value": "Label aus Merkmalskatalog Registerharmonisierung"
+   },
+   {
+    "@language": "it",
+    "@value": "Identificatore federale dell’edificio"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#datatype": [
+   {
+    "@id": "http://www.w3.org/2001/XMLSchema#number"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#description": [
+   {
+    "@language": "de",
+    "@value": "gesamtschweizerisch eindeutige Identifikationsnummer für alle Gebäude"
+   },
+   {
+    "@language": "fr",
+    "@value": "Identifiant de bâtiment"
+   },
+   {
+    "@language": "it",
+    "@value": "Identificatore federale dell’edificio"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#maxCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#minCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "it",
+    "@value": "Identificatore dell'edificio (EGID)"
+   },
+   {
+    "@language": "fr",
+    "@value": "Identificateur de bâtiment (EGID)"
+   },
+   {
+    "@language": "en",
+    "@value": "EGID"
+   },
+   {
+    "@language": "de",
+    "@value": "Gebäudeidentifikator (EGID)"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#order": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "2"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/dwellingAddressType/EGID"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/dwellingAddressType/EWID",
+  "@type": [
+   "http://www.w3.org/ns/shacl#PropertyShape",
+   "http://www.w3.org/2002/07/owl#DatatypeProperty"
+  ],
+  "http://purl.org/dc/terms/conformsTo": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/concept/EWID/version/1.0.0"
+   }
+  ],
+  "http://purl.org/dc/terms/identifier": [
+   {
+    "@value": "EWID"
+   }
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "it",
+    "@value": "Identificatore dell'abitazione (EWID)"
+   },
+   {
+    "@language": "fr",
+    "@value": "Indentificateur de logement (EWID)"
+   },
+   {
+    "@language": "en",
+    "@value": "EWID"
+   },
+   {
+    "@language": "de",
+    "@value": "Wohnungsidentifikator (EWID)"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#comment": [
+   {
+    "@language": "de",
+    "@value": "Label aus Merkmalskatalog Registerharmonisierung"
+   },
+   {
+    "@language": "fr",
+    "@value": "Identifiant de logement"
+   },
+   {
+    "@language": "it",
+    "@value": "Identificatore federale dell'abitazione"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#datatype": [
+   {
+    "@id": "http://www.w3.org/2001/XMLSchema#number"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#description": [
+   {
+    "@language": "de",
+    "@value": "gesamtschweizerisch eindeutige Identifikationsnummer für alle Wohnungen"
+   },
+   {
+    "@language": "fr",
+    "@value": "Identifiant de logement"
+   },
+   {
+    "@language": "it",
+    "@value": "Identificatore federale dell'abitazione"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#maxCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#minCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "it",
+    "@value": "Identificatore dell'abitazione (EWID)"
+   },
+   {
+    "@language": "fr",
+    "@value": "Indentificateur de logement (EWID)"
+   },
+   {
+    "@language": "en",
+    "@value": "EWID"
+   },
+   {
+    "@language": "de",
+    "@value": "Wohnungsidentifikator (EWID)"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#order": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "3"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/dwellingAddressType/EWID"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/dwellingAddressType/house_number",
+  "@type": [
+   "http://www.w3.org/ns/shacl#PropertyShape",
+   "http://www.w3.org/2002/07/owl#DatatypeProperty"
+  ],
+  "http://purl.org/dc/terms/conformsTo": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/concept/DEINR/version/1.0.0"
+   }
+  ],
+  "http://purl.org/dc/terms/identifier": [
+   {
+    "@value": "house_number"
+   }
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "de",
+    "@value": "Hausnummer"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#comment": [
+   {
+    "@language": "de",
+    "@value": "{'de': '', 'fr': '', 'it': '', 'en': ''}"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#datatype": [
+   {
+    "@id": "http://www.w3.org/2001/XMLSchema#string"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#description": [
+   {
+    "@language": "fr",
+    "@value": "Numéro de maison faisant partie de l’adresse du bâtiment"
+   },
+   {
+    "@language": "de",
+    "@value": "Hausnummer als Teil der Gebäudeadresse"
+   },
+   {
+    "@language": "it",
+    "@value": "Numero dell’entrata ufficiale, che figura nell’indirizzo dell’edificio"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#maxCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#minCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "de",
+    "@value": "Hausnummer"
+   },
+   {
+    "@language": "en",
+    "@value": "house number"
+   },
+   {
+    "@language": "fr",
+    "@value": "Numéro"
+   },
+   {
+    "@language": "it",
+    "@value": "numero civico"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/dwellingAddressType/house_number"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/dwellingAddressType/locality",
+  "@type": [
+   "http://www.w3.org/ns/shacl#PropertyShape",
+   "http://www.w3.org/2002/07/owl#DatatypeProperty"
+  ],
+  "http://purl.org/dc/terms/conformsTo": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/concept/DPLZNAME/version/1.0.0"
+   }
+  ],
+  "http://purl.org/dc/terms/identifier": [
+   {
+    "@value": "locality"
+   }
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "it",
+    "@value": "Località"
+   },
+   {
+    "@language": "fr",
+    "@value": "Localité"
+   },
+   {
+    "@language": "en",
+    "@value": "locality"
+   },
+   {
+    "@language": "de",
+    "@value": "Ortschaft"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#comment": [
+   {
+    "@language": "de",
+    "@value": "{'de': '', 'fr': '', 'it': '', 'en': ''}"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#datatype": [
+   {
+    "@id": "http://www.w3.org/2001/XMLSchema#string"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#maxCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#minCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "it",
+    "@value": "Località"
+   },
+   {
+    "@language": "fr",
+    "@value": "Localité"
+   },
+   {
+    "@language": "en",
+    "@value": "locality"
+   },
+   {
+    "@language": "de",
+    "@value": "Ortschaft"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/dwellingAddressType/locality"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/dwellingAddressType/street",
+  "@type": [
+   "http://www.w3.org/ns/shacl#PropertyShape",
+   "http://www.w3.org/2002/07/owl#DatatypeProperty"
+  ],
+  "http://purl.org/dc/terms/conformsTo": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/concept/STRNAME/version/1.0.0"
+   }
+  ],
+  "http://purl.org/dc/terms/identifier": [
+   {
+    "@value": "street"
+   }
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "de",
+    "@value": "Strasse"
+   },
+   {
+    "@language": "it",
+    "@value": "Strada"
+   },
+   {
+    "@language": "fr",
+    "@value": "Rue"
+   },
+   {
+    "@language": "en",
+    "@value": "Street"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#comment": [
+   {
+    "@language": "de",
+    "@value": "{'de': '', 'fr': '', 'it': '', 'en': ''}"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#datatype": [
+   {
+    "@id": "http://www.w3.org/2001/XMLSchema#string"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#maxCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#minCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "de",
+    "@value": "Strasse"
+   },
+   {
+    "@language": "it",
+    "@value": "Strada"
+   },
+   {
+    "@language": "fr",
+    "@value": "Rue"
+   },
+   {
+    "@language": "en",
+    "@value": "Street"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#order": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/dwellingAddressType/street"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/dwellingAddressType/zip_code",
+  "@type": [
+   "http://www.w3.org/ns/shacl#PropertyShape",
+   "http://www.w3.org/2002/07/owl#DatatypeProperty"
+  ],
+  "http://purl.org/dc/terms/description": [
+   {
+    "@language": "de",
+    "@value": "{'de': '', 'fr': '', 'it': '', 'en': ''}"
+   }
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "en",
+    "@value": "zip code"
+   },
+   {
+    "@language": "fr",
+    "@value": "code postal"
+   },
+   {
+    "@language": "it",
+    "@value": "numero postale"
+   },
+   {
+    "@language": "de",
+    "@value": "Postleitzahl"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#comment": [
+   {
+    "@language": "de",
+    "@value": "{'de': '', 'fr': '', 'it': '', 'en': ''}"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#label": [
+   {
+    "@language": "de",
+    "@value": "Postleitzahl"
+   },
+   {
+    "@language": "it",
+    "@value": "numero postale"
+   },
+   {
+    "@language": "fr",
+    "@value": "code postal"
+   },
+   {
+    "@language": "en",
+    "@value": "zip code"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#datatype": [
+   {
+    "@id": "http://www.w3.org/2001/XMLSchema#string"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#description": [
+   {
+    "@language": "de",
+    "@value": "{'de': '', 'fr': '', 'it': '', 'en': ''}"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#maxCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#minCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "de",
+    "@value": "Postleitzahl"
+   },
+   {
+    "@language": "it",
+    "@value": "numero postale"
+   },
+   {
+    "@language": "fr",
+    "@value": "code postal"
+   },
+   {
+    "@language": "en",
+    "@value": "zip code"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/dwellingAddressType/zip_code"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset",
+  "@type": [
+   "http://www.w3.org/ns/shacl#NodeShape",
+   "http://purl.org/linked-data/cube#DataStructureDefinition",
+   "http://www.w3.org/2000/01/rdf-schema#Class"
+  ],
+  "http://i14y-schema/extension#coord_x": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "12"
+   }
+  ],
+  "http://i14y-schema/extension#coord_y": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value": "122.83333333333334"
+   }
+  ],
+  "http://purl.org/dc/terms/description": [
+   {
+    "@language": "de",
+    "@value": "Dataset imported from ech-0104.xsd"
+   }
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "de",
+    "@value": "Imported Dataset"
+   }
+  ],
+  "http://purl.org/pav/version": [
+   {
+    "@value": "1.0.0"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#comment": [
+   {
+    "@language": "de",
+    "@value": "Dataset imported from ech-0104.xsd"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#label": [
+   {
+    "@language": "de",
+    "@value": "Imported Dataset"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#property": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/dwellingAddress"
+   },
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/simpleProofOfResidence"
+   },
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/issuingMunicipality"
+   },
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/personInformation"
+   },
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/moveData"
+   }
+  ],
+  "https://schema.org/validFrom": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#date",
+    "@value": "2026-07-01"
+   }
+  ],
+  "https://schema.org/version": [
+   {
+    "@value": "1.0.0"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/dwellingAddress",
+  "@type": [
+   "http://www.w3.org/2002/07/owl#ObjectProperty",
+   "http://www.w3.org/ns/shacl#PropertyShape"
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "de",
+    "@value": "dwellingAddress"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#label": [
+   {
+    "@language": "de",
+    "@value": "dwellingAddress"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#maxCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#minCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "de",
+    "@value": "dwellingAddress"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#node": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/dwellingAddressType"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/dwellingAddress"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/issuingMunicipality",
+  "@type": [
+   "http://www.w3.org/2002/07/owl#ObjectProperty",
+   "http://www.w3.org/ns/shacl#PropertyShape"
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "de",
+    "@value": "issuingMunicipality"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#label": [
+   {
+    "@language": "de",
+    "@value": "issuingMunicipality"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#maxCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#minCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "de",
+    "@value": "issuingMunicipality"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#node": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/issuingMunicipalityType"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/issuingMunicipality"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/moveData",
+  "@type": [
+   "http://www.w3.org/2002/07/owl#ObjectProperty",
+   "http://www.w3.org/ns/shacl#PropertyShape"
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "de",
+    "@value": "moveData"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#label": [
+   {
+    "@language": "de",
+    "@value": "moveData"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#maxCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#minCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "de",
+    "@value": "moveData"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#node": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/moveDataType"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/moveData"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/personInformation",
+  "@type": [
+   "http://www.w3.org/2002/07/owl#ObjectProperty",
+   "http://www.w3.org/ns/shacl#PropertyShape"
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "de",
+    "@value": "personInformation"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#label": [
+   {
+    "@language": "de",
+    "@value": "personInformation"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#maxCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#minCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "de",
+    "@value": "personInformation"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#node": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/personInformationType"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/personInformation"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/simpleProofOfResidence",
+  "@type": [
+   "http://www.w3.org/2002/07/owl#ObjectProperty",
+   "http://www.w3.org/ns/shacl#PropertyShape"
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "de",
+    "@value": "simpleProofOfResidence"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#label": [
+   {
+    "@language": "de",
+    "@value": "simpleProofOfResidence"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#maxCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#minCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "de",
+    "@value": "simpleProofOfResidence"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#node": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/simpleProofOfResidenceType"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/simpleProofOfResidence"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/issuingMunicipalityType",
+  "@type": [
+   "http://www.w3.org/2000/01/rdf-schema#Class",
+   "http://www.w3.org/ns/shacl#NodeShape"
+  ],
+  "http://i14y-schema/extension#coord_x": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "812"
+   }
+  ],
+  "http://i14y-schema/extension#coord_y": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "412"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "de",
+    "@value": "issuingMunicipality"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#property": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/issuingMunicipalityType/municipality_id"
+   },
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/issuingMunicipalityType/municipality_name"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#targetClass": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/issuingMunicipalityType"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/issuingMunicipalityType/municipality_id",
+  "@type": [
+   "http://www.w3.org/ns/shacl#PropertyShape",
+   "http://www.w3.org/2002/07/owl#DatatypeProperty"
+  ],
+  "http://purl.org/dc/terms/conformsTo": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/concept/GGDEID/version/1.0.0"
+   }
+  ],
+  "http://purl.org/dc/terms/identifier": [
+   {
+    "@value": "municipality_id"
+   }
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "it",
+    "@value": "Identificatore comune"
+   },
+   {
+    "@language": "fr",
+    "@value": "ID de la commune"
+   },
+   {
+    "@language": "en",
+    "@value": "Municipality ID"
+   },
+   {
+    "@language": "de",
+    "@value": "ID Gemeinde"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#comment": [
+   {
+    "@language": "de",
+    "@value": "Identifiant unique de l’autorité"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#datatype": [
+   {
+    "@id": "http://www.w3.org/2001/XMLSchema#number"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#description": [
+   {
+    "@language": "fr",
+    "@value": "Identifiant unique de l’autorité"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#maxCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#minCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "it",
+    "@value": "Identificatore comune"
+   },
+   {
+    "@language": "fr",
+    "@value": "ID de la commune"
+   },
+   {
+    "@language": "en",
+    "@value": "Municipality ID"
+   },
+   {
+    "@language": "de",
+    "@value": "ID Gemeinde"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#order": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/issuingMunicipalityType/municipality_id"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/issuingMunicipalityType/municipality_name",
+  "@type": [
+   "http://www.w3.org/ns/shacl#PropertyShape",
+   "http://www.w3.org/2002/07/owl#DatatypeProperty"
+  ],
+  "http://purl.org/dc/terms/identifier": [
+   {
+    "@value": "municipality_name"
+   }
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "de",
+    "@value": "Gemeindename"
+   },
+   {
+    "@language": "fr",
+    "@value": "Nom de la commune"
+   },
+   {
+    "@language": "it",
+    "@value": "nome del comune"
+   },
+   {
+    "@language": "en",
+    "@value": "Municipality Name"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#comment": [
+   {
+    "@language": "de",
+    "@value": "Nom officiel de la commune (dérivé de l’identifiant de l’autorité de délivrance)"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#datatype": [
+   {
+    "@id": "http://www.w3.org/2001/XMLSchema#string"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#description": [
+   {
+    "@language": "fr",
+    "@value": "Nom officiel de la commune (dérivé de l’identifiant de l’autorité de délivrance)"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#maxCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#minCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "0"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "de",
+    "@value": "Gemeindename"
+   },
+   {
+    "@language": "fr",
+    "@value": "Nom de la commune"
+   },
+   {
+    "@language": "it",
+    "@value": "nome del comune"
+   },
+   {
+    "@language": "en",
+    "@value": "Municipality Name"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#order": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "2"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/issuingMunicipalityType/municipality_name"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/moveDataType",
+  "@type": [
+   "http://www.w3.org/2000/01/rdf-schema#Class",
+   "http://www.w3.org/ns/shacl#NodeShape"
+  ],
+  "http://i14y-schema/extension#coord_x": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "812"
+   }
+  ],
+  "http://i14y-schema/extension#coord_y": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "632"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "de",
+    "@value": "moveData"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#property": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/moveDataType/arrival_date"
+   },
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/moveDataType/comesFrom"
+   },
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/moveDataType/departure_date"
+   },
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/moveDataType/goes_to"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#targetClass": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/moveDataType"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/moveDataType/arrival_date",
+  "@type": [
+   "http://www.w3.org/ns/shacl#PropertyShape",
+   "http://www.w3.org/2002/07/owl#DatatypeProperty"
+  ],
+  "http://purl.org/dc/terms/conformsTo": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/concept/residenceArrivalDate/version/1.0.0"
+   }
+  ],
+  "http://purl.org/dc/terms/identifier": [
+   {
+    "@value": "arrival_date"
+   }
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "de",
+    "@value": "Zuzugsdatum"
+   },
+   {
+    "@language": "it",
+    "@value": "Data di arrivo"
+   },
+   {
+    "@language": "fr",
+    "@value": "Date d'arrivée"
+   },
+   {
+    "@language": "en",
+    "@value": "Arrival Date"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#comment": [
+   {
+    "@language": "de",
+    "@value": "Date d’arrivée dans la commune"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#datatype": [
+   {
+    "@id": "http://www.w3.org/2001/XMLSchema#date"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#description": [
+   {
+    "@language": "it",
+    "@value": "La data di arrivo non deve coincidere necessariamente con la data di notifica dell’arrivo"
+   },
+   {
+    "@language": "de",
+    "@value": "Datum, an dem der tatsächliche Zuzug in die Meldegemeinde erfolgt ist"
+   },
+   {
+    "@language": "fr",
+    "@value": "Date d’arrivée dans la commune"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#maxCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#minCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "de",
+    "@value": "Zuzugsdatum"
+   },
+   {
+    "@language": "it",
+    "@value": "Data di arrivo"
+   },
+   {
+    "@language": "fr",
+    "@value": "Date d'arrivée"
+   },
+   {
+    "@language": "en",
+    "@value": "Arrival Date"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#order": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/moveDataType/arrival_date"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/moveDataType/comesFrom",
+  "@type": [
+   "http://www.w3.org/ns/shacl#PropertyShape",
+   "http://www.w3.org/2002/07/owl#DatatypeProperty"
+  ],
+  "http://purl.org/dc/terms/identifier": [
+   {
+    "@value": "comes_from"
+   }
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "en",
+    "@value": "comesFrom"
+   },
+   {
+    "@language": "de",
+    "@value": "comes_from"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#comment": [
+   {
+    "@language": "de",
+    "@value": "Herkunftsort"
+   },
+   {
+    "@language": "it",
+    "@value": "Luogo di provenienza"
+   },
+   {
+    "@language": "fr",
+    "@value": "Lieu de provenance"
+   },
+   {
+    "@language": "en",
+    "@value": "comes from"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#datatype": [
+   {
+    "@id": "http://www.w3.org/2001/XMLSchema#string"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#description": [
+   {
+    "@language": "fr",
+    "@value": "Nom officiel de la commune"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#maxCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#minCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "0"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "it",
+    "@value": "Luogo di provenienza"
+   },
+   {
+    "@language": "fr",
+    "@value": "Lieu de provenance"
+   },
+   {
+    "@language": "en",
+    "@value": "comes from"
+   },
+   {
+    "@language": "de",
+    "@value": "Herkunftsort"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#order": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "2"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/moveDataType/comesFrom"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/moveDataType/departure_date",
+  "@type": [
+   "http://www.w3.org/ns/shacl#PropertyShape",
+   "http://www.w3.org/2002/07/owl#DatatypeProperty"
+  ],
+  "http://purl.org/dc/terms/conformsTo": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/concept/residenceDepartureDate/version/1.0.0"
+   }
+  ],
+  "http://purl.org/dc/terms/identifier": [
+   {
+    "@value": "departure_date"
+   }
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "de",
+    "@value": "Wegzugsdatum"
+   },
+   {
+    "@language": "it",
+    "@value": "data di partenza"
+   },
+   {
+    "@language": "fr",
+    "@value": "Date de départ"
+   },
+   {
+    "@language": "en",
+    "@value": "Departure Date"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#comment": [
+   {
+    "@language": "de",
+    "@value": "Date de départ de la commune ; le champ reste vide si l’habitant est toujours inscrit dans cette commune"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#datatype": [
+   {
+    "@id": "http://www.w3.org/2001/XMLSchema#date"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#description": [
+   {
+    "@language": "it",
+    "@value": "Data in cui è avvenuta la partenza effettiva dal Comune di notifica"
+   },
+   {
+    "@language": "de",
+    "@value": "Datum, an dem der tatsächliche Wegzug aus der Meldegemeinde erfolgt ist"
+   },
+   {
+    "@language": "fr",
+    "@value": "Date à laquelle la personne est effectivement partie de la commune d’annonce"
+   },
+   {
+    "@language": "en",
+    "@value": "Date on which the person actually left the municipality of registration"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#maxCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#minCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "0"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "de",
+    "@value": "Wegzugsdatum"
+   },
+   {
+    "@language": "it",
+    "@value": "data di partenza"
+   },
+   {
+    "@language": "fr",
+    "@value": "Date de départ"
+   },
+   {
+    "@language": "en",
+    "@value": "Departure Date"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#order": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "3"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/moveDataType/departure_date"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/moveDataType/goes_to",
+  "@type": [
+   "http://www.w3.org/ns/shacl#PropertyShape",
+   "http://www.w3.org/2002/07/owl#DatatypeProperty"
+  ],
+  "http://purl.org/dc/terms/identifier": [
+   {
+    "@value": "goes_to"
+   }
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "it",
+    "@value": "Luogo di destinazione"
+   },
+   {
+    "@language": "fr",
+    "@value": "Lieu de destination"
+   },
+   {
+    "@language": "en",
+    "@value": "goes to"
+   },
+   {
+    "@language": "de",
+    "@value": "Zielort"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#comment": [
+   {
+    "@language": "de",
+    "@value": "{'de': '', 'fr': '', 'it': '', 'en': ''}"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#datatype": [
+   {
+    "@id": "http://www.w3.org/2001/XMLSchema#string"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#description": [
+   {
+    "@language": "fr",
+    "@value": "Nom officiel de la commune"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#maxCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#minCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "0"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "it",
+    "@value": "Luogo di destinazione"
+   },
+   {
+    "@language": "fr",
+    "@value": "Lieu de destination"
+   },
+   {
+    "@language": "en",
+    "@value": "goes to"
+   },
+   {
+    "@language": "de",
+    "@value": "Zielort"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#order": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "4"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/moveDataType/goes_to"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/personInformationType",
+  "@type": [
+   "http://www.w3.org/2000/01/rdf-schema#Class",
+   "http://www.w3.org/ns/shacl#NodeShape"
+  ],
+  "http://i14y-schema/extension#coord_x": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "812"
+   }
+  ],
+  "http://i14y-schema/extension#coord_y": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "942"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "de",
+    "@value": "personInformation"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#property": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/personInformationType/date_of_birth"
+   },
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/personInformationType/first_name"
+   },
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/personInformationType/nationality"
+   },
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/personInformationType/official_name"
+   },
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/personInformationType/place_of_origin"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#targetClass": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/personInformationType"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/personInformationType/date_of_birth",
+  "@type": [
+   "http://www.w3.org/ns/shacl#PropertyShape",
+   "http://www.w3.org/2002/07/owl#DatatypeProperty"
+  ],
+  "http://purl.org/dc/terms/conformsTo": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/concept/dateOfBirth/version/1.0.0"
+   }
+  ],
+  "http://purl.org/dc/terms/identifier": [
+   {
+    "@value": "date_of_birth"
+   }
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "de",
+    "@value": "Geburtsdatum"
+   },
+   {
+    "@language": "fr",
+    "@value": "Date de naissance"
+   },
+   {
+    "@language": "it",
+    "@value": "Data di nascita"
+   },
+   {
+    "@language": "en",
+    "@value": "Date of Birth"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#comment": [
+   {
+    "@language": "de",
+    "@value": "{'de': '', 'fr': '', 'it': '', 'en': ''}"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#datatype": [
+   {
+    "@id": "http://www.w3.org/2001/XMLSchema#date"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#description": [
+   {
+    "@language": "it",
+    "@value": "Data in cui la persona è nata"
+   },
+   {
+    "@language": "de",
+    "@value": "Datum, an dem die Person geboren wurde"
+   },
+   {
+    "@language": "fr",
+    "@value": "Date à laquelle la personne est née"
+   },
+   {
+    "@language": "en",
+    "@value": "Date on which the person was born"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#maxCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#minCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "de",
+    "@value": "Geburtsdatum"
+   },
+   {
+    "@language": "fr",
+    "@value": "Date de naissance"
+   },
+   {
+    "@language": "it",
+    "@value": "Data di nascita"
+   },
+   {
+    "@language": "en",
+    "@value": "Date of Birth"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#order": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "3"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/personInformationType/date_of_birth"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/personInformationType/first_name",
+  "@type": [
+   "http://www.w3.org/ns/shacl#PropertyShape",
+   "http://www.w3.org/2002/07/owl#DatatypeProperty"
+  ],
+  "http://purl.org/dc/terms/conformsTo": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/concept/personFirstName/version/1.0.0"
+   }
+  ],
+  "http://purl.org/dc/terms/identifier": [
+   {
+    "@value": "first_name"
+   }
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "it",
+    "@value": "Nomi ufficiali"
+   },
+   {
+    "@language": "fr",
+    "@value": "Prénoms officiels(s)"
+   },
+   {
+    "@language": "en",
+    "@value": "official First Name"
+   },
+   {
+    "@language": "de",
+    "@value": "Amtliche Vornamen(n)"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#comment": [
+   {
+    "@language": "de",
+    "@value": "Tous les prénoms selon registre des habitants"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#datatype": [
+   {
+    "@id": "http://www.w3.org/2001/XMLSchema#string"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#description": [
+   {
+    "@language": "it",
+    "@value": "Nomi estratti dall’atto di nascita o dal registro dello stato civile nell’ordine corretto, rispettivamente da documenti di legittimazione stranieri"
+   },
+   {
+    "@language": "de",
+    "@value": "Vornamen gemäss Geburtsurkunde oder Zivilstandsregister/Infostar in der aufgeführten Reihenfolge bzw. gemäss ausländischen Ausweispapieren"
+   },
+   {
+    "@language": "en",
+    "@value": "First names taken from the birth certificate, the civil registry (Infostar) in the order in which they appear, or taken from foreign identity documents"
+   },
+   {
+    "@language": "fr",
+    "@value": "Tous les prénoms selon registre des habitants"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#maxCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#minCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "it",
+    "@value": "Nomi ufficiali"
+   },
+   {
+    "@language": "fr",
+    "@value": "Prénoms officiels(s)"
+   },
+   {
+    "@language": "en",
+    "@value": "official First Name"
+   },
+   {
+    "@language": "de",
+    "@value": "Amtliche Vornamen(n)"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#order": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "2"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/personInformationType/first_name"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/personInformationType/nationality",
+  "@type": [
+   "http://www.w3.org/ns/shacl#PropertyShape",
+   "http://www.w3.org/2002/07/owl#DatatypeProperty"
+  ],
+  "http://purl.org/dc/terms/conformsTo": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/concept/ST_ISO_3166_ALPHA_2_2024/version/1.0.0"
+   }
+  ],
+  "http://purl.org/dc/terms/identifier": [
+   {
+    "@value": "nationality"
+   }
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "fr",
+    "@value": "Nationalité"
+   },
+   {
+    "@language": "de",
+    "@value": "Nationalität"
+   },
+   {
+    "@language": "en",
+    "@value": "Nationality"
+   },
+   {
+    "@language": "it",
+    "@value": "Cittadinanza"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#comment": [
+   {
+    "@language": "de",
+    "@value": "Code pays à 3 caractères"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#datatype": [
+   {
+    "@id": "http://www.w3.org/2001/XMLSchema#string"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#description": [
+   {
+    "@language": "de",
+    "@value": "Nationalität der Person"
+   },
+   {
+    "@language": "fr",
+    "@value": "Code pays à 3 caractères"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#maxCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#minCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "0"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "fr",
+    "@value": "Nationalité"
+   },
+   {
+    "@language": "de",
+    "@value": "Nationalität"
+   },
+   {
+    "@language": "en",
+    "@value": "Nationality"
+   },
+   {
+    "@language": "it",
+    "@value": "Cittadinanza"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#order": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "5"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/personInformationType/nationality"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/personInformationType/official_name",
+  "@type": [
+   "http://www.w3.org/ns/shacl#PropertyShape",
+   "http://www.w3.org/2002/07/owl#DatatypeProperty"
+  ],
+  "http://purl.org/dc/terms/conformsTo": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/concept/personOfficialName/version/1.0.0"
+   }
+  ],
+  "http://purl.org/dc/terms/identifier": [
+   {
+    "@value": "official_name"
+   }
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "it",
+    "@value": "Cognome ufficiale"
+   },
+   {
+    "@language": "fr",
+    "@value": "Nom officiel"
+   },
+   {
+    "@language": "en",
+    "@value": "Official Name"
+   },
+   {
+    "@language": "de",
+    "@value": "Amtlicher Name"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#comment": [
+   {
+    "@language": "de",
+    "@value": "Nom selon registre des habitants"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#datatype": [
+   {
+    "@id": "http://www.w3.org/2001/XMLSchema#string"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#description": [
+   {
+    "@language": "fr",
+    "@value": "Nom selon registre des habitants"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#maxCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#minCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "it",
+    "@value": "Cognome ufficiale"
+   },
+   {
+    "@language": "fr",
+    "@value": "Nom officiel"
+   },
+   {
+    "@language": "en",
+    "@value": "Official Name"
+   },
+   {
+    "@language": "de",
+    "@value": "Amtlicher Name"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#order": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/personInformationType/official_name"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/personInformationType/place_of_origin",
+  "@type": [
+   "http://www.w3.org/ns/shacl#PropertyShape",
+   "http://www.w3.org/2002/07/owl#DatatypeProperty"
+  ],
+  "http://purl.org/dc/terms/conformsTo": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/concept/placeOfOriginName/version/1.0.0"
+   }
+  ],
+  "http://purl.org/dc/terms/identifier": [
+   {
+    "@value": "place_of_origin"
+   }
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "de",
+    "@value": "Heimatort"
+   },
+   {
+    "@language": "en",
+    "@value": "Place of origin"
+   },
+   {
+    "@language": "it",
+    "@value": "Luoghi di origine"
+   },
+   {
+    "@language": "fr",
+    "@value": "Lieu d’origine"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#comment": [
+   {
+    "@language": "de",
+    "@value": "Nom officiel de la commune"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#datatype": [
+   {
+    "@id": "http://www.w3.org/2001/XMLSchema#string"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#description": [
+   {
+    "@language": "it",
+    "@value": "Tutti i luoghi di origine di una persona di cittadinanza svizzera secondo le informazioni delle autorità di stato civile"
+   },
+   {
+    "@language": "de",
+    "@value": "Alle Heimatorte einer Person schweizerischer Nationalität gemäss Informationen der Zivilstandsbehörden"
+   },
+   {
+    "@language": "fr",
+    "@value": "Tous les lieux d’origine d’une personne de nationalité suisse selon les informations de l’état civil"
+   },
+   {
+    "@language": "en",
+    "@value": "All places of origin of a person of Swiss nationality according to civil status information"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#minCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "de",
+    "@value": "Heimatort"
+   },
+   {
+    "@language": "en",
+    "@value": "Place of origin"
+   },
+   {
+    "@language": "it",
+    "@value": "Luoghi di origine"
+   },
+   {
+    "@language": "fr",
+    "@value": "Lieu d’origine"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#order": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "4"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/personInformationType/place_of_origin"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/simpleProofOfResidenceType",
+  "@type": [
+   "http://www.w3.org/2000/01/rdf-schema#Class",
+   "http://www.w3.org/ns/shacl#NodeShape"
+  ],
+  "http://i14y-schema/extension#coord_x": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "812"
+   }
+  ],
+  "http://i14y-schema/extension#coord_y": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1297"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "de",
+    "@value": "simpleProofOfResidence"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#property": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/simpleProofOfResidenceType/issue_date"
+   },
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/simpleProofOfResidenceType/issuing_authority"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#targetClass": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/simpleProofOfResidenceType"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/simpleProofOfResidenceType/issue_date",
+  "@type": [
+   "http://www.w3.org/ns/shacl#PropertyShape",
+   "http://www.w3.org/2002/07/owl#DatatypeProperty"
+  ],
+  "http://purl.org/dc/terms/conformsTo": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/concept/issuanceDate/version/1.0.0"
+   }
+  ],
+  "http://purl.org/dc/terms/identifier": [
+   {
+    "@value": "issueance_date"
+   }
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "de",
+    "@value": "Ausstelldatum"
+   },
+   {
+    "@language": "it",
+    "@value": "Rilasciato il"
+   },
+   {
+    "@language": "fr",
+    "@value": "Date de délivrance"
+   },
+   {
+    "@language": "en",
+    "@value": "Issue Date"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#comment": [
+   {
+    "@language": "de",
+    "@value": "Date de délivrance de l’attestation"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#datatype": [
+   {
+    "@id": "http://www.w3.org/2001/XMLSchema#date"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#description": [
+   {
+    "@language": "de",
+    "@value": "Ausstellungsdatum des Dokumentes oder Nachweises"
+   },
+   {
+    "@language": "fr",
+    "@value": "Date de délivrance de l’attestation"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#maxCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#minCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "de",
+    "@value": "Ausstelldatum"
+   },
+   {
+    "@language": "it",
+    "@value": "Rilasciato il"
+   },
+   {
+    "@language": "fr",
+    "@value": "Date de délivrance"
+   },
+   {
+    "@language": "en",
+    "@value": "Issue Date"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#order": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/simpleProofOfResidenceType/issue_date"
+   }
+  ]
+ },
+ {
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/simpleProofOfResidenceType/issuing_authority",
+  "@type": [
+   "http://www.w3.org/ns/shacl#PropertyShape",
+   "http://www.w3.org/2002/07/owl#DatatypeProperty"
+  ],
+  "http://purl.org/dc/terms/conformsTo": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/concept/issuingAuthority/version/1.0.0"
+   }
+  ],
+  "http://purl.org/dc/terms/identifier": [
+   {
+    "@value": "issuing_authority"
+   }
+  ],
+  "http://purl.org/dc/terms/title": [
+   {
+    "@language": "de",
+    "@value": "Ausstellende Behörde"
+   },
+   {
+    "@language": "it",
+    "@value": "Autorità di emissione"
+   },
+   {
+    "@language": "fr",
+    "@value": "Autorité d'établissement"
+   },
+   {
+    "@language": "en",
+    "@value": "Issuing Authority"
+   }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#comment": [
+   {
+    "@language": "de",
+    "@value": "Désignation de l’autorité délivrant la preuve «attestation de domicile»"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#datatype": [
+   {
+    "@id": "http://www.w3.org/2001/XMLSchema#token"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#description": [
+   {
+    "@language": "de",
+    "@value": "Die Behörde, die den Nachweis ausstellt"
+   },
+   {
+    "@language": "fr",
+    "@value": "Désignation de l’autorité délivrant la preuve «attestation de domicile»"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#maxCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#maxLength": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "255"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#minCount": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#minLength": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "de",
+    "@value": "Ausstellende Behörde"
+   },
+   {
+    "@language": "it",
+    "@value": "Autorità di emissione"
+   },
+   {
+    "@language": "fr",
+    "@value": "Autorité d'établissement"
+   },
+   {
+    "@language": "en",
+    "@value": "Issuing Authority"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#order": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "2"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#path": [
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/simpleProofOfResidenceType/issuing_authority"
+   }
+  ]
+ }
+]

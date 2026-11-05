@@ -15,6 +15,10 @@ repository, and follows the intake model of the
    a named approver (pre-study §8.8, §9.2).
 3. **Reference, don't duplicate.** Schemas, trust-registry entries and legal texts
    stay with their authoritative source. Entries link to them (pre-study §8.6).
+   Credential schemas published on I14Y are federated, not copied by hand: a
+   workflow caches them and brings any upstream change in as a pull request,
+   so they are never updated silently. This is the federation the pre-study
+   proposes for schema metadata (§6.1).
 4. **Use-case and schema lifecycles are separate.** This repository tracks how use
    cases mature. Schemas mature in I14Y, eCH or sectoral repositories, and an
    entry only records where they stand (pre-study §9.3).
@@ -123,6 +127,8 @@ These are configured in GitHub settings, not in files:
   listed above. The **Label credential signals** workflow then sorts credential
   issues into `credential-need` and `credential-supply`.
 - Enable GitHub Discussions for escalation.
+- *Settings → Actions → General*: allow GitHub Actions to create pull requests,
+  so the **Sync schemas from I14Y** workflow can propose updates.
 - Pages: *Settings → Pages → Build and deployment*, source **Deploy from a
   branch**, branch `main`, folder `/ (root)`. The site then rebuilds on every
   merge to `main`.

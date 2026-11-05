@@ -1,0 +1,50 @@
+# Keeps the schemas federated from I14Y current. Runs weekly, when a credential
+# entry or the sync script changes, and on demand. A change upstream on I14Y
+# arrives as a pull request on the automation/i14y-sync branch, so curators see
+# the diff before it is published: federated schemas are never updated silently.
+name: Sync schemas from I14Y
+
+on:
+  schedule:
+    - cron: "17 5 * * 1"
+  push:
+    branches: [main]
+    paths:
+      - "credentials/**"
+      - "scripts/i14y_sync.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: i14y-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch from I14Y
+        run: python3 scripts/i14y_sync.py
+      - name: Open or update the pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet && [ -z "$(git ls-files --others --exclude-standard)" ]; then
+            echo "Federated schemas are up to date."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B automation/i14y-sync
+          git add federation _includes/i14y
+          git commit -m "Update schemas federated from I14Y"
+          git push --force origin automation/i14y-sync
+          if [ -z "$(gh pr list --head automation/i14y-sync --state open --json number --jq '.[].number')" ]; then
+            gh pr create --head automation/i14y-sync --base main \
+              --title "I14Y: federated credential schemas changed" \
+              --body "The weekly sync found changes on I14Y in one or more credential schemas federated under \`federation/i14y/\`. Review the diff, check whether the affected credential entries and use cases need updating, then merge to publish."
+          fi
