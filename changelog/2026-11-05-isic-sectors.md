@@ -12,8 +12,6 @@
 - Sector names in the facts panel of each use-case page
 - `ISIC A` … `ISIC V` labels, created by the *Sync labels* workflow and applied
   to use-case candidates from the sectors chosen in the form
-- `deploy-pages.yml`: builds the site with GitHub Pages' Jekyll and deploys it,
-  so the site publishes with the Pages source set to *GitHub Actions*
 
 ## Changed
 
@@ -23,5 +21,8 @@
 - The *Use-case candidate* form offers the sectors as a multi-select dropdown
 - `label-signals.yml` is now *Label from issue forms* and also applies the
   sector labels
+- The site publishes from the branch (Pages source *Deploy from a branch*,
+  `main`, root). A separate Actions deploy was tried and removed, because it
+  would deploy a second time on every push
 - `CONTRIBUTING.md` documents the sector rules; `GOVERNANCE.md` replaces the
   free-form `sector:` labels with the ISIC section labels
