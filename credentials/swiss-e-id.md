@@ -13,7 +13,7 @@ schema_refs: []
 used_by: [vehicle-leasing, motor-vehicle-claims-processing]
 demand_issues: []
 created: 2026-10-30
-updated: 2026-10-30
+updated: 2026-11-05
 ---
 
 # Swiss e-ID
@@ -40,7 +40,12 @@ The authoritative attribute set is defined by the BGEID and its ordinance.
 
 ## Schema and semantic references
 
-Not linked here yet. Add the official reference once it is published.
+No e-ID dataset on [I14Y](https://www.i14y.admin.ch/) yet (checked
+2026-11-05). The [Beta-ID](beta-id.md), the e-ID's test credential, carries the
+same attributes and is published on I14Y as
+[`urn:vct:ch.admin.bcs.betaid`](https://www.i14y.admin.ch/de/catalog/datasets/urn:vct:ch.admin.bcs.betaid/description); its schema is federated in
+[`federation/i14y/beta-id/`](../federation/i14y/beta-id/). Reference the e-ID's
+own I14Y dataset here once it is published.
 
 ## Supply status
 

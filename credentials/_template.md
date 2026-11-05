@@ -9,6 +9,8 @@ supply: missing
 ambition_level: AL2
 likely_issuer:
 issuer_type:
+i14y_dataset:   # I14Y dataset identifier, usually the vct, e.g. urn:vct:ch.admin.bcs.betaid
+i14y_id:        # the dataset's I14Y id (uuid); the i14y-sync workflow federates its schema
 schema_refs: []
 used_by: []
 demand_issues: []
@@ -39,7 +41,10 @@ a sectoral repository, not here.
 
 ## Schema and semantic references
 
-Links to published schemas, eCH standards or overlays, or "None published yet".
+Where the credential is published on I14Y, name the dataset and link it, and
+set `i14y_dataset` and `i14y_id` so its schema is federated into
+`federation/i14y/<id>/`. Otherwise link eCH standards or sectoral schemas, or
+write "Not published on I14Y (checked YYYY-MM-DD)".
 
 ## Supply status
 

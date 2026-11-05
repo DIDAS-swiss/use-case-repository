@@ -1,0 +1,179 @@
+{
+ "accessRights": {
+  "code": "RESTRICTED",
+  "name": {
+   "de": "Eingeschränkt",
+   "en": "Restricted",
+   "fr": "Restreint",
+   "it": "Ristretto"
+  },
+  "uri": "http://publications.europa.eu/resource/authority/access-right/RESTRICTED"
+ },
+ "confidentialityPerson": {
+  "code": "person",
+  "name": {
+   "de": "Enthält Personendaten",
+   "en": "Contains personal data",
+   "fr": "Contient des données personnelles",
+   "it": "Contiene dati personali"
+  }
+ },
+ "conformsTo": [],
+ "contactPoints": [
+  {
+   "fn": {
+    "de": "Geschäftsstelle Digitale Verwaltung Schweiz"
+   },
+   "hasAddress": {
+    "de": "Haus der Kantone\nSpeichergasse 6\n3003 Bern"
+   },
+   "hasEmail": "info@digitale-verwaltung-schweiz.ch",
+   "kind": "Organization"
+  }
+ ],
+ "description": {
+  "de": "Amtliche Bestätigung der Gemeinde, die angibt wie lange eine Person in der Gemeinde unter einer bestimmten Adresse wohnhaft ist."
+ },
+ "distributions": [],
+ "documentation": [],
+ "geoIvIds": [],
+ "id": "49ad2ad8-6792-4902-bc0c-c2c3b41fb909",
+ "identifiers": [
+  "urn:vct:ch.egovernment.residency-permit-simple"
+ ],
+ "images": [],
+ "isReferencedBy": [],
+ "keywords": [
+  {
+   "label": {
+    "de": "Verifiable Credential",
+    "en": "Verifiable Credential",
+    "fr": "Verifiable Credential",
+    "it": "Verifiable Credential"
+   }
+  }
+ ],
+ "landingPages": [],
+ "languages": [
+  {
+   "code": "de",
+   "name": {
+    "de": "Deutsch",
+    "en": "German",
+    "fr": "allemand",
+    "it": "Tedesco"
+   },
+   "uri": "https://www.loc.gov/standards/iso639-2/php/langcodes_name.php?iso_639_1=de"
+  },
+  {
+   "code": "fr",
+   "name": {
+    "de": "Französisch",
+    "en": "French",
+    "fr": "français",
+    "it": "Francese"
+   },
+   "uri": "https://www.loc.gov/standards/iso639-2/php/langcodes_name.php?iso_639_1=fr"
+  },
+  {
+   "code": "it",
+   "name": {
+    "de": "Italienisch",
+    "en": "Italian",
+    "fr": "italien",
+    "it": "Italiano"
+   },
+   "uri": "https://www.loc.gov/standards/iso639-2/php/langcodes_name.php?iso_639_1=it"
+  },
+  {
+   "code": "en",
+   "name": {
+    "de": "Englisch",
+    "en": "English",
+    "fr": "anglais",
+    "it": "Inglese"
+   },
+   "uri": "https://www.loc.gov/standards/iso639-2/php/langcodes_name.php?iso_639_1=en"
+  }
+ ],
+ "publicationLevel": "Public",
+ "publisher": {
+  "classification": {
+   "code": "0224",
+   "name": {
+    "de": "Andere öffentlich-rechtliche Verwaltungseinheit",
+    "en": "Other public-law administrative unit",
+    "fr": "Autre unité de l’administration de droit public",
+    "it": "Altra unità amministrativa di diritto pubblico"
+   }
+  },
+  "description": {
+   "de": "Die Digitale Verwaltung Schweiz (DVS) gestaltet die strategische Steuerung und Koordination der Digitalisierungsaktivitäten von Bund, Kantonen und Gemeinden.",
+   "en": "The objective of Digital Public Services Switzerland (DPSS) is to ensure effective strategic steering and coordination of federal, cantonal and communal digitalisation activities.",
+   "fr": "L'Administration numérique suisse (ANS) vise à assurer l'efficacité du pilotage et de la coordination stratégiques des activités menées par la Confédération, les cantons et les communes en lien avec la transformation numérique.",
+   "it": "L’Amministrazione digitale Svizzera (ADS) intende definire in modo efficace la gestione e il coordinamento strategici delle attività relative alla digitalizzazione della Confederazione, dei Cantoni e dei Comuni."
+  },
+  "homePage": "https://www.digitale-verwaltung-schweiz.ch",
+  "id": "8aa0da3c-2d28-46e9-a11b-d38260eb68ef",
+  "identifier": "CH_DVS",
+  "images": [],
+  "name": {
+   "de": "Digitale Verwaltung Schweiz (DVS)",
+   "en": "Digital Public Services Switzerland (DPS)",
+   "fr": "Administration numérique suisse (ANS)",
+   "it": "Amministrazione digitale Svizzera (ADS)"
+  },
+  "prefLabel": {
+   "de": "DVS",
+   "en": "DPS",
+   "fr": "ANS",
+   "it": "ADS"
+  },
+  "spatial": [
+   "CH"
+  ],
+  "spatialCH": [
+   {
+    "code": "8100",
+    "name": {
+     "de": "Schweiz",
+     "en": "Switzerland",
+     "fr": "Suisse",
+     "it": "Svizzera",
+     "rm": "Svizra"
+    }
+   }
+  ],
+  "subAgentOf": [],
+  "subAgents": [],
+  "system": {
+   "createdAt": "2025-01-17T14:19:22.488916+00:00",
+   "modifiedAt": "2026-08-26T09:52:30.591449+00:00"
+  }
+ },
+ "qualifiedAttributions": [],
+ "qualifiedRelations": [],
+ "registrationStatus": "Candidate",
+ "relations": [],
+ "spatial": [],
+ "system": {
+  "createdAt": "2026-01-23T08:17:16.053044+00:00",
+  "modifiedAt": "2026-07-02T09:02:16.302533+00:00"
+ },
+ "temporalCoverage": [],
+ "themes": [
+  {
+   "code": "117",
+   "name": {
+    "de": "Einwohner",
+    "en": "Citizens",
+    "fr": "Habitants",
+    "it": "Cittadini"
+   }
+  }
+ ],
+ "title": {
+  "de": "Einfache Wohnsitzbestätigung"
+ },
+ "version": "1.0.0"
+}

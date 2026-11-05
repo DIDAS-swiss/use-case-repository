@@ -16,7 +16,7 @@ credentials_excluded: [residence-confirmation, debt-enforcement-extract, salary-
 related_use_cases: [vehicle-leasing]
 glossary_terms: [issuer, verifier, wallet, selective-disclosure]
 created: 2026-10-30
-updated: 2026-10-30
+updated: 2026-11-05
 ---
 
 # Motor vehicle claims processing
@@ -80,12 +80,12 @@ This is the pre-study's illustrative "claims process flow" (§4.2):
 
 | Credential | In this use case | Claims needed | Supply | Why |
 |---|---|---|---|---|
-| [Swiss e-ID](../credentials/swiss-e-id.md) | reused | name, date of birth | emerging | Identify the claimant |
+| [Swiss e-ID](../credentials/swiss-e-id.md) · test with [Beta-ID](../credentials/beta-id.md) ([I14Y](https://www.i14y.admin.ch/de/catalog/datasets/urn:vct:ch.admin.bcs.betaid/description)) | reused | name, date of birth | emerging | Identify the claimant |
 | [Vehicle registration](../credentials/vehicle-registration.md) | reused (from leasing) | holder, vehicle identification, plate | missing | Identify the vehicle |
 | [Motor vehicle liability insurance confirmation](../credentials/motor-vehicle-liability-insurance-confirmation.md) | reused (from leasing) | insurer, policy, vehicle, validity | missing | Confirm cover |
 | [Accident report](../credentials/accident-report.md) | new | date, place, parties, vehicles, circumstances | missing | Establish the facts |
 | [Repair assessment](../credentials/repair-assessment.md) | new | vehicle, damage, estimated cost, assessor | missing | Establish the amount |
-| [Residence confirmation](../credentials/residence-confirmation.md) | **excluded** | | | Not needed for the claim decision |
+| [Residence confirmation](../credentials/residence-confirmation.md) · [I14Y](https://www.i14y.admin.ch/de/catalog/datasets/urn:vct:ch.egovernment.residency-permit-simple/description) | **excluded** | | | Not needed for the claim decision |
 | [Debt enforcement register extract](../credentials/debt-enforcement-extract.md) | **excluded** | | | Not needed for the claim decision |
 | [Salary and employment confirmation](../credentials/salary-employment-confirmation.md) | **excluded** | | | Not needed for the claim decision |
 

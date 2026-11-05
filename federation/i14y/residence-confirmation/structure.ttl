@@ -1,0 +1,505 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix dcat: <http://www.w3.org/ns/dcat#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix i14y_schema: <http://i14y-schema/extension#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix qudt: <http://qudt.org/schema/qudt/>.
+@prefix schema: <http://schema.org/#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix unit: <http://qudt.org/vocab/unit/>.
+
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/dwellingAddressType> a rdfs:Class,
+                                                                                                                           sh:NodeShape;
+                                                                                                                         i14y_schema:coord_x 812 ;
+                                                                                                                         i14y_schema:coord_y 12 ;
+                                                                                                                         sh:name "dwellingAddress"@de;
+                                                                                                                         sh:property <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/dwellingAddressType/street>,
+                                                                                                                                     <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/dwellingAddressType/EGID>,
+                                                                                                                                     <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/dwellingAddressType/EWID>,
+                                                                                                                                     <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/dwellingAddressType/house_number>,
+                                                                                                                                     <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/dwellingAddressType/locality>,
+                                                                                                                                     <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/dwellingAddressType/zip_code>;
+                                                                                                                         sh:targetClass <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/dwellingAddressType>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/dwellingAddressType/street> a owl:DatatypeProperty,
+                                                                                                                                  sh:PropertyShape;
+                                                                                                                                dcterms:conformsTo <https://register.ld.admin.ch/i14y/concept/STRNAME/version/1.0.0>;
+                                                                                                                                dcterms:identifier "street";
+                                                                                                                                dcterms:title "Rue"@fr,
+                                                                                                                                              "Strada"@it,
+                                                                                                                                              "Strasse"@de,
+                                                                                                                                              "Street"@en;
+                                                                                                                                rdfs:comment "{'de': '', 'fr': '', 'it': '', 'en': ''}"@de;
+                                                                                                                                sh:datatype xsd:string;
+                                                                                                                                sh:maxCount 1 ;
+                                                                                                                                sh:minCount 1 ;
+                                                                                                                                sh:name "Rue"@fr,
+                                                                                                                                        "Strada"@it,
+                                                                                                                                        "Strasse"@de,
+                                                                                                                                        "Street"@en;
+                                                                                                                                sh:order 1 ;
+                                                                                                                                sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/dwellingAddressType/street>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/dwellingAddressType/EGID> a owl:DatatypeProperty,
+                                                                                                                                sh:PropertyShape;
+                                                                                                                              dcterms:conformsTo <https://register.ld.admin.ch/i14y/concept/EGID/version/1.0.0>;
+                                                                                                                              dcterms:identifier "EGID";
+                                                                                                                              dcterms:title "EGID"@en,
+                                                                                                                                            "Gebäudeidentifikator (EGID)"@de,
+                                                                                                                                            "Identificateur de bâtiment (EGID)"@fr,
+                                                                                                                                            "Identificatore dell'edificio (EGID)"@it;
+                                                                                                                              rdfs:comment "Identifiant de bâtiment"@fr,
+                                                                                                                                           "Identificatore federale dell’edificio"@it,
+                                                                                                                                           "Label aus Merkmalskatalog Registerharmonisierung"@de;
+                                                                                                                              sh:datatype xsd:number;
+                                                                                                                              sh:description "Identifiant de bâtiment"@fr,
+                                                                                                                                             "Identificatore federale dell’edificio"@it,
+                                                                                                                                             "gesamtschweizerisch eindeutige Identifikationsnummer für alle Gebäude"@de;
+                                                                                                                              sh:maxCount 1 ;
+                                                                                                                              sh:minCount 1 ;
+                                                                                                                              sh:name "EGID"@en,
+                                                                                                                                      "Gebäudeidentifikator (EGID)"@de,
+                                                                                                                                      "Identificateur de bâtiment (EGID)"@fr,
+                                                                                                                                      "Identificatore dell'edificio (EGID)"@it;
+                                                                                                                              sh:order 2 ;
+                                                                                                                              sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/dwellingAddressType/EGID>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/dwellingAddressType/EWID> a owl:DatatypeProperty,
+                                                                                                                                sh:PropertyShape;
+                                                                                                                              dcterms:conformsTo <https://register.ld.admin.ch/i14y/concept/EWID/version/1.0.0>;
+                                                                                                                              dcterms:identifier "EWID";
+                                                                                                                              dcterms:title "EWID"@en,
+                                                                                                                                            "Identificatore dell'abitazione (EWID)"@it,
+                                                                                                                                            "Indentificateur de logement (EWID)"@fr,
+                                                                                                                                            "Wohnungsidentifikator (EWID)"@de;
+                                                                                                                              rdfs:comment "Identifiant de logement"@fr,
+                                                                                                                                           "Identificatore federale dell'abitazione"@it,
+                                                                                                                                           "Label aus Merkmalskatalog Registerharmonisierung"@de;
+                                                                                                                              sh:datatype xsd:number;
+                                                                                                                              sh:description "Identifiant de logement"@fr,
+                                                                                                                                             "Identificatore federale dell'abitazione"@it,
+                                                                                                                                             "gesamtschweizerisch eindeutige Identifikationsnummer für alle Wohnungen"@de;
+                                                                                                                              sh:maxCount 1 ;
+                                                                                                                              sh:minCount 1 ;
+                                                                                                                              sh:name "EWID"@en,
+                                                                                                                                      "Identificatore dell'abitazione (EWID)"@it,
+                                                                                                                                      "Indentificateur de logement (EWID)"@fr,
+                                                                                                                                      "Wohnungsidentifikator (EWID)"@de;
+                                                                                                                              sh:order 3 ;
+                                                                                                                              sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/dwellingAddressType/EWID>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/dwellingAddressType/house_number> a owl:DatatypeProperty,
+                                                                                                                                        sh:PropertyShape;
+                                                                                                                                      dcterms:conformsTo <https://register.ld.admin.ch/i14y/concept/DEINR/version/1.0.0>;
+                                                                                                                                      dcterms:identifier "house_number";
+                                                                                                                                      dcterms:title "Hausnummer"@de;
+                                                                                                                                      rdfs:comment "{'de': '', 'fr': '', 'it': '', 'en': ''}"@de;
+                                                                                                                                      sh:datatype xsd:string;
+                                                                                                                                      sh:description "Hausnummer als Teil der Gebäudeadresse"@de,
+                                                                                                                                                     "Numero dell’entrata ufficiale, che figura nell’indirizzo dell’edificio"@it,
+                                                                                                                                                     "Numéro de maison faisant partie de l’adresse du bâtiment"@fr;
+                                                                                                                                      sh:maxCount 1 ;
+                                                                                                                                      sh:minCount 1 ;
+                                                                                                                                      sh:name "Hausnummer"@de,
+                                                                                                                                              "Numéro"@fr,
+                                                                                                                                              "house number"@en,
+                                                                                                                                              "numero civico"@it;
+                                                                                                                                      sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/dwellingAddressType/house_number>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/dwellingAddressType/locality> a owl:DatatypeProperty,
+                                                                                                                                    sh:PropertyShape;
+                                                                                                                                  dcterms:conformsTo <https://register.ld.admin.ch/i14y/concept/DPLZNAME/version/1.0.0>;
+                                                                                                                                  dcterms:identifier "locality";
+                                                                                                                                  dcterms:title "Località"@it,
+                                                                                                                                                "Localité"@fr,
+                                                                                                                                                "Ortschaft"@de,
+                                                                                                                                                "locality"@en;
+                                                                                                                                  rdfs:comment "{'de': '', 'fr': '', 'it': '', 'en': ''}"@de;
+                                                                                                                                  sh:datatype xsd:string;
+                                                                                                                                  sh:maxCount 1 ;
+                                                                                                                                  sh:minCount 1 ;
+                                                                                                                                  sh:name "Località"@it,
+                                                                                                                                          "Localité"@fr,
+                                                                                                                                          "Ortschaft"@de,
+                                                                                                                                          "locality"@en;
+                                                                                                                                  sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/dwellingAddressType/locality>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/dwellingAddressType/zip_code> a owl:DatatypeProperty,
+                                                                                                                                    sh:PropertyShape;
+                                                                                                                                  dcterms:description "{'de': '', 'fr': '', 'it': '', 'en': ''}"@de;
+                                                                                                                                  dcterms:title "Postleitzahl"@de,
+                                                                                                                                                "code postal"@fr,
+                                                                                                                                                "numero postale"@it,
+                                                                                                                                                "zip code"@en;
+                                                                                                                                  rdfs:comment "{'de': '', 'fr': '', 'it': '', 'en': ''}"@de;
+                                                                                                                                  rdfs:label "Postleitzahl"@de,
+                                                                                                                                             "code postal"@fr,
+                                                                                                                                             "numero postale"@it,
+                                                                                                                                             "zip code"@en;
+                                                                                                                                  sh:datatype xsd:string;
+                                                                                                                                  sh:description "{'de': '', 'fr': '', 'it': '', 'en': ''}"@de;
+                                                                                                                                  sh:maxCount 1 ;
+                                                                                                                                  sh:minCount 1 ;
+                                                                                                                                  sh:name "Postleitzahl"@de,
+                                                                                                                                          "code postal"@fr,
+                                                                                                                                          "numero postale"@it,
+                                                                                                                                          "zip code"@en;
+                                                                                                                                  sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/dwellingAddressType/zip_code>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset> a <http://purl.org/linked-data/cube#DataStructureDefinition>,
+                                                                                                                        rdfs:Class,
+                                                                                                                        sh:NodeShape;
+                                                                                                                      i14y_schema:coord_x 12 ;
+                                                                                                                      i14y_schema:coord_y 122.83333333333334;
+                                                                                                                      dcterms:description "Dataset imported from ech-0104.xsd"@de;
+                                                                                                                      dcterms:title "Imported Dataset"@de;
+                                                                                                                      <http://purl.org/pav/version> "1.0.0";
+                                                                                                                      rdfs:comment "Dataset imported from ech-0104.xsd"@de;
+                                                                                                                      rdfs:label "Imported Dataset"@de;
+                                                                                                                      sh:property <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/dwellingAddress>,
+                                                                                                                                  <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/issuingMunicipality>,
+                                                                                                                                  <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/moveData>,
+                                                                                                                                  <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/personInformation>,
+                                                                                                                                  <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/simpleProofOfResidence>;
+                                                                                                                      <https://schema.org/validFrom> "2026-07-01"^^xsd:date;
+                                                                                                                      <https://schema.org/version> "1.0.0".
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/dwellingAddress> a owl:ObjectProperty,
+                                                                                                                                        sh:PropertyShape;
+                                                                                                                                      dcterms:title "dwellingAddress"@de;
+                                                                                                                                      rdfs:label "dwellingAddress"@de;
+                                                                                                                                      sh:maxCount 1 ;
+                                                                                                                                      sh:minCount 1 ;
+                                                                                                                                      sh:name "dwellingAddress"@de;
+                                                                                                                                      sh:node <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/dwellingAddressType>;
+                                                                                                                                      sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/dwellingAddress>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/issuingMunicipality> a owl:ObjectProperty,
+                                                                                                                                            sh:PropertyShape;
+                                                                                                                                          dcterms:title "issuingMunicipality"@de;
+                                                                                                                                          rdfs:label "issuingMunicipality"@de;
+                                                                                                                                          sh:maxCount 1 ;
+                                                                                                                                          sh:minCount 1 ;
+                                                                                                                                          sh:name "issuingMunicipality"@de;
+                                                                                                                                          sh:node <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/issuingMunicipalityType>;
+                                                                                                                                          sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/issuingMunicipality>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/moveData> a owl:ObjectProperty,
+                                                                                                                                 sh:PropertyShape;
+                                                                                                                               dcterms:title "moveData"@de;
+                                                                                                                               rdfs:label "moveData"@de;
+                                                                                                                               sh:maxCount 1 ;
+                                                                                                                               sh:minCount 1 ;
+                                                                                                                               sh:name "moveData"@de;
+                                                                                                                               sh:node <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/moveDataType>;
+                                                                                                                               sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/moveData>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/personInformation> a owl:ObjectProperty,
+                                                                                                                                          sh:PropertyShape;
+                                                                                                                                        dcterms:title "personInformation"@de;
+                                                                                                                                        rdfs:label "personInformation"@de;
+                                                                                                                                        sh:maxCount 1 ;
+                                                                                                                                        sh:minCount 1 ;
+                                                                                                                                        sh:name "personInformation"@de;
+                                                                                                                                        sh:node <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/personInformationType>;
+                                                                                                                                        sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/personInformation>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/simpleProofOfResidence> a owl:ObjectProperty,
+                                                                                                                                               sh:PropertyShape;
+                                                                                                                                             dcterms:title "simpleProofOfResidence"@de;
+                                                                                                                                             rdfs:label "simpleProofOfResidence"@de;
+                                                                                                                                             sh:maxCount 1 ;
+                                                                                                                                             sh:minCount 1 ;
+                                                                                                                                             sh:name "simpleProofOfResidence"@de;
+                                                                                                                                             sh:node <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/simpleProofOfResidenceType>;
+                                                                                                                                             sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/simpleProofOfResidence>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/issuingMunicipalityType> a rdfs:Class,
+                                                                                                                               sh:NodeShape;
+                                                                                                                             i14y_schema:coord_x 812 ;
+                                                                                                                             i14y_schema:coord_y 412 ;
+                                                                                                                             sh:name "issuingMunicipality"@de;
+                                                                                                                             sh:property <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/issuingMunicipalityType/municipality_id>,
+                                                                                                                                         <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/issuingMunicipalityType/municipality_name>;
+                                                                                                                             sh:targetClass <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/issuingMunicipalityType>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/issuingMunicipalityType/municipality_id> a owl:DatatypeProperty,
+                                                                                                                                               sh:PropertyShape;
+                                                                                                                                             dcterms:conformsTo <https://register.ld.admin.ch/i14y/concept/GGDEID/version/1.0.0>;
+                                                                                                                                             dcterms:identifier "municipality_id";
+                                                                                                                                             dcterms:title "ID Gemeinde"@de,
+                                                                                                                                                           "ID de la commune"@fr,
+                                                                                                                                                           "Identificatore comune"@it,
+                                                                                                                                                           "Municipality ID"@en;
+                                                                                                                                             rdfs:comment "Identifiant unique de l’autorité"@de;
+                                                                                                                                             sh:datatype xsd:number;
+                                                                                                                                             sh:description "Identifiant unique de l’autorité"@fr;
+                                                                                                                                             sh:maxCount 1 ;
+                                                                                                                                             sh:minCount 1 ;
+                                                                                                                                             sh:name "ID Gemeinde"@de,
+                                                                                                                                                     "ID de la commune"@fr,
+                                                                                                                                                     "Identificatore comune"@it,
+                                                                                                                                                     "Municipality ID"@en;
+                                                                                                                                             sh:order 1 ;
+                                                                                                                                             sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/issuingMunicipalityType/municipality_id>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/issuingMunicipalityType/municipality_name> a owl:DatatypeProperty,
+                                                                                                                                                 sh:PropertyShape;
+                                                                                                                                               dcterms:identifier "municipality_name";
+                                                                                                                                               dcterms:title "Gemeindename"@de,
+                                                                                                                                                             "Municipality Name"@en,
+                                                                                                                                                             "Nom de la commune"@fr,
+                                                                                                                                                             "nome del comune"@it;
+                                                                                                                                               rdfs:comment "Nom officiel de la commune (dérivé de l’identifiant de l’autorité de délivrance)"@de;
+                                                                                                                                               sh:datatype xsd:string;
+                                                                                                                                               sh:description "Nom officiel de la commune (dérivé de l’identifiant de l’autorité de délivrance)"@fr;
+                                                                                                                                               sh:maxCount 1 ;
+                                                                                                                                               sh:minCount 0 ;
+                                                                                                                                               sh:name "Gemeindename"@de,
+                                                                                                                                                       "Municipality Name"@en,
+                                                                                                                                                       "Nom de la commune"@fr,
+                                                                                                                                                       "nome del comune"@it;
+                                                                                                                                               sh:order 2 ;
+                                                                                                                                               sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/issuingMunicipalityType/municipality_name>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/moveDataType> a rdfs:Class,
+                                                                                                                    sh:NodeShape;
+                                                                                                                  i14y_schema:coord_x 812 ;
+                                                                                                                  i14y_schema:coord_y 632 ;
+                                                                                                                  sh:name "moveData"@de;
+                                                                                                                  sh:property <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/moveDataType/arrival_date>,
+                                                                                                                              <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/moveDataType/comesFrom>,
+                                                                                                                              <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/moveDataType/departure_date>,
+                                                                                                                              <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/moveDataType/goes_to>;
+                                                                                                                  sh:targetClass <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/moveDataType>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/moveDataType/arrival_date> a owl:DatatypeProperty,
+                                                                                                                                 sh:PropertyShape;
+                                                                                                                               dcterms:conformsTo <https://register.ld.admin.ch/i14y/concept/residenceArrivalDate/version/1.0.0>;
+                                                                                                                               dcterms:identifier "arrival_date";
+                                                                                                                               dcterms:title "Arrival Date"@en,
+                                                                                                                                             "Data di arrivo"@it,
+                                                                                                                                             "Date d'arrivée"@fr,
+                                                                                                                                             "Zuzugsdatum"@de;
+                                                                                                                               rdfs:comment "Date d’arrivée dans la commune"@de;
+                                                                                                                               sh:datatype xsd:date;
+                                                                                                                               sh:description "Date d’arrivée dans la commune"@fr,
+                                                                                                                                              "Datum, an dem der tatsächliche Zuzug in die Meldegemeinde erfolgt ist"@de,
+                                                                                                                                              "La data di arrivo non deve coincidere necessariamente con la data di notifica dell’arrivo"@it;
+                                                                                                                               sh:maxCount 1 ;
+                                                                                                                               sh:minCount 1 ;
+                                                                                                                               sh:name "Arrival Date"@en,
+                                                                                                                                       "Data di arrivo"@it,
+                                                                                                                                       "Date d'arrivée"@fr,
+                                                                                                                                       "Zuzugsdatum"@de;
+                                                                                                                               sh:order 1 ;
+                                                                                                                               sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/moveDataType/arrival_date>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/moveDataType/comesFrom> a owl:DatatypeProperty,
+                                                                                                                              sh:PropertyShape;
+                                                                                                                            dcterms:identifier "comes_from";
+                                                                                                                            dcterms:title "comesFrom"@en,
+                                                                                                                                          "comes_from"@de;
+                                                                                                                            rdfs:comment "Herkunftsort"@de,
+                                                                                                                                         "Lieu de provenance"@fr,
+                                                                                                                                         "Luogo di provenienza"@it,
+                                                                                                                                         "comes from"@en;
+                                                                                                                            sh:datatype xsd:string;
+                                                                                                                            sh:description "Nom officiel de la commune"@fr;
+                                                                                                                            sh:maxCount 1 ;
+                                                                                                                            sh:minCount 0 ;
+                                                                                                                            sh:name "Herkunftsort"@de,
+                                                                                                                                    "Lieu de provenance"@fr,
+                                                                                                                                    "Luogo di provenienza"@it,
+                                                                                                                                    "comes from"@en;
+                                                                                                                            sh:order 2 ;
+                                                                                                                            sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/moveDataType/comesFrom>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/moveDataType/departure_date> a owl:DatatypeProperty,
+                                                                                                                                   sh:PropertyShape;
+                                                                                                                                 dcterms:conformsTo <https://register.ld.admin.ch/i14y/concept/residenceDepartureDate/version/1.0.0>;
+                                                                                                                                 dcterms:identifier "departure_date";
+                                                                                                                                 dcterms:title "Date de départ"@fr,
+                                                                                                                                               "Departure Date"@en,
+                                                                                                                                               "Wegzugsdatum"@de,
+                                                                                                                                               "data di partenza"@it;
+                                                                                                                                 rdfs:comment "Date de départ de la commune ; le champ reste vide si l’habitant est toujours inscrit dans cette commune"@de;
+                                                                                                                                 sh:datatype xsd:date;
+                                                                                                                                 sh:description "Data in cui è avvenuta la partenza effettiva dal Comune di notifica"@it,
+                                                                                                                                                "Date on which the person actually left the municipality of registration"@en,
+                                                                                                                                                "Date à laquelle la personne est effectivement partie de la commune d’annonce"@fr,
+                                                                                                                                                "Datum, an dem der tatsächliche Wegzug aus der Meldegemeinde erfolgt ist"@de;
+                                                                                                                                 sh:maxCount 1 ;
+                                                                                                                                 sh:minCount 0 ;
+                                                                                                                                 sh:name "Date de départ"@fr,
+                                                                                                                                         "Departure Date"@en,
+                                                                                                                                         "Wegzugsdatum"@de,
+                                                                                                                                         "data di partenza"@it;
+                                                                                                                                 sh:order 3 ;
+                                                                                                                                 sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/moveDataType/departure_date>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/moveDataType/goes_to> a owl:DatatypeProperty,
+                                                                                                                            sh:PropertyShape;
+                                                                                                                          dcterms:identifier "goes_to";
+                                                                                                                          dcterms:title "Lieu de destination"@fr,
+                                                                                                                                        "Luogo di destinazione"@it,
+                                                                                                                                        "Zielort"@de,
+                                                                                                                                        "goes to"@en;
+                                                                                                                          rdfs:comment "{'de': '', 'fr': '', 'it': '', 'en': ''}"@de;
+                                                                                                                          sh:datatype xsd:string;
+                                                                                                                          sh:description "Nom officiel de la commune"@fr;
+                                                                                                                          sh:maxCount 1 ;
+                                                                                                                          sh:minCount 0 ;
+                                                                                                                          sh:name "Lieu de destination"@fr,
+                                                                                                                                  "Luogo di destinazione"@it,
+                                                                                                                                  "Zielort"@de,
+                                                                                                                                  "goes to"@en;
+                                                                                                                          sh:order 4 ;
+                                                                                                                          sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/moveDataType/goes_to>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/personInformationType> a rdfs:Class,
+                                                                                                                             sh:NodeShape;
+                                                                                                                           i14y_schema:coord_x 812 ;
+                                                                                                                           i14y_schema:coord_y 942 ;
+                                                                                                                           sh:name "personInformation"@de;
+                                                                                                                           sh:property <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/personInformationType/official_name>,
+                                                                                                                                       <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/personInformationType/first_name>,
+                                                                                                                                       <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/personInformationType/date_of_birth>,
+                                                                                                                                       <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/personInformationType/place_of_origin>,
+                                                                                                                                       <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/personInformationType/nationality>;
+                                                                                                                           sh:targetClass <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/personInformationType>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/personInformationType/official_name> a owl:DatatypeProperty,
+                                                                                                                                           sh:PropertyShape;
+                                                                                                                                         dcterms:conformsTo <https://register.ld.admin.ch/i14y/concept/personOfficialName/version/1.0.0>;
+                                                                                                                                         dcterms:identifier "official_name";
+                                                                                                                                         dcterms:title "Amtlicher Name"@de,
+                                                                                                                                                       "Cognome ufficiale"@it,
+                                                                                                                                                       "Nom officiel"@fr,
+                                                                                                                                                       "Official Name"@en;
+                                                                                                                                         rdfs:comment "Nom selon registre des habitants"@de;
+                                                                                                                                         sh:datatype xsd:string;
+                                                                                                                                         sh:description "Nom selon registre des habitants"@fr;
+                                                                                                                                         sh:maxCount 1 ;
+                                                                                                                                         sh:minCount 1 ;
+                                                                                                                                         sh:name "Amtlicher Name"@de,
+                                                                                                                                                 "Cognome ufficiale"@it,
+                                                                                                                                                 "Nom officiel"@fr,
+                                                                                                                                                 "Official Name"@en;
+                                                                                                                                         sh:order 1 ;
+                                                                                                                                         sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/personInformationType/official_name>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/personInformationType/first_name> a owl:DatatypeProperty,
+                                                                                                                                        sh:PropertyShape;
+                                                                                                                                      dcterms:conformsTo <https://register.ld.admin.ch/i14y/concept/personFirstName/version/1.0.0>;
+                                                                                                                                      dcterms:identifier "first_name";
+                                                                                                                                      dcterms:title "Amtliche Vornamen(n)"@de,
+                                                                                                                                                    "Nomi ufficiali"@it,
+                                                                                                                                                    "Prénoms officiels(s)"@fr,
+                                                                                                                                                    "official First Name"@en;
+                                                                                                                                      rdfs:comment "Tous les prénoms selon registre des habitants"@de;
+                                                                                                                                      sh:datatype xsd:string;
+                                                                                                                                      sh:description "First names taken from the birth certificate, the civil registry (Infostar) in the order in which they appear, or taken from foreign identity documents"@en,
+                                                                                                                                                     "Nomi estratti dall’atto di nascita o dal registro dello stato civile nell’ordine corretto, rispettivamente da documenti di legittimazione stranieri"@it,
+                                                                                                                                                     "Tous les prénoms selon registre des habitants"@fr,
+                                                                                                                                                     "Vornamen gemäss Geburtsurkunde oder Zivilstandsregister/Infostar in der aufgeführten Reihenfolge bzw. gemäss ausländischen Ausweispapieren"@de;
+                                                                                                                                      sh:maxCount 1 ;
+                                                                                                                                      sh:minCount 1 ;
+                                                                                                                                      sh:name "Amtliche Vornamen(n)"@de,
+                                                                                                                                              "Nomi ufficiali"@it,
+                                                                                                                                              "Prénoms officiels(s)"@fr,
+                                                                                                                                              "official First Name"@en;
+                                                                                                                                      sh:order 2 ;
+                                                                                                                                      sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/personInformationType/first_name>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/personInformationType/date_of_birth> a owl:DatatypeProperty,
+                                                                                                                                           sh:PropertyShape;
+                                                                                                                                         dcterms:conformsTo <https://register.ld.admin.ch/i14y/concept/dateOfBirth/version/1.0.0>;
+                                                                                                                                         dcterms:identifier "date_of_birth";
+                                                                                                                                         dcterms:title "Data di nascita"@it,
+                                                                                                                                                       "Date de naissance"@fr,
+                                                                                                                                                       "Date of Birth"@en,
+                                                                                                                                                       "Geburtsdatum"@de;
+                                                                                                                                         rdfs:comment "{'de': '', 'fr': '', 'it': '', 'en': ''}"@de;
+                                                                                                                                         sh:datatype xsd:date;
+                                                                                                                                         sh:description "Data in cui la persona è nata"@it,
+                                                                                                                                                        "Date on which the person was born"@en,
+                                                                                                                                                        "Date à laquelle la personne est née"@fr,
+                                                                                                                                                        "Datum, an dem die Person geboren wurde"@de;
+                                                                                                                                         sh:maxCount 1 ;
+                                                                                                                                         sh:minCount 1 ;
+                                                                                                                                         sh:name "Data di nascita"@it,
+                                                                                                                                                 "Date de naissance"@fr,
+                                                                                                                                                 "Date of Birth"@en,
+                                                                                                                                                 "Geburtsdatum"@de;
+                                                                                                                                         sh:order 3 ;
+                                                                                                                                         sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/personInformationType/date_of_birth>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/personInformationType/place_of_origin> a owl:DatatypeProperty,
+                                                                                                                                             sh:PropertyShape;
+                                                                                                                                           dcterms:conformsTo <https://register.ld.admin.ch/i14y/concept/placeOfOriginName/version/1.0.0>;
+                                                                                                                                           dcterms:identifier "place_of_origin";
+                                                                                                                                           dcterms:title "Heimatort"@de,
+                                                                                                                                                         "Lieu d’origine"@fr,
+                                                                                                                                                         "Luoghi di origine"@it,
+                                                                                                                                                         "Place of origin"@en;
+                                                                                                                                           rdfs:comment "Nom officiel de la commune"@de;
+                                                                                                                                           sh:datatype xsd:string;
+                                                                                                                                           sh:description "All places of origin of a person of Swiss nationality according to civil status information"@en,
+                                                                                                                                                          "Alle Heimatorte einer Person schweizerischer Nationalität gemäss Informationen der Zivilstandsbehörden"@de,
+                                                                                                                                                          "Tous les lieux d’origine d’une personne de nationalité suisse selon les informations de l’état civil"@fr,
+                                                                                                                                                          "Tutti i luoghi di origine di una persona di cittadinanza svizzera secondo le informazioni delle autorità di stato civile"@it;
+                                                                                                                                           sh:minCount 1 ;
+                                                                                                                                           sh:name "Heimatort"@de,
+                                                                                                                                                   "Lieu d’origine"@fr,
+                                                                                                                                                   "Luoghi di origine"@it,
+                                                                                                                                                   "Place of origin"@en;
+                                                                                                                                           sh:order 4 ;
+                                                                                                                                           sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/personInformationType/place_of_origin>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/personInformationType/nationality> a owl:DatatypeProperty,
+                                                                                                                                         sh:PropertyShape;
+                                                                                                                                       dcterms:conformsTo <https://register.ld.admin.ch/i14y/concept/ST_ISO_3166_ALPHA_2_2024/version/1.0.0>;
+                                                                                                                                       dcterms:identifier "nationality";
+                                                                                                                                       dcterms:title "Cittadinanza"@it,
+                                                                                                                                                     "Nationality"@en,
+                                                                                                                                                     "Nationalität"@de,
+                                                                                                                                                     "Nationalité"@fr;
+                                                                                                                                       rdfs:comment "Code pays à 3 caractères"@de;
+                                                                                                                                       sh:datatype xsd:string;
+                                                                                                                                       sh:description "Code pays à 3 caractères"@fr,
+                                                                                                                                                      "Nationalität der Person"@de;
+                                                                                                                                       sh:maxCount 1 ;
+                                                                                                                                       sh:minCount 0 ;
+                                                                                                                                       sh:name "Cittadinanza"@it,
+                                                                                                                                               "Nationality"@en,
+                                                                                                                                               "Nationalität"@de,
+                                                                                                                                               "Nationalité"@fr;
+                                                                                                                                       sh:order 5 ;
+                                                                                                                                       sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/personInformationType/nationality>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/simpleProofOfResidenceType> a rdfs:Class,
+                                                                                                                                  sh:NodeShape;
+                                                                                                                                i14y_schema:coord_x 812 ;
+                                                                                                                                i14y_schema:coord_y 1297 ;
+                                                                                                                                sh:name "simpleProofOfResidence"@de;
+                                                                                                                                sh:property <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/simpleProofOfResidenceType/issue_date>,
+                                                                                                                                            <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/simpleProofOfResidenceType/issuing_authority>;
+                                                                                                                                sh:targetClass <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/simpleProofOfResidenceType>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/simpleProofOfResidenceType/issue_date> a owl:DatatypeProperty,
+                                                                                                                                             sh:PropertyShape;
+                                                                                                                                           dcterms:conformsTo <https://register.ld.admin.ch/i14y/concept/issuanceDate/version/1.0.0>;
+                                                                                                                                           dcterms:identifier "issueance_date";
+                                                                                                                                           dcterms:title "Ausstelldatum"@de,
+                                                                                                                                                         "Date de délivrance"@fr,
+                                                                                                                                                         "Issue Date"@en,
+                                                                                                                                                         "Rilasciato il"@it;
+                                                                                                                                           rdfs:comment "Date de délivrance de l’attestation"@de;
+                                                                                                                                           sh:datatype xsd:date;
+                                                                                                                                           sh:description "Ausstellungsdatum des Dokumentes oder Nachweises"@de,
+                                                                                                                                                          "Date de délivrance de l’attestation"@fr;
+                                                                                                                                           sh:maxCount 1 ;
+                                                                                                                                           sh:minCount 1 ;
+                                                                                                                                           sh:name "Ausstelldatum"@de,
+                                                                                                                                                   "Date de délivrance"@fr,
+                                                                                                                                                   "Issue Date"@en,
+                                                                                                                                                   "Rilasciato il"@it;
+                                                                                                                                           sh:order 1 ;
+                                                                                                                                           sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/simpleProofOfResidenceType/issue_date>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/simpleProofOfResidenceType/issuing_authority> a owl:DatatypeProperty,
+                                                                                                                                                    sh:PropertyShape;
+                                                                                                                                                  dcterms:conformsTo <https://register.ld.admin.ch/i14y/concept/issuingAuthority/version/1.0.0>;
+                                                                                                                                                  dcterms:identifier "issuing_authority";
+                                                                                                                                                  dcterms:title "Ausstellende Behörde"@de,
+                                                                                                                                                                "Autorità di emissione"@it,
+                                                                                                                                                                "Autorité d'établissement"@fr,
+                                                                                                                                                                "Issuing Authority"@en;
+                                                                                                                                                  rdfs:comment "Désignation de l’autorité délivrant la preuve «attestation de domicile»"@de;
+                                                                                                                                                  sh:datatype xsd:token;
+                                                                                                                                                  sh:description "Die Behörde, die den Nachweis ausstellt"@de,
+                                                                                                                                                                 "Désignation de l’autorité délivrant la preuve «attestation de domicile»"@fr;
+                                                                                                                                                  sh:maxCount 1 ;
+                                                                                                                                                  sh:maxLength 255 ;
+                                                                                                                                                  sh:minCount 1 ;
+                                                                                                                                                  sh:minLength 1 ;
+                                                                                                                                                  sh:name "Ausstellende Behörde"@de,
+                                                                                                                                                          "Autorità di emissione"@it,
+                                                                                                                                                          "Autorité d'établissement"@fr,
+                                                                                                                                                          "Issuing Authority"@en;
+                                                                                                                                                  sh:order 2 ;
+                                                                                                                                                  sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/simpleProofOfResidenceType/issuing_authority>.

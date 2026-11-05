@@ -1,0 +1,430 @@
+{
+ "credential": "beta-id",
+ "dataset": "urn:vct:ch.admin.bcs.betaid",
+ "dataset_url": "https://www.i14y.admin.ch/de/catalog/datasets/urn:vct:ch.admin.bcs.betaid/description",
+ "groups": [
+  {
+   "attributes": [
+    {
+     "concept": {
+      "identifier": "personOfficialName",
+      "url": "https://www.i14y.admin.ch/de/catalog/concepts/5fd27bff-8bd7-49d9-a4e3-c68e4f791cef/description",
+      "version": "1.0.0"
+     },
+     "datatype": "string",
+     "description": "",
+     "key": "family_name",
+     "label": {
+      "de": "Familienname",
+      "en": "Surname",
+      "fr": "Nom",
+      "it": "Cognome"
+     },
+     "max": null,
+     "min": null
+    },
+    {
+     "concept": {
+      "identifier": "personFirstName",
+      "url": "https://www.i14y.admin.ch/de/catalog/concepts/aecd306b-91c0-4854-a508-00dc570cb64b/description",
+      "version": "1.0.0"
+     },
+     "datatype": "string",
+     "description": "",
+     "key": "given_name",
+     "label": {
+      "de": "Vorname(n)",
+      "en": "Given name(s)",
+      "fr": "Prénom(s)",
+      "it": "Nom(i)"
+     },
+     "max": null,
+     "min": null
+    },
+    {
+     "concept": {
+      "identifier": "dateOfBirth",
+      "url": "https://www.i14y.admin.ch/de/catalog/concepts/cba34e18-bbed-4119-ae1a-3cf49d3a22ac/description",
+      "version": "1.0.0"
+     },
+     "datatype": "date",
+     "description": "Geburtsdatum der Person",
+     "key": "birth_date",
+     "label": {
+      "de": "Geburtsdatum",
+      "en": "Date of birth",
+      "fr": "Date de naissance",
+      "it": "Data di nascita"
+     },
+     "max": null,
+     "min": null
+    },
+    {
+     "concept": {
+      "identifier": "PID_AGE_OVER_16",
+      "url": "https://www.i14y.admin.ch/de/catalog/concepts/08dd4ce2-e77f-9b1f-9373-c73daf9e6a3b/description",
+      "version": "1.0.0"
+     },
+     "datatype": "string",
+     "description": "Declaration that the person has reached the age of 16.",
+     "key": "age_over_16",
+     "label": {
+      "de": "Älter als 16 Jahre",
+      "en": "Over the age of 16",
+      "fr": "Age plus de 16 ans",
+      "it": "Età superiore a 16 anni"
+     },
+     "max": null,
+     "min": null,
+     "values": [
+      "false",
+      "true"
+     ]
+    },
+    {
+     "datatype": null,
+     "description": "Declaration that the person has reached the age of 18.",
+     "key": "age_over_18",
+     "label": {
+      "de": "Älter als 18 Jahre",
+      "en": "Over the age of 18",
+      "fr": "Age plus de 18 ans",
+      "it": "Età superiore a 18 anni"
+     },
+     "max": null,
+     "min": null
+    },
+    {
+     "datatype": null,
+     "description": "Declaration that the person has reached the age of 65.",
+     "key": "age_over_65",
+     "label": {
+      "de": "Älter als 65 Jahre",
+      "en": "Over the age of 65",
+      "fr": "Age plus de 65 ans",
+      "it": "Età superiore a 65 anni"
+     },
+     "max": null,
+     "min": null
+    },
+    {
+     "datatype": "decimal",
+     "description": "Year of birth of the person. Value derived from the date of birth, where only the year (YYYY) is retained.",
+     "key": "age_birth_year",
+     "label": {
+      "de": "Geburtsjahr",
+      "en": "Born in",
+      "fr": "Né(e) en",
+      "it": "Annata"
+     },
+     "max": null,
+     "min": null
+    },
+    {
+     "concept": {
+      "identifier": "DV_SEXE",
+      "url": "https://www.i14y.admin.ch/de/catalog/concepts/08dae1d6-4aab-d80c-96cc-4400b6cdae38/description",
+      "version": "2.0.0"
+     },
+     "datatype": null,
+     "description": "",
+     "key": "sex",
+     "label": {
+      "de": "Geschlecht",
+      "en": "Sex",
+      "fr": "Sexe",
+      "it": "Sesso"
+     },
+     "max": null,
+     "min": null
+    },
+    {
+     "concept": {
+      "identifier": "PID_PLACE_OF_ORIGIN",
+      "url": null,
+      "version": "1.0.0"
+     },
+     "datatype": "string",
+     "description": "",
+     "key": "place_of_origin",
+     "label": {
+      "de": "Heimatort",
+      "en": "Place of origin",
+      "fr": "Lieu d'origine",
+      "it": "Luogo di attinenza"
+     },
+     "max": null,
+     "min": null
+    },
+    {
+     "concept": {
+      "identifier": "PID_PLACE_OF_BIRTH",
+      "url": null,
+      "version": "1.0.0"
+     },
+     "datatype": "string",
+     "description": "Birth in Switzerland: municipality including canton code where the person was born. Birth abroad: place and country of birth as stated on official identity documents.",
+     "key": "birth_place",
+     "label": {
+      "de": "Geburtsort",
+      "en": "Place of birth",
+      "fr": "Lieu de naissance",
+      "it": "Luogo di nascita"
+     },
+     "max": null,
+     "min": null
+    },
+    {
+     "concept": {
+      "identifier": "ST_ISO_3166_ALPHA_2_2024",
+      "url": "https://www.i14y.admin.ch/de/catalog/concepts/08dc79aa-981b-7d9b-a00c-63519522b3c3/description",
+      "version": "1.0.0"
+     },
+     "datatype": null,
+     "description": "Nationality of the person (single value) in ISO 3166-1 Alpha 2 format",
+     "key": "nationality",
+     "label": {
+      "de": "Nationalität",
+      "en": "Nationality",
+      "fr": "Nationalité",
+      "it": "Cittadinanza"
+     },
+     "max": null,
+     "min": null
+    },
+    {
+     "concept": {
+      "identifier": "PID_FACIAL_IMAGE",
+      "url": null,
+      "version": "1.0.0"
+     },
+     "datatype": "string",
+     "description": "Face image (portrait) of the person in image/png base46 encoded format",
+     "key": "portrait",
+     "label": {
+      "de": "Gesichtsbild",
+      "en": "Face image",
+      "fr": "Image faciale",
+      "it": "Immagine facciale"
+     },
+     "max": null,
+     "min": null
+    },
+    {
+     "concept": {
+      "identifier": "AHVN13",
+      "url": "https://www.i14y.admin.ch/de/catalog/concepts/08dbcbbc-6826-fad6-973d-c76ab6ff6579/description",
+      "version": "1.0.0"
+     },
+     "datatype": "string",
+     "description": "",
+     "key": "personal_administrative_number",
+     "label": {
+      "de": "AHV-Nummer",
+      "en": "Insurance number",
+      "fr": "Numéro AVS",
+      "it": "Numero AVS"
+     },
+     "max": "1",
+     "min": "1"
+    },
+    {
+     "concept": {
+      "identifier": "PID_ADDITIONAL_PERSON_INFORMATION",
+      "url": null,
+      "version": "1.0.0"
+     },
+     "datatype": "string",
+     "description": "Additional personal details on the identity document (ID card, passport, foreigner's identity card)",
+     "key": "additional_person_info",
+     "label": {
+      "de": "Zusätzliche Angaben zur Person",
+      "en": "Additional information about the person",
+      "fr": "Mentions supplémentaires concernant la personne",
+      "it": "Informazioni supplementari sulla persona"
+     },
+     "max": null,
+     "min": null
+    },
+    {
+     "concept": {
+      "identifier": "EID_NUMBER",
+      "url": null,
+      "version": "1.0.0"
+     },
+     "datatype": "string",
+     "description": "Unique number of Beta-ID",
+     "key": "document_number",
+     "label": {
+      "de": "Beta-ID-Nummer",
+      "en": "Beta-ID Number",
+      "fr": "Numéro de Beta-ID",
+      "it": "Numero di Beta-ID"
+     },
+     "max": null,
+     "min": null
+    },
+    {
+     "concept": {
+      "identifier": "EID_ISSUANCE_DATE",
+      "url": null,
+      "version": "1.0.0"
+     },
+     "datatype": "date",
+     "description": "Date of issuance of Beta-ID",
+     "key": "issuance_date",
+     "label": {
+      "de": "Ausstellungsdatum",
+      "en": "Date of issuance",
+      "fr": "Délivré le",
+      "it": "Rilasciato il"
+     },
+     "max": null,
+     "min": null
+    },
+    {
+     "concept": {
+      "identifier": "EID_EXPIRY_DATE",
+      "url": null,
+      "version": "1.0.0"
+     },
+     "datatype": "date",
+     "description": "Date until which a Beta-ID is valid. Exceeding this date does not automatically revoke the Beta-ID.",
+     "key": "expiry_date",
+     "label": {
+      "de": "Gültig bis",
+      "en": "Date of expiry",
+      "fr": "Date d'expiration",
+      "it": "Data di scadenza"
+     },
+     "max": null,
+     "min": null
+    },
+    {
+     "concept": {
+      "identifier": "EID_REFERENCE_ID_TYPE",
+      "url": null,
+      "version": "1.0.0"
+     },
+     "datatype": null,
+     "description": "Type of identification document used when applying for the Beta-ID and on which the Beta-ID is based.",
+     "key": "reference_id_type",
+     "label": {
+      "de": "Ausweistyp",
+      "en": "Identification document type",
+      "fr": "Type de document d'identité",
+      "it": "Tipo di documento"
+     },
+     "max": null,
+     "min": null
+    },
+    {
+     "concept": {
+      "identifier": "EID_REFERENCE_ID_EXPIRY_DATE",
+      "url": null,
+      "version": "1.0.0"
+     },
+     "datatype": "date",
+     "description": "Expiry date of the reference document that was used when issuing the Beta-ID.",
+     "key": "referende_id_expiry_date",
+     "label": {
+      "de": "Ablaufdatum des Ausweises",
+      "en": "Identification document date of expiry",
+      "fr": "Date d'expiration du document",
+      "it": "Data di scadenza del documento"
+     },
+     "max": null,
+     "min": null
+    },
+    {
+     "concept": {
+      "identifier": "EID_VERIFICATION_TYPE",
+      "url": null,
+      "version": "1.0.0"
+     },
+     "datatype": null,
+     "description": "",
+     "key": "verification_type",
+     "label": {
+      "de": "Identitätsprüfungsart",
+      "en": "Identity verification process",
+      "fr": "Processus de vérificaiton d'identité",
+      "it": "Procedura di verifica del'identità"
+     },
+     "max": null,
+     "min": null
+    },
+    {
+     "concept": {
+      "identifier": "GENERAL_TEXT_MEDIUM",
+      "url": null,
+      "version": "1.0.0"
+     },
+     "datatype": "string",
+     "description": "Organisation responsible for identity verification.",
+     "key": "verification_organization",
+     "label": {
+      "de": "Identitätsprüfung durch",
+      "en": "Identity verification by",
+      "fr": "Vérification d'identité par",
+      "it": "Procedura di verifica del'identità tramite"
+     },
+     "max": null,
+     "min": null
+    },
+    {
+     "concept": {
+      "identifier": "GENERAL_TEXT_MEDIUM",
+      "url": null,
+      "version": "1.0.0"
+     },
+     "datatype": "string",
+     "description": "Issuing authority of Beta-ID",
+     "key": "issuing_authority",
+     "label": {
+      "de": "Ausgabestelle",
+      "en": "Issuing authority",
+      "fr": "Autorité de délivrance",
+      "it": "Autorità di emissione"
+     },
+     "max": null,
+     "min": null
+    },
+    {
+     "concept": {
+      "identifier": "ST_ISO_3166_ALPHA_2_2024",
+      "url": "https://www.i14y.admin.ch/de/catalog/concepts/08dc79aa-981b-7d9b-a00c-63519522b3c3/description",
+      "version": "1.0.0"
+     },
+     "datatype": null,
+     "description": "",
+     "key": "issuing_country",
+     "label": {
+      "de": "Herausgebender Staat",
+      "en": "Issuing country",
+      "fr": "Pays d'émission",
+      "it": "Paese di emissione"
+     },
+     "max": null,
+     "min": null
+    }
+   ],
+   "key": "ch_admin_beta_id",
+   "label": {
+    "de": "Beta-ID",
+    "en": "Beta-ID",
+    "fr": "Beta-ID",
+    "it": "Beta-ID"
+   },
+   "parent": null
+  }
+ ],
+ "title": {
+  "de": "Beta-ID",
+  "en": "Beta-ID",
+  "fr": "Beta-ID",
+  "it": "Beta-ID"
+ },
+ "valid_from": "2025-02-17",
+ "version": "1.0.0"
+}

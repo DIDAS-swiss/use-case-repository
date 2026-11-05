@@ -13,4 +13,4 @@ sources in a `## Sources` section.
 | [DIDAS Glossary](https://github.com/DIDAS-swiss/didas-glossary) | CC BY 4.0 | Vocabulary, linked rather than copied |
 | [DIDAS Industry Function Graph](https://github.com/DIDAS-swiss/industry-function-graph) (Accelerate GmbH, contributed to DIDAS) | CC BY 4.0 | `_data/sectors.csv`, a copy of its `data/sectors.csv` at commit `115ebb9`: the sector selector |
 | [ISIC Rev. 5](https://unstats.un.org/unsd/classifications/Econ/isic) (United Nations Statistics Division) | UN publication; only the codes and titles the Industry Function Graph carries, with attribution, not the classification in full | Sector codes and titles in `_data/sectors.csv`, entries and issue forms |
-
+| [I14Y](https://www.i14y.admin.ch/) interoperability platform (Swiss Confederation); datasets by their publishers (fedpol, DVS) | Public dataset records and structures retrieved through the public I14Y API, with attribution; I14Y remains the authoritative source | `federation/i14y/`, `_includes/i14y/`: federated credential schemas |

@@ -25,6 +25,9 @@ manage labels.
 - **[Credentials](credentials/)**: one file per credential type that a use case
   relies on, with its supply status, indexed in
   [`credentials/README.md`](credentials/README.md)
+- **[Federated schemas](federation/i14y/)**: credential schemas federated from
+  [I14Y](https://www.i14y.admin.ch/), such as the Beta-ID and the simple residence
+  confirmation, refreshed weekly by a workflow
 - **Gap board**: open demand for credentials no one issues yet. These are the
   [open `credential-need` issues](https://github.com/DIDAS-swiss/use-case-repository/issues?q=is%3Aissue+is%3Aopen+label%3Acredential-need),
   with the `missing` credentials listed in the

@@ -1,0 +1,433 @@
+{
+ "credential": "residence-confirmation",
+ "dataset": "urn:vct:ch.egovernment.residency-permit-simple",
+ "dataset_url": "https://www.i14y.admin.ch/de/catalog/datasets/urn:vct:ch.egovernment.residency-permit-simple/description",
+ "groups": [
+  {
+   "attributes": [
+    {
+     "datatype": null,
+     "description": "",
+     "group": "dwellingAddressType",
+     "key": "dwellingAddress",
+     "label": {
+      "de": "dwellingAddress"
+     },
+     "max": "1",
+     "min": "1"
+    },
+    {
+     "datatype": null,
+     "description": "",
+     "group": "issuingMunicipalityType",
+     "key": "issuingMunicipality",
+     "label": {
+      "de": "issuingMunicipality"
+     },
+     "max": "1",
+     "min": "1"
+    },
+    {
+     "datatype": null,
+     "description": "",
+     "group": "moveDataType",
+     "key": "moveData",
+     "label": {
+      "de": "moveData"
+     },
+     "max": "1",
+     "min": "1"
+    },
+    {
+     "datatype": null,
+     "description": "",
+     "group": "personInformationType",
+     "key": "personInformation",
+     "label": {
+      "de": "personInformation"
+     },
+     "max": "1",
+     "min": "1"
+    },
+    {
+     "datatype": null,
+     "description": "",
+     "group": "simpleProofOfResidenceType",
+     "key": "simpleProofOfResidence",
+     "label": {
+      "de": "simpleProofOfResidence"
+     },
+     "max": "1",
+     "min": "1"
+    }
+   ],
+   "key": "imported_dataset",
+   "label": {
+    "de": "Imported Dataset"
+   },
+   "parent": null
+  },
+  {
+   "attributes": [
+    {
+     "concept": {
+      "identifier": "STRNAME",
+      "url": "https://www.i14y.admin.ch/de/catalog/concepts/08d9993d-6898-4ef8-a1dc-51cdf305804c/description",
+      "version": "1.0.0"
+     },
+     "datatype": "string",
+     "description": "",
+     "key": "street",
+     "label": {
+      "de": "Strasse",
+      "en": "Street",
+      "fr": "Rue",
+      "it": "Strada"
+     },
+     "max": "1",
+     "min": "1"
+    },
+    {
+     "concept": {
+      "identifier": "EGID",
+      "url": "https://www.i14y.admin.ch/de/catalog/concepts/08d9994b-6516-1cdb-bb6c-5636efad4a24/description",
+      "version": "1.0.0"
+     },
+     "datatype": "number",
+     "description": "gesamtschweizerisch eindeutige Identifikationsnummer für alle Gebäude",
+     "key": "EGID",
+     "label": {
+      "de": "Gebäudeidentifikator (EGID)",
+      "en": "EGID",
+      "fr": "Identificateur de bâtiment (EGID)",
+      "it": "Identificatore dell'edificio (EGID)"
+     },
+     "max": "1",
+     "min": "1"
+    },
+    {
+     "concept": {
+      "identifier": "EWID",
+      "url": "https://www.i14y.admin.ch/de/catalog/concepts/08da6fdd-4701-50a2-8fd7-29137b5cb91f/description",
+      "version": "1.0.0"
+     },
+     "datatype": "number",
+     "description": "gesamtschweizerisch eindeutige Identifikationsnummer für alle Wohnungen",
+     "key": "EWID",
+     "label": {
+      "de": "Wohnungsidentifikator (EWID)",
+      "en": "EWID",
+      "fr": "Indentificateur de logement (EWID)",
+      "it": "Identificatore dell'abitazione (EWID)"
+     },
+     "max": "1",
+     "min": "1"
+    },
+    {
+     "concept": {
+      "identifier": "DEINR",
+      "url": "https://www.i14y.admin.ch/de/catalog/concepts/08d9993e-b805-51f2-9d9d-5b426f9bee96/description",
+      "version": "1.0.0"
+     },
+     "datatype": "string",
+     "description": "Hausnummer als Teil der Gebäudeadresse",
+     "key": "house_number",
+     "label": {
+      "de": "Hausnummer",
+      "en": "house number",
+      "fr": "Numéro",
+      "it": "numero civico"
+     },
+     "max": "1",
+     "min": "1"
+    },
+    {
+     "concept": {
+      "identifier": "DPLZNAME",
+      "url": "https://www.i14y.admin.ch/de/catalog/concepts/08d99949-1d50-9ad2-b9d2-d0fb35d25b71/description",
+      "version": "1.0.0"
+     },
+     "datatype": "string",
+     "description": "",
+     "key": "locality",
+     "label": {
+      "de": "Ortschaft",
+      "en": "locality",
+      "fr": "Localité",
+      "it": "Località"
+     },
+     "max": "1",
+     "min": "1"
+    },
+    {
+     "datatype": "string",
+     "description": "",
+     "key": "zip_code",
+     "label": {
+      "de": "Postleitzahl",
+      "en": "zip code",
+      "fr": "code postal",
+      "it": "numero postale"
+     },
+     "max": "1",
+     "min": "1"
+    }
+   ],
+   "key": "dwellingAddressType",
+   "label": {},
+   "parent": "imported_dataset"
+  },
+  {
+   "attributes": [
+    {
+     "concept": {
+      "identifier": "GGDEID",
+      "url": "https://www.i14y.admin.ch/de/catalog/concepts/08dacca8-bfc1-79ef-b856-5d40afba9b92/description",
+      "version": "1.0.0"
+     },
+     "datatype": "number",
+     "description": "Identifiant unique de l’autorité",
+     "key": "municipality_id",
+     "label": {
+      "de": "ID Gemeinde",
+      "en": "Municipality ID",
+      "fr": "ID de la commune",
+      "it": "Identificatore comune"
+     },
+     "max": "1",
+     "min": "1"
+    },
+    {
+     "datatype": "string",
+     "description": "Nom officiel de la commune (dérivé de l’identifiant de l’autorité de délivrance)",
+     "key": "municipality_name",
+     "label": {
+      "de": "Gemeindename",
+      "en": "Municipality Name",
+      "fr": "Nom de la commune",
+      "it": "nome del comune"
+     },
+     "max": "1",
+     "min": "0"
+    }
+   ],
+   "key": "issuingMunicipalityType",
+   "label": {},
+   "parent": "imported_dataset"
+  },
+  {
+   "attributes": [
+    {
+     "concept": {
+      "identifier": "residenceArrivalDate",
+      "url": "https://www.i14y.admin.ch/de/catalog/concepts/394d39ea-7922-43d2-9a06-3a23c85dd174/description",
+      "version": "1.0.0"
+     },
+     "datatype": "date",
+     "description": "Datum, an dem der tatsächliche Zuzug in die Meldegemeinde erfolgt ist",
+     "key": "arrival_date",
+     "label": {
+      "de": "Zuzugsdatum",
+      "en": "Arrival Date",
+      "fr": "Date d'arrivée",
+      "it": "Data di arrivo"
+     },
+     "max": "1",
+     "min": "1"
+    },
+    {
+     "datatype": "string",
+     "description": "Nom officiel de la commune",
+     "key": "comesFrom",
+     "label": {
+      "de": "Herkunftsort",
+      "en": "comes from",
+      "fr": "Lieu de provenance",
+      "it": "Luogo di provenienza"
+     },
+     "max": "1",
+     "min": "0"
+    },
+    {
+     "concept": {
+      "identifier": "residenceDepartureDate",
+      "url": "https://www.i14y.admin.ch/de/catalog/concepts/4523f32f-a9fc-49a0-b1e9-755eb728500b/description",
+      "version": "1.0.0"
+     },
+     "datatype": "date",
+     "description": "Date on which the person actually left the municipality of registration",
+     "key": "departure_date",
+     "label": {
+      "de": "Wegzugsdatum",
+      "en": "Departure Date",
+      "fr": "Date de départ",
+      "it": "data di partenza"
+     },
+     "max": "1",
+     "min": "0"
+    },
+    {
+     "datatype": "string",
+     "description": "Nom officiel de la commune",
+     "key": "goes_to",
+     "label": {
+      "de": "Zielort",
+      "en": "goes to",
+      "fr": "Lieu de destination",
+      "it": "Luogo di destinazione"
+     },
+     "max": "1",
+     "min": "0"
+    }
+   ],
+   "key": "moveDataType",
+   "label": {},
+   "parent": "imported_dataset"
+  },
+  {
+   "attributes": [
+    {
+     "concept": {
+      "identifier": "personOfficialName",
+      "url": "https://www.i14y.admin.ch/de/catalog/concepts/5fd27bff-8bd7-49d9-a4e3-c68e4f791cef/description",
+      "version": "1.0.0"
+     },
+     "datatype": "string",
+     "description": "Nom selon registre des habitants",
+     "key": "official_name",
+     "label": {
+      "de": "Amtlicher Name",
+      "en": "Official Name",
+      "fr": "Nom officiel",
+      "it": "Cognome ufficiale"
+     },
+     "max": "1",
+     "min": "1"
+    },
+    {
+     "concept": {
+      "identifier": "personFirstName",
+      "url": "https://www.i14y.admin.ch/de/catalog/concepts/aecd306b-91c0-4854-a508-00dc570cb64b/description",
+      "version": "1.0.0"
+     },
+     "datatype": "string",
+     "description": "First names taken from the birth certificate, the civil registry (Infostar) in the order in which they appear, or taken from foreign identity documents",
+     "key": "first_name",
+     "label": {
+      "de": "Amtliche Vornamen(n)",
+      "en": "official First Name",
+      "fr": "Prénoms officiels(s)",
+      "it": "Nomi ufficiali"
+     },
+     "max": "1",
+     "min": "1"
+    },
+    {
+     "concept": {
+      "identifier": "dateOfBirth",
+      "url": "https://www.i14y.admin.ch/de/catalog/concepts/cba34e18-bbed-4119-ae1a-3cf49d3a22ac/description",
+      "version": "1.0.0"
+     },
+     "datatype": "date",
+     "description": "Date on which the person was born",
+     "key": "date_of_birth",
+     "label": {
+      "de": "Geburtsdatum",
+      "en": "Date of Birth",
+      "fr": "Date de naissance",
+      "it": "Data di nascita"
+     },
+     "max": "1",
+     "min": "1"
+    },
+    {
+     "concept": {
+      "identifier": "placeOfOriginName",
+      "url": "https://www.i14y.admin.ch/de/catalog/concepts/61397a31-cfae-4e8a-bc8b-44227ea4f6cc/description",
+      "version": "1.0.0"
+     },
+     "datatype": "string",
+     "description": "All places of origin of a person of Swiss nationality according to civil status information",
+     "key": "place_of_origin",
+     "label": {
+      "de": "Heimatort",
+      "en": "Place of origin",
+      "fr": "Lieu d’origine",
+      "it": "Luoghi di origine"
+     },
+     "max": null,
+     "min": "1"
+    },
+    {
+     "concept": {
+      "identifier": "ST_ISO_3166_ALPHA_2_2024",
+      "url": "https://www.i14y.admin.ch/de/catalog/concepts/08dc79aa-981b-7d9b-a00c-63519522b3c3/description",
+      "version": "1.0.0"
+     },
+     "datatype": "string",
+     "description": "Nationalität der Person",
+     "key": "nationality",
+     "label": {
+      "de": "Nationalität",
+      "en": "Nationality",
+      "fr": "Nationalité",
+      "it": "Cittadinanza"
+     },
+     "max": "1",
+     "min": "0"
+    }
+   ],
+   "key": "personInformationType",
+   "label": {},
+   "parent": "imported_dataset"
+  },
+  {
+   "attributes": [
+    {
+     "concept": {
+      "identifier": "issuanceDate",
+      "url": "https://www.i14y.admin.ch/de/catalog/concepts/2c8ecd25-db10-4c33-933d-f629e2d91127/description",
+      "version": "1.0.0"
+     },
+     "datatype": "date",
+     "description": "Ausstellungsdatum des Dokumentes oder Nachweises",
+     "key": "issue_date",
+     "label": {
+      "de": "Ausstelldatum",
+      "en": "Issue Date",
+      "fr": "Date de délivrance",
+      "it": "Rilasciato il"
+     },
+     "max": "1",
+     "min": "1"
+    },
+    {
+     "concept": {
+      "identifier": "issuingAuthority",
+      "url": "https://www.i14y.admin.ch/de/catalog/concepts/2281e447-0d31-470b-927d-3a2cfccf7b3e/description",
+      "version": "1.0.0"
+     },
+     "datatype": "token",
+     "description": "Die Behörde, die den Nachweis ausstellt",
+     "key": "issuing_authority",
+     "label": {
+      "de": "Ausstellende Behörde",
+      "en": "Issuing Authority",
+      "fr": "Autorité d'établissement",
+      "it": "Autorità di emissione"
+     },
+     "max": "1",
+     "min": "1"
+    }
+   ],
+   "key": "simpleProofOfResidenceType",
+   "label": {},
+   "parent": "imported_dataset"
+  }
+ ],
+ "title": {
+  "de": "Imported Dataset"
+ },
+ "valid_from": "2026-07-01",
+ "version": "1.0.0"
+}

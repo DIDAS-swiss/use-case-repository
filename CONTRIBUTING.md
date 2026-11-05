@@ -68,10 +68,33 @@ detail belongs in the body.
 | `ambition_level` | yes | `AL1`, `AL2` or `AL3` |
 | `likely_issuer` | yes | the organisation or kind of organisation with the mandate or the data |
 | `issuer_type` | yes | `federal` · `cantonal` · `municipal` · `sectoral` · `private` |
-| `schema_refs` | no | links to I14Y, eCH or sectoral schema publications. **Never** invent an identifier |
+| `i14y_dataset` | where published | the I14Y dataset identifier, usually the credential type (`vct`), for example `urn:vct:ch.admin.bcs.betaid` |
+| `i14y_id` | where published | the dataset's I14Y id (a uuid, the `id` in the I14Y API). With it, the schema is federated (see *Credentials on I14Y* below) |
+| `schema_refs` | no | further links: eCH standards, sectoral schemas, specifications. **Never** invent an identifier |
 | `used_by` | yes | use-case ids |
 | `demand_issues` | no | `credential-need` issue numbers |
 | `created`, `updated` | yes | `YYYY-MM-DD` |
+
+## Credentials on I14Y
+
+I14Y is the reference for credential schemas. Wherever a credential is
+published there, its entry points to I14Y and nowhere else for the schema:
+
+1. Find the dataset on [I14Y](https://www.i14y.admin.ch/de/catalog/datasets),
+   usually under its credential type, for example `urn:vct:ch.admin.bcs.betaid`.
+2. Set `i14y_dataset` and `i14y_id` in the credential's front matter, and link the
+   dataset under *Schema and semantic references*.
+3. The **Sync schemas from I14Y** workflow then federates the schema into
+   `federation/i14y/<credential-id>/`: the dataset record, the structure as
+   SHACL (Turtle and JSON-LD), a compact attribute list and a rendered table,
+   which the site shows on the credential's page. To do it locally, run
+   `python3 scripts/i14y_sync.py` (standard library only).
+4. In use cases and indexes, reference the credential's I14Y dataset next to the
+   credential, as the existing entries do.
+
+Files under `federation/i14y/` and `_includes/i14y/` are generated: never edit
+them by hand. Where a credential has no I14Y dataset, write "Not published on
+I14Y (checked YYYY-MM-DD)", so the next reader knows someone looked.
 
 ## Sectors
 

@@ -16,7 +16,7 @@ credentials_excluded: []
 related_use_cases: [motor-vehicle-claims-processing]
 glossary_terms: [issuer, verifier, wallet, ambition-level]
 created: 2026-10-30
-updated: 2026-10-30
+updated: 2026-11-05
 ---
 
 # Vehicle leasing
@@ -83,8 +83,8 @@ The order of steps 5 and 6, and who holds the vehicle registration credential
 
 | Credential | In this use case | Claims needed | Supply | Why |
 |---|---|---|---|---|
-| [Swiss e-ID](../credentials/swiss-e-id.md) | reused | name, date of birth | emerging | Identification of the lessee |
-| [Residence confirmation](../credentials/residence-confirmation.md) | new | current address, residence since | emerging | Address verification |
+| [Swiss e-ID](../credentials/swiss-e-id.md) · test with [Beta-ID](../credentials/beta-id.md) ([I14Y](https://www.i14y.admin.ch/de/catalog/datasets/urn:vct:ch.admin.bcs.betaid/description)) | reused | name, date of birth | emerging | Identification of the lessee |
+| [Residence confirmation](../credentials/residence-confirmation.md) · [I14Y](https://www.i14y.admin.ch/de/catalog/datasets/urn:vct:ch.egovernment.residency-permit-simple/description) | new | current address, residence since | emerging | Address verification |
 | [Debt enforcement register extract](../credentials/debt-enforcement-extract.md) | new | open proceedings and loss certificates | emerging | Creditworthiness |
 | [Salary and employment confirmation](../credentials/salary-employment-confirmation.md) | new | employer, employment status, income band | missing | Affordability check |
 | [Motor vehicle liability insurance confirmation](../credentials/motor-vehicle-liability-insurance-confirmation.md) | new | insurer, policy, vehicle, validity | missing | Required for registration |
