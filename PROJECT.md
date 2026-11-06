@@ -4,6 +4,8 @@ title: Project board
 
 # Project board
 
+**👉 [Open the project board](https://github.com/orgs/DIDAS-swiss/projects/6)**
+
 The project board is the entry point to the repository's workflows: every
 use-case candidate, credential signal, change request and pull request lands on
 it, and its views show what is waiting for whom. It uses only GitHub Projects'
@@ -59,10 +61,10 @@ An organisation owner or a member allowed to create projects does this once.
 
 6. **Link it to the repository**: repository *use-case-repository* → *Projects*
    tab → *Link a project*, so it shows up there for every visitor.
-7. **Point the repository at it**: set `project_url` in
+7. **Point the repository at it**: `project_url` in
    [`_config.yml`](https://github.com/DIDAS-swiss/use-case-repository/blob/main/_config.yml)
-   and the *Project board* button in [README.md](README.md) to the project's URL.
-   Until then both point to the organisation's project list.
+   and the *Project board* button in [README.md](README.md) carry the project's
+   URL, now [https://github.com/orgs/DIDAS-swiss/projects/6](https://github.com/orgs/DIDAS-swiss/projects/6).
 
 ## Project README
 

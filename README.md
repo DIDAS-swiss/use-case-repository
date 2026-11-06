@@ -15,14 +15,14 @@ discovery layer proposed in the DPSS pre-study of June 2026. See
   &nbsp;
   <a href="https://github.com/DIDAS-swiss/use-case-repository/issues/new?template=credential-signal.yml"><img alt="Signal a credential need" src="https://img.shields.io/badge/Signal%20a%20credential%20need-495057?style=for-the-badge"></a>
   &nbsp;
-  <a href="https://github.com/orgs/DIDAS-swiss/projects"><img alt="Project board" src="https://img.shields.io/badge/Project%20board-495057?style=for-the-badge"></a>
+  <a href="https://github.com/orgs/DIDAS-swiss/projects/6"><img alt="Project board" src="https://img.shields.io/badge/Project%20board-495057?style=for-the-badge"></a>
 </p>
 
 **[➕ Register your use case](https://github.com/DIDAS-swiss/use-case-repository/issues/new?template=use-case-candidate.yml)**: a short form is enough; a curator helps
 turn it into a structured entry. Half a page of plain prose will do.
 
 **📖 Published: https://didas-swiss.github.io/use-case-repository/** ·
-**🗂 Workflow entry point: the [project board](PROJECT.md)**
+**🗂 Workflow entry point: the [project board](https://github.com/orgs/DIDAS-swiss/projects/6)** ([how it works](PROJECT.md))
 
 Everything runs on GitHub itself, with no website or build step. Entries are
 Markdown files that GitHub renders, intake runs through issue forms, and the
