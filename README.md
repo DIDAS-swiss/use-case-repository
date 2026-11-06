@@ -25,6 +25,13 @@ manage labels.
 - **[Credentials](credentials/)**: one file per credential type that a use case
   relies on, with its supply status, indexed in
   [`credentials/README.md`](credentials/README.md)
+- **[Anchors](anchors.md)**: every trust flow of the
+  [Trust Flow Diagram Repository](https://github.com/DIDAS-swiss/Trust-Flow-Diagram-Repository),
+  every pattern of the [Industry Function Graph](https://github.com/DIDAS-swiss/industry-function-graph)
+  and every credential dataset on I14Y, with the use cases that point to it. Each
+  use case links what models it, what it realises, the schemas of its
+  credentials and its implementations, so this repository is where the DIDAS
+  work meets
 - **[Federated schemas](federation/i14y/)**: credential schemas federated from
   [I14Y](https://www.i14y.admin.ch/), such as the Beta-ID and the simple residence
   confirmation, refreshed weekly by a workflow

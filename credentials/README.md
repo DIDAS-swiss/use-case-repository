@@ -33,17 +33,17 @@ To offer to issue one, open a
 
 ## All credentials
 
-| Credential | Ambition level | Issuer type | Supply | Stage | Used by | I14Y |
+| Credential | Ambition level | Issuer type | Supply | Stage | Used by | Schema |
 |---|---|---|---|---|---|---|
-| [Accident report](accident-report.md) | AL2 | cantonal | missing | signal | 1 | not published |
-| [Beta-ID](beta-id.md) (test credential) | AL1 | federal | available (Public Beta) | candidate | test stand-in for the e-ID | [`urn:vct:ch.admin.bcs.betaid`](https://www.i14y.admin.ch/de/catalog/datasets/urn:vct:ch.admin.bcs.betaid/description) · [schema](../federation/i14y/beta-id/) |
-| [Debt enforcement register extract](debt-enforcement-extract.md) | AL2 | cantonal | emerging | signal | 1 | not published |
-| [Immunization record](immunization-record.md) | AL3 | private | emerging | signal | 1 | not published; showcase type `urn:vct:ch.didas.health.immunization:1.0` |
-| [Motor vehicle liability insurance confirmation](motor-vehicle-liability-insurance-confirmation.md) | AL3 | private | missing | signal | 2 | not published |
-| [Repair assessment](repair-assessment.md) | AL3 | private | missing | signal | 1 | not published |
-| [Residence confirmation](residence-confirmation.md) | AL2 | municipal | emerging | signal | 1 | [`urn:vct:ch.egovernment.residency-permit-simple`](https://www.i14y.admin.ch/de/catalog/datasets/urn:vct:ch.egovernment.residency-permit-simple/description) · [schema](../federation/i14y/residence-confirmation/) |
-| [Salary and employment confirmation](salary-employment-confirmation.md) | AL3 | private | missing | signal | 1 | not published |
-| [Swiss e-ID](swiss-e-id.md) | AL1 | federal | emerging | candidate | 2 | not published; attribute set as [Beta-ID](https://www.i14y.admin.ch/de/catalog/datasets/urn:vct:ch.admin.bcs.betaid/description) |
-| [Vehicle registration](vehicle-registration.md) | AL2 | cantonal | missing | signal | 2 | not published |
+| [Accident report](accident-report.md) | AL2 | cantonal | missing | signal | 1 | none |
+| [Beta-ID](beta-id.md) (test credential) | AL1 | federal | available (Public Beta) | candidate | test stand-in for the e-ID | on I14Y (Recorded): [`urn:vct:ch.admin.bcs.betaid`](https://www.i14y.admin.ch/de/catalog/datasets/urn:vct:ch.admin.bcs.betaid/description) · [schema](../federation/i14y/beta-id/) |
+| [Debt enforcement register extract](debt-enforcement-extract.md) | AL2 | cantonal | emerging | signal | 1 | none |
+| [Immunization record](immunization-record.md) | AL3 | private | emerging | signal | 1 | emerging: showcase type `urn:vct:ch.didas.health.immunization:1.0`, not on I14Y |
+| [Motor vehicle liability insurance confirmation](motor-vehicle-liability-insurance-confirmation.md) | AL3 | private | missing | signal | 2 | none |
+| [Repair assessment](repair-assessment.md) | AL3 | private | missing | signal | 1 | none |
+| [Residence confirmation](residence-confirmation.md) | AL2 | municipal | emerging | signal | 1 | on I14Y (Candidate): [`urn:vct:ch.egovernment.residency-permit-simple`](https://www.i14y.admin.ch/de/catalog/datasets/urn:vct:ch.egovernment.residency-permit-simple/description) · [schema](../federation/i14y/residence-confirmation/) |
+| [Salary and employment confirmation](salary-employment-confirmation.md) | AL3 | private | missing | signal | 1 | none |
+| [Swiss e-ID](swiss-e-id.md) | AL1 | federal | emerging | candidate | 2 | none; attribute set as [Beta-ID](https://www.i14y.admin.ch/de/catalog/datasets/urn:vct:ch.admin.bcs.betaid/description) |
+| [Vehicle registration](vehicle-registration.md) | AL2 | cantonal | missing | signal | 2 | none |
 
-"Not published" means no credential dataset was found on I14Y on 2026-11-05.
+"None" means no schema is known; for each, no credential dataset was found on I14Y on 2026-11-05. All credential datasets on I14Y are listed on the [Anchors page](../anchors.md#credential-datasets-on-i14y).

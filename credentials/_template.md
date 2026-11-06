@@ -6,11 +6,12 @@ title_fr:
 title_it:
 stage: signal
 supply: missing
+schema_status: none   # i14y: published on I14Y · emerging: a schema exists or is in preparation elsewhere · none
 ambition_level: AL2
 likely_issuer:
 issuer_type:
 i14y_dataset:   # I14Y dataset identifier, usually the vct, e.g. urn:vct:ch.admin.bcs.betaid
-i14y_id:        # the dataset's I14Y id (uuid); the i14y-sync workflow federates its schema
+i14y_id:        # the dataset's I14Y id (uuid); the federation-sync workflow federates its schema
 schema_refs: []
 used_by: []
 demand_issues: []

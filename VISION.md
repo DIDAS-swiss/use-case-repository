@@ -53,6 +53,22 @@ It covers five of the MVP's functional priorities (§9.3) at repository scale:
 Issuer and verifier discovery and live federation with I14Y and the swiyu Trust
 Registry need a running system. In this repository they appear only as links.
 
+## The use case as anchor
+
+The pre-study asks the Catalog to federate references rather than assemble them
+by hand (§4.4, finding 4; §5.1). In DIDAS that work already sits in several
+places: trust flows in the
+[Trust Flow Diagram Repository](https://github.com/DIDAS-swiss/Trust-Flow-Diagram-Repository),
+sector-neutral patterns in the
+[Industry Function Graph](https://github.com/DIDAS-swiss/industry-function-graph),
+schemas on I14Y, and showcases such as
+[digital-health_swiyu](https://github.com/DIDAS-swiss/digital-health_swiyu).
+Each use case here links to all of them, and the
+[Anchors page](https://didas-swiss.github.io/use-case-repository/anchors.html)
+shows, for every flow, pattern and I14Y credential dataset, which use cases point
+to it. The use case is where the pieces meet, as the pre-study's Part 1
+(decision context) is where its conceptual model starts.
+
 ## How the entry format maps to the conceptual model
 
 | Conceptual model part (§3.3.1) | Entry field(s) |

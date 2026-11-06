@@ -19,7 +19,12 @@ repository, and follows the intake model of the
    workflow caches them and brings any upstream change in as a pull request,
    so they are never updated silently. This is the federation the pre-study
    proposes for schema metadata (§6.1).
-4. **Use-case and schema lifecycles are separate.** This repository tracks how use
+4. **The use case is the anchor.** Trust flows, Industry Function Graph patterns,
+   I14Y credential datasets and implementations are maintained in their own
+   places. Each use case here links to them, so that the use case is where they
+   meet, and the [Anchors page](https://didas-swiss.github.io/use-case-repository/anchors.html)
+   shows which of them still lack a use case.
+5. **Use-case and schema lifecycles are separate.** This repository tracks how use
    cases mature. Schemas mature in I14Y, eCH or sectoral repositories, and an
    entry only records where they stand (pre-study §9.3).
 
@@ -66,7 +71,11 @@ provisional stewardship until one is confirmed (pre-study §7.3).
    role?), looks for duplicates, checks the ISIC sector labels the form applied and adds
    ambition-level labels (`AL2`, `AL3`). The curator may also apply `needs-work`, `duplicate` or
    `out-of-scope`, with reasons.
-3. **Drafting**: the proposer, a curator or a volunteer opens a pull request adding
+3. **Drafting**: the anchors chosen in the form (trust flows, Industry Function
+   Graph patterns, I14Y credential datasets, emerging schemas, implementations)
+   go into the entry's `trust_flows`, `ifm_patterns` and `implementations` fields
+   and into the credential entries' `schema_status`. Then the proposer, a curator
+   or a volunteer opens a pull request adding
    `use-cases/<id>.md` at stage `signal` and a row in `use-cases/README.md`, with
    `Closes #N`. Any credential the use case needs that has no file yet is added in
    `credentials/` in the same pull request.
@@ -128,7 +137,7 @@ These are configured in GitHub settings, not in files:
   issues into `credential-need` and `credential-supply`.
 - Enable GitHub Discussions for escalation.
 - *Settings → Actions → General*: allow GitHub Actions to create pull requests,
-  so the **Sync schemas from I14Y** workflow can propose updates.
+  so the **Sync federated sources** workflow can propose updates.
 - Pages: *Settings → Pages → Build and deployment*, source **Deploy from a
   branch**, branch `main`, folder `/ (root)`. The site then rebuilds on every
   merge to `main`.

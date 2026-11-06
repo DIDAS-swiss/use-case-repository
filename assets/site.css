@@ -174,3 +174,15 @@ a { color: var(--accent); }
 .federated { margin-top: 40px; }
 .federated .note { font-size: 0.88rem; color: var(--muted); }
 .federated td code { white-space: nowrap; }
+
+/* Anchors on use-case pages. */
+.anchors { margin-top: 40px; }
+.anchors .note { font-size: 0.88rem; color: var(--muted); }
+.anchors dt { font-weight: 600; margin-top: 16px; }
+.anchors dd { margin: 4px 0 0; }
+.anchors ul { margin: 4px 0; padding-left: 20px; }
+.anchors li { margin: 4px 0; }
+.tag {
+  display: inline-block; padding: 0 6px; border: 1px solid var(--rule); border-radius: 4px;
+  font-size: 0.78rem; color: var(--muted);
+}

@@ -52,6 +52,7 @@
       <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>Overview</a>
       <a href="{{ '/use-cases/' | relative_url }}"{% if page.kind == 'use-case' %} aria-current="page"{% endif %}>Use cases</a>
       <a href="{{ '/credentials/' | relative_url }}"{% if page.kind == 'credential' %} aria-current="page"{% endif %}>Credentials &amp; gap board</a>
+      <a href="{{ '/anchors.html' | relative_url }}"{% if page.url == '/anchors.html' %} aria-current="page"{% endif %}>Anchors</a>
       <a href="{{ '/GOVERNANCE.html' | relative_url }}"{% if page.url == '/GOVERNANCE.html' %} aria-current="page"{% endif %}>Governance</a>
       <a href="{{ '/VISION.html' | relative_url }}"{% if page.url == '/VISION.html' %} aria-current="page"{% endif %}>Vision</a>
       <a class="cta" href="https://github.com/{{ site.repository }}/issues/new/choose">Propose a use case</a>
@@ -74,11 +75,77 @@
       {%- if page.likely_issuer %}<div class="wide"><dt>Likely issuer</dt><dd>{{ page.likely_issuer }}</dd></div>{% endif -%}
       {%- if page.domain_steward %}<div><dt>Domain steward</dt><dd>{{ page.domain_steward }}</dd></div>{% endif -%}
       {%- if page.title_de or page.title_fr or page.title_it %}<div class="wide"><dt>DE · FR · IT</dt><dd>{{ page.title_de }} · {{ page.title_fr }} · {{ page.title_it }}</dd></div>{% endif -%}
+      {%- if page.schema_status %}<div><dt>Schema</dt><dd>{% if page.schema_status == "i14y" %}on I14Y{% elsif page.schema_status == "emerging" %}emerging{% else %}none yet{% endif %}</dd></div>{% endif -%}
       {%- if page.i14y_dataset %}<div class="wide"><dt>I14Y</dt><dd><a href="https://www.i14y.admin.ch/de/catalog/datasets/{{ page.i14y_dataset }}/description"><code>{{ page.i14y_dataset }}</code></a></dd></div>{% endif -%}
       <div><dt>Updated</dt><dd>{{ page.updated }}</dd></div>
     </dl>
     {%- endif -%}
     {{ content }}
+    {%- if page.kind == 'use-case' and page.stage -%}
+    <section class="anchors" aria-labelledby="anchors">
+      <h2 id="anchors">Anchors</h2>
+      <p class="note">What this use case connects to in the other DIDAS repositories and on I14Y.</p>
+      <dl>
+        <dt>Credentials and their schemas</dt>
+        <dd>
+          {%- assign groups = "credentials_reused,credentials_new,credentials_excluded" | split: "," -%}
+          {%- assign any = false -%}
+          <ul>
+          {%- for g in groups -%}
+            {%- for cid in page[g] -%}
+              {%- assign any = true -%}
+              {%- assign cpath = "credentials/" | append: cid | append: ".md" -%}
+              {%- assign c = site.pages | where: "path", cpath | first -%}
+              <li><a href="{{ '/credentials/' | append: cid | append: '.html' | relative_url }}">{{ c.title | default: cid }}</a>
+                <span class="tag">{{ g | remove: "credentials_" }}</span>
+                {%- if c.schema_status == "i14y" %}
+                  {%- assign ds = site.data["i14y-credentials"] | where: "identifier", c.i14y_dataset | first %}
+                  <span class="pill supply-available">I14Y{% if ds %} · {{ ds.registration_status }}{% endif %}</span> <a href="https://www.i14y.admin.ch/de/catalog/datasets/{{ c.i14y_dataset }}/description"><code>{{ c.i14y_dataset }}</code></a>
+                {%- elsif c.schema_status == "emerging" %} <span class="pill supply-emerging">schema emerging</span>
+                {%- else %} <span class="pill supply-missing">no schema</span>
+                {%- endif -%}
+              </li>
+            {%- endfor -%}
+          {%- endfor -%}
+          </ul>
+          {%- unless any %}None listed.{% endunless -%}
+        </dd>
+        <dt>Trust flows</dt>
+        <dd>
+          {%- if page.trust_flows and page.trust_flows.size > 0 -%}
+          <ul>
+          {%- for fid in page.trust_flows -%}
+            {%- assign f = site.data["trust-flows"] | where: "id", fid | first -%}
+            <li>{% if f %}<a href="{{ f.url }}">{{ f.title }}</a> <span class="tag">{{ f.status }}</span> <code>{{ fid }}</code>{% else %}<code>{{ fid }}</code> <span class="tag">not in the Trust Flow list</span>{% endif %}</li>
+          {%- endfor -%}
+          </ul>
+          {%- else -%}None modelled yet in the <a href="https://github.com/DIDAS-swiss/Trust-Flow-Diagram-Repository">Trust Flow Diagram Repository</a>.{%- endif -%}
+        </dd>
+        <dt>Use case pattern · Industry Function Graph</dt>
+        <dd>
+          {%- if page.ifm_patterns and page.ifm_patterns.size > 0 -%}
+          <ul>
+          {%- for pid in page.ifm_patterns -%}
+            {%- assign pat = site.data["ifm-patterns"] | where: "id", pid | first -%}
+            <li>{% if pat %}<a href="{{ pat.url }}">{{ pat.name }}</a> <code>{{ pid }}</code>{% else %}<code>{{ pid }}</code>{% endif %}</li>
+          {%- endfor -%}
+          </ul>
+          {%- else -%}No pattern in the <a href="https://github.com/DIDAS-swiss/industry-function-graph">Industry Function Graph</a> fits yet.{%- endif -%}
+        </dd>
+        <dt>Implementations</dt>
+        <dd>
+          {%- if page.implementations and page.implementations.size > 0 -%}
+          <ul>
+          {%- for impl in page.implementations -%}
+            {%- assign url = impl | split: " " | first -%}
+            <li><a href="{{ url }}">{{ url | remove: "https://" | remove: "github.com/" }}</a>{{ impl | remove_first: url }}</li>
+          {%- endfor -%}
+          </ul>
+          {%- else -%}None known.{%- endif -%}
+        </dd>
+      </dl>
+    </section>
+    {%- endif -%}
     {%- if page.i14y_id -%}
     {%- assign cred = page.name | remove: '.md' -%}
     {%- capture federated %}{% include i14y/{{ cred }}.md %}{% endcapture %}

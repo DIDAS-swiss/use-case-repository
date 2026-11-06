@@ -14,6 +14,9 @@ credentials_reused: [swiss-e-id, vehicle-registration, motor-vehicle-liability-i
 credentials_new: [accident-report, repair-assessment]
 credentials_excluded: [residence-confirmation, debt-enforcement-extract, salary-employment-confirmation]
 related_use_cases: [vehicle-leasing]
+trust_flows: []
+ifm_patterns: [identity-verification]
+implementations: []
 glossary_terms: [issuer, verifier, wallet, selective-disclosure]
 created: 2026-10-30
 updated: 2026-11-05

@@ -6,6 +6,7 @@ title_fr: Vaccination
 title_it: Vaccinazione
 stage: signal
 supply: emerging
+schema_status: emerging
 ambition_level: AL3
 likely_issuer: The vaccinator that administered the dose (GP practice, pharmacy with a vaccination permit, company medical service)
 issuer_type: private

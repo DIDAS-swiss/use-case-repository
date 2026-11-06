@@ -14,6 +14,9 @@ credentials_reused: []
 credentials_new: [immunization-record]
 credentials_excluded: [swiss-e-id, beta-id]
 related_use_cases: []
+trust_flows: [health/immunization/F-01, health/immunization/F-02, health/immunization/F-03, health/immunization/F-06]
+ifm_patterns: []
+implementations: ["https://github.com/DIDAS-swiss/digital-health_swiyu (sandbox demo, mocked swiyu components)"]
 glossary_terms: [issuer, verifier, wallet, claim, selective-disclosure, status-list, ebpi]
 created: 2026-11-05
 updated: 2026-11-05

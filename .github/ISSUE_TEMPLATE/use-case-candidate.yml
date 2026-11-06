@@ -43,6 +43,28 @@ body:
       description: Which facts or documents does the verifier need? Mark those you know already exist, or are already used in another use case.
     validations:
       required: true
+  - type: dropdown
+    id: i14y_credentials
+    attributes:
+      label: Credentials already on I14Y (optional)
+      description: >-
+        Credential datasets published on I14Y, the Swiss interoperability platform,
+        whatever their registration status. Pick those this use case relies on.
+      multiple: true
+      options:
+        - "urn:vct:ch.admin.bcs.betaid · Beta-ID (CH_FEDPOL, Recorded)"
+        - "urn:vct:ch.egovernment.residency-permit-simple · Einfache Wohnsitzbestätigung (CH_DVS, Candidate)"
+  - type: textarea
+    id: schemas
+    attributes:
+      label: Emerging or other schemas (optional)
+      description: >-
+        For credentials not on I14Y: where a schema is in preparation or already
+        used, for example in a pilot, an eCH standard or a sector repository.
+        One line per credential, with a link and how far it is.
+      placeholder: |
+        Immunization record: urn:vct:ch.didas.health.immunization:1.0, showcase schema in digital-health_swiyu, not yet on I14Y
+        Vehicle registration: no schema known
   - type: checkboxes
     id: ambition
     attributes:
@@ -104,6 +126,77 @@ body:
         - "ISIC-T · Other service activities"
         - "ISIC-U · Activities of households as employers; undifferentiated goods- and services-producing activities of households for own use"
         - "ISIC-V · Activities of extraterritorial organizations and bodies"
+  - type: markdown
+    attributes:
+      value: |
+        ### Anchors
+        This repository is where the other DIDAS work meets. Link what already exists
+        for this use case, so that nobody has to find it again.
+  - type: dropdown
+    id: trust_flows
+    attributes:
+      label: Trust flows (optional)
+      description: >-
+        Flows from the DIDAS Trust Flow Diagram Repository that model this use case
+        or a step of it.
+      multiple: true
+      options:
+        - "banking/kyc-credential/kyc-onboarding · Online onboarding and KYC credential issuance (in-progress)"
+        - "banking/kyc-credential/kyc-sharing · KYC credential sharing (in-progress)"
+        - "banking/kyc-credential/re-kyc · Re-KYC periodic reevaluation (in-progress)"
+        - "banking/re-identification-forgotten-password/online-banking-reidentification · Online banking re-identification (in-progress)"
+        - "banking/re-identification-age-of-majority/qes-18 · QES for 18-year-old re-identification (in-progress)"
+        - "education/certificates-and-enrolment/high-school-certificate-issuance · High school certificate issuance (in-progress)"
+        - "education/certificates-and-enrolment/university-immatriculation · University immatriculation (in-progress)"
+        - "health/immunization/F-01 · Becoming an actor in the health trust domain (partial)"
+        - "health/immunization/F-02 · Recording an administered dose (implemented)"
+        - "health/immunization/F-03 · Presenting vaccination evidence with minimal disclosure (implemented)"
+        - "health/immunization/F-04 · Check-in at the practice (implemented)"
+        - "health/immunization/F-05 · Prescription and its redemption (implemented)"
+        - "health/immunization/F-06 · Correction, suspension and revocation (partial)"
+        - "health/immunization/F-07 · Projecting a presented credential into FHIR and openEHR (implemented)"
+        - "health/immunization/F-08 · Assembling an International Patient Summary from held credentials (roadmap)"
+        - "health/immunization/F-09 · Secondary use under revocable research consent (roadmap)"
+        - "health/immunization/F-10 · Wearables and continuous data (roadmap)"
+        - "health/public-health-statistics/F-11 · Answering the national coverage survey (roadmap)"
+        - "Not listed: linked under Other flow diagrams"
+  - type: dropdown
+    id: ifm_patterns
+    attributes:
+      label: Use case pattern in the Industry Function Graph (optional)
+      description: >-
+        The sector-neutral pattern(s) this use case realises. Pick the closest;
+        if none fits, say so under "Situation and outcome".
+      multiple: true
+      options:
+        - "eid-issuance · Electronic identity issuance"
+        - "identity-verification · Identity verification"
+        - "qualification-verification · Qualification verification"
+        - "accreditation-verification · Accreditation verification"
+        - "age-threshold-verification · Age threshold verification"
+        - "due-diligence-onboarding · Onboarding with regulatory due diligence"
+        - "due-diligence-refresh · Periodic due diligence re-evaluation"
+        - "credential-recovery-reidentification · Re-identification for credential recovery"
+        - "legal-capacity-reidentification · Re-identification at a change of legal capacity"
+        - "education-qualification-issuance · Education qualification issuance"
+        - "tertiary-admission · Tertiary admission"
+        - "employment-engagement · Employment engagement"
+        - "patient-record-matching · Patient record matching"
+        - "public-service-access · Public service access"
+        - "supplier-qualification · Supplier qualification"
+        - "No pattern fits yet"
+  - type: textarea
+    id: other_flows
+    attributes:
+      label: Other flow diagrams (optional)
+      description: Flows modelled elsewhere, for example in a showcase repository or a specification. Links.
+  - type: textarea
+    id: implementations
+    attributes:
+      label: Implementations, pilots and showcases (optional)
+      description: Running code, demos, pilots or deployments of this use case. Link and state how far each goes (demo, sandbox, pilot, production).
+      placeholder: |
+        https://github.com/DIDAS-swiss/digital-health_swiyu (sandbox demo, mocked swiyu components)
   - type: textarea
     id: governance
     attributes:

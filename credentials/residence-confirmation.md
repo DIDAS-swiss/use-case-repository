@@ -6,6 +6,7 @@ title_fr: Attestation de domicile
 title_it: Attestazione di domicilio
 stage: signal
 supply: emerging
+schema_status: i14y
 ambition_level: AL2
 likely_issuer: Municipal residents' registration office (Einwohnerkontrolle)
 issuer_type: municipal

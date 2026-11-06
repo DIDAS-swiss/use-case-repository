@@ -6,6 +6,7 @@ title_fr: Bêta-ID
 title_it: Beta-ID
 stage: candidate
 supply: available
+schema_status: i14y
 ambition_level: AL1
 likely_issuer: Federal Office of Police (fedpol), through the Beta Credential Service (BCS)
 issuer_type: federal

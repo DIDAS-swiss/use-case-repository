@@ -54,6 +54,9 @@ detail belongs in the body.
 | `credentials_new` | no | credential ids this use case newly requires |
 | `credentials_excluded` | no | credential ids deliberately **not** requested, which makes data minimisation explicit |
 | `related_use_cases` | no | use-case ids |
+| `trust_flows` | no | Trust Flow ids, `<sector>/<family>/<flow>`, from [`_data/trust-flows.csv`](https://github.com/DIDAS-swiss/use-case-repository/blob/main/_data/trust-flows.csv). See *Anchors* below |
+| `ifm_patterns` | no | Industry Function Graph pattern ids from [`_data/ifm-patterns.csv`](https://github.com/DIDAS-swiss/use-case-repository/blob/main/_data/ifm-patterns.csv) |
+| `implementations` | no | `"<url> (<how far: demo, sandbox, pilot, production>)"`, one per implementation |
 | `glossary_terms` | no | DIDAS Glossary term anchors, for example `issuer`, `verifier` |
 | `created`, `updated` | yes | `YYYY-MM-DD` |
 
@@ -65,6 +68,7 @@ detail belongs in the body.
 | `title_de`, `title_fr`, `title_it` | no | as above |
 | `stage` | yes | as above |
 | `supply` | yes | `available` (issued in production) · `emerging` (announced, piloted or in build) · `missing` (no known issuer) |
+| `schema_status` | yes | `i14y` (published on I14Y, at any registration status) · `emerging` (a schema exists or is in preparation elsewhere: a pilot, eCH, a sector repository) · `none` |
 | `ambition_level` | yes | `AL1`, `AL2` or `AL3` |
 | `likely_issuer` | yes | the organisation or kind of organisation with the mandate or the data |
 | `issuer_type` | yes | `federal` · `cantonal` · `municipal` · `sectoral` · `private` |
@@ -75,6 +79,30 @@ detail belongs in the body.
 | `demand_issues` | no | `credential-need` issue numbers |
 | `created`, `updated` | yes | `YYYY-MM-DD` |
 
+## Anchors
+
+A use case here is the anchor that the other DIDAS work meets at. Link what
+already exists, so that nobody has to find it again:
+
+| Anchor | Field | Source |
+|---|---|---|
+| Trust flows that model the use case or a step of it | `trust_flows` | [DIDAS Trust Flow Diagram Repository](https://github.com/DIDAS-swiss/Trust-Flow-Diagram-Repository) |
+| The sector-neutral pattern it realises | `ifm_patterns` | [DIDAS Industry Function Graph](https://github.com/DIDAS-swiss/industry-function-graph) |
+| The credentials it relies on, and their schemas | `credentials_*` and, on each credential, `schema_status` and `i14y_dataset` | [I14Y](https://www.i14y.admin.ch/) or, for emerging schemas, wherever they live |
+| Running code, pilots, deployments | `implementations` | anywhere |
+| Sectors | `sectors` | ISIC Rev. 5 via the Industry Function Graph |
+
+The lists the ids come from are copies kept current by the **Sync federated
+sources** workflow (`scripts/i14y_sync.py`, `scripts/sources_sync.py`), which
+also rebuilds the choice lists in the issue forms (`scripts/build_issue_form.py`).
+Never edit `_data/` or the generated option lists by hand. If a flow or pattern
+is missing, add it in its own repository first; the next sync brings it here.
+
+The site shows each use case's anchors at the end of its page, and the
+[Anchors page](https://didas-swiss.github.io/use-case-repository/anchors.html)
+turns them around: for each trust flow, pattern and I14Y credential dataset, the
+use cases that point to it. One without a use case is a candidate for one.
+
 ## Credentials on I14Y
 
 I14Y is the reference for credential schemas. Wherever a credential is
@@ -84,7 +112,7 @@ published there, its entry points to I14Y and nowhere else for the schema:
    usually under its credential type, for example `urn:vct:ch.admin.bcs.betaid`.
 2. Set `i14y_dataset` and `i14y_id` in the credential's front matter, and link the
    dataset under *Schema and semantic references*.
-3. The **Sync schemas from I14Y** workflow then federates the schema into
+3. The **Sync federated sources** workflow then federates the schema into
    `federation/i14y/<credential-id>/`: the dataset record, the structure as
    SHACL (Turtle and JSON-LD), a compact attribute list and a rendered table,
    which the site shows on the credential's page. To do it locally, run
@@ -141,6 +169,7 @@ are what this repository is meant to show.
 - [ ] Front matter fields match the template
 - [ ] Index row added or updated (`use-cases/README.md`, `credentials/README.md`)
 - [ ] Cross-references kept in step (`credentials_*` ↔ `used_by`)
+- [ ] Anchors set where they exist: `trust_flows`, `ifm_patterns`, `implementations`, and `schema_status` on each credential
 - [ ] Sources given for legal bases and supply status
 - [ ] Changelog entry in `changelog/`
 - [ ] `Closes #N` for the intake issue

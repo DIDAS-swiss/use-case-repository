@@ -6,6 +6,7 @@ title_fr: Attestation de salaire et d'emploi
 title_it: Attestazione di salario e d'impiego
 stage: signal
 supply: missing
+schema_status: none
 ambition_level: AL3
 likely_issuer: Employer, with schema coordination by a sector body (the pre-study mockup names an eCH working group, SAV and SGV)
 issuer_type: private

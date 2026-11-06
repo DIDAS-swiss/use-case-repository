@@ -6,6 +6,7 @@ title_fr: Extrait du registre des poursuites
 title_it: Estratto del registro delle esecuzioni
 stage: signal
 supply: emerging
+schema_status: none
 ambition_level: AL2
 likely_issuer: Cantonal or regional debt enforcement office (Betreibungsamt)
 issuer_type: cantonal

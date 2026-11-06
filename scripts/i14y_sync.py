@@ -12,14 +12,19 @@ I14Y API and writes, under federation/i14y/<credential-id>/:
   README.md        the attribute list as a table, readable on GitHub
 
 and copies README.md's table to _includes/i14y/<credential-id>.md, where the
-site layout picks it up. Nothing here is edited by hand: I14Y stays the
+site layout picks it up. It also lists every credential dataset on I14Y (any
+dataset identified by a `urn:vct:` credential type), published or still a
+candidate, in _data/i14y-credentials.csv, which the issue form offers as a
+choice. Nothing here is edited by hand: I14Y stays the
 authoritative source, and a change upstream reaches this repository as a pull
-request from the i14y-sync workflow, never silently.
+request from the federation-sync workflow, never silently.
 
 Run from the repository root:  python3 scripts/i14y_sync.py
 Standard library only, so it runs on a stock GitHub Actions runner.
 """
 
+import csv
+import io
 import json
 import pathlib
 import re
@@ -248,7 +253,40 @@ def sync(path, concepts):
     return credential_id, changed
 
 
+def catalogue():
+    """Every credential dataset on I14Y, whatever its registration status."""
+    rows = []
+    for d in get(f"{API}/datasets").get("data", []):
+        urn = next((i for i in d.get("identifiers") or [] if i.startswith("urn:vct:")), None)
+        if not urn:
+            continue
+        title = d.get("title") or {}
+        pub = d.get("publisher") or {}
+        rows.append({
+            "identifier": urn,
+            "title": title.get("en") or title.get("de") or urn,
+            "title_de": title.get("de") or "",
+            "publisher": pub.get("identifier") or "",
+            "publisher_name": (pub.get("name") or {}).get("en") or (pub.get("name") or {}).get("de") or "",
+            "registration_status": d.get("registrationStatus") or "",
+            "id": d["id"],
+            "url": f"{CATALOG}/datasets/{urn}/description",
+        })
+    rows.sort(key=lambda r: r["identifier"])
+    buf = io.StringIO()
+    w = csv.DictWriter(buf, fieldnames=list(rows[0]) if rows else ["identifier"], lineterminator="\n")
+    w.writeheader()
+    w.writerows(rows)
+    out = ROOT / "_data" / "i14y-credentials.csv"
+    if not out.exists() or out.read_text(encoding="utf-8") != buf.getvalue():
+        out.write_text(buf.getvalue(), encoding="utf-8")
+        print(f"i14y catalogue: updated, {len(rows)} credential datasets")
+    else:
+        print(f"i14y catalogue: unchanged, {len(rows)} credential datasets")
+
+
 def main():
+    catalogue()
     concepts = concept_index()
     for path in sorted((ROOT / "credentials").glob("*.md")):
         if path.name.startswith(("_", "README")):

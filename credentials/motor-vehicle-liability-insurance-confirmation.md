@@ -6,6 +6,7 @@ title_fr: Attestation d'assurance responsabilité civile véhicule
 title_it: Attestato d'assicurazione responsabilità civile veicoli
 stage: signal
 supply: missing
+schema_status: none
 ambition_level: AL3
 likely_issuer: Motor vehicle liability insurers; schema coordination by the Swiss Insurance Association (SVV)
 issuer_type: private

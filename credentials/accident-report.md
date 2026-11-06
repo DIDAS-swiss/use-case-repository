@@ -6,6 +6,7 @@ title_fr: Rapport d'accident
 title_it: Rapporto d'incidente
 stage: signal
 supply: missing
+schema_status: none
 ambition_level: AL2
 likely_issuer: Cantonal police (the pre-study mockup names FDJP and cantonal police)
 issuer_type: cantonal

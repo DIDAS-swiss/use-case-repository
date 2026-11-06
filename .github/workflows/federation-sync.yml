@@ -1,0 +1,59 @@
+# Keeps everything this repository anchors to current: the credential schemas
+# and the credential catalogue from I14Y, the flows of the Trust Flow Diagram
+# Repository, the patterns and sectors of the Industry Function Graph, and the
+# issue-form choice lists built from them. Runs weekly, when a credential entry
+# or a sync script changes, and on demand. Any change arrives as a pull request
+# on the automation/federation-sync branch, so curators see the diff before it
+# is published: federated content is never updated silently.
+name: Sync federated sources
+
+on:
+  schedule:
+    - cron: "17 5 * * 1"
+  push:
+    branches: [main]
+    paths:
+      - "credentials/**"
+      - "scripts/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: federation-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install PyYAML
+        run: python3 -m pip install --quiet pyyaml
+      - name: Fetch from I14Y
+        run: python3 scripts/i14y_sync.py
+      - name: Fetch trust flows, patterns and sectors
+        run: python3 scripts/sources_sync.py
+      - name: Rebuild the issue-form choice lists
+        run: python3 scripts/build_issue_form.py
+      - name: Open or update the pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet && [ -z "$(git ls-files --others --exclude-standard)" ]; then
+            echo "Federated sources are up to date."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B automation/federation-sync
+          git add federation _includes/i14y _data .github/ISSUE_TEMPLATE
+          git commit -m "Update federated sources"
+          git push --force origin automation/federation-sync
+          if [ -z "$(gh pr list --head automation/federation-sync --state open --json number --jq '.[].number')" ]; then
+            gh pr create --head automation/federation-sync --base main \
+              --title "Federated sources changed" \
+              --body "The sync found changes in one or more federated sources: I14Y credential schemas or catalogue (\`federation/i14y/\`, \`_data/i14y-credentials.csv\`), Trust Flow Diagram Repository flows, Industry Function Graph patterns or sectors (\`_data/\`). The issue-form choice lists were rebuilt from them. Review the diff, check whether affected entries need updating, then merge to publish."
+          fi

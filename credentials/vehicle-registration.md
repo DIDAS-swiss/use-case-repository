@@ -6,6 +6,7 @@ title_fr: Permis de circulation
 title_it: Licenza di circolazione
 stage: signal
 supply: missing
+schema_status: none
 ambition_level: AL2
 likely_issuer: Cantonal road traffic office (Strassenverkehrsamt); federal coordination by FEDRO (ASTRA)
 issuer_type: cantonal

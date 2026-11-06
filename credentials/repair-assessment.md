@@ -6,6 +6,7 @@ title_fr: Expertise des dommages
 title_it: Perizia dei danni
 stage: signal
 supply: missing
+schema_status: none
 ambition_level: AL3
 likely_issuer: Certified garage or vehicle damage expert
 issuer_type: private

@@ -14,6 +14,9 @@ credentials_reused: []
 credentials_new: []
 credentials_excluded: []
 related_use_cases: []
+trust_flows: []        # Trust Flow ids from _data/trust-flows.csv, e.g. health/immunization/F-02
+ifm_patterns: []       # Industry Function Graph pattern ids from _data/ifm-patterns.csv
+implementations: []    # "<url> (<how far: demo, sandbox, pilot, production>)"
 glossary_terms: []
 created: YYYY-MM-DD
 updated: YYYY-MM-DD

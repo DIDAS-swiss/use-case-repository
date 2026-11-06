@@ -6,6 +6,7 @@ title_fr: e-ID
 title_it: Id-e
 stage: candidate
 supply: emerging
+schema_status: none
 ambition_level: AL1
 likely_issuer: Federal Office of Police (fedpol)
 issuer_type: federal
