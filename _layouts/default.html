@@ -55,11 +55,24 @@
       <a href="{{ '/anchors.html' | relative_url }}"{% if page.url == '/anchors.html' %} aria-current="page"{% endif %}>Anchors</a>
       <a href="{{ '/GOVERNANCE.html' | relative_url }}"{% if page.url == '/GOVERNANCE.html' %} aria-current="page"{% endif %}>Governance</a>
       <a href="{{ '/VISION.html' | relative_url }}"{% if page.url == '/VISION.html' %} aria-current="page"{% endif %}>Vision</a>
-      <a class="cta" href="https://github.com/{{ site.repository }}/issues/new/choose">Propose a use case</a>
+      <a class="cta" href="https://github.com/{{ site.repository }}/issues/new?template=use-case-candidate.yml">+ Register your use case</a>
     </div>
   </nav>
 
   <main class="content">
+    {%- if page.url == '/' %}
+    <section class="hero" aria-label="Get involved">
+      <div>
+        <p class="hero-title">Have a use case for verifiable credentials?</p>
+        <p class="hero-text">Register it in a short form. Plain prose is enough: a curator helps turn it into a structured entry, linked to trust flows, I14Y schemas and the credentials it needs.</p>
+      </div>
+      <div class="hero-actions">
+        <a class="button primary" href="https://github.com/{{ site.repository }}/issues/new?template=use-case-candidate.yml">+ Register your use case</a>
+        <a class="button" href="https://github.com/{{ site.repository }}/issues/new?template=credential-signal.yml">Signal a credential need</a>
+        <a class="button" href="{{ site.project_url }}">Project board</a>
+      </div>
+    </section>
+    {%- endif %}
     {%- if page.stage -%}
     <dl class="facts">
       <div><dt>Stage</dt><dd><span class="pill stage-{{ page.stage }}">{{ page.stage }}</span></dd></div>
@@ -81,6 +94,9 @@
     </dl>
     {%- endif -%}
     {{ content }}
+    {%- if page.url == '/use-cases/' %}
+    <p class="register"><a class="button primary" href="https://github.com/{{ site.repository }}/issues/new?template=use-case-candidate.yml">+ Register your use case</a></p>
+    {%- endif %}
     {%- if page.kind == 'use-case' and page.stage -%}
     <section class="anchors" aria-labelledby="anchors">
       <h2 id="anchors">Anchors</h2>

@@ -136,6 +136,8 @@ These are configured in GitHub settings, not in files:
   listed above. The **Label credential signals** workflow then sorts credential
   issues into `credential-need` and `credential-supply`.
 - Enable GitHub Discussions for escalation.
+- Create the **project board** as described in [PROJECT.md](PROJECT.md), the
+  entry point that shows every item's place in Workflows A and B.
 - *Settings → Actions → General*: allow GitHub Actions to create pull requests,
   so the **Sync federated sources** workflow can propose updates.
 - Pages: *Settings → Pages → Build and deployment*, source **Deploy from a

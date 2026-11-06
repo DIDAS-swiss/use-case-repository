@@ -8,6 +8,9 @@ description: >-
   Business use cases for the Swiss verifiable data ecosystem. An early version
   of the use-case section of the Swiss Ecosystem Discovery Catalog.
 repository: DIDAS-swiss/use-case-repository
+# The GitHub Project that is the entry point to the workflows (see PROJECT.md).
+# Until it exists, this points to the organisation's project list.
+project_url: https://github.com/orgs/DIDAS-swiss/projects
 baseurl: /use-case-repository
 url: https://didas-swiss.github.io
 

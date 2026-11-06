@@ -10,13 +10,25 @@ Our aim is for this repository to grow into an early, working version of the
 discovery layer proposed in the DPSS pre-study of June 2026. See
 [VISION.md](VISION.md) for how the two relate.
 
-**📖 Published: https://didas-swiss.github.io/use-case-repository/**
+<p align="center" class="gh-only">
+  <a href="https://github.com/DIDAS-swiss/use-case-repository/issues/new?template=use-case-candidate.yml"><img alt="Register your use case" src="https://img.shields.io/badge/%2B%20Register%20your%20use%20case-1971c2?style=for-the-badge"></a>
+  &nbsp;
+  <a href="https://github.com/DIDAS-swiss/use-case-repository/issues/new?template=credential-signal.yml"><img alt="Signal a credential need" src="https://img.shields.io/badge/Signal%20a%20credential%20need-495057?style=for-the-badge"></a>
+  &nbsp;
+  <a href="https://github.com/orgs/DIDAS-swiss/projects"><img alt="Project board" src="https://img.shields.io/badge/Project%20board-495057?style=for-the-badge"></a>
+</p>
+
+**[➕ Register your use case](https://github.com/DIDAS-swiss/use-case-repository/issues/new?template=use-case-candidate.yml)**: a short form is enough; a curator helps
+turn it into a structured entry. Half a page of plain prose will do.
+
+**📖 Published: https://didas-swiss.github.io/use-case-repository/** ·
+**🗂 Workflow entry point: the [project board](PROJECT.md)**
 
 Everything runs on GitHub itself, with no website or build step. Entries are
 Markdown files that GitHub renders, intake runs through issue forms, and the
 lifecycle is tracked with labels and pull requests. GitHub Pages publishes the same
-files as a browsable site with its built-in Jekyll, and two small GitHub Actions
-manage labels.
+files as a browsable site with its built-in Jekyll, and a few GitHub Actions
+manage labels and keep the federated sources current.
 
 ## Browse
 

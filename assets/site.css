@@ -186,3 +186,27 @@ a { color: var(--accent); }
   display: inline-block; padding: 0 6px; border: 1px solid var(--rule); border-radius: 4px;
   font-size: 0.78rem; color: var(--muted);
 }
+
+/* Calls to action: register a use case. */
+.gh-only { display: none; }   /* README buttons for GitHub; the site has its own */
+.site-nav .cta {
+  background: var(--accent); color: #fff; padding: 2px 12px; border-radius: 4px;
+}
+.site-nav .cta:hover, .site-nav .cta[aria-current="page"] { color: #fff; box-shadow: none; opacity: 0.9; }
+.hero {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 24px;
+  margin: 0 0 32px; padding: 20px 24px;
+  border: 1px solid var(--rule); border-left: 4px solid var(--accent); border-radius: 6px; background: var(--wash);
+}
+.hero > div:first-child { flex: 1 1 360px; }
+.hero-title { margin: 0 0 4px; font-size: 1.2rem; font-weight: 600; }
+.hero-text { margin: 0; color: var(--muted); }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.button {
+  display: inline-block; padding: 8px 14px; border-radius: 6px; font-weight: 600; font-size: 0.95rem;
+  text-decoration: none; border: 1px solid var(--rule); color: var(--ink); background: var(--bg);
+}
+.button:hover { border-color: var(--accent); color: var(--accent); }
+.button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.button.primary:hover { color: #fff; opacity: 0.9; }
+.register { margin-top: 24px; }
