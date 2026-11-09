@@ -30,9 +30,16 @@ jobs:
     env:
       PROJECT_TOKEN: ${{ secrets.PROJECT_TOKEN }}
     steps:
+      # On issue and pull request events a missing token is only a warning; run by
+      # hand, the run fails, so it does not look as if the board had been updated.
       - name: Explain a missing token
         if: env.PROJECT_TOKEN == ''
-        run: echo "::warning::PROJECT_TOKEN is not set, so the project board is not updated. See PROJECT.md."
+        run: |
+          echo "::warning::PROJECT_TOKEN is not set, so the project board is not updated. See PROJECT.md, One-time setup."
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "::error::The repository secret PROJECT_TOKEN is missing. Nothing was added to the project board."
+            exit 1
+          fi
       - uses: actions/checkout@v4
         if: env.PROJECT_TOKEN != ''
         with:
