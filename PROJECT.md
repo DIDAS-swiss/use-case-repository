@@ -8,8 +8,8 @@ title: Project board
 
 The project board is the entry point to the repository's workflows: every
 use-case candidate, credential signal, change request and pull request lands on
-it, and its views show what is waiting for whom. It uses only GitHub Projects'
-built-in fields and automations, so it needs no extra token or workflow.
+it, and its views show what is waiting for whom. A workflow keeps it up to date
+(see *Keeping it up to date*).
 
 **[➕ Register your use case](https://github.com/DIDAS-swiss/use-case-repository/issues/new?template=use-case-candidate.yml)** ·
 [Signal a credential need](https://github.com/DIDAS-swiss/use-case-repository/issues/new?template=credential-signal.yml) ·
@@ -19,61 +19,77 @@ built-in fields and automations, so it needs no extra token or workflow.
 
 | Status | Meaning | Moved by |
 |---|---|---|
-| **New** | Just filed through an issue form | automatically, when the item is added |
+| **New** | Just filed through an issue form | automatically |
 | **Triage** | A curator is checking scope, duplicates and labels | curator |
 | **Drafting** | Accepted; an entry is being written in a pull request | curator or proposer |
-| **In review** | The pull request is open and waiting for approval | curator |
-| **Published** | Merged: the entry is in the catalogue | automatically, when the pull request is merged or the issue closed |
-| **Not pursued** | Out of scope, duplicate or withdrawn, with the reason in the issue | curator |
+| **In review** | The pull request is open and waiting for approval | automatically |
+| **Published** | Merged: the entry is in the catalogue | automatically, when the pull request is merged or the issue completed |
+| **Not pursued** | Out of scope, duplicate or withdrawn, with the reason in the issue | automatically when closed as such, or curator |
 
 The lifecycle *stage* of an entry (`signal` → `candidate` → `qualified` → …) is
 not a board column: it belongs to the entry and is carried by its `stage:` label
 and front matter (see [GOVERNANCE.md](GOVERNANCE.md#lifecycle-stages)).
 
-## Setting it up
+## Keeping it up to date
 
-An organisation owner or a member allowed to create projects does this once.
+The **Sync project board** workflow (`.github/workflows/project-sync.yml`) keeps
+the board in step with the repository:
 
-1. **Create the project.** Organisation **DIDAS-swiss** → *Projects* → *New
-   project* → *Board*. Name it **DIDAS Use Case Repository**. Short description:
-   *Intake and lifecycle of business use cases for the Swiss verifiable data
-   ecosystem.*
-2. **Status field.** Edit the built-in *Status* field so its options are, in this
-   order: `New`, `Triage`, `Drafting`, `In review`, `Published`, `Not pursued`.
-3. **Type field.** Add a single-select field *Type* with `Use case`,
-   `Credential need`, `Credential supply`, `Change`, `Federation update`.
-4. **Built-in workflows** (project menu → *Workflows*):
-   - *Auto-add to project*: repository `use-case-repository`, filter
-     `is:issue,pr is:open`. Every new issue and pull request arrives on its own.
-   - *Item added to project*: set Status to `New`.
-   - *Item closed* and *Pull request merged*: set Status to `Published`.
-   - *Auto-archive items*: `is:closed updated:<@today-30d`.
-5. **Views.** Create these, from the view menu:
+- every issue and pull request is added, including the ones that existed before
+- **Type** follows the labels: `use-case` → Use case, `credential-need` → Credential
+  need, `credential-supply` → Credential supply, `change` and other pull requests →
+  Change, the sync branch `automation/…` → Federation update
+- **Status** follows what happens: a new issue starts at New, an open pull request
+  is In review, merged or completed is Published, closed as not planned, duplicate
+  or out of scope is Not pursued, reopened goes back to Triage. A status a curator
+  set by hand (Triage, Drafting) is never overwritten by a label change or edit
+
+Run by hand, it also sets up the board: the Status options, the Type field, the
+short description and the project README.
+
+### One-time setup
+
+GitHub Projects can only be written with a token that has project rights; the
+repository's own Actions token does not, which is why the board stays empty
+without this.
+
+1. **Create a token.** As a member with write access to project 6:
+   GitHub → *Settings* → *Developer settings* → *Personal access tokens* →
+   *Fine-grained tokens* → *Generate new token*.
+   - Resource owner: **DIDAS-swiss**
+   - Repository access: *Only select repositories* → `use-case-repository`;
+     repository permissions *Issues* and *Pull requests*: **Read-only**
+   - Organization permissions → *Projects*: **Read and write**
+
+   The organisation may have to approve fine-grained tokens. A classic token with
+   the `project` and `public_repo` scopes works as well.
+2. **Store it** in the repository: *Settings* → *Secrets and variables* →
+   *Actions* → *New repository secret*, name **`PROJECT_TOKEN`**.
+3. **Run the workflow once**: *Actions* → *Sync project board* → *Run workflow*.
+   It creates the fields, writes the description and README, and adds the
+   existing issues and pull requests. From then on it runs on every issue and
+   pull request event.
+4. **Views** cannot be created through GitHub's API. Create them once, from the
+   board's view menu:
 
    | View | Layout | Filter | Group by |
    |---|---|---|---|
    | Intake | Board | `is:open` | Status |
-   | Use cases | Table | `label:use-case` | Status |
-   | Gap board | Board | `label:credential-need is:open` | Status |
-   | Supply | Table | `label:credential-supply` | |
-   | By sector | Table | `label:use-case` | (show the *Labels* column; filter by `label:"ISIC L"` etc.) |
-   | Federation updates | Table | `label:federation` or `head:automation/federation-sync` | |
+   | Use cases | Table | `type:"Use case"` | Status |
+   | Gap board | Board | `type:"Credential need" is:open` | Status |
+   | Supply | Table | `type:"Credential supply"` | |
+   | By sector | Table | `type:"Use case"` | (show the *Labels* column; filter `label:"ISIC L"` etc.) |
+   | Federation updates | Table | `type:"Federation update"` | |
 
-6. **Link it to the repository**: repository *use-case-repository* → *Projects*
-   tab → *Link a project*, so it shows up there for every visitor.
-7. **Point the repository at it**: `project_url` in
-   [`_config.yml`](https://github.com/DIDAS-swiss/use-case-repository/blob/main/_config.yml)
-   and the *Project board* button in [README.md](README.md) carry the project's
-   URL, now [https://github.com/orgs/DIDAS-swiss/projects/6](https://github.com/orgs/DIDAS-swiss/projects/6).
+5. **Visibility and link**: in the board's *Settings*, set visibility to
+   *Public*, so the links from the README and the site work for everyone. Then
+   link the board in the repository's *Projects* tab.
+
+The board is at [https://github.com/orgs/DIDAS-swiss/projects/6](https://github.com/orgs/DIDAS-swiss/projects/6); `project_url` in
+[`_config.yml`](https://github.com/DIDAS-swiss/use-case-repository/blob/main/_config.yml)
+and the *Project board* buttons point to it.
 
 ## Project README
 
-Paste this into the project's own README (project menu → *Settings*):
-
-> **DIDAS Use Case Repository: intake and lifecycle.**
-> Use cases for the Swiss verifiable data ecosystem, from first signal to
-> published entry. Register a use case or signal a credential need with the issue
-> forms in [use-case-repository](https://github.com/DIDAS-swiss/use-case-repository/issues/new/choose);
-> items appear here automatically. Governance:
-> [GOVERNANCE.md](https://github.com/DIDAS-swiss/use-case-repository/blob/main/GOVERNANCE.md) ·
-> Catalogue: [didas-swiss.github.io/use-case-repository](https://didas-swiss.github.io/use-case-repository/)
+The workflow writes the board's README and short description when run by hand;
+the text is in `project-sync.yml`.

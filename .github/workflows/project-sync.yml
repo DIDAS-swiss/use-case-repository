@@ -1,0 +1,170 @@
+# Keeps the project board (PROJECT.md) in step with the repository: every issue
+# and pull request is on it, its Type follows the labels, and its Status follows
+# what happens to it. Curators still move items through Triage and Drafting by
+# hand; this workflow never overrides a status a person set, except when an item
+# is closed, merged or reopened.
+#
+# GitHub Projects can only be written with a token that has project rights, so
+# this needs the repository secret PROJECT_TOKEN (see PROJECT.md). Without it,
+# the workflow does nothing. Run it once by hand to set up the board's fields,
+# description and README, and to add the issues and pull requests that exist.
+name: Sync project board
+
+on:
+  issues:
+    types: [opened, edited, labeled, unlabeled, closed, reopened]
+  pull_request_target:
+    types: [opened, reopened, ready_for_review, closed, labeled, unlabeled]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: project-sync-${{ github.event.issue.number || github.event.pull_request.number || 'all' }}
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    env:
+      PROJECT_TOKEN: ${{ secrets.PROJECT_TOKEN }}
+    steps:
+      - name: Explain a missing token
+        if: env.PROJECT_TOKEN == ''
+        run: echo "::warning::PROJECT_TOKEN is not set, so the project board is not updated. See PROJECT.md."
+      - uses: actions/github-script@v7
+        if: env.PROJECT_TOKEN != ''
+        with:
+          github-token: ${{ secrets.PROJECT_TOKEN }}
+          script: |
+            const ORG = 'DIDAS-swiss';
+            const NUMBER = 6;
+            const STATUS = [
+              ['New', 'GRAY', 'Just filed through an issue form'],
+              ['Triage', 'YELLOW', 'A curator checks scope, duplicates and labels'],
+              ['Drafting', 'ORANGE', 'Accepted; the entry is being written'],
+              ['In review', 'BLUE', 'Pull request open, waiting for approval'],
+              ['Published', 'GREEN', 'Merged or done: the entry is in the catalogue'],
+              ['Not pursued', 'RED', 'Out of scope, duplicate or withdrawn'],
+            ];
+            const TYPE = [
+              ['Use case', 'BLUE', 'Use-case candidate or entry'],
+              ['Credential need', 'RED', 'Demand signal: on the gap board'],
+              ['Credential supply', 'GREEN', 'Supply signal: someone could issue'],
+              ['Change', 'GRAY', 'Change to an existing entry'],
+              ['Federation update', 'PURPLE', 'Sync of I14Y, trust flows, patterns or sectors'],
+            ];
+            const README = [
+              '**DIDAS Use Case Repository: intake and lifecycle.**',
+              '',
+              'Use cases for the Swiss verifiable data ecosystem, from first signal to published entry.',
+              'Register a use case or signal a credential need with the issue forms in',
+              '[use-case-repository](https://github.com/DIDAS-swiss/use-case-repository/issues/new/choose);',
+              'items appear here automatically.',
+              '',
+              '- Catalogue: https://didas-swiss.github.io/use-case-repository/',
+              '- Governance: https://github.com/DIDAS-swiss/use-case-repository/blob/main/GOVERNANCE.md',
+              '- How this board works: https://github.com/DIDAS-swiss/use-case-repository/blob/main/PROJECT.md',
+            ].join('\n');
+
+            const gql = (q, v) => github.graphql(q, v);
+            const option = ([name, color, description]) => ({ name, color, description });
+
+            async function loadProject() {
+              const r = await gql(`query($org: String!, $n: Int!) {
+                organization(login: $org) { projectV2(number: $n) { id
+                  fields(first: 50) { nodes { ... on ProjectV2SingleSelectField { id name options { id name color description } } } } } } }`,
+                { org: ORG, n: NUMBER });
+              return r.organization.projectV2;
+            }
+
+            // Adds whatever options are missing, keeping the ones already there.
+            async function ensureField(project, name, wanted) {
+              const field = project.fields.nodes.find(f => f && f.name === name);
+              if (!field) {
+                await gql(`mutation($p: ID!, $n: String!, $o: [ProjectV2SingleSelectFieldOptionInput!]) {
+                  createProjectV2Field(input: { projectId: $p, dataType: SINGLE_SELECT, name: $n, singleSelectOptions: $o }) { clientMutationId } }`,
+                  { p: project.id, n: name, o: wanted.map(option) });
+                core.info(`created field ${name}`);
+                return;
+              }
+              const have = new Set(field.options.map(o => o.name));
+              const missing = wanted.filter(([n]) => !have.has(n));
+              if (!missing.length) return;
+              const keep = name === 'Status'
+                ? []   // the default Todo / In Progress / Done are replaced by the board's own flow
+                : field.options.map(o => ({ name: o.name, color: o.color, description: o.description || '' }));
+              await gql(`mutation($f: ID!, $o: [ProjectV2SingleSelectFieldOptionInput!]) {
+                updateProjectV2Field(input: { fieldId: $f, singleSelectOptions: $o }) { clientMutationId } }`,
+                { f: field.id, o: [...wanted.map(option), ...keep.filter(o => !wanted.some(([n]) => n === o.name))] });
+              core.info(`updated options of ${name}: added ${missing.map(([n]) => n).join(', ')}`);
+            }
+
+            function typeOf(content, isPr) {
+              const labels = (content.labels || []).map(l => typeof l === 'string' ? l : l.name);
+              if (isPr && (content.head?.ref || '').startsWith('automation/')) return 'Federation update';
+              if (labels.includes('credential-need')) return 'Credential need';
+              if (labels.includes('credential-supply')) return 'Credential supply';
+              if (labels.includes('use-case')) return 'Use case';
+              if (labels.includes('change') || isPr) return 'Change';
+              return null;
+            }
+
+            // The status an event decides; null leaves a person's choice alone.
+            function statusOf(content, isPr, action) {
+              const labels = (content.labels || []).map(l => typeof l === 'string' ? l : l.name);
+              if (content.state === 'closed') {
+                if (isPr) return content.merged_at || content.merged ? 'Published' : 'Not pursued';
+                if (labels.includes('duplicate') || labels.includes('out-of-scope')) return 'Not pursued';
+                return content.state_reason === 'not_planned' ? 'Not pursued' : 'Published';
+              }
+              if (action === 'reopened') return isPr ? 'In review' : 'Triage';
+              if (isPr && ['opened', 'ready_for_review'].includes(action)) return content.draft ? 'Drafting' : 'In review';
+              return null;
+            }
+
+            async function setField(project, itemId, fieldName, value) {
+              const field = project.fields.nodes.find(f => f && f.name === fieldName);
+              const opt = field && field.options.find(o => o.name === value);
+              if (!opt) { core.warning(`no option ${value} in ${fieldName}`); return; }
+              await gql(`mutation($p: ID!, $i: ID!, $f: ID!, $o: String!) {
+                updateProjectV2ItemFieldValue(input: { projectId: $p, itemId: $i, fieldId: $f, value: { singleSelectOptionId: $o } }) { clientMutationId } }`,
+                { p: project.id, i: itemId, f: field.id, o: opt.id });
+            }
+
+            async function sync(project, content, isPr, action) {
+              const added = await gql(`mutation($p: ID!, $c: ID!) {
+                addProjectV2ItemById(input: { projectId: $p, contentId: $c }) { item { id
+                  status: fieldValueByName(name: "Status") { ... on ProjectV2ItemFieldSingleSelectValue { name } } } } }`,
+                { p: project.id, c: content.node_id });
+              const item = added.addProjectV2ItemById.item;
+              const type = typeOf(content, isPr);
+              if (type) await setField(project, item.id, 'Type', type);
+              const status = statusOf(content, isPr, action)
+                || (!item.status ? (isPr ? (content.draft ? 'Drafting' : 'In review') : 'New') : null);
+              if (status && status !== item.status?.name) await setField(project, item.id, 'Status', status);
+              core.info(`#${content.number}: type ${type || '-'}, status ${status || item.status?.name || '-'}`);
+            }
+
+            let project = await loadProject();
+            if (context.eventName === 'workflow_dispatch') {
+              await ensureField(project, 'Status', STATUS);
+              await ensureField(project, 'Type', TYPE);
+              await gql(`mutation($p: ID!, $d: String!, $r: String!) {
+                updateProjectV2(input: { projectId: $p, shortDescription: $d, readme: $r }) { clientMutationId } }`,
+                { p: project.id, d: 'Intake and lifecycle of business use cases for the Swiss verifiable data ecosystem', r: README });
+              project = await loadProject();
+              const all = await github.paginate(github.rest.issues.listForRepo, { ...context.repo, state: 'all', per_page: 100 });
+              for (const it of all) {
+                const isPr = !!it.pull_request;
+                const content = isPr
+                  ? (await github.rest.pulls.get({ ...context.repo, pull_number: it.number })).data
+                  : it;
+                await sync(project, content, isPr, 'backfill');
+              }
+            } else if (context.payload.pull_request) {
+              await sync(project, context.payload.pull_request, true, context.payload.action);
+            } else if (context.payload.issue) {
+              await sync(project, context.payload.issue, false, context.payload.action);
+            }
