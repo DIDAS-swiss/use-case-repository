@@ -13,7 +13,11 @@ intake_issue:          # number of the use-case candidate issue
 credentials_reused: []   # credential ids from credentials/, taken over from another use case or issuer
 credentials_new: []      # credential ids this use case newly requires
 credentials_excluded: [] # credential ids deliberately not requested (data minimisation)
-related_use_cases: []
+related_use_cases: []      # related use cases with no sequence
+upstream_use_cases: []     # use cases that must happen first: they issue a credential this one verifies
+downstream_use_cases: []   # use cases that reuse a credential this one issues
+lighthouse:                # selected | candidate | empty (see GOVERNANCE.md, Lighthouses)
+lighthouse_basis:          # one line on why, e.g. "DIDAS selection" or "meets 5 of 6 criteria"
 trust_flows: []        # Trust Flow ids from _data/trust-flows.csv, e.g. health/immunization/F-02
 ifm_patterns: []       # Industry Function Graph pattern ids from _data/ifm-patterns.csv
 implementations: []    # "<url> (<how far: demo, sandbox, pilot, production>)"

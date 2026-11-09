@@ -101,7 +101,10 @@ jobs:
             const groupName = Object.fromEntries(groups.map(r => [r[0], r[1] || r[0]]));
             const GROUP = groups.map(r => [r[1] || r[0], 'BLUE', (r[2] || 'DIDAS working group').slice(0, 100)]);
 
-            const LIGHTHOUSE = [['Lighthouse', 'YELLOW', 'Selected as a lighthouse use case (label lighthouse)']];
+            const LIGHTHOUSE = [
+              ['Lighthouse', 'YELLOW', 'Selected as a lighthouse use case (label lighthouse)'],
+              ['Candidate', 'ORANGE', 'Lighthouse candidate (label lighthouse-candidate)'],
+            ];
 
             const gql = (q, v) => github.graphql(q, v);
             const option = ([name, color, description]) => ({ name, color, description });
@@ -205,8 +208,10 @@ jobs:
               if (sector) await setField(project, item.id, 'Sector', sector);
               const group = groupOf(content);
               if (group && GROUP.length) await setField(project, item.id, 'Working group', group);
-              const lighthouse = (content.labels || []).some(l => (typeof l === 'string' ? l : l.name) === 'lighthouse');
-              await setOrClear(project, item.id, 'Lighthouse', lighthouse ? 'Lighthouse' : null);
+              const names = (content.labels || []).map(l => typeof l === 'string' ? l : l.name);
+              const lighthouse = names.includes('lighthouse') ? 'Lighthouse'
+                : names.includes('lighthouse-candidate') ? 'Candidate' : null;
+              await setOrClear(project, item.id, 'Lighthouse', lighthouse);
               const status = statusOf(content, isPr, action)
                 || (!item.status ? (isPr ? (content.draft ? 'Drafting' : 'In review') : 'New') : null);
               if (status && status !== item.status?.name) await setField(project, item.id, 'Status', status);

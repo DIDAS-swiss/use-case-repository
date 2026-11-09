@@ -69,6 +69,7 @@ jobs:
             }
             labels.push(['intake-batch', 'ededed', 'Filed through a batch in intake/']);
             labels.push(['lighthouse', 'fbca04', 'Selected as a lighthouse use case']);
+            labels.push(['lighthouse-candidate', 'fef2c0', 'Lighthouse candidate: meets most of the lighthouse criteria']);
             for (const [name, color, description] of labels) {
               try {
                 await github.rest.issues.updateLabel({ ...context.repo, name, color, description });

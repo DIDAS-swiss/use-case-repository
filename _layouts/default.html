@@ -90,6 +90,7 @@
       {%- if page.likely_issuer %}<div class="wide"><dt>Likely issuer</dt><dd>{{ page.likely_issuer }}</dd></div>{% endif -%}
       {%- if page.domain_steward %}<div><dt>Domain steward</dt><dd>{{ page.domain_steward }}</dd></div>{% endif -%}
       {%- if page.title_de or page.title_fr or page.title_it %}<div class="wide"><dt>DE · FR · IT</dt><dd>{{ page.title_de }} · {{ page.title_fr }} · {{ page.title_it }}</dd></div>{% endif -%}
+      {%- if page.lighthouse %}<div><dt>Lighthouse</dt><dd><span class="pill {% if page.lighthouse == 'selected' %}supply-available{% else %}supply-emerging{% endif %}">{% if page.lighthouse == 'selected' %}lighthouse{% else %}candidate{% endif %}</span>{% if page.lighthouse_basis %}<br><span class="note">{{ page.lighthouse_basis }}</span>{% endif %}</dd></div>{% endif -%}
       {%- if page.schema_status %}<div><dt>Schema</dt><dd>{% if page.schema_status == "i14y" %}on I14Y{% elsif page.schema_status == "emerging" %}emerging{% else %}none yet{% endif %}</dd></div>{% endif -%}
       {%- if page.i14y_dataset %}<div class="wide"><dt>I14Y</dt><dd><a href="https://www.i14y.admin.ch/de/catalog/datasets/{{ page.i14y_dataset }}/description"><code>{{ page.i14y_dataset }}</code></a></dd></div>{% endif -%}
       <div><dt>Updated</dt><dd>{{ page.updated }}</dd></div>
@@ -128,6 +129,19 @@
           </ul>
           {%- unless any %}None listed.{% endunless -%}
         </dd>
+        {%- if page.upstream_use_cases.size > 0 or page.downstream_use_cases.size > 0 %}
+        <dt>Upstream and downstream use cases</dt>
+        <dd><ul>
+          {%- for uid in page.upstream_use_cases -%}
+            {%- assign upath = "use-cases/" | append: uid | append: ".md" -%}{%- assign u = site.pages | where: "path", upath | first -%}
+            <li><span class="tag">upstream</span> <a href="{{ '/use-cases/' | append: uid | append: '.html' | relative_url }}">{{ u.title | default: uid }}</a>: issues a credential this use case verifies</li>
+          {%- endfor -%}
+          {%- for did in page.downstream_use_cases -%}
+            {%- assign dpath = "use-cases/" | append: did | append: ".md" -%}{%- assign d = site.pages | where: "path", dpath | first -%}
+            <li><span class="tag">downstream</span> <a href="{{ '/use-cases/' | append: did | append: '.html' | relative_url }}">{{ d.title | default: did }}</a>: reuses a credential this use case issues</li>
+          {%- endfor -%}
+        </ul></dd>
+        {%- endif %}
         <dt>Trust flows</dt>
         <dd>
           {%- if page.trust_flows and page.trust_flows.size > 0 -%}

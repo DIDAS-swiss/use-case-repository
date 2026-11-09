@@ -14,12 +14,16 @@ credentials_reused: [swiss-e-id, vehicle-registration, motor-vehicle-liability-i
 credentials_new: [accident-report, repair-assessment]
 credentials_excluded: [residence-confirmation, debt-enforcement-extract, salary-employment-confirmation]
 related_use_cases: [vehicle-leasing]
+upstream_use_cases: [vehicle-leasing]
+downstream_use_cases: []
+lighthouse: candidate
+lighthouse_basis: Meets most DIDAS lighthouse criteria (backlog v2, 2026-11-09)
 trust_flows: []
 ifm_patterns: [identity-verification]
 implementations: []
 glossary_terms: [issuer, verifier, wallet, selective-disclosure]
 created: 2026-10-30
-updated: 2026-11-05
+updated: 2026-11-09
 ---
 
 # Motor vehicle claims processing
