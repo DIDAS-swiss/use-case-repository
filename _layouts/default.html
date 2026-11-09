@@ -50,6 +50,7 @@
   <nav class="site-nav" aria-label="Sections">
     <div class="inner">
       <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>Overview</a>
+      <a href="{{ '/backlog.html' | relative_url }}"{% if page.url == '/backlog.html' %} aria-current="page"{% endif %}>Backlog</a>
       <a href="{{ '/use-cases/' | relative_url }}"{% if page.kind == 'use-case' %} aria-current="page"{% endif %}>Use cases</a>
       <a href="{{ '/credentials/' | relative_url }}"{% if page.kind == 'credential' %} aria-current="page"{% endif %}>Credentials &amp; gap board</a>
       <a href="{{ '/anchors.html' | relative_url }}"{% if page.url == '/anchors.html' %} aria-current="page"{% endif %}>Anchors</a>
@@ -70,6 +71,7 @@
       </div>
       <div class="hero-actions">
         <a class="button primary" href="https://github.com/{{ site.repository }}/issues/new?template=use-case-candidate.yml">+ Register your use case</a>
+        <a class="button" href="{{ '/backlog.html' | relative_url }}">See the backlog</a>
         <a class="button" href="https://github.com/{{ site.repository }}/issues/new?template=credential-signal.yml">Signal a credential need</a>
         <a class="button" href="{{ site.project_url }}">Project board</a>
       </div>

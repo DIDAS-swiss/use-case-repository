@@ -210,3 +210,25 @@ a { color: var(--accent); }
 .button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
 .button.primary:hover { color: #fff; opacity: 0.9; }
 .register { margin-top: 24px; }
+
+/* Backlog page. */
+.lifecycle { display: flex; flex-wrap: wrap; align-items: stretch; gap: 6px; margin: 20px 0 12px; }
+.lifecycle .step {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 2px; min-width: 110px;
+  padding: 10px 14px; border: 1px solid var(--rule); border-radius: 6px; background: var(--wash);
+  color: var(--ink); font: inherit; cursor: pointer; text-align: left;
+}
+.lifecycle .step .count { font-size: 1.5rem; font-weight: 600; line-height: 1.1; }
+.lifecycle .step .label { font-size: 0.85rem; color: var(--muted); }
+.lifecycle .step[aria-pressed="true"] { border-color: var(--accent); box-shadow: inset 0 -3px 0 var(--accent); }
+.lifecycle .arrow { align-self: center; color: var(--muted); }
+.filters { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; margin: 8px 0 4px; font-size: 0.9rem; color: var(--muted); }
+.filters select, .filters input {
+  max-width: min(100%, 22rem); padding: 5px 8px; font: inherit; color: var(--ink);
+  background: var(--bg); border: 1px solid var(--rule); border-radius: 4px; margin-left: 4px;
+}
+.step-candidate { background: var(--info-bg); color: var(--info-ink); }
+.step-taken { background: var(--warn-bg); color: var(--warn-ink); }
+.step-drafting { background: var(--warn-bg); color: var(--warn-ink); }
+.step-published { background: var(--ok-bg); color: var(--ok-ink); }
+.step-not-pursued { background: var(--wash); color: var(--muted); }
