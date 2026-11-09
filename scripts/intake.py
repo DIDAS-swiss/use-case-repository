@@ -223,6 +223,8 @@ def issue(c, batch, warnings, published_path=None):
     labels += sorted({f"ISIC {section(s)}" for s in sectors if section(s)})
     if group:
         labels.append(f"wg: {group}")
+    if str(c.get("lighthouse") or "").strip().lower() in ("yes", "y", "true", "x", "1", "ja"):
+        labels.append("lighthouse")
     if published_path:
         labels.append("change")
     return {"title": f"[Use case] {title}", "body": body, "labels": labels}

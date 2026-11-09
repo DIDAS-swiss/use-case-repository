@@ -142,6 +142,7 @@ DIDAS working groups take candidates and develop them into entries.
 | `cross-domain` | Spans more than one domain, so the curator approves |
 | `wg: …` | Taken by a DIDAS working group |
 | `intake-batch` | Filed through a batch in `intake/` |
+| `lighthouse` | Selected as a lighthouse use case; shown in the project's Lighthouse field |
 
 ## Escalation
 

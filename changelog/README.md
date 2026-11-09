@@ -9,6 +9,7 @@ To document a change, add a new dated file here as part of the same pull request
 
 ## Entries
 
+- [2026-11-09: Lighthouse selection on the project board](2026-11-09-lighthouse.md)
 - [2026-11-09: DIDAS use-case backlog v2 filed as candidates](2026-11-09-backlog-intake.md)
 - [2026-11-09: A manageable assignment of ISIC sectors to working groups](2026-11-09-working-group-assignment.md)
 - [2026-11-09: Working groups by sector](2026-11-09-working-groups.md)

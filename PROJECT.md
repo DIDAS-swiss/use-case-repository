@@ -60,8 +60,12 @@ the board in step with the repository:
 - **Working group** follows the `wg: <group>` label, once the groups are listed in
   [`_data/working-groups.csv`](https://github.com/DIDAS-swiss/use-case-repository/blob/main/_data/working-groups.csv)
 
-Run by hand, it also sets up the board: the Status options and the Type, Sector
-and Working group fields, the short description and the project README.
+- **Lighthouse** is set while the item carries the `lighthouse` label, and cleared
+  when the label is removed. Curators or working groups add the label to select a
+  use case as a lighthouse; a batch file can set it with a `lighthouse` column
+
+Run by hand, it also sets up the board: the Status options and the Type, Sector,
+Working group and Lighthouse fields, the short description and the project README.
 
 ### One-time setup
 
@@ -97,7 +101,13 @@ without this.
    | By sector | Board | `type:"Use case"` | Sector |
    | Up for grabs | Table | `type:"Use case" no:"Working group" is:open` | Sector |
    | Working groups | Board | `type:"Use case" has:"Working group"` | Working group |
+   | Lighthouses | Table | `type:"Use case" lighthouse:Lighthouse` | Sector |
    | Federation updates | Table | `type:"Federation update"` | |
+
+   In any view, filter by sector with the field (`sector:"L · Financial and
+   insurance activities"`, or pick it from the filter menu) or by any of an item's
+   sectors with its labels (`label:"ISIC L"`), and by lighthouse with
+   `lighthouse:Lighthouse` or `label:lighthouse`.
 
 5. **Visibility and link**: in the board's *Settings*, set visibility to
    *Public*, so the links from the README and the site work for everyone. Then

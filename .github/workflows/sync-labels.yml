@@ -68,6 +68,7 @@ jobs:
               labels.push([`wg: ${id}`, '1971c2', `Taken by the DIDAS working group ${name || id}`.slice(0, 100)]);
             }
             labels.push(['intake-batch', 'ededed', 'Filed through a batch in intake/']);
+            labels.push(['lighthouse', 'fbca04', 'Selected as a lighthouse use case']);
             for (const [name, color, description] of labels) {
               try {
                 await github.rest.issues.updateLabel({ ...context.repo, name, color, description });
