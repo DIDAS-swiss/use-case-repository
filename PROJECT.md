@@ -60,9 +60,10 @@ the board in step with the repository:
 - **Working group** follows the `wg: <group>` label, once the groups are listed in
   [`_data/working-groups.csv`](https://github.com/DIDAS-swiss/use-case-repository/blob/main/_data/working-groups.csv)
 
-- **Lighthouse** is set while the item carries the `lighthouse` label, and cleared
-  when the label is removed. Curators or working groups add the label to select a
-  use case as a lighthouse; a batch file can set it with a `lighthouse` column
+- **Lighthouse** follows two labels: `lighthouse` (selected) sets *Lighthouse*,
+  `lighthouse-candidate` sets *Candidate*; without either the field is cleared.
+  Selection is a decision of DIDAS ([GOVERNANCE.md](GOVERNANCE.md#lighthouses));
+  a batch file sets the labels with its `lighthouse` column
 
 Run by hand, it also sets up the board: the Status options and the Kind, Sector,
 Working group and Lighthouse fields, the short description and the project README.
@@ -101,13 +102,14 @@ without this.
    | By sector | Board | `kind:"Use case"` | Sector |
    | Up for grabs | Table | `kind:"Use case" no:"Working group" is:open` | Sector |
    | Working groups | Board | `kind:"Use case" has:"Working group"` | Working group |
-   | Lighthouses | Table | `kind:"Use case" lighthouse:Lighthouse` | Sector |
+   | Lighthouses | Board | `kind:"Use case" lighthouse:Lighthouse,Candidate` | Lighthouse |
    | Federation updates | Table | `kind:"Federation update"` | |
 
    In any view, filter by sector with the field (`sector:"L · Financial and
    insurance activities"`, or pick it from the filter menu) or by any of an item's
    sectors with its labels (`label:"ISIC L"`), and by lighthouse with
-   `lighthouse:Lighthouse` or `label:lighthouse`.
+   `lighthouse:Lighthouse`, `lighthouse:Candidate` or the labels `lighthouse` and
+   `lighthouse-candidate`.
 
 5. **Visibility and link**: in the board's *Settings*, set visibility to
    *Public*, so the links from the README and the site work for everyone. Then

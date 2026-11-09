@@ -50,10 +50,24 @@ use-case front matter and body: `title`, `title_de`, `title_fr`, `title_it`,
 `coordination_and_open_questions_de`, `sources`, plus `no` and `id` as the
 backlog reference. Actors and process steps separated by ` | ` become lists.
 
+Further columns:
+
+| Column | Values |
+|---|---|
+| `upstream_use_cases` | ids of use cases that must happen first, because they issue a credential this one verifies, separated by `;` |
+| `downstream_use_cases` | ids of use cases that reuse a credential this one issues, separated by `;` |
+| `lighthouse` | `yes` or `selected` sets the label `lighthouse`; `candidate` sets `lighthouse-candidate`; empty leaves the labels alone |
+| `lighthouse_basis` | one line on why |
+| `review_notes` | points the description has to fix, numbered `(1) … (2) …` |
+
 ## What happens
 
-- A candidate whose title matches an existing use-case issue is skipped, so a file
-  can be extended and pushed again without duplicates.
+- A candidate whose title matches an existing use-case issue is not opened again.
+  Its issue is kept in step with the file instead: it gets the lighthouse label
+  the file gives it, and one comment with its upstream and downstream use cases
+  (linked to their issues), its lighthouse level and its review notes. The
+  comment is updated, not repeated, when the file changes. The issue's stage,
+  status, other labels and description are left as they are.
 - A candidate that is already published in `use-cases/` (same title or id) is
   opened as an **update issue**, labelled `change`, that links the entry so the
   backlog version can be compared and merged into it.

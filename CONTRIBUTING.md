@@ -53,7 +53,11 @@ detail belongs in the body.
 | `credentials_reused` | no | credential ids taken over from another use case or from an existing issuer |
 | `credentials_new` | no | credential ids this use case newly requires |
 | `credentials_excluded` | no | credential ids deliberately **not** requested, which makes data minimisation explicit |
-| `related_use_cases` | no | use-case ids |
+| `related_use_cases` | no | use-case ids, for relations with no sequence |
+| `upstream_use_cases` | no | use-case ids that must happen first, because they issue a credential this use case verifies |
+| `downstream_use_cases` | no | use-case ids that reuse a credential this use case issues |
+| `lighthouse` | no | `selected`, `candidate` or empty; see [GOVERNANCE.md](GOVERNANCE.md#lighthouses) |
+| `lighthouse_basis` | with `lighthouse` | one line on why, for example "DIDAS selection" or "meets 5 of 6 criteria" |
 | `trust_flows` | no | Trust Flow ids, `<sector>/<family>/<flow>`, from [`_data/trust-flows.csv`](https://github.com/DIDAS-swiss/use-case-repository/blob/main/_data/trust-flows.csv). See *Anchors* below |
 | `ifm_patterns` | no | Industry Function Graph pattern ids from [`_data/ifm-patterns.csv`](https://github.com/DIDAS-swiss/use-case-repository/blob/main/_data/ifm-patterns.csv) |
 | `implementations` | no | `"<url> (<how far: demo, sandbox, pilot, production>)"`, one per implementation |

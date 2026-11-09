@@ -198,6 +198,32 @@ body:
       placeholder: |
         https://github.com/DIDAS-swiss/digital-health_swiyu (sandbox demo, mocked swiyu components)
   - type: textarea
+    id: upstream_use_cases
+    attributes:
+      label: Upstream use cases (optional)
+      description: Use cases that must happen first, because they issue a credential this one verifies. Ids or titles, one per line.
+  - type: textarea
+    id: downstream_use_cases
+    attributes:
+      label: Downstream use cases (optional)
+      description: Use cases that reuse a credential this one issues. Ids or titles, one per line.
+  - type: dropdown
+    id: lighthouse
+    attributes:
+      label: Lighthouse proposal (optional)
+      description: >-
+        Propose this use case as a lighthouse candidate if it meets most of the criteria in GOVERNANCE.md
+        (reach, benefit for administration and business, a repeatable building block, a confirmed issuer,
+        feasible within about 12 months, internationally interoperable). Selection is a decision of DIDAS.
+      options:
+        - "No proposal"
+        - "Propose as lighthouse candidate"
+  - type: textarea
+    id: lighthouse_basis
+    attributes:
+      label: Why a lighthouse (optional)
+      description: Which criteria it meets, in a line or two.
+  - type: textarea
     id: governance
     attributes:
       label: Legal basis and governance (optional)

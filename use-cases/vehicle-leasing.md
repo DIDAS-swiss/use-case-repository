@@ -14,12 +14,16 @@ credentials_reused: [swiss-e-id]
 credentials_new: [residence-confirmation, debt-enforcement-extract, salary-employment-confirmation, motor-vehicle-liability-insurance-confirmation, vehicle-registration]
 credentials_excluded: []
 related_use_cases: [motor-vehicle-claims-processing]
+upstream_use_cases: []
+downstream_use_cases: [motor-vehicle-claims-processing]
+lighthouse:
+lighthouse_basis:
 trust_flows: []
 ifm_patterns: [identity-verification, due-diligence-onboarding]
 implementations: []
 glossary_terms: [issuer, verifier, wallet, ambition-level]
 created: 2026-10-30
-updated: 2026-11-05
+updated: 2026-11-09
 ---
 
 # Vehicle leasing

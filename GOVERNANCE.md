@@ -112,6 +112,37 @@ DIDAS working groups take candidates and develop them into entries.
   the [lifecycle](#lifecycle-stages); a working group can act as domain steward for
   its sector once it is listed in [STEWARDS.md](STEWARDS.md).
 
+## Lighthouses
+
+A lighthouse is a use case that shows what the ecosystem can do and that others
+can repeat. The criteria:
+
+1. Visible, broad reach: many verifiers; reuse across sectors and cantons.
+2. Benefit for both administration and business.
+3. Builds on a building block and makes it repeatable: trust infrastructure as
+   protocol, organisation identity and powers of attorney, governance of
+   credentials, data minimisation.
+4. Authoritative issuer confirmed; credential available or announced.
+5. Feasible within about 12 months.
+6. Internationally interoperable.
+
+A **candidate** meets most criteria (label `lighthouse-candidate`, front matter
+`lighthouse: candidate`). **Selection** (label `lighthouse`, `lighthouse:
+selected`) is a decision of DIDAS, together with the Federal Office of Justice
+(BJ) for cases from its agenda. `lighthouse_basis` records why, in one line.
+Being a lighthouse does not change an entry's lifecycle stage.
+
+## Upstream and downstream use cases
+
+Use case A is **upstream** of B when A issues a credential that B verifies, for
+example a residence confirmation, a debt enforcement extract, a driving licence
+or an insurance confirmation; B is then **downstream** of A. Chains named in the
+use-case texts count too, for example the learner permit before the driving
+licence, or leasing before claims. Where the issuing use case is not itself an
+entry or candidate (the e-ID), no relation is recorded. Relations with no
+sequence stay in `related_use_cases`. *Check data* warns when two entries
+disagree about a relation.
+
 ## Workflow B: credential needs and supply signals
 
 1. **Intake**: anyone files a *Credential need / supply signal* issue. A workflow
@@ -142,7 +173,8 @@ DIDAS working groups take candidates and develop them into entries.
 | `cross-domain` | Spans more than one domain, so the curator approves |
 | `wg: …` | Taken by a DIDAS working group |
 | `intake-batch` | Filed through a batch in `intake/` |
-| `lighthouse` | Selected as a lighthouse use case; shown in the project's Lighthouse field |
+| `lighthouse` | Selected as a lighthouse use case (see [Lighthouses](#lighthouses)); the project's Lighthouse field shows *Lighthouse* |
+| `lighthouse-candidate` | Lighthouse candidate: meets most of the criteria; the Lighthouse field shows *Candidate* |
 
 ## Escalation
 
