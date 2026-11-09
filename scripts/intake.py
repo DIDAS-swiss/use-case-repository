@@ -426,7 +426,12 @@ def main():
             warnings = []
             title = str(c["title"]).strip()
             key = title.lower()
+            # an issue is found by its short id first, so a corrected title stays the same issue
+            by_id = next((k for k, e in existing.items() if c.get("id") and backlog_id(e.get("body")) == c["id"]), None)
+            if by_id:
+                key = by_id
             entry = published.get(key) or published.get(str(c.get("id") or "").lower())
+            entry = entry or published.get(title.lower())
             new = issue(c, batch, warnings, published_path=entry, numbers=numbers)
             for w in warnings:
                 print(f"::warning file={path.relative_to(ROOT)}::{w}")
