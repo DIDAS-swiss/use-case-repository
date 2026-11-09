@@ -37,10 +37,26 @@ candidates:
 Free-text fields (`summary`, `actors`, `credentials`, `governance`, `demand`,
 `sources`) may be as short as a line.
 
+## CSV batches
+
+A batch can also be a CSV file, one candidate per row, with the column names of the
+use-case front matter and body: `title`, `title_de`, `title_fr`, `title_it`,
+`ambition_levels`, `sectors`, `credentials_reused`, `credentials_new`,
+`credentials_excluded`, `related_use_cases` (lists separated by `;`), and
+`summary`, `summary_de`, `outcome`, `outcome_de`, `actors`, `process_flow`,
+`design_basis`, `credentials`, `legal_basis`, `trust_frameworks`,
+`verifier_governance`, `sensitive_attributes`, `relying_parties`,
+`indicative_scale`, `value`, `coordination_and_open_questions`,
+`coordination_and_open_questions_de`, `sources`, plus `no` and `id` as the
+backlog reference. Actors and process steps separated by ` | ` become lists.
+
 ## What happens
 
 - A candidate whose title matches an existing use-case issue is skipped, so a file
   can be extended and pushed again without duplicates.
+- A candidate that is already published in `use-cases/` (same title or id) is
+  opened as an **update issue**, labelled `change`, that links the entry so the
+  backlog version can be compared and merged into it.
 - Unknown sector, trust-flow or pattern ids are reported in the workflow log and
   left out; the candidate is still created.
 - A candidate without `working_group` gets a *Suggested working group*: the group
