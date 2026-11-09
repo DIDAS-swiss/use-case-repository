@@ -1,0 +1,62 @@
+# Creates the organisation's issue fields this repository fills in: Stage,
+# Sector, Working group and Lighthouse, so every use-case issue carries them as
+# real fields in its sidebar. Run by hand; it creates only what is missing and
+# logs GitHub's answer. Needs PROJECT_TOKEN with permission to manage the
+# organisation's issue fields.
+name: Set up issue fields
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          sparse-checkout: _data
+      - uses: actions/github-script@v8
+        with:
+          github-token: ${{ secrets.PROJECT_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const org = 'DIDAS-swiss';
+            const parse = line => { const out = []; let cur = '', q = false;
+              for (let i = 0; i < line.length; i++) { const c = line[i];
+                if (q) { if (c === '"' && line[i + 1] === '"') { cur += '"'; i++; } else if (c === '"') q = false; else cur += c; }
+                else if (c === '"') q = true; else if (c === ',') { out.push(cur); cur = ''; } else cur += c; }
+              out.push(cur); return out; };
+            const csv = f => fs.readFileSync(f, 'utf8').trim().split('\n').slice(1).filter(Boolean).map(parse);
+            const sections = csv('_data/sectors.csv').filter(r => r[1] === 'section')
+              .map(r => { const n = `${r[2]} · ${r[3]}`; return n.length > 80 ? n.slice(0, 79).trimEnd() + '…' : n; });
+            const groups = csv('_data/working-groups.csv').map(r => r[1] || r[0]);
+            const wanted = [
+              { name: 'Stage', description: 'Lifecycle stage of the use case (GOVERNANCE.md)',
+                options: ['signal', 'candidate', 'qualified', 'active', 'maintained', 'deprecated'] },
+              { name: 'Sector', description: 'Primary sector, ISIC Rev. 5 section', options: sections },
+              { name: 'Working group', description: 'DIDAS working group that has taken the use case', options: groups },
+              { name: 'Lighthouse', description: 'Lighthouse selection (GOVERNANCE.md)', options: ['Lighthouse', 'Candidate'] },
+            ];
+            const colors = ['GRAY', 'BLUE', 'GREEN', 'YELLOW', 'ORANGE', 'RED', 'PINK', 'PURPLE'];
+            let existing = [];
+            try {
+              existing = (await github.request('GET /orgs/{org}/issue-fields', { org, per_page: 100 })).data;
+              core.info(`existing fields: ${existing.map(f => f.name).join(', ')}`);
+            } catch (e) {
+              core.setFailed(`Listing issue fields failed (${e.status}): ${e.message}`);
+              return;
+            }
+            for (const w of wanted) {
+              if (existing.some(f => f.name === w.name)) { core.info(`${w.name}: exists`); continue; }
+              const body = { name: w.name, description: w.description, data_type: 'single_select', visibility: 'all',
+                options: w.options.map((name, i) => ({ name, color: colors[i % colors.length], priority: i + 1 })) };
+              try {
+                await github.request('POST /orgs/{org}/issue-fields', { org, ...body });
+                core.info(`${w.name}: created with ${w.options.length} options`);
+              } catch (e) {
+                core.error(`${w.name}: creating failed (${e.status}): ${e.message} ${JSON.stringify(e.response?.data || {})}`);
+              }
+            }
