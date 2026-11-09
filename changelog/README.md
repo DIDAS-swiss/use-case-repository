@@ -9,6 +9,7 @@ To document a change, add a new dated file here as part of the same pull request
 
 ## Entries
 
+- [2026-11-09: A manageable assignment of ISIC sectors to working groups](2026-11-09-working-group-assignment.md)
 - [2026-11-09: Working groups by sector](2026-11-09-working-groups.md)
 - [2026-11-09: Batch intake for working groups, sectors on the project board](2026-11-09-batch-intake.md)
 - [2026-11-09: The project board stays in step with the repository](2026-11-09-project-sync.md)

@@ -89,9 +89,23 @@ def ifm_patterns(repo):
 
 
 def sectors(repo):
+    """The graph's sectors, each section followed by its divisions and classes."""
     with open(repo / "data" / "sectors.csv", encoding="utf-8", newline="") as f:
-        return [{"id": r["id"], "level": r["level"], "notation": r["notation"],
+        rows = [{"id": r["id"], "level": r["level"], "notation": r["notation"],
                  "label": r["pref_label_en"], "broader": r["broader"]} for r in csv.DictReader(f)]
+    children = {}
+    for r in rows:
+        children.setdefault(r["broader"], []).append(r)
+    ordered = []
+
+    def walk(r):
+        ordered.append(r)
+        for c in sorted(children.get(r["id"], []), key=lambda c: c["notation"]):
+            walk(c)
+
+    for r in sorted(children.get("", []), key=lambda r: r["notation"]):
+        walk(r)
+    return ordered
 
 
 def main():

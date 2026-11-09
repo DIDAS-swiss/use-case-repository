@@ -1,0 +1,33 @@
+# Checks that the data holds together: the working-group assignment follows its
+# rules, and every entry refers only to sectors, flows, patterns, credentials,
+# use cases and I14Y datasets that exist. See scripts/check_data.py.
+name: Check data
+
+on:
+  pull_request:
+    paths:
+      - "_data/**"
+      - "use-cases/**"
+      - "credentials/**"
+      - "scripts/**"
+  push:
+    branches: [main]
+    paths:
+      - "_data/**"
+      - "use-cases/**"
+      - "credentials/**"
+      - "scripts/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install PyYAML
+        run: python3 -m pip install --quiet pyyaml
+      - name: Check
+        run: python3 scripts/check_data.py

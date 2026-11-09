@@ -92,11 +92,17 @@ DIDAS working groups take candidates and develop them into entries.
   groups, is filed as one file in [`intake/`](intake/README.md). The *Intake
   candidates* workflow opens one candidate issue per entry, labelled
   `intake-batch`, and puts them on the [project board](PROJECT.md) by sector.
-- **Groups by sector**: Banking, Insurance, Health, Pharma, Public Sector,
-  Education, Retail, Mobility, Hospitality, Industry & Manufacturing, Digital &
-  Telecom, Energy & Utilities, Real Estate and Sport, each with the ISIC sectors it
-  covers. A batch candidate without a group names the group whose sectors match
-  its primary sector most closely, as a suggestion.
+- **Groups by sector**: each working group is responsible for one or more ISIC
+  sectors. The assignment is one table,
+  [`_data/working-group-sectors.csv`](https://github.com/DIDAS-swiss/use-case-repository/blob/main/_data/working-group-sectors.csv),
+  one row per group and sector code, shown in both directions on the
+  [Working groups page](https://didas-swiss.github.io/use-case-repository/working-groups.html).
+  Rules: a code belongs to at most one group; the most specific assignment wins
+  (a division over its section, a class over its division); a code without an
+  assignment inherits the group of the nearest broader code. *Check data*
+  enforces them on every change, and assignment changes are pull requests that
+  curators review. A batch candidate without a group names the group responsible
+  for its primary sector as a suggestion.
 - **Taking a candidate**: a working group adds its `wg: <group>` label and assigns
   a member, and moves the item to *Drafting*. The groups are listed in
   [`_data/working-groups.csv`](https://github.com/DIDAS-swiss/use-case-repository/blob/main/_data/working-groups.csv); *Sync labels* creates
