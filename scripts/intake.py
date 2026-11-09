@@ -46,6 +46,27 @@ def section(sector_id):
     return s["notation"] if s else None
 
 
+def depth(sector_id):
+    n, s = 0, SECTORS.get(sector_id)
+    while s and s["broader"]:
+        n, s = n + 1, SECTORS.get(s["broader"])
+    return n
+
+
+def suggest_group(sector_id):
+    """The working group whose sectors match the primary sector most closely."""
+    best, best_depth = None, -1
+    chain, s = set(), SECTORS.get(sector_id)
+    while s:
+        chain.add(s["id"])
+        s = SECTORS.get(s["broader"])
+    for g in GROUPS.values():
+        for gs in (g.get("sectors") or "").split():
+            if gs in chain and depth(gs) > best_depth:
+                best, best_depth = g, depth(gs)
+    return best
+
+
 def api(method, path, body=None):
     req = urllib.request.Request(
         f"{API}{path}", method=method,
@@ -121,6 +142,10 @@ def issue(c, batch, warnings):
         ("Proposed on behalf of (optional)", text("proposed_by", batch.get("proposed_by") or "_No response_")),
         ("Sources (optional)", text("sources")),
     ]
+    suggested = None if group else (suggest_group(sectors[0]) if sectors else None)
+    if suggested:
+        sections.append(("Suggested working group",
+                         f"{suggested['name']} (from the primary sector; the group takes the candidate by adding `wg: {suggested['id']}`)"))
     body = f"_Filed with the intake batch **{batch.get('batch', 'unnamed')}**._\n\n"
     body += "\n\n".join(f"### {h}\n\n{v}" for h, v in sections)
     labels = ["use-case", "stage: signal", "intake-batch"] + als

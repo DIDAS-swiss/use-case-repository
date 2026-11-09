@@ -1,1 +1,15 @@
-id,name,description
+id,name,description,sectors
+banking,Banking,"DIDAS working group for banking and financial services",ISIC-64
+insurance,Insurance,"DIDAS working group for insurance and pension funding",ISIC-65
+health,Health,"DIDAS working group for health and care",ISIC-86 ISIC-R
+pharma,Pharma,"DIDAS working group for the pharmaceutical industry and its supply chain",ISIC-21
+public-sector,Public Sector,"DIDAS working group for public administration at federal, cantonal and municipal level",ISIC-84 ISIC-P
+education,Education,"DIDAS working group for education and training",ISIC-85 ISIC-Q
+retail,Retail,"DIDAS working group for retail and online commerce",ISIC-47 ISIC-G
+mobility,Mobility,"DIDAS working group for mobility, transport and vehicles",ISIC-H
+hospitality,Hospitality,"DIDAS working group for accommodation and food services",ISIC-I
+industry,Industry & Manufacturing,"DIDAS working group for manufacturing and industrial supply chains",ISIC-C
+digital,Digital & Telecom,"DIDAS working group for telecommunications and information services",ISIC-K
+energy,Energy & Utilities,"DIDAS working group for energy, water and waste",ISIC-D ISIC-E
+real-estate,Real Estate,"DIDAS working group for real estate and housing",ISIC-M
+sport,Sport,"DIDAS working group for sport, arts and recreation",ISIC-S

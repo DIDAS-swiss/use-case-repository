@@ -43,4 +43,8 @@ Free-text fields (`summary`, `actors`, `credentials`, `governance`, `demand`,
   can be extended and pushed again without duplicates.
 - Unknown sector, trust-flow or pattern ids are reported in the workflow log and
   left out; the candidate is still created.
+- A candidate without `working_group` gets a *Suggested working group*: the
+  group in [`_data/working-groups.csv`](https://github.com/DIDAS-swiss/use-case-repository/blob/main/_data/working-groups.csv)
+  whose sectors match its primary sector most closely (Pharma before Industry &
+  Manufacturing for `ISIC-21`). The group still takes it by adding its label.
 - Files whose names start with `_`, and this README, are ignored.
