@@ -1,0 +1,12 @@
+# Example batch, ignored by the workflow because its name starts with "_".
+batch: Example
+proposed_by: DIDAS
+candidates:
+  - title: Age verification at a retail checkout
+    summary: A shop checks that a buyer is over 18 without learning the date of birth.
+    sectors: [ISIC-4711, ISIC-XX]
+    ambition_levels: [AL1, AL3]
+    trust_flows: []
+    ifm_patterns: [age-threshold-verification]
+  - title: Vehicle leasing
+    sectors: [ISIC-64]

@@ -30,6 +30,15 @@ The lifecycle *stage* of an entry (`signal` → `candidate` → `qualified` → 
 not a board column: it belongs to the entry and is carried by its `stage:` label
 and front matter (see [GOVERNANCE.md](GOVERNANCE.md#lifecycle-stages)).
 
+## Working groups take candidates
+
+Candidates arrive one at a time through the form, or as a batch through
+[`intake/`](intake/README.md). The **Up for grabs** view lists the open candidates
+no working group has taken yet, by sector. A working group takes one by adding
+its `wg: <group>` label and assigning a member; the board then shows it under
+that group, and the group details the candidate and drafts the entry
+([GOVERNANCE.md](GOVERNANCE.md#working-groups)).
+
 ## Keeping it up to date
 
 The **Sync project board** workflow (`.github/workflows/project-sync.yml`) keeps
@@ -44,8 +53,15 @@ the board in step with the repository:
   or out of scope is Not pursued, reopened goes back to Triage. A status a curator
   set by hand (Triage, Drafting) is never overwritten by a label change or edit
 
-Run by hand, it also sets up the board: the Status options, the Type field, the
-short description and the project README.
+- **Sector** is the item's primary sector as an ISIC Rev. 5 section: the first
+  sector chosen in the form, otherwise its first `ISIC <letter>` label. Every
+  sector of a cross-sector use case remains filterable through the labels, for
+  example `label:"ISIC P"`
+- **Working group** follows the `wg: <group>` label, once the groups are listed in
+  [`_data/working-groups.csv`](https://github.com/DIDAS-swiss/use-case-repository/blob/main/_data/working-groups.csv)
+
+Run by hand, it also sets up the board: the Status options and the Type, Sector
+and Working group fields, the short description and the project README.
 
 ### One-time setup
 
@@ -78,7 +94,9 @@ without this.
    | Use cases | Table | `type:"Use case"` | Status |
    | Gap board | Board | `type:"Credential need" is:open` | Status |
    | Supply | Table | `type:"Credential supply"` | |
-   | By sector | Table | `type:"Use case"` | (show the *Labels* column; filter `label:"ISIC L"` etc.) |
+   | By sector | Board | `type:"Use case"` | Sector |
+   | Up for grabs | Table | `type:"Use case" no:"Working group" is:open` | Sector |
+   | Working groups | Board | `type:"Use case" has:"Working group"` | Working group |
    | Federation updates | Table | `type:"Federation update"` | |
 
 5. **Visibility and link**: in the board's *Settings*, set visibility to

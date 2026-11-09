@@ -84,6 +84,23 @@ provisional stewardship until one is confirmed (pre-study §7.3).
 5. **Publication**: the merge publishes the entry. A changelog entry is part of the
    same pull request.
 
+## Working groups
+
+DIDAS working groups take candidates and develop them into entries.
+
+- **Batch intake**: a list of candidates, for example commissioned for the working
+  groups, is filed as one file in [`intake/`](intake/README.md). The *Intake
+  candidates* workflow opens one candidate issue per entry, labelled
+  `intake-batch`, and puts them on the [project board](PROJECT.md) by sector.
+- **Taking a candidate**: a working group adds its `wg: <group>` label and assigns
+  a member, and moves the item to *Drafting*. The groups are listed in
+  [`_data/working-groups.csv`](_data/working-groups.csv); *Sync labels* creates
+  their labels.
+- **Detailing it**: the group fills in actors, credentials, governance and anchors
+  in the issue, then drafts the entry as in Workflow A. Stage transitions follow
+  the [lifecycle](#lifecycle-stages); a working group can act as domain steward for
+  its sector once it is listed in [STEWARDS.md](STEWARDS.md).
+
 ## Workflow B: credential needs and supply signals
 
 1. **Intake**: anyone files a *Credential need / supply signal* issue. A workflow
@@ -112,6 +129,8 @@ provisional stewardship until one is confirmed (pre-study §7.3).
 | `ISIC A` … `ISIC V` | Sector, as ISIC Rev. 5 section. Applied automatically from the sectors chosen in the issue form |
 | `needs-work`, `duplicate`, `out-of-scope` | Triage outcomes |
 | `cross-domain` | Spans more than one domain, so the curator approves |
+| `wg: …` | Taken by a DIDAS working group |
+| `intake-batch` | Filed through a batch in `intake/` |
 
 ## Escalation
 

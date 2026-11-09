@@ -61,6 +61,13 @@ jobs:
               if (level !== 'section') continue;
               labels.push([`ISIC ${notation}`, 'c5f6fa', `Sector: ${title}`.slice(0, 100)]);
             }
+            // One label per DIDAS working group, from _data/working-groups.csv
+            for (const line of fs.readFileSync('_data/working-groups.csv', 'utf8').trim().split('\n').slice(1)) {
+              if (!line.trim()) continue;
+              const [id, name] = parse(line);
+              labels.push([`wg: ${id}`, '1971c2', `Taken by the DIDAS working group ${name || id}`.slice(0, 100)]);
+            }
+            labels.push(['intake-batch', 'ededed', 'Filed through a batch in intake/']);
             for (const [name, color, description] of labels) {
               try {
                 await github.rest.issues.updateLabel({ ...context.repo, name, color, description });

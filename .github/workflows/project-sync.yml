@@ -33,6 +33,10 @@ jobs:
       - name: Explain a missing token
         if: env.PROJECT_TOKEN == ''
         run: echo "::warning::PROJECT_TOKEN is not set, so the project board is not updated. See PROJECT.md."
+      - uses: actions/checkout@v4
+        if: env.PROJECT_TOKEN != ''
+        with:
+          sparse-checkout: _data
       - uses: actions/github-script@v7
         if: env.PROJECT_TOKEN != ''
         with:
@@ -67,6 +71,28 @@ jobs:
               '- Governance: https://github.com/DIDAS-swiss/use-case-repository/blob/main/GOVERNANCE.md',
               '- How this board works: https://github.com/DIDAS-swiss/use-case-repository/blob/main/PROJECT.md',
             ].join('\n');
+
+            // Sectors (ISIC Rev. 5 sections) and working groups, from _data/.
+            const fs = require('fs');
+            const parse = line => {
+              const out = []; let cur = '', q = false;
+              for (let i = 0; i < line.length; i++) {
+                const c = line[i];
+                if (q) { if (c === '"' && line[i + 1] === '"') { cur += '"'; i++; } else if (c === '"') q = false; else cur += c; }
+                else if (c === '"') q = true; else if (c === ',') { out.push(cur); cur = ''; } else cur += c;
+              }
+              out.push(cur); return out;
+            };
+            const csv = f => { try { return fs.readFileSync(f, 'utf8').trim().split('\n').slice(1).filter(Boolean).map(parse); } catch (e) { return []; } };
+            const sectorRows = csv('_data/sectors.csv');   // id, level, notation, label, broader
+            const broader = Object.fromEntries(sectorRows.map(r => [r[0], r[4]]));
+            const sectionOf = id => (broader[id] ? sectionOf(broader[id]) : id);
+            const sectionName = Object.fromEntries(sectorRows.filter(r => r[1] === 'section')
+              .map(r => { const n = `${r[2]} · ${r[3]}`; return [r[2], n.length > 80 ? n.slice(0, 79).trimEnd() + '…' : n]; }));
+            const SECTOR = Object.values(sectionName).map(n => [n, 'GRAY', 'ISIC Rev. 5 section']);
+            const groups = csv('_data/working-groups.csv');   // id, name, description
+            const groupName = Object.fromEntries(groups.map(r => [r[0], r[1] || r[0]]));
+            const GROUP = groups.map(r => [r[1] || r[0], 'BLUE', (r[2] || 'DIDAS working group').slice(0, 100)]);
 
             const gql = (q, v) => github.graphql(q, v);
             const option = ([name, color, description]) => ({ name, color, description });
@@ -111,6 +137,21 @@ jobs:
               return null;
             }
 
+            // The primary sector: the first sector chosen in the form, else the
+            // first ISIC section label.
+            function sectorOf(content) {
+              const block = ((content.body || '').split('### Sector(s)')[1] || '').split('\n### ')[0];
+              const first = (block.match(/ISIC-[A-Z0-9]+/) || [])[0];
+              if (first && first in broader) return sectionName[sectionOf(first).replace('ISIC-', '')];
+              const label = (content.labels || []).map(l => typeof l === 'string' ? l : l.name).find(n => /^ISIC [A-Z]$/.test(n));
+              return label ? sectionName[label.slice(5)] : null;
+            }
+
+            function groupOf(content) {
+              const label = (content.labels || []).map(l => typeof l === 'string' ? l : l.name).find(n => n.startsWith('wg: '));
+              return label ? (groupName[label.slice(4)] || null) : null;
+            }
+
             // The status an event decides; null leaves a person's choice alone.
             function statusOf(content, isPr, action) {
               const labels = (content.labels || []).map(l => typeof l === 'string' ? l : l.name);
@@ -141,16 +182,22 @@ jobs:
               const item = added.addProjectV2ItemById.item;
               const type = typeOf(content, isPr);
               if (type) await setField(project, item.id, 'Type', type);
+              const sector = !isPr && sectorOf(content);
+              if (sector) await setField(project, item.id, 'Sector', sector);
+              const group = groupOf(content);
+              if (group && GROUP.length) await setField(project, item.id, 'Working group', group);
               const status = statusOf(content, isPr, action)
                 || (!item.status ? (isPr ? (content.draft ? 'Drafting' : 'In review') : 'New') : null);
               if (status && status !== item.status?.name) await setField(project, item.id, 'Status', status);
-              core.info(`#${content.number}: type ${type || '-'}, status ${status || item.status?.name || '-'}`);
+              core.info(`#${content.number}: type ${type || '-'}, status ${status || item.status?.name || '-'}, sector ${sector || '-'}, group ${group || '-'}`);
             }
 
             let project = await loadProject();
             if (context.eventName === 'workflow_dispatch') {
               await ensureField(project, 'Status', STATUS);
               await ensureField(project, 'Type', TYPE);
+              if (SECTOR.length) await ensureField(project, 'Sector', SECTOR);
+              if (GROUP.length) await ensureField(project, 'Working group', GROUP);
               await gql(`mutation($p: ID!, $d: String!, $r: String!) {
                 updateProjectV2(input: { projectId: $p, shortDescription: $d, readme: $r }) { clientMutationId } }`,
                 { p: project.id, d: 'Intake and lifecycle of business use cases for the Swiss verifiable data ecosystem', r: README });

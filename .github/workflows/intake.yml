@@ -1,0 +1,38 @@
+# Opens one use-case candidate issue per entry of a batch file in intake/
+# (see intake/README.md), then refreshes the project board so the new
+# candidates appear there with their sector, ready for a working group.
+name: Intake candidates
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "intake/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+  actions: write
+
+concurrency:
+  group: intake
+  cancel-in-progress: false
+
+jobs:
+  intake:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install PyYAML
+        run: python3 -m pip install --quiet pyyaml
+      - name: Open candidate issues
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 scripts/intake.py
+      # Issues opened with the workflow token do not trigger other workflows,
+      # so the project board is refreshed explicitly.
+      - name: Refresh the project board
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run project-sync.yml --ref main
