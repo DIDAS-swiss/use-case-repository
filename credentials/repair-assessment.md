@@ -11,7 +11,7 @@ ambition_level: AL3
 likely_issuer: Certified garage or vehicle damage expert
 issuer_type: private
 schema_refs: []
-used_by: [motor-vehicle-claims-processing]
+used_by: []
 demand_issues: []
 created: 2026-10-30
 updated: 2026-11-05
@@ -51,7 +51,7 @@ federated into this repository.
 
 ## Demand
 
-Needed by [motor vehicle claims processing](../use-cases/motor-vehicle-claims-processing.md).
+Needed by [motor vehicle claims processing](https://github.com/DIDAS-swiss/use-case-repository/issues/83).
 
 ## Sources
 

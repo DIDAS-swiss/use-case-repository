@@ -11,7 +11,7 @@ ambition_level: AL3
 likely_issuer: Motor vehicle liability insurers; schema coordination by the Swiss Insurance Association (SVV)
 issuer_type: private
 schema_refs: []
-used_by: [vehicle-leasing, motor-vehicle-claims-processing]
+used_by: []
 demand_issues: []
 created: 2026-10-30
 updated: 2026-11-05
@@ -51,7 +51,7 @@ federated into this repository.
 
 ## Demand
 
-Created in [vehicle leasing](../use-cases/vehicle-leasing.md) and **reused** in [motor vehicle claims processing](../use-cases/motor-vehicle-claims-processing.md).
+Created in [vehicle leasing](https://github.com/DIDAS-swiss/use-case-repository/issues/123) and **reused** in [motor vehicle claims processing](https://github.com/DIDAS-swiss/use-case-repository/issues/83).
 
 ## Sources
 

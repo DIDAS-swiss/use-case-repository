@@ -11,7 +11,7 @@ ambition_level: AL3
 likely_issuer: The vaccinator that administered the dose (GP practice, pharmacy with a vaccination permit, company medical service)
 issuer_type: private
 schema_refs: [https://github.com/DIDAS-swiss/digital-health_swiyu/blob/main/docs/credentials/immunization.md, https://github.com/DIDAS-swiss/digital-health_swiyu/blob/main/config/praxis/credentials/health-immunization-sd-jwt/schema.json, http://fhir.ch/ig/ch-vacd/StructureDefinition/ch-vacd-immunization]
-used_by: [vaccination-record]
+used_by: []
 demand_issues: []
 created: 2026-11-05
 updated: 2026-11-05
@@ -69,7 +69,7 @@ components, Sandbox only. No vaccinator issues it in production.
 
 ## Demand
 
-Needed by [vaccination record](../use-cases/vaccination-record.md), requested by
+Needed by [vaccination record](https://github.com/DIDAS-swiss/use-case-repository/issues/122), requested by
 practices, pharmacies and travel clinics, later by research and coverage
 monitoring.
 

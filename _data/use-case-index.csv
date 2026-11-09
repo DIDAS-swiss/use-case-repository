@@ -81,7 +81,7 @@ mdl-age-bridge,Electronic driving licence as age proof until the e-ID is availab
 medical-certificates,"Verifiable medical certificates (sick notes, accident reports)",candidate
 medication-plan-wallet,Medication plan held in the patient's wallet,candidate
 mobile-contract-identity,Identity check for a mobile phone contract,candidate
-motor-vehicle-claims-processing,Motor vehicle claims processing,entry
+motor-vehicle-claims-processing,Motor vehicle claims processing,candidate
 moving-renting,Moving to a new municipality with a new lease,candidate
 open-pension,Open Pension: consent-based sharing of pension data across all pillars,candidate
 organ-donation-register-eid,Organ and tissue donation register: recording the decision with the e-ID,candidate
@@ -121,8 +121,8 @@ tobacco-age-online,Age verification for online sale of tobacco products,candidat
 tobacco-age-vending,Age verification at tobacco vending machines,candidate
 tourism-guest-mobility,Guest mobility discounts in tourism regions,candidate
 traffic-control-licence,Digital driving licence at traffic control,candidate
-vaccination-record,Vaccination record and evidence of doses,entry
-vehicle-leasing,Vehicle leasing,entry
+vaccination-record,Vaccination record with minimal disclosure and backup,candidate
+vehicle-leasing,Vehicle leasing,candidate
 vehicle-provisional-registration,Provisional traffic authorisation for a vehicle,candidate
 vehicle-registration-document,Digital vehicle registration document for rental and change of holder,candidate
 vet-certificate-efz,Federal VET certificate (EFZ) issuance,candidate

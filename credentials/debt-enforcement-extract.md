@@ -11,7 +11,7 @@ ambition_level: AL2
 likely_issuer: Cantonal or regional debt enforcement office (Betreibungsamt)
 issuer_type: cantonal
 schema_refs: []
-used_by: [vehicle-leasing]
+used_by: []
 demand_issues: []
 created: 2026-10-30
 updated: 2026-11-05
@@ -49,7 +49,7 @@ federated into this repository.
 
 ## Demand
 
-Needed by [vehicle leasing](../use-cases/vehicle-leasing.md). Deliberately **excluded** in [motor vehicle claims processing](../use-cases/motor-vehicle-claims-processing.md).
+Needed by [vehicle leasing](https://github.com/DIDAS-swiss/use-case-repository/issues/123). Deliberately **excluded** in [motor vehicle claims processing](https://github.com/DIDAS-swiss/use-case-repository/issues/83).
 
 ## Sources
 

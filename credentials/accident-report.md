@@ -11,7 +11,7 @@ ambition_level: AL2
 likely_issuer: Cantonal police (the pre-study mockup names FDJP and cantonal police)
 issuer_type: cantonal
 schema_refs: []
-used_by: [motor-vehicle-claims-processing]
+used_by: []
 demand_issues: []
 created: 2026-10-30
 updated: 2026-11-05
@@ -50,7 +50,7 @@ federated into this repository.
 
 ## Demand
 
-Needed by [motor vehicle claims processing](../use-cases/motor-vehicle-claims-processing.md).
+Needed by [motor vehicle claims processing](https://github.com/DIDAS-swiss/use-case-repository/issues/83).
 
 ## Sources
 

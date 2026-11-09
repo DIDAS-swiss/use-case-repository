@@ -11,7 +11,7 @@ ambition_level: AL2
 likely_issuer: Cantonal road traffic office (Strassenverkehrsamt); federal coordination by FEDRO (ASTRA)
 issuer_type: cantonal
 schema_refs: []
-used_by: [vehicle-leasing, motor-vehicle-claims-processing]
+used_by: []
 demand_issues: []
 created: 2026-10-30
 updated: 2026-11-05
@@ -50,7 +50,7 @@ federated into this repository.
 
 ## Demand
 
-Created in [vehicle leasing](../use-cases/vehicle-leasing.md) and **reused** in [motor vehicle claims processing](../use-cases/motor-vehicle-claims-processing.md). One issuer decision unblocks both.
+Created in [vehicle leasing](https://github.com/DIDAS-swiss/use-case-repository/issues/123) and **reused** in [motor vehicle claims processing](https://github.com/DIDAS-swiss/use-case-repository/issues/83). One issuer decision unblocks both.
 
 ## Sources
 

@@ -11,7 +11,7 @@ ambition_level: AL1
 likely_issuer: Federal Office of Police (fedpol)
 issuer_type: federal
 schema_refs: []
-used_by: [vehicle-leasing, motor-vehicle-claims-processing]
+used_by: []
 demand_issues: []
 created: 2026-10-30
 updated: 2026-11-05

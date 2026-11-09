@@ -80,8 +80,8 @@ Beta-ID from the BCS. There is no production issuance, by design.
 
 Not relied on by any use case as evidence. It is the test stand-in for the
 [Swiss e-ID](swiss-e-id.md) in pilots of
-[vehicle leasing](../use-cases/vehicle-leasing.md) and
-[motor vehicle claims processing](../use-cases/motor-vehicle-claims-processing.md).
+[vehicle leasing](https://github.com/DIDAS-swiss/use-case-repository/issues/123) and
+[motor vehicle claims processing](https://github.com/DIDAS-swiss/use-case-repository/issues/83).
 
 ## Sources
 

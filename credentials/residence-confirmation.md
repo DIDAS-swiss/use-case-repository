@@ -13,7 +13,7 @@ issuer_type: municipal
 i14y_dataset: urn:vct:ch.egovernment.residency-permit-simple
 i14y_id: 49ad2ad8-6792-4902-bc0c-c2c3b41fb909
 schema_refs: []
-used_by: [vehicle-leasing]
+used_by: []
 demand_issues: []
 created: 2026-10-30
 updated: 2026-11-05
@@ -57,7 +57,7 @@ mapping shows it with a cantonal issuer.
 
 ## Demand
 
-Needed by [vehicle leasing](../use-cases/vehicle-leasing.md). Deliberately **excluded** in [motor vehicle claims processing](../use-cases/motor-vehicle-claims-processing.md).
+Needed by [vehicle leasing](https://github.com/DIDAS-swiss/use-case-repository/issues/123). Deliberately **excluded** in [motor vehicle claims processing](https://github.com/DIDAS-swiss/use-case-repository/issues/83).
 
 ## Sources
 

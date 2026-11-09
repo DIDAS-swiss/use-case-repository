@@ -1,6 +1,8 @@
 # Use cases
 
-Every published use case, with its lifecycle stage. To propose one, open a
+Every published use case, with its lifecycle stage. None is published yet: all
+use cases are candidates in the [backlog](../backlog.md) until a working group
+has drafted them and a curator has merged the entry. To propose one, open a
 [Use-case candidate](https://github.com/DIDAS-swiss/use-case-repository/issues/new?template=use-case-candidate.yml) issue.
 The format is described in [CONTRIBUTING.md](../CONTRIBUTING.md).
 
@@ -12,9 +14,7 @@ insurance activities* also finds the divisions and classes inside it.
 
 | Use case | Stage | Ambition levels | Sectors | Credentials: reused · new · excluded | Steward |
 |---|---|---|---|---|---|
-| [Motor vehicle claims processing](motor-vehicle-claims-processing.md) | signal | AL1, AL2, AL3 | ISIC-6512 Non-life insurance; ISIC-84 Public administration | 3 · 2 · 3 | vacant |
-| [Vehicle leasing](vehicle-leasing.md) | signal | AL1, AL2, AL3 | ISIC-64 Financial services; ISIC-65 Insurance; ISIC-84 Public administration | 1 · 5 · 0 | vacant |
-| [Vaccination record and evidence of doses](vaccination-record.md) | signal | AL3 | ISIC-86 Human health; ISIC-47 Retail trade (pharmacies) | 0 · 1 · 2 | vacant |
+| _None yet_ | | | | | |
 
 Stages: `signal` → `candidate` → `qualified` → `active` → `maintained`, or
 `deprecated`. See [GOVERNANCE.md](../GOVERNANCE.md#lifecycle-stages).

@@ -9,6 +9,7 @@ To document a change, add a new dated file here as part of the same pull request
 
 ## Entries
 
+- [2026-11-10: The three seed entries go back to the backlog](2026-11-10-entries-back-to-backlog.md)
 - [2026-11-10: The e-ID is not a login](2026-11-10-eid-not-login.md)
 - [2026-11-10: Backlog page with the whole lifecycle](2026-11-10-backlog-page.md)
 - [2026-11-10: The use-case form is the structure; links and dynamic choices](2026-11-10-form-as-structure.md)
