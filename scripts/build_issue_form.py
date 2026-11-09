@@ -2,10 +2,13 @@
 """Fill the choice lists of the issue forms from _data/.
 
 GitHub issue forms are static YAML, so the dropdowns that offer the anchor
-vocabularies (sectors, trust flows, Industry Function Graph patterns and the
-credential datasets on I14Y) are written into the form from the lists the sync
-scripts keep current. Only the `options:` block of those dropdowns is replaced;
-the rest of the form is edited by hand as usual.
+vocabularies are written into the form from the lists the repository keeps:
+sectors, trust flows, Industry Function Graph patterns, I14Y credential datasets
+and DIDAS Glossary terms (kept current by the sync scripts), the credentials
+described in credentials/, and the use cases (published entries and the
+candidates of the intake batches, written to _data/use-case-index.csv here).
+Only the `options:` block of those dropdowns is replaced; the rest of the form
+is edited by hand as usual.
 
 Run from the repository root:  python3 scripts/build_issue_form.py
 Standard library only.
@@ -42,13 +45,49 @@ def sector_options():
     return out
 
 
+def front_matter(path):
+    import yaml
+    return yaml.safe_load(path.read_text(encoding="utf-8").split("---")[1]) or {}
+
+
+def credential_options():
+    out = []
+    for path in sorted((ROOT / "credentials").glob("*.md")):
+        if path.name.startswith(("_", "README")):
+            continue
+        out.append(f"{path.stem} · {front_matter(path).get('title') or path.stem}")
+    return out
+
+
+def use_case_index():
+    """Published entries and batch candidates, id -> (title, kind); written to _data/."""
+    index = {}
+    for path in sorted((ROOT / "use-cases").glob("*.md")):
+        if not path.name.startswith(("_", "README")):
+            index[path.stem] = (front_matter(path).get("title") or path.stem, "entry")
+    for path in sorted((ROOT / "intake").glob("*.csv")):
+        with open(path, encoding="utf-8-sig", newline="") as f:
+            for r in csv.DictReader(f):
+                if r.get("id") and r["id"] not in index:
+                    index[r["id"]] = (r.get("title") or r["id"], "candidate")
+    rows = sorted(index.items())
+    with open(DATA / "use-case-index.csv", "w", encoding="utf-8", newline="") as f:
+        w = csv.writer(f, lineterminator="\n")
+        w.writerow(["id", "title", "kind"])
+        w.writerows([(i, t, k) for i, (t, k) in rows])
+    return [f"{i} · {t}" for i, (t, _) in rows]
+
+
 def options():
+    use_case_index()   # the ids the relation fields refer to, listed on the site
     return {
         "sectors": sector_options(),
         "trust_flows": [f"{r['id']} · {r['title']} ({r['status']})" for r in rows("trust-flows.csv")]
         + ["Not listed: linked under Other flow diagrams"],
         "ifm_patterns": [f"{r['id']} · {r['name']}" for r in rows("ifm-patterns.csv")]
         + ["No pattern fits yet"],
+        "described_credentials": credential_options(),
+        "glossary_terms": [f"{r['id']} · {r['term']}" for r in rows("glossary-terms.csv")],
         "i14y_credentials": [
             f"{r['identifier']} · {r['title']} ({r['publisher']}, {r['registration_status']})"
             for r in rows("i14y-credentials.csv")
@@ -69,7 +108,9 @@ def fill(form, lists):
         if stripped == "options:" and current in lists:
             indent = " " * (len(line) - len(line.lstrip()) + 2)
             i += 1
-            while i < len(lines) and lines[i].startswith(indent + "- "):
+            # an option may wrap onto continuation lines, indented deeper than its "- "
+            while i < len(lines) and (lines[i].startswith(indent + "- ")
+                                      or (lines[i].startswith(indent + "  ") and lines[i].strip())):
                 i += 1
             out += [f"{indent}- {json.dumps(o, ensure_ascii=False)}" for o in lists[current]]
             current = None

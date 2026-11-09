@@ -1,7 +1,8 @@
 # Issue forms cannot set labels from a dropdown, so this applies them from the
 # answers: credential signals go to the gap board (credential-need) or the
 # supply side (credential-supply), and use-case candidates get one `ISIC <letter>`
-# label per ISIC Rev. 5 section their chosen sectors fall under.
+# label per ISIC Rev. 5 section their chosen sectors fall under, and a comment
+# linking what their fields name.
 name: Label from issue forms
 
 on:
@@ -34,7 +35,7 @@ jobs:
             }
 
   use-case-sectors:
-    if: startsWith(github.event.issue.title, '[Use case]')
+    if: contains(github.event.issue.labels.*.name, 'use-case')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
@@ -76,3 +77,18 @@ jobs:
               if (!wanted.has(name)) await github.rest.issues.removeLabel({ ...issue, name });
             }
             if (wanted.size) await github.rest.issues.addLabels({ ...issue, labels: [...wanted] });
+
+  # The links comment for a use-case issue, built from its form fields: the
+  # credentials, I14Y datasets, trust flows, patterns, glossary terms and use
+  # cases it names. scripts/issue_links.py, the same code the intake uses.
+  use-case-links:
+    if: contains(github.event.issue.labels.*.name, 'use-case')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Install PyYAML
+        run: python3 -m pip install --quiet pyyaml
+      - name: Update the links comment
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 scripts/issue_links.py ${{ github.event.issue.number }}

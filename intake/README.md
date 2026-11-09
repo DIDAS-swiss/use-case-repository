@@ -3,7 +3,8 @@
 A list of candidates, for example collected in a workshop or commissioned for the
 DIDAS working groups, is filed here as one YAML file. When the file reaches
 `main`, the **Intake candidates** workflow opens one *use-case candidate* issue per
-entry, exactly as if each had been submitted through the form: labelled
+entry, written in the fields of the use-case form, exactly as if each had been
+submitted through it: labelled
 `use-case`, `stage: signal`, with its ISIC section and ambition-level labels, and
 added to the [project board](https://github.com/orgs/DIDAS-swiss/projects/6).
 
@@ -63,11 +64,12 @@ Further columns:
 ## What happens
 
 - A candidate whose title matches an existing use-case issue is not opened again.
-  Its issue is kept in step with the file instead: it gets the lighthouse label
-  the file gives it, and one comment with its upstream and downstream use cases
-  (linked to their issues), its lighthouse level and its review notes. The
-  comment is updated, not repeated, when the file changes. The issue's stage,
-  status, other labels and description are left as they are.
+  Its issue is kept in step with the file instead: its title and description in
+  the form's fields, unless someone has edited the description by hand (an
+  invisible checksum tells); the lighthouse label; one comment with where it came
+  from, the suggested working group and the points to fix; and one comment with
+  links. Comments are updated, not repeated. The issue's stage, status and other
+  labels are left as they are.
 - A candidate that is already published in `use-cases/` (same title or id) is
   opened as an **update issue**, labelled `change`, that links the entry so the
   backlog version can be compared and merged into it.

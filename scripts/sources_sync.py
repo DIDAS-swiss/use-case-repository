@@ -9,6 +9,8 @@ script copies the vocabularies it points into, from their own repositories:
   _data/ifm-patterns.csv every use case pattern of the DIDAS Industry Function
                          Graph
   _data/sectors.csv      the graph's ISIC Rev. 5 sector list
+  _data/glossary-terms.csv
+                         every term of the DIDAS Glossary, with its link
 
 The credential datasets on I14Y come from scripts/i14y_sync.py. After either
 script, scripts/build_issue_form.py puts the lists into the issue form.
@@ -31,6 +33,8 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 TFR = "https://github.com/DIDAS-swiss/Trust-Flow-Diagram-Repository"
 IFM = "https://github.com/DIDAS-swiss/industry-function-graph"
 IFM_PAGE = "https://didas-swiss.github.io/industry-function-graph/"
+GLOSSARY = "https://github.com/DIDAS-swiss/didas-glossary"
+GLOSSARY_PAGE = "https://didas-swiss.github.io/didas-glossary/"
 
 
 def clone(url, into):
@@ -108,10 +112,25 @@ def sectors(repo):
     return ordered
 
 
+def glossary_terms(repo):
+    """Each term file's id, its name and its anchor on the published glossary."""
+    import re
+    rows = []
+    for path in sorted((repo / "spec" / "terms-definitions").glob("*.md")):
+        first = path.read_text(encoding="utf-8").split("\n", 1)[0]
+        m = re.match(r"\[\[(?:def|tref):\s*(?:toip-glossary,\s*)?([^,\]]+)", first)
+        if not m:
+            continue
+        term = m.group(1).strip()
+        slug = re.sub(r"[^a-z0-9]+", "-", term.lower()).strip("-")
+        rows.append({"id": path.stem, "term": term, "url": f"{GLOSSARY_PAGE}#term:{slug}"})
+    return rows
+
+
 def main():
     with tempfile.TemporaryDirectory() as tmp:
-        tfr, ifm = pathlib.Path(tmp, "tfr"), pathlib.Path(tmp, "ifm")
-        tfr_head, ifm_head = clone(TFR, tfr), clone(IFM, ifm)
+        tfr, ifm, glo = pathlib.Path(tmp, "tfr"), pathlib.Path(tmp, "ifm"), pathlib.Path(tmp, "glossary")
+        tfr_head, ifm_head, glo_head = clone(TFR, tfr), clone(IFM, ifm), clone(GLOSSARY, glo)
         data = ROOT / "_data"
         results = {
             f"trust-flows.csv (Trust Flow Diagram Repository at {tfr_head})": write_csv(
@@ -122,6 +141,8 @@ def main():
                 data / "ifm-patterns.csv", ["id", "name", "description", "url"], ifm_patterns(ifm)),
             f"sectors.csv (Industry Function Graph at {ifm_head})": write_csv(
                 data / "sectors.csv", ["id", "level", "notation", "label", "broader"], sectors(ifm)),
+            f"glossary-terms.csv (DIDAS Glossary at {glo_head})": write_csv(
+                data / "glossary-terms.csv", ["id", "term", "url"], glossary_terms(glo)),
         }
     for name, changed in results.items():
         print(f"{name}: {'updated' if changed else 'unchanged'}")

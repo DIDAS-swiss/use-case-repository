@@ -9,6 +9,7 @@ To document a change, add a new dated file here as part of the same pull request
 
 ## Entries
 
+- [2026-11-10: The use-case form is the structure; links and dynamic choices](2026-11-10-form-as-structure.md)
 - [2026-11-09: Upstream and downstream use cases; two lighthouse levels](2026-11-09-upstream-downstream-lighthouse.md)
 - [2026-11-09: Project field Kind instead of Type; Node 24 actions](2026-11-09-kind-field.md)
 - [2026-11-09: Lighthouse selection on the project board](2026-11-09-lighthouse.md)

@@ -8,6 +8,26 @@ You do not need to write an entry to contribute. A *Use-case candidate* or
 *Credential need* issue is a complete contribution, and a curator will help
 structure it. This guide is for anyone who opens the pull request.
 
+## The form is the structure
+
+Every use case starts as an issue in the fields of the
+[use-case form](https://github.com/DIDAS-swiss/use-case-repository/issues/new?template=use-case-candidate.yml),
+whether someone fills in the form or a batch in [`intake/`](intake/README.md)
+files it. Everything after builds on those fields:
+
+- **Links**: the issue gets one comment linking what its fields name: the
+  credentials described here, I14Y datasets, trust flows, patterns, DIDAS
+  Glossary terms and related, upstream and downstream use cases
+  (`scripts/issue_links.py`).
+- **Entry**: the label `drafting` turns the fields into `use-cases/<id>.md` in a
+  pull request (`scripts/draft_entry.py`). The form's fields follow the
+  sections of an entry in order.
+
+Choice fields are dynamic: sectors, trust flows, patterns, I14Y datasets,
+glossary terms and the credentials described in `credentials/` are written into
+the form from their lists (`scripts/build_issue_form.py`). Use cases are named by
+id, from the [list of use-case ids](https://didas-swiss.github.io/use-case-repository/use-case-ids.html).
+
 ## Two kinds of entry
 
 | | Use case | Credential |
@@ -61,7 +81,7 @@ detail belongs in the body.
 | `trust_flows` | no | Trust Flow ids, `<sector>/<family>/<flow>`, from [`_data/trust-flows.csv`](https://github.com/DIDAS-swiss/use-case-repository/blob/main/_data/trust-flows.csv). See *Anchors* below |
 | `ifm_patterns` | no | Industry Function Graph pattern ids from [`_data/ifm-patterns.csv`](https://github.com/DIDAS-swiss/use-case-repository/blob/main/_data/ifm-patterns.csv) |
 | `implementations` | no | `"<url> (<how far: demo, sandbox, pilot, production>)"`, one per implementation |
-| `glossary_terms` | no | DIDAS Glossary term anchors, for example `issuer`, `verifier` |
+| `glossary_terms` | no | DIDAS Glossary term ids from [`_data/glossary-terms.csv`](https://github.com/DIDAS-swiss/use-case-repository/blob/main/_data/glossary-terms.csv), for example `issuer`, `verifier`; linked on the entry page |
 | `created`, `updated` | yes | `YYYY-MM-DD` |
 
 ### Credential
