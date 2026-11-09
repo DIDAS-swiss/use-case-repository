@@ -45,7 +45,7 @@ The **Sync project board** workflow (`.github/workflows/project-sync.yml`) keeps
 the board in step with the repository:
 
 - every issue and pull request is added, including the ones that existed before
-- **Type** follows the labels: `use-case` → Use case, `credential-need` → Credential
+- **Kind** follows the labels: `use-case` → Use case, `credential-need` → Credential
   need, `credential-supply` → Credential supply, `change` and other pull requests →
   Change, the sync branch `automation/…` → Federation update
 - **Status** follows what happens: a new issue starts at New, an open pull request
@@ -64,7 +64,7 @@ the board in step with the repository:
   when the label is removed. Curators or working groups add the label to select a
   use case as a lighthouse; a batch file can set it with a `lighthouse` column
 
-Run by hand, it also sets up the board: the Status options and the Type, Sector,
+Run by hand, it also sets up the board: the Status options and the Kind, Sector,
 Working group and Lighthouse fields, the short description and the project README.
 
 ### One-time setup
@@ -95,14 +95,14 @@ without this.
    | View | Layout | Filter | Group by |
    |---|---|---|---|
    | Intake | Board | `is:open` | Status |
-   | Use cases | Table | `type:"Use case"` | Status |
-   | Gap board | Board | `type:"Credential need" is:open` | Status |
-   | Supply | Table | `type:"Credential supply"` | |
-   | By sector | Board | `type:"Use case"` | Sector |
-   | Up for grabs | Table | `type:"Use case" no:"Working group" is:open` | Sector |
-   | Working groups | Board | `type:"Use case" has:"Working group"` | Working group |
-   | Lighthouses | Table | `type:"Use case" lighthouse:Lighthouse` | Sector |
-   | Federation updates | Table | `type:"Federation update"` | |
+   | Use cases | Table | `kind:"Use case"` | Status |
+   | Gap board | Board | `kind:"Credential need" is:open` | Status |
+   | Supply | Table | `kind:"Credential supply"` | |
+   | By sector | Board | `kind:"Use case"` | Sector |
+   | Up for grabs | Table | `kind:"Use case" no:"Working group" is:open` | Sector |
+   | Working groups | Board | `kind:"Use case" has:"Working group"` | Working group |
+   | Lighthouses | Table | `kind:"Use case" lighthouse:Lighthouse` | Sector |
+   | Federation updates | Table | `kind:"Federation update"` | |
 
    In any view, filter by sector with the field (`sector:"L · Financial and
    insurance activities"`, or pick it from the filter menu) or by any of an item's
