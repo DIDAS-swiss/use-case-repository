@@ -164,6 +164,15 @@
           </ul>
           {%- else -%}No pattern in the <a href="https://github.com/DIDAS-swiss/industry-function-graph">Industry Function Graph</a> fits yet.{%- endif -%}
         </dd>
+        {%- if page.glossary_terms.size > 0 %}
+        <dt>DIDAS Glossary terms</dt>
+        <dd><ul>
+          {%- for gid in page.glossary_terms -%}
+            {%- assign g = site.data["glossary-terms"] | where: "id", gid | first -%}
+            <li>{% if g %}<a href="{{ g.url }}">{{ g.term }}</a>{% else %}<a href="https://didas-swiss.github.io/didas-glossary/#term:{{ gid }}">{{ gid }}</a>{% endif %}</li>
+          {%- endfor -%}
+        </ul></dd>
+        {%- endif %}
         <dt>Implementations</dt>
         <dd>
           {%- if page.implementations and page.implementations.size > 0 -%}

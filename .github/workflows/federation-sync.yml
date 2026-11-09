@@ -1,7 +1,8 @@
 # Keeps everything this repository anchors to current: the credential schemas
 # and the credential catalogue from I14Y, the flows of the Trust Flow Diagram
-# Repository, the patterns and sectors of the Industry Function Graph, and the
-# issue-form choice lists built from them. Runs weekly, when a credential entry
+# Repository, the patterns and sectors of the Industry Function Graph, the terms
+# of the DIDAS Glossary, and the issue-form choice lists built from them and
+# from the repository's own credentials and use cases. Runs weekly, when a credential entry
 # or a sync script changes, and on demand. Any change arrives as a pull request
 # on the automation/federation-sync branch, so curators see the diff before it
 # is published: federated content is never updated silently.
@@ -14,6 +15,8 @@ on:
     branches: [main]
     paths:
       - "credentials/**"
+      - "use-cases/**"
+      - "intake/**"
       - "scripts/**"
   workflow_dispatch:
 

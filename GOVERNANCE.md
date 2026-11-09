@@ -71,14 +71,13 @@ provisional stewardship until one is confirmed (pre-study §7.3).
    role?), looks for duplicates, checks the ISIC sector labels the form applied and adds
    ambition-level labels (`AL2`, `AL3`). The curator may also apply `needs-work`, `duplicate` or
    `out-of-scope`, with reasons.
-3. **Drafting**: the anchors chosen in the form (trust flows, Industry Function
-   Graph patterns, I14Y credential datasets, emerging schemas, implementations)
-   go into the entry's `trust_flows`, `ifm_patterns` and `implementations` fields
-   and into the credential entries' `schema_status`. Then the proposer, a curator
-   or a volunteer opens a pull request adding
-   `use-cases/<id>.md` at stage `signal` and a row in `use-cases/README.md`, with
-   `Closes #N`. Any credential the use case needs that has no file yet is added in
-   `credentials/` in the same pull request.
+3. **Drafting**: the form is the structure everything builds on. Adding the
+   label `drafting` to the issue opens a pull request with `use-cases/<id>.md`,
+   written from the issue's form fields by the *Draft entry* workflow
+   (`scripts/draft_entry.py`). The pull request does not close the issue. The
+   proposer, a curator or the working group refines the draft in it; credentials
+   or use cases named in the issue but not described yet stay in the body text
+   until they are.
 4. **Review**: one curator approval merges a `signal` or `candidate` entry. Later
    stages need the approver named in the stage table above.
 5. **Publication**: the merge publishes the entry. A changelog entry is part of the
@@ -173,6 +172,7 @@ disagree about a relation.
 | `cross-domain` | Spans more than one domain, so the curator approves |
 | `wg: …` | Taken by a DIDAS working group |
 | `intake-batch` | Filed through a batch in `intake/` |
+| `drafting` | Opens a pull request with the entry drafted from the issue's form fields |
 | `lighthouse` | Selected as a lighthouse use case (see [Lighthouses](#lighthouses)); the project's Lighthouse field shows *Lighthouse* |
 | `lighthouse-candidate` | Lighthouse candidate: meets most of the criteria; the Lighthouse field shows *Candidate* |
 

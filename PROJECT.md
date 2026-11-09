@@ -39,6 +39,13 @@ its `wg: <group>` label and assigning a member; the board then shows it under
 that group, and the group details the candidate and drafts the entry
 ([GOVERNANCE.md](GOVERNANCE.md#working-groups)).
 
+## From candidate to entry
+
+A working group that has detailed a candidate adds the label `drafting`. The
+*Draft entry* workflow opens a pull request with the entry written from the
+issue's form fields; the pull request shows on the board as *In review*, the
+issue keeps its status. Merging the pull request publishes the entry.
+
 ## Keeping it up to date
 
 The **Sync project board** workflow (`.github/workflows/project-sync.yml`) keeps

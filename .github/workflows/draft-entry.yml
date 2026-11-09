@@ -1,0 +1,50 @@
+# Drafts a use-case entry from a use-case issue when a curator or working group
+# adds the label `drafting`: scripts/draft_entry.py writes use-cases/<id>.md from
+# the issue's form fields, and this opens a pull request for it. The pull request
+# does not close the issue and the entry starts at stage `signal`; publishing is
+# the curator's merge.
+name: Draft entry
+
+on:
+  issues:
+    types: [labeled]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  draft:
+    if: github.event.label.name == 'drafting' && contains(github.event.issue.labels.*.name, 'use-case')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Install PyYAML
+        run: python3 -m pip install --quiet pyyaml
+      - name: Draft the entry
+        id: draft
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: echo "id=$(python3 scripts/draft_entry.py ${{ github.event.issue.number }})" >> "$GITHUB_OUTPUT"
+      - name: Check the data
+        run: python3 scripts/check_data.py || echo "::warning::Check data reports problems; see the pull request checks."
+      - name: Open the pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ID: ${{ steps.draft.outputs.id }}
+          NUMBER: ${{ github.event.issue.number }}
+          TITLE: ${{ github.event.issue.title }}
+        run: |
+          rm -rf scripts/__pycache__
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "draft/$ID"
+          git add use-cases credentials
+          git commit -m "Draft entry $ID from #$NUMBER"
+          git push --force origin "draft/$ID"
+          if [ -z "$(gh pr list --head "draft/$ID" --state open --json number --jq '.[].number')" ]; then
+            gh pr create --head "draft/$ID" --base main --title "Draft entry: $TITLE" \
+              --body "Drafted from #$NUMBER, from its form fields, by scripts/draft_entry.py. The entry starts at stage \`signal\`. Refine it here; merging publishes the entry. This pull request does not close the issue."
+          fi
+          gh issue comment "$NUMBER" --body "A draft entry is open for review: $(gh pr list --head "draft/$ID" --json url --jq '.[0].url')"

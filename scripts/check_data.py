@@ -73,6 +73,7 @@ def main():
     errors, notes = wg.check()
     warnings = []
     flows, patterns = ids("trust-flows.csv"), ids("ifm-patterns.csv")
+    terms = ids("glossary-terms.csv")
     datasets = ids("i14y-credentials.csv", "identifier")
     use_cases, credentials = entries("use-cases"), entries("credentials")
 
@@ -87,6 +88,7 @@ def main():
         refs(where, fm, "sectors", wg.SECTORS, "sector")
         refs(where, fm, "trust_flows", flows, "trust flow")
         refs(where, fm, "ifm_patterns", patterns, "pattern")
+        refs(where, fm, "glossary_terms", terms, "DIDAS Glossary term")
         refs(where, fm, "related_use_cases", use_cases, "use case")
         refs(where, fm, "upstream_use_cases", use_cases, "use case")
         refs(where, fm, "downstream_use_cases", use_cases, "use case")

@@ -1,15 +1,20 @@
 name: Use-case candidate
 description: Propose a business use case in which verifiable data is exchanged
-title: "[Use case] "
-labels: ["use-case", "stage: signal"]
+labels:
+  - use-case
+  - 'stage: signal'
 body:
   - type: markdown
     attributes:
-      value: |
-        Thank you for proposing a use case. Plain prose is fine; a curator will help
+      value: 'Thank you for proposing a use case. Plain prose is fine; a curator will help
+
         turn it into a structured entry (see [GOVERNANCE.md](https://github.com/DIDAS-swiss/use-case-repository/blob/main/GOVERNANCE.md)).
+
         Please first check the [published use cases](https://github.com/DIDAS-swiss/use-case-repository/blob/main/use-cases/README.md)
+
         and the [open candidates](https://github.com/DIDAS-swiss/use-case-repository/issues?q=is%3Aissue+label%3Ause-case) for duplicates.
+
+        '
   - type: input
     id: title
     attributes:
@@ -18,38 +23,87 @@ body:
       placeholder: e.g. Vehicle leasing
     validations:
       required: true
+  - type: input
+    id: entry_id
+    attributes:
+      label: Short id (optional)
+      description: Lower-case words joined by hyphens; it becomes the file name of the published entry.
+      placeholder: e.g. vehicle-leasing
+  - type: input
+    id: titles
+    attributes:
+      label: Title in German, French and Italian (optional)
+      description: Where you know them.
+      placeholder: 'DE: Fahrzeugleasing · FR: Leasing de véhicules · IT: Leasing di veicoli'
   - type: textarea
     id: summary
     attributes:
-      label: Situation and outcome
-      description: What happens today, which decision is taken, and what must be proven to take it?
+      label: Summary
+      description: The situation today, the decision taken, and what changes when the data arrives as verifiable credentials.
     validations:
       required: true
   - type: textarea
+    id: outcome
+    attributes:
+      label: 'Outcome: what must be proven (optional)'
+      description: The facts the verifier needs proven to take the decision, one per line, stated as claims rather than documents.
+      placeholder: 'The applicant lives at the declared address
+
+        The applicant has no open debt enforcement proceedings'
+  - type: textarea
     id: actors
     attributes:
-      label: Actors
-      description: Who holds, who verifies, who issues? Name organisations where you can.
-      placeholder: |
-        Holder: lessee (person)
+      label: Actors and roles
+      description: Who holds, who verifies, who issues, who governs. Name organisations where you can.
+      placeholder: 'Holder: lessee (person)
+
         Verifier: leasing company
-        Issuers: road traffic office, insurer, ...
+
+        Issuers: road traffic office, insurer'
     validations:
       required: true
+  - type: textarea
+    id: process_flow
+    attributes:
+      label: Process flow (optional)
+      description: 'The steps, one per line: actor, action, credential.'
+      placeholder: '1. Lessee: applies and identifies with the e-ID
+
+        2. Leasing company: requests residence and debt enforcement proofs'
+  - type: textarea
+    id: design_basis
+    attributes:
+      label: Design basis (optional)
+      description: Official designs, specifications or pilots the flow follows, with links.
   - type: textarea
     id: credentials
     attributes:
       label: Credentials needed
-      description: Which facts or documents does the verifier need? Mark those you know already exist, or are already used in another use case.
+      description: Which facts or documents does the verifier need? Say which are reused from another use case, which are new, and which are deliberately not requested.
     validations:
       required: true
+  - type: dropdown
+    id: described_credentials
+    attributes:
+      label: Credentials described in this repository (optional)
+      description: Pick the credentials above that already have an entry; each is linked on the issue. Describe new ones in the field above.
+      multiple: true
+      options:
+        - "accident-report · Accident report"
+        - "beta-id · Beta-ID"
+        - "debt-enforcement-extract · Debt enforcement register extract"
+        - "immunization-record · Immunization record"
+        - "motor-vehicle-liability-insurance-confirmation · Motor vehicle liability insurance confirmation"
+        - "repair-assessment · Repair assessment"
+        - "residence-confirmation · Residence confirmation"
+        - "salary-employment-confirmation · Salary and employment confirmation"
+        - "swiss-e-id · Swiss e-ID"
+        - "vehicle-registration · Vehicle registration"
   - type: dropdown
     id: i14y_credentials
     attributes:
       label: Credentials already on I14Y (optional)
-      description: >-
-        Credential datasets published on I14Y, the Swiss interoperability platform,
-        whatever their registration status. Pick those this use case relies on.
+      description: Credential datasets published on I14Y, the Swiss interoperability platform, whatever their registration status. Pick those this use case relies on.
       multiple: true
       options:
         - "urn:vct:ch.admin.bcs.betaid · Beta-ID (CH_FEDPOL, Recorded)"
@@ -58,18 +112,17 @@ body:
     id: schemas
     attributes:
       label: Emerging or other schemas (optional)
-      description: >-
-        For credentials not on I14Y: where a schema is in preparation or already
-        used, for example in a pilot, an eCH standard or a sector repository.
-        One line per credential, with a link and how far it is.
-      placeholder: |
-        Immunization record: urn:vct:ch.didas.health.immunization:1.0, showcase schema in digital-health_swiyu, not yet on I14Y
+      description: 'For credentials not on I14Y: where a schema is in preparation or already used, for example in a pilot, an eCH standard or a sector repository. One line per credential, with a link and how far it is.'
+      placeholder: 'Immunization record: urn:vct:ch.didas.health.immunization:1.0, showcase schema in digital-health_swiyu, not yet on I14Y
+
         Vehicle registration: no schema known
+
+        '
   - type: checkboxes
     id: ambition
     attributes:
       label: Ambition level(s)
-      description: "AL1: e-ID · AL2: credentials from public authorities · AL3: credentials from private and other non-state actors"
+      description: 'AL1: e-ID · AL2: credentials from public authorities · AL3: credentials from private and other non-state actors'
       options:
         - label: AL1
         - label: AL2
@@ -78,10 +131,7 @@ body:
     id: sectors
     attributes:
       label: Sector(s)
-      description: >-
-        ISIC Rev. 5, as used by the DIDAS Industry Function Graph. Pick the most
-        specific level that fits; a section (letter) is fine where no division is listed.
-        Missing a division? Name it under "Situation and outcome".
+      description: ISIC Rev. 5, as used by the DIDAS Industry Function Graph. Pick the most specific level that fits; a section (letter) is fine where no division is listed. Missing a division? Name it under "Situation and outcome".
       multiple: true
       options:
         - "ISIC-A · Agriculture, forestry and fishing"
@@ -128,17 +178,18 @@ body:
         - "ISIC-V · Activities of extraterritorial organizations and bodies"
   - type: markdown
     attributes:
-      value: |
-        ### Anchors
+      value: '### Anchors
+
         This repository is where the other DIDAS work meets. Link what already exists
+
         for this use case, so that nobody has to find it again.
+
+        '
   - type: dropdown
     id: trust_flows
     attributes:
       label: Trust flows (optional)
-      description: >-
-        Flows from the DIDAS Trust Flow Diagram Repository that model this use case
-        or a step of it.
+      description: Flows from the DIDAS Trust Flow Diagram Repository that model this use case or a step of it.
       multiple: true
       options:
         - "banking/kyc-credential/kyc-onboarding · Online onboarding and KYC credential issuance (in-progress)"
@@ -164,9 +215,7 @@ body:
     id: ifm_patterns
     attributes:
       label: Use case pattern in the Industry Function Graph (optional)
-      description: >-
-        The sector-neutral pattern(s) this use case realises. Pick the closest;
-        if none fits, say so under "Situation and outcome".
+      description: The sector-neutral pattern(s) this use case realises. Pick the closest; if none fits, say so under "Situation and outcome".
       multiple: true
       options:
         - "eid-issuance · Electronic identity issuance"
@@ -195,29 +244,74 @@ body:
     attributes:
       label: Implementations, pilots and showcases (optional)
       description: Running code, demos, pilots or deployments of this use case. Link and state how far each goes (demo, sandbox, pilot, production).
-      placeholder: |
-        https://github.com/DIDAS-swiss/digital-health_swiyu (sandbox demo, mocked swiyu components)
+      placeholder: 'https://github.com/DIDAS-swiss/digital-health_swiyu (sandbox demo, mocked swiyu components)
+
+        '
+  - type: dropdown
+    id: glossary_terms
+    attributes:
+      label: DIDAS Glossary terms (optional)
+      description: Terms of the DIDAS Glossary this use case relies on; each is linked on the issue.
+      multiple: true
+      options:
+        - "ambition-level · ambition level"
+        - "beta-id · Beta-ID"
+        - "claim · claim"
+        - "credential · credential"
+        - "didas · DIDAS"
+        - "digital-product-passport · digital product passport"
+        - "e-collecting · E-Collecting"
+        - "ebpi · EBPI"
+        - "ecosystem · ecosystem"
+        - "governance · governance"
+        - "governing-authority · governing authority"
+        - "international-patient-summary · International Patient Summary"
+        - "issuer · issuer"
+        - "minute-of-agreement · Minute of Agreement"
+        - "protocol · protocol"
+        - "selective-disclosure · selective disclosure"
+        - "status-list · status list"
+        - "trust-domain · trust domain"
+        - "trust-infrastructure · trust infrastructure"
+        - "trust-marker · trust marker"
+        - "trust-protocol · trust protocol"
+        - "trust-statement · trust statement"
+        - "verifiable-credential · verifiable credential"
+        - "verifier · verifier"
+        - "wallet · wallet"
+  - type: textarea
+    id: related_use_cases
+    attributes:
+      label: Related use cases (optional)
+      description: Use cases related without a sequence. Their ids, one per line, from the [list of use-case ids](https://didas-swiss.github.io/use-case-repository/use-case-ids.html); each is linked on the issue.
+      placeholder: 'vehicle-leasing
+
+        residence-confirmation'
   - type: textarea
     id: upstream_use_cases
     attributes:
       label: Upstream use cases (optional)
-      description: Use cases that must happen first, because they issue a credential this one verifies. Ids or titles, one per line.
+      description: Use cases that must happen first, because they issue a credential this one verifies. Ids from the [list of use-case ids](https://didas-swiss.github.io/use-case-repository/use-case-ids.html), one per line.
+      placeholder: 'vehicle-leasing
+
+        residence-confirmation'
   - type: textarea
     id: downstream_use_cases
     attributes:
       label: Downstream use cases (optional)
-      description: Use cases that reuse a credential this one issues. Ids or titles, one per line.
+      description: Use cases that reuse a credential this one issues. Ids from the [list of use-case ids](https://didas-swiss.github.io/use-case-repository/use-case-ids.html), one per line.
+      placeholder: 'vehicle-leasing
+
+        residence-confirmation'
   - type: dropdown
     id: lighthouse
     attributes:
       label: Lighthouse proposal (optional)
-      description: >-
-        Propose this use case as a lighthouse candidate if it meets most of the criteria in GOVERNANCE.md
-        (reach, benefit for administration and business, a repeatable building block, a confirmed issuer,
-        feasible within about 12 months, internationally interoperable). Selection is a decision of DIDAS.
+      description: Propose this use case as a lighthouse candidate if it meets most of the criteria in GOVERNANCE.md (reach, benefit for administration and business, a repeatable building block, a confirmed issuer, feasible within about 12 months, internationally interoperable). Selection is a decision of DIDAS.
       options:
-        - "No proposal"
-        - "Propose as lighthouse candidate"
+        - No proposal
+        - Propose as lighthouse candidate
+        - Selected as lighthouse (DIDAS decision)
   - type: textarea
     id: lighthouse_basis
     attributes:
@@ -233,6 +327,11 @@ body:
     attributes:
       label: Demand and value (optional)
       description: Who would rely on it, how often, and what would it improve?
+  - type: textarea
+    id: open_questions
+    attributes:
+      label: Coordination needs and open questions (optional)
+      description: What has to happen, and who has to act, for this use case to move on.
   - type: input
     id: organisation
     attributes:
