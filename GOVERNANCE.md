@@ -94,7 +94,7 @@ DIDAS working groups take candidates and develop them into entries.
   `intake-batch`, and puts them on the [project board](PROJECT.md) by sector.
 - **Taking a candidate**: a working group adds its `wg: <group>` label and assigns
   a member, and moves the item to *Drafting*. The groups are listed in
-  [`_data/working-groups.csv`](_data/working-groups.csv); *Sync labels* creates
+  [`_data/working-groups.csv`](https://github.com/DIDAS-swiss/use-case-repository/blob/main/_data/working-groups.csv); *Sync labels* creates
   their labels.
 - **Detailing it**: the group fills in actors, credentials, governance and anchors
   in the issue, then drafts the entry as in Workflow A. Stage transitions follow
