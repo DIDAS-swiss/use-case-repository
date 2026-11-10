@@ -23,8 +23,17 @@ trust infrastructure, swiyu, without the e-ID).
 | Electronic signatures | The e-ID is not a signing tool. It can be used to obtain electronic signatures from certified providers under ZertES, including qualified electronic signatures (QES), and so enable or trigger a remote signing flow. Remote signing capabilities are planned; which providers integrate the e-ID, and when, is not established here. | swiyu, [Hilfe zur e-ID](https://swiyu.admin.ch/de/hilfe-e-id) ("Kann ich mit der e-ID elektronisch signieren?") |
 
 **Last checked: 10 November 2026.** The BJ page lists no announcement after
-30 June 2026. Whoever checks again updates the date and, where the status
+30 June 2026; swiyu.admin.ch, live since 27 October 2026, lists the e-ID as "soon available". Whoever checks again updates the date and, where the status
 changed, the table; the use cases follow through their link.
+
+### Credentials on the trust infrastructure
+
+| Credential | Status | Source |
+|---|---|---|
+| Electronic learner's permit (eLFA) | **In live use** in all cantons since 1 December 2025, issued by the cantonal road traffic offices into the swiyu wallet and checkable with ASTRA's [LicenceCheck](https://licencecheck.astra.admin.ch/). The Confederation calls it a pilot (with asa; evaluation until end of March 2027). DIDAS reports about 100,000 active eLFA as of 10 November 2026. | [eid.admin.ch, eLFA](https://www.eid.admin.ch/de/pilotprojekte) (no longer maintained since 27 October 2026); DIDAS |
+| e-ID, residence confirmation, debt enforcement register extract, digital driving licence | Announced as "soon available" for organisations to integrate. | [swiyu – Ökosystem](https://swiyu.admin.ch/de/oekosystem) |
+
+The federal site moved from eid.admin.ch to [swiyu.admin.ch](https://swiyu.admin.ch/de) on 27 October 2026; sources here point to swiyu.admin.ch where the page exists there.
 
 ### What this means for a use case
 

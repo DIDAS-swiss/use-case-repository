@@ -22,6 +22,7 @@ To offer to issue one, open a
 
 | Credential | Supply | Likely issuer | Blocks use cases (candidates) |
 |---|---|---|---|
+| [Digital driving licence](digital-driving-licence.md) | emerging | Cantonal road traffic office | 7: [traffic control](https://github.com/DIDAS-swiss/use-case-repository/issues/40), [carsharing](https://github.com/DIDAS-swiss/use-case-repository/issues/45), [car rental](https://github.com/DIDAS-swiss/use-case-repository/issues/23), [corporate carsharing](https://github.com/DIDAS-swiss/use-case-repository/issues/55), [fleet](https://github.com/DIDAS-swiss/use-case-repository/issues/63), [age proof](https://github.com/DIDAS-swiss/use-case-repository/issues/52), [learner carsharing](https://github.com/DIDAS-swiss/use-case-repository/issues/76) |
 | [Vehicle registration](vehicle-registration.md) | missing | Cantonal road traffic office | 2: [leasing](https://github.com/DIDAS-swiss/use-case-repository/issues/123), [claims](https://github.com/DIDAS-swiss/use-case-repository/issues/83) |
 | [Motor vehicle liability insurance confirmation](motor-vehicle-liability-insurance-confirmation.md) | missing | Insurers / SVV | 2: [leasing](https://github.com/DIDAS-swiss/use-case-repository/issues/123), [claims](https://github.com/DIDAS-swiss/use-case-repository/issues/83) |
 | [Salary and employment confirmation](salary-employment-confirmation.md) | missing | Employers / sector body | 1: [leasing](https://github.com/DIDAS-swiss/use-case-repository/issues/123) |
@@ -39,6 +40,8 @@ To offer to issue one, open a
 | [Accident report](accident-report.md) | AL2 | cantonal | missing | signal | 1 | none |
 | [Beta-ID](beta-id.md) (test credential) | AL1 | federal | available (Public Beta) | candidate | test stand-in for the e-ID | on I14Y (Recorded): [`urn:vct:ch.admin.bcs.betaid`](https://www.i14y.admin.ch/de/catalog/datasets/urn:vct:ch.admin.bcs.betaid/description) · [schema](../federation/i14y/beta-id/) |
 | [Debt enforcement register extract](debt-enforcement-extract.md) | AL2 | cantonal | emerging | signal | 1 | none |
+| [Digital driving licence](digital-driving-licence.md) | AL2 | cantonal | emerging | signal | 7 | none; announced on [swiyu](https://swiyu.admin.ch/de/oekosystem) |
+| [Electronic learner's permit (eLFA)](learner-permit-elfa.md) | AL2 | cantonal | available (live; about 100,000 active, DIDAS 10.11.2026) | signal | 2 | emerging: issuer-side schema, not on I14Y (checked 2026-11-10) |
 | [Immunization record](immunization-record.md) | AL3 | private | emerging | signal | 1 | emerging: showcase type `urn:vct:ch.didas.health.immunization:1.0`, not on I14Y |
 | [Motor vehicle liability insurance confirmation](motor-vehicle-liability-insurance-confirmation.md) | AL3 | private | missing | signal | 2 | none |
 | [Repair assessment](repair-assessment.md) | AL3 | private | missing | signal | 1 | none |
@@ -47,4 +50,4 @@ To offer to issue one, open a
 | [Swiss e-ID](swiss-e-id.md) | AL1 | federal | emerging | candidate | 2 | none; attribute set as [Beta-ID](https://www.i14y.admin.ch/de/catalog/datasets/urn:vct:ch.admin.bcs.betaid/description) |
 | [Vehicle registration](vehicle-registration.md) | AL2 | cantonal | missing | signal | 2 | none |
 
-"None" means no schema is known; for each, no credential dataset was found on I14Y on 2026-11-05. All credential datasets on I14Y are listed on the [Anchors page](../anchors.md#credential-datasets-on-i14y).
+"None" means no schema is known; for each, no credential dataset was found on I14Y on 2026-11-05 (learner's permit and driving licence: 2026-11-10). All credential datasets on I14Y are listed on the [Anchors page](../anchors.md#credential-datasets-on-i14y).
