@@ -9,6 +9,7 @@ To document a change, add a new dated file here as part of the same pull request
 
 ## Entries
 
+- [2026-11-10: eLFA live; driving-licence credentials; swiyu.admin.ch sources](2026-11-10-swiyu-pilots.md)
 - [2026-11-10: Editorial review of the backlog; a shorter form](2026-11-10-editorial-review.md)
 - [2026-11-10: The three seed entries go back to the backlog](2026-11-10-entries-back-to-backlog.md)
 - [2026-11-10: The e-ID is not a login](2026-11-10-eid-not-login.md)
