@@ -316,6 +316,14 @@ body:
         - "verifier · verifier"
         - "wallet · wallet"
   - type: textarea
+    id: missing_terms
+    attributes:
+      label: Terms missing from the DIDAS Glossary (optional)
+      description: Terms this use case needs that the glossary does not define yet, one per line, each with what it means here. Each becomes a new-term request in the [DIDAS Glossary](https://github.com/DIDAS-swiss/didas-glossary/issues?q=label%3A%22new+term%22), linked back to this issue.
+      placeholder: |
+        mandate — the authority a principal gives an agent to act for them
+        status attestation — a dated statement by the issuer that a credential is valid
+  - type: textarea
     id: related_use_cases
     attributes:
       label: Related use cases (optional)

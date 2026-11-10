@@ -65,6 +65,7 @@ Further columns:
 | `expected_benefit`, `benefit_basis` | the activity that would change, and whether that is a `hypothesis` (default), `reported` or `measured` |
 | `open_question`, `open_question_de` | the one question that holds the use case up; rendered first under *Open questions* |
 | `background`, `background_de` | legal and programme context, project-specific dates |
+| `missing_terms` | terms the DIDAS Glossary does not define yet, each as `term — meaning`, separated by ` \| `; they become glossary requests (see [CONTRIBUTING.md](../CONTRIBUTING.md#glossary-requests)) |
 | `dependencies` | `e-id` or `trust-infrastructure`: links the [dependencies page](../dependencies.md) instead of repeating the shared timing |
 
 Placeholders such as "no official figure" stay in the file but are left out of

@@ -10,7 +10,8 @@ script copies the vocabularies it points into, from their own repositories:
                          Graph
   _data/sectors.csv      the graph's ISIC Rev. 5 sector list
   _data/glossary-terms.csv
-                         every term of the DIDAS Glossary, with its link
+                         every term of the DIDAS Glossary, with its other
+                         names and its link
 
 The credential datasets on I14Y come from scripts/i14y_sync.py. After either
 script, scripts/build_issue_form.py puts the lists into the issue form.
@@ -113,17 +114,20 @@ def sectors(repo):
 
 
 def glossary_terms(repo):
-    """Each term file's id, its name and its anchor on the published glossary."""
+    """Each term file's id, its name, its other names (plural, DE/FR/IT) and its
+    anchor on the published glossary."""
     import re
     rows = []
     for path in sorted((repo / "spec" / "terms-definitions").glob("*.md")):
         first = path.read_text(encoding="utf-8").split("\n", 1)[0]
-        m = re.match(r"\[\[(?:def|tref):\s*(?:toip-glossary,\s*)?([^,\]]+)", first)
+        m = re.match(r"\[\[(?:def|tref):\s*(?:toip-glossary,\s*)?([^\]]+)\]\]", first)
         if not m:
             continue
-        term = m.group(1).strip()
+        names = [n.strip() for n in m.group(1).split(",") if n.strip()]
+        term = names[0]
         slug = re.sub(r"[^a-z0-9]+", "-", term.lower()).strip("-")
-        rows.append({"id": path.stem, "term": term, "url": f"{GLOSSARY_PAGE}#term:{slug}"})
+        rows.append({"id": path.stem, "term": term, "aliases": "; ".join(names[1:]),
+                     "url": f"{GLOSSARY_PAGE}#term:{slug}"})
     return rows
 
 
@@ -142,7 +146,7 @@ def main():
             f"sectors.csv (Industry Function Graph at {ifm_head})": write_csv(
                 data / "sectors.csv", ["id", "level", "notation", "label", "broader"], sectors(ifm)),
             f"glossary-terms.csv (DIDAS Glossary at {glo_head})": write_csv(
-                data / "glossary-terms.csv", ["id", "term", "url"], glossary_terms(glo)),
+                data / "glossary-terms.csv", ["id", "term", "aliases", "url"], glossary_terms(glo)),
         }
     for name, changed in results.items():
         print(f"{name}: {'updated' if changed else 'unchanged'}")
