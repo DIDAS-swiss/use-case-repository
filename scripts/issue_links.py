@@ -25,14 +25,15 @@ import urllib.request
 
 import yaml
 
-ROOT = pathlib.Path(__file__).resolve().parent.parent
+import use_case_form as form
+
+ROOT = form.ROOT
 API = "https://api.github.com"
 SITE = "https://didas-swiss.github.io/use-case-repository"
 REPO = "https://github.com/DIDAS-swiss/use-case-repository"
 MARKER = "<!-- issue-links -->"
 
-FORM = yaml.safe_load((ROOT / ".github" / "ISSUE_TEMPLATE" / "use-case-candidate.yml").read_text(encoding="utf-8"))
-FIELDS = {f["id"]: f for f in FORM["body"] if f.get("id")}
+FIELDS = form.BY_ID
 
 
 def rows(name):
@@ -61,26 +62,13 @@ USE_CASES = {r["id"]: r for r in rows("use-case-index.csv")}
 
 
 def fields(body):
-    """The form's fields in an issue body, as {field id: text}."""
-    by_label = {f["attributes"]["label"]: i for i, f in FIELDS.items()}
-    out, current, buf = {}, None, []
-    for line in (body or "").split("\n"):
-        m = re.match(r"^### (.+?)\s*$", line)
-        if m and m.group(1) in by_label:
-            if current:
-                out[current] = "\n".join(buf).strip()
-            current, buf = by_label[m.group(1)], []
-        elif current:
-            buf.append(line)
-    if current:
-        out[current] = "\n".join(buf).strip()
-    return {k: ("" if v == "_No response_" else re.sub(r"\n*<!--.*?-->\s*$", "", v, flags=re.S)) for k, v in out.items()}
+    """The form's fields in an issue body, as {field id: text}; reads current and earlier forms."""
+    return form.parse(body)
 
 
 def chosen(field_id, text):
     """The leading ids of the dropdown options a field's text holds."""
-    options = FIELDS[field_id]["attributes"].get("options") or []
-    return [o.lstrip("— ").split(" · ")[0] for o in options if o in (text or "")]
+    return form.chosen(field_id, text)
 
 
 def ids(text, known):
@@ -135,9 +123,9 @@ def numbers_from(issues):
     """Candidate id -> issue number, from the Short id field of use-case issues."""
     out = {}
     for i in issues:
-        m = re.search(r"^### Short id \(optional\)\n\n([a-z0-9-]+)\s*$", i.get("body") or "", re.M)
-        if m:
-            out[m.group(1)] = i["number"]
+        sid = form.short_id(i.get("body"))
+        if sid:
+            out[sid] = i["number"]
     return out
 
 

@@ -20,8 +20,18 @@ files it. Everything after builds on those fields:
   Glossary terms and related, upstream and downstream use cases
   (`scripts/issue_links.py`).
 - **Entry**: the label `drafting` turns the fields into `use-cases/<id>.md` in a
-  pull request (`scripts/draft_entry.py`). The form's fields follow the
-  sections of an entry in order.
+  pull request (`scripts/draft_entry.py`).
+
+The form asks first for the six things a signal needs: the **use case** (one
+decision), a **summary** of up to 70 words, the **actors**, the **facts to
+prove**, the **demand and value** (measured, reported or a hypothesis) and the
+**evidence status** with its **sources**. Catalogue choices, flows and
+credentials follow under *Details* and can be added by a curator or the working
+group later.
+
+All scripts read the form through `scripts/use_case_form.py`. When a label
+changes, the earlier label goes into its `LEGACY_LABELS`, so issues written
+with the earlier form still parse; `tests/` checks bodies of both versions.
 
 Choice fields are dynamic: sectors, trust flows, patterns, I14Y datasets,
 glossary terms and the credentials described in `credentials/` are written into
@@ -174,8 +184,25 @@ of NACE Rev. 2.1, at section and division level.
 ## The body
 
 Use the headings in the template, in that order, so every entry reads the same
-way. A heading may say "Not yet known". Leaving it out hides the gap, and the gaps
-are what this repository is meant to show.
+way. The core headings (Summary, Facts to prove, Actors and roles, Demand and
+value, Evidence status, Credentials, Sources) stay even when empty and say "Not
+yet known": the gaps are what this repository is meant to show. Other headings
+are left out when there is nothing to say.
+
+Write for the decision:
+
+- Start with who decides what and the facts they need; legal and programme
+  history goes under Background.
+- One decision per entry; link related steps instead of repeating the journey.
+- Name the activity that would change instead of "faster" or "tamper-proof", and
+  say whether a benefit is measured, reported or a hypothesis.
+- Keep "proposed" and "could" where an issuer or verifier has not confirmed.
+- Keep identity, authentication, signature, authority and entitlement apart,
+  and integrity apart from truth, completeness, freshness and legal title.
+- Do not require a wallet where a register query, an API, a signed document or an
+  existing login already meets the need; say what the credential adds.
+- Shared e-ID timing is on the [dependencies page](dependencies.md), not in
+  each entry.
 
 ## Sources and facts
 

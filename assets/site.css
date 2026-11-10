@@ -231,4 +231,7 @@ a { color: var(--accent); }
 .step-taken { background: var(--warn-bg); color: var(--warn-ink); }
 .step-drafting { background: var(--warn-bg); color: var(--warn-ink); }
 .step-published { background: var(--ok-bg); color: var(--ok-ink); }
+.uc-details { margin-top: 4px; font-size: 0.9rem; }
+.uc-details summary { cursor: pointer; color: var(--muted); }
+.uc-details p { margin: 6px 0; max-width: 70ch; }
 .step-not-pursued { background: var(--wash); color: var(--muted); }

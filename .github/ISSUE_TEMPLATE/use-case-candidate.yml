@@ -6,70 +6,113 @@ labels:
 body:
   - type: markdown
     attributes:
-      value: 'Thank you for proposing a use case. Plain prose is fine; a curator will help
+      value: |
+        Thank you for proposing a use case. The first six questions are enough to file it:
+        the decision, a short summary, who is involved, the facts to prove, why it matters,
+        and how far the evidence goes. An idea without evidence yet is welcome: choose
+        *Hypothesis* and say what you expect. Plain prose is fine; "unknown" is a valid answer.
+        A curator or working group adds the details further down later
+        (see [GOVERNANCE.md](https://github.com/DIDAS-swiss/use-case-repository/blob/main/GOVERNANCE.md)).
 
-        turn it into a structured entry (see [GOVERNANCE.md](https://github.com/DIDAS-swiss/use-case-repository/blob/main/GOVERNANCE.md)).
-
-        Please first check the [published use cases](https://github.com/DIDAS-swiss/use-case-repository/blob/main/use-cases/README.md)
-
-        and the [open candidates](https://github.com/DIDAS-swiss/use-case-repository/issues?q=is%3Aissue+label%3Ause-case) for duplicates.
-
-        '
+        Please first check the [backlog](https://didas-swiss.github.io/use-case-repository/backlog.html) for duplicates.
   - type: input
     id: title
     attributes:
       label: Use case
-      description: A short name for the outcome, not the organisation
-      placeholder: e.g. Vehicle leasing
+      description: One decision or outcome, not a technology, document or programme.
+      placeholder: e.g. Grant a student discount at online checkout
     validations:
       required: true
-  - type: input
-    id: entry_id
-    attributes:
-      label: Short id (optional)
-      description: Lower-case words joined by hyphens; it becomes the file name of the published entry.
-      placeholder: e.g. vehicle-leasing
-  - type: input
-    id: titles
-    attributes:
-      label: Title in German, French and Italian (optional)
-      description: Where you know them.
-      placeholder: 'DE: Fahrzeugleasing · FR: Leasing de véhicules · IT: Leasing di veicoli'
   - type: textarea
     id: summary
     attributes:
       label: Summary
-      description: The situation today, the decision taken, and what changes when the data arrives as verifiable credentials.
+      description: In up to 70 words, who decides what, which evidence they need, and what is difficult today. Keep a proposed change conditional ("could") unless it is demonstrated.
+      placeholder: An online retailer needs to know whether a customer is currently enrolled at an accepted university before granting its student discount. A university-issued status attestation could replace document uploads.
+    validations:
+      required: true
+  - type: textarea
+    id: actors
+    attributes:
+      label: Actors and roles
+      description: The verifier taking the decision, and the source with authority to attest each fact. Mark proposed or unconfirmed names as such.
+      placeholder: |
+        Verifier: online retailer (to be confirmed)
+        Issuer: the university (student status)
+        Holder: the student
     validations:
       required: true
   - type: textarea
     id: outcome
     attributes:
-      label: 'Outcome: what must be proven (optional)'
-      description: The facts the verifier needs proven to take the decision, one per line, stated as claims rather than documents.
-      placeholder: 'The applicant lives at the declared address
-
-        The applicant has no open debt enforcement proceedings'
-  - type: textarea
-    id: actors
-    attributes:
-      label: Actors and roles
-      description: Who holds, who verifies, who issues, who governs. Name organisations where you can.
-      placeholder: 'Holder: lessee (person)
-
-        Verifier: leasing company
-
-        Issuers: road traffic office, insurer'
+      label: Facts to prove
+      description: The minimum facts the verifier needs for the decision, one per line, stated as claims rather than documents.
+      placeholder: |
+        The customer is enrolled at an accepted university for the current semester
     validations:
       required: true
+  - type: textarea
+    id: demand
+    attributes:
+      label: Demand and value
+      description: Which current activity would change, and who says this matters? Say whether the benefit is measured, reported by a participant, or a hypothesis. Where relevant, compare with direct register access, an API, a signed document or an existing login.
+      placeholder: |
+        Expected benefit (hypothesis): less manual review of uploaded enrolment certificates, less data disclosed.
+        Relying parties: online retailers offering student discounts
+    validations:
+      required: true
+  - type: dropdown
+    id: evidence_status
+    attributes:
+      label: Evidence status
+      description: How far the evidence for the proposed exchange goes today (not the existing paper process). A hypothesis is a valid start.
+      options:
+        - "Hypothesis: no evidence yet"
+        - "Documented need: a source describes the current process or problem"
+        - "Design: an official or actor-published design of the exchange exists"
+        - "Prototype: demo, showcase or sandbox"
+        - "Pilot: limited real use"
+        - "Production: in live use"
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: One source per claim, with a link and what it supports. Write "none yet" if there is no external source.
+  - type: markdown
+    attributes:
+      value: |
+        ### Details
+
+        Optional when you file the use case. A curator or the working group fills them in
+        while qualifying it: catalogue choices, flows, credentials and links to the other
+        DIDAS repositories.
+  - type: input
+    id: entry_id
+    attributes:
+      label: Short id (optional)
+      description: Lower-case words joined by hyphens; it becomes the file name of the published entry.
+      placeholder: e.g. student-discount-online
+  - type: input
+    id: titles
+    attributes:
+      label: Title in German, French and Italian (optional)
+      description: Where you know them.
+      placeholder: 'DE: Studierendenrabatt online gewähren · FR: … · IT: …'
+  - type: textarea
+    id: background
+    attributes:
+      label: Background (optional)
+      description: Legal and programme context, project-specific dates. The shared timing of the state e-ID and the trust infrastructure is kept once on the dependencies page; please do not repeat it here.
   - type: textarea
     id: process_flow
     attributes:
       label: Process flow (optional)
-      description: 'The steps, one per line: actor, action, credential.'
-      placeholder: '1. Lessee: applies and identifies with the e-ID
-
-        2. Leasing company: requests residence and debt enforcement proofs'
+      description: 'The steps, one per line: actor, action, credential. Say which steps are official and which are proposed.'
+      placeholder: |
+        1. Customer: presents a student-status credential at checkout
+        2. Retailer: verifies issuer, validity and status, then applies the discount
   - type: textarea
     id: design_basis
     attributes:
@@ -78,10 +121,8 @@ body:
   - type: textarea
     id: credentials
     attributes:
-      label: Credentials needed
-      description: Which facts or documents does the verifier need? Say which are reused from another use case, which are new, and which are deliberately not requested.
-    validations:
-      required: true
+      label: Credentials needed (optional)
+      description: Which credentials carry the facts above? Say which are reused from another use case, which are new, and which are deliberately not requested. Required before a use case is qualified.
   - type: dropdown
     id: described_credentials
     attributes:
@@ -113,11 +154,9 @@ body:
     attributes:
       label: Emerging or other schemas (optional)
       description: 'For credentials not on I14Y: where a schema is in preparation or already used, for example in a pilot, an eCH standard or a sector repository. One line per credential, with a link and how far it is.'
-      placeholder: 'Immunization record: urn:vct:ch.didas.health.immunization:1.0, showcase schema in digital-health_swiyu, not yet on I14Y
-
+      placeholder: |
+        Immunization record: urn:vct:ch.didas.health.immunization:1.0, showcase schema in digital-health_swiyu, not yet on I14Y
         Vehicle registration: no schema known
-
-        '
   - type: checkboxes
     id: ambition
     attributes:
@@ -131,7 +170,7 @@ body:
     id: sectors
     attributes:
       label: Sector(s)
-      description: ISIC Rev. 5, as used by the DIDAS Industry Function Graph. Pick the most specific level that fits; a section (letter) is fine where no division is listed. Missing a division? Name it under "Situation and outcome".
+      description: ISIC Rev. 5, as used by the DIDAS Industry Function Graph. Pick the most specific level that fits; a section (letter) is fine where no division is listed. Missing a division? Name it under "Background".
       multiple: true
       options:
         - "ISIC-A · Agriculture, forestry and fishing"
@@ -178,13 +217,11 @@ body:
         - "ISIC-V · Activities of extraterritorial organizations and bodies"
   - type: markdown
     attributes:
-      value: '### Anchors
+      value: |
+        ### Anchors
 
         This repository is where the other DIDAS work meets. Link what already exists
-
         for this use case, so that nobody has to find it again.
-
-        '
   - type: dropdown
     id: trust_flows
     attributes:
@@ -215,7 +252,7 @@ body:
     id: ifm_patterns
     attributes:
       label: Use case pattern in the Industry Function Graph (optional)
-      description: The sector-neutral pattern(s) this use case realises. Pick the closest; if none fits, say so under "Situation and outcome".
+      description: The sector-neutral pattern(s) this use case realises. Pick the closest; if none fits, say so under "Background".
       multiple: true
       options:
         - "eid-issuance · Electronic identity issuance"
@@ -244,9 +281,8 @@ body:
     attributes:
       label: Implementations, pilots and showcases (optional)
       description: Running code, demos, pilots or deployments of this use case. Link and state how far each goes (demo, sandbox, pilot, production).
-      placeholder: 'https://github.com/DIDAS-swiss/digital-health_swiyu (sandbox demo, mocked swiyu components)
-
-        '
+      placeholder: |
+        https://github.com/DIDAS-swiss/digital-health_swiyu (sandbox demo, mocked swiyu components)
   - type: dropdown
     id: glossary_terms
     attributes:
@@ -284,34 +320,31 @@ body:
     attributes:
       label: Related use cases (optional)
       description: Use cases related without a sequence. Their ids, one per line, from the [list of use-case ids](https://didas-swiss.github.io/use-case-repository/use-case-ids.html); each is linked on the issue.
-      placeholder: 'vehicle-leasing
-
-        residence-confirmation'
+      placeholder: |
+        vehicle-leasing
+        residence-confirmation
   - type: textarea
     id: upstream_use_cases
     attributes:
       label: Upstream use cases (optional)
-      description: Use cases that must happen first, because they issue a credential this one verifies. Ids from the [list of use-case ids](https://didas-swiss.github.io/use-case-repository/use-case-ids.html), one per line.
-      placeholder: 'vehicle-leasing
-
-        residence-confirmation'
+      description: Use cases that must happen first because they issue a credential this one verifies. A similar earlier transaction is a related use case, not an upstream one. Ids from the [list of use-case ids](https://didas-swiss.github.io/use-case-repository/use-case-ids.html), one per line.
+      placeholder: |
+        residence-confirmation
   - type: textarea
     id: downstream_use_cases
     attributes:
       label: Downstream use cases (optional)
       description: Use cases that reuse a credential this one issues. Ids from the [list of use-case ids](https://didas-swiss.github.io/use-case-repository/use-case-ids.html), one per line.
-      placeholder: 'vehicle-leasing
-
-        residence-confirmation'
+      placeholder: |
+        vehicle-leasing
   - type: dropdown
     id: lighthouse
     attributes:
       label: Lighthouse proposal (optional)
-      description: Propose this use case as a lighthouse candidate if it meets most of the criteria in GOVERNANCE.md (reach, benefit for administration and business, a repeatable building block, a confirmed issuer, feasible within about 12 months, internationally interoperable). Selection is a decision of DIDAS.
+      description: Propose this use case as a lighthouse candidate if it meets most of the criteria in GOVERNANCE.md (reach, benefit for administration and business, a repeatable building block, a confirmed issuer, feasible within about 12 months, internationally interoperable). Selection is not made here; a curator records the DIDAS decision with the `lighthouse` label and a link to the decision record.
       options:
         - No proposal
         - Propose as lighthouse candidate
-        - Selected as lighthouse (DIDAS decision)
   - type: textarea
     id: lighthouse_basis
     attributes:
@@ -323,22 +356,12 @@ body:
       label: Legal basis and governance (optional)
       description: Laws, regulations, sector frameworks or supervisory bodies that apply.
   - type: textarea
-    id: demand
-    attributes:
-      label: Demand and value (optional)
-      description: Who would rely on it, how often, and what would it improve?
-  - type: textarea
     id: open_questions
     attributes:
-      label: Coordination needs and open questions (optional)
-      description: What has to happen, and who has to act, for this use case to move on.
+      label: Open questions (optional)
+      description: What remains unknown? Ask each question once, and name who has to act for the use case to move on.
   - type: input
     id: organisation
     attributes:
       label: Proposed on behalf of (optional)
       description: Organisation, if any. Leave empty to propose as an individual.
-  - type: textarea
-    id: sources
-    attributes:
-      label: Sources (optional)
-      description: Links to process descriptions, studies, legal texts.

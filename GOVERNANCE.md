@@ -125,22 +125,50 @@ can repeat. The criteria:
 5. Feasible within about 12 months.
 6. Internationally interoperable.
 
-A **candidate** meets most criteria (label `lighthouse-candidate`, front matter
-`lighthouse: candidate`). **Selection** (label `lighthouse`, `lighthouse:
-selected`) is a decision of DIDAS, together with the Federal Office of Justice
-(BJ) for cases from its agenda. `lighthouse_basis` records why, in one line.
-Being a lighthouse does not change an entry's lifecycle stage.
+Anyone can **propose** a lighthouse in the use-case form. A **candidate** meets
+most criteria (label `lighthouse-candidate`, front matter `lighthouse:
+candidate`). **Selection** (label `lighthouse`, `lighthouse: selected`) is a
+decision of DIDAS, together with the Federal Office of Justice (BJ) for cases
+from its agenda. The form does not offer selection: a curator records it with the
+label and a **decision record** (`lighthouse_decision_record` in the batch or the
+entry): a link to the decision with the approver, the date and the criteria
+assessed. `lighthouse_basis` summarises why, in one line. A selection recorded
+before decision records were kept (backlog v2, 9 November 2026) stays as it is;
+its issue comment says that the record is still to be linked. Being a lighthouse
+does not change an entry's lifecycle stage.
 
 ## Upstream and downstream use cases
 
 Use case A is **upstream** of B when A issues a credential that B verifies, for
 example a residence confirmation, a debt enforcement extract, a driving licence
-or an insurance confirmation; B is then **downstream** of A. Chains named in the
-use-case texts count too, for example the learner permit before the driving
-licence, or leasing before claims. Where the issuing use case is not itself an
-entry or candidate (the e-ID), no relation is recorded. Relations with no
+or an insurance confirmation; B is then **downstream** of A. The relation needs
+an actual credential that A issues and B verifies, for example the learner
+permit before the driving licence. A similar earlier business transaction is not
+enough: most drivers making a motor claim have not leased their car, so leasing
+is *related* to claims, not upstream of them. Where the issuing use case is not
+itself an entry or candidate (the e-ID), no relation is recorded. Relations with no
 sequence stay in `related_use_cases`. *Check data* warns when two entries
 disagree about a relation.
+
+## Evidence status and editorial reviews
+
+A use case's **evidence status** says how far the evidence for the proposed
+exchange goes: `hypothesis`, `documented need`, `design`, `prototype`, `pilot` or
+`production`. It is separate from the lifecycle stage: a use case can have a
+working prototype and still be a `signal`, and publishing an entry does not make
+it qualified, endorsed or ready for production. A hypothesis is a valid way to
+file a signal, as long as it is marked as one.
+
+An **editorial review** of the backlog is recorded in `intake/reviews/`: one row
+per use case with the recommendation (retain, revise, split, merge or park), the
+finding and how far its evidence was checked, and the separate scopes it proposes
+for a split. The intake adds the review to the issue's comment. A recommendation
+is not a decision: it does not close, open or merge issues, and it does not
+change stages, working groups or lighthouse selections. Splits, merges and
+parking are decided by the working group or a curator, issue by issue.
+
+Shared dependencies, such as the timing of the state e-ID, are kept once on the
+[dependencies page](dependencies.md).
 
 ## Workflow B: credential needs and supply signals
 

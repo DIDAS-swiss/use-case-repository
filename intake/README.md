@@ -1,7 +1,7 @@
 # Batch intake of use-case candidates
 
 A list of candidates, for example collected in a workshop or commissioned for the
-DIDAS working groups, is filed here as one YAML file. When the file reaches
+DIDAS working groups, is filed here as one YAML or CSV file. When the file reaches
 `main`, the **Intake candidates** workflow opens one *use-case candidate* issue per
 entry, written in the fields of the use-case form, exactly as if each had been
 submitted through it: labelled
@@ -59,7 +59,16 @@ Further columns:
 | `downstream_use_cases` | ids of use cases that reuse a credential this one issues, separated by `;` |
 | `lighthouse` | `yes` or `selected` sets the label `lighthouse`; `candidate` sets `lighthouse-candidate`; empty leaves the labels alone |
 | `lighthouse_basis` | one line on why |
+| `lighthouse_decision_record` | for a selection: link to the decision (approver, date, criteria); the comment says when it is missing |
 | `review_notes` | points the description has to fix, numbered `(1) … (2) …` |
+| `evidence_status` | `hypothesis`, `documented need`, `design`, `prototype`, `pilot` or `production`: how far the evidence for the proposed exchange goes |
+| `expected_benefit`, `benefit_basis` | the activity that would change, and whether that is a `hypothesis` (default), `reported` or `measured` |
+| `open_question`, `open_question_de` | the one question that holds the use case up; rendered first under *Open questions* |
+| `background`, `background_de` | legal and programme context, project-specific dates |
+| `dependencies` | `e-id` or `trust-infrastructure`: links the [dependencies page](../dependencies.md) instead of repeating the shared timing |
+
+Placeholders such as "no official figure" stay in the file but are left out of
+the issue.
 
 ## What happens
 
@@ -81,3 +90,36 @@ Further columns:
   (Pharma before Industry & Manufacturing for `ISIC-21`). The group still takes
   it by adding its label.
 - Files whose names start with `_`, and this README, are ignored.
+
+## Editorial reviews
+
+`intake/reviews/` holds editorial reviews of the backlog; they are not batches,
+and no issue is opened from them.
+
+- `<date>-review.csv`: one row per use case: `id`, `issue`, `review_date`,
+  `disposition` (Retain, Revise, Split, Merge, Park), `finding`,
+  `proposed_scope`, `verification_status`, `primary_checks`, `merge_into`,
+  `changes` and `translation`.
+- `<date>-scopes.csv`: the separate scopes proposed for a split: `scope_id`,
+  `parent_id`, `parent_issue`, `title`, `summary`, `relationship`, `status`.
+
+The intake adds the latest review to each issue's comment, marked as a
+recommendation. It closes, opens and merges nothing.
+
+## Checking a run before it happens
+
+A push to `main` that touches `intake/` runs the intake live. To see what it
+would do first, without writing anything to GitHub:
+
+```sh
+python3 scripts/intake.py --reconcile --write /tmp/intake-plan
+```
+
+It reads the existing use-case issues (GET requests only, optionally with
+`GITHUB_TOKEN`; `--issues FILE` reads a saved JSON list instead), matches them
+by short id and writes `plan.json` with, per issue, whether its title, body,
+lighthouse label, comment and links comment would change, plus the current and
+new body side by side. A description edited by hand is reported and left as it
+is. `--with-comments` (or `--comments DIR` with saved `<number>.json` files)
+also compares the comments. `--dry-run` only renders the batches and does not
+look at existing issues.
