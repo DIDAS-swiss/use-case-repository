@@ -38,6 +38,46 @@ glossary terms and the credentials described in `credentials/` are written into
 the form from their lists (`scripts/build_issue_form.py`). Use cases are named by
 id, from the [list of use-case ids](https://didas-swiss.github.io/use-case-repository/use-case-ids.html).
 
+## Glossary requests
+
+A use case that needs a term the [DIDAS Glossary](https://didas-swiss.github.io/didas-glossary/)
+does not define lists it in the form field *Terms missing from the DIDAS
+Glossary*, one per line, with what it means in this use case:
+
+```
+mandate — the authority a principal gives an agent to act for them
+```
+
+The *Glossary requests* workflow (`scripts/glossary_requests.py`) then:
+
+- skips a term the glossary already defines, under its name or an alias;
+- opens one `[Term] …` issue per term in the glossary, in the shape of the
+  glossary's own *New term* form and with its labels, or reuses the one that
+  is there; several use cases asking for the same term share one issue;
+- keeps one comment on the glossary issue listing the use cases that need the
+  term, and one comment on each use-case issue saying where each of its terms
+  stands: requested, defined, or closed as not planned.
+
+It runs when a use-case issue is opened, edited, closed or reopened, after
+every intake run, weekly, and by hand (*Actions* → *Glossary requests*). It
+never closes, reopens or deletes an issue; the glossary decides about the term
+as it does for any proposal.
+
+**One-time setup.** The workflow writes to the glossary with a fine-grained
+token stored as the repository secret **`GLOSSARY_TOKEN`**:
+
+1. GitHub → *Settings* → *Developer settings* → *Personal access tokens* →
+   *Fine-grained tokens* → *Generate new token*.
+   - Resource owner: **DIDAS-swiss**
+   - Repository access: *Only select repositories* → `didas-glossary`
+   - Repository permissions → *Issues*: **Read and write** (*Metadata* read-only
+     is added automatically). Nothing else.
+2. In this repository: *Settings* → *Secrets and variables* → *Actions* → *New
+   repository secret*, name `GLOSSARY_TOKEN`.
+
+Issues and comments in the glossary appear under the account that owns the
+token. Without the secret the workflow only warns.
+
 ## Two kinds of entry
 
 | | Use case | Credential |
