@@ -36,3 +36,9 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh workflow run project-sync.yml --ref main
+      # Issues edited with the workflow token do not trigger the glossary
+      # requests either, so they are refreshed the same way.
+      - name: Refresh the glossary requests
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run glossary-requests.yml --ref main

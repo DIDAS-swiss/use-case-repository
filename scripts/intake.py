@@ -314,6 +314,7 @@ def issue(c, batch, warnings, published_path=None, numbers=None):
         "described_credentials": [o for x in (c.get("credentials_reused") or []) + (c.get("credentials_new") or [])
                                   if x in CREDENTIALS and (o := option("described_credentials", x))],
         "glossary_terms": [o for x in c.get("glossary_terms") or [] if (o := option("glossary_terms", x))],
+        "missing_terms": "\n".join(x.strip() for x in text("missing_terms").split(" | ") if x.strip()),
         "i14y_credentials": [o for d in on_i14y if (o := option("i14y_credentials", d))],
         "schemas": text("schemas"),
         "ambition": als,

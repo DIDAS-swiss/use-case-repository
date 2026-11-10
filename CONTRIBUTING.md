@@ -38,6 +38,49 @@ glossary terms and the credentials described in `credentials/` are written into
 the form from their lists (`scripts/build_issue_form.py`). Use cases are named by
 id, from the [list of use-case ids](https://didas-swiss.github.io/use-case-repository/use-case-ids.html).
 
+## Glossary requests
+
+A use case that needs a term the [DIDAS Glossary](https://didas-swiss.github.io/didas-glossary/)
+does not define lists it in the form field *Terms missing from the DIDAS
+Glossary*, one per line, with what it means in this use case:
+
+```
+mandate — the authority a principal gives an agent to act for them
+```
+
+The *Glossary requests* workflow (`scripts/glossary_requests.py`) then:
+
+- skips a term the glossary already defines, under its name or an alias;
+- opens one `[Term] …` issue per term in the glossary, in the shape of the
+  glossary's own *New term* form and with its labels, or reuses the one that
+  is there; several use cases asking for the same term share one issue;
+- keeps one comment on the glossary issue listing the use cases that need the
+  term, and one comment on each use-case issue saying where each of its terms
+  stands: requested, defined, or closed as not planned.
+
+It runs when a use-case issue is opened, edited, closed or reopened, after
+every intake run, weekly, and by hand (*Actions* → *Glossary requests*). It
+never closes, reopens or deletes an issue; the glossary decides about the term
+as it does for any proposal.
+
+**One-time setup.** The workflow writes to the glossary with the existing
+`PROJECT_TOKEN` (see [PROJECT.md](PROJECT.md)), extended once:
+
+1. GitHub → *Settings* → *Developer settings* → *Personal access tokens* →
+   *Fine-grained tokens* → the token stored as `PROJECT_TOKEN` → *Edit*.
+2. *Repository access*: add `didas-glossary` to the selected repositories.
+3. *Repository permissions* → *Issues*: **Read and write**. A fine-grained
+   token's repository permissions apply to every selected repository, so this
+   also lets the token write issues in `use-case-repository`.
+4. *Update*. The token value does not change, so the secret stays as it is.
+
+To keep the two apart instead, create a separate token with only
+`didas-glossary` and *Issues: Read and write*, and store it as the secret
+`GLOSSARY_TOKEN`; the workflow uses it in preference to `PROJECT_TOKEN`.
+
+Issues and comments in the glossary appear under the account that owns the
+token. Without either secret the workflow only warns.
+
 ## Two kinds of entry
 
 | | Use case | Credential |

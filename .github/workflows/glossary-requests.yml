@@ -1,0 +1,38 @@
+# Terms a use case needs that the DIDAS Glossary does not define become new-term
+# requests in the glossary: one "[Term] …" issue per term, shared by every use
+# case that asks for it, with a comment on each side linking the other. See
+# scripts/glossary_requests.py and CONTRIBUTING.md, Glossary requests.
+# Writes to the glossary with GLOSSARY_TOKEN if that secret exists, otherwise
+# with PROJECT_TOKEN; either needs Issues: Read and write on
+# DIDAS-swiss/didas-glossary. Without a token the run only warns.
+name: Glossary requests
+
+on:
+  issues:
+    types: [opened, edited, closed, reopened]
+  schedule:
+    - cron: "41 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: glossary-requests
+  cancel-in-progress: false
+
+jobs:
+  requests:
+    if: github.event_name != 'issues' || contains(github.event.issue.labels.*.name, 'use-case')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Install PyYAML
+        run: python3 -m pip install --quiet pyyaml
+      - name: Open or update the glossary requests
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          # a dedicated GLOSSARY_TOKEN if set, else the existing PROJECT_TOKEN
+          GLOSSARY_TOKEN: ${{ secrets.GLOSSARY_TOKEN || secrets.PROJECT_TOKEN }}
+        run: python3 scripts/glossary_requests.py
