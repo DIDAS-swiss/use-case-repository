@@ -280,7 +280,7 @@ def issue(c, batch, warnings, published_path=None, numbers=None):
     def relations(key):
         return "\n".join(f"- `{x}`" + (f" (#{numbers[x]})" if x in numbers else "") for x in c.get(key) or [])
 
-    creds = [text("credentials")]
+    creds = [listed_text("credentials")]
     for label, key in (("Reused", "credentials_reused"), ("New", "credentials_new"), ("Deliberately excluded", "credentials_excluded")):
         if c.get(key):
             creds.append(f"- **{label}**: " + ", ".join(cred(x) for x in c[key]))
@@ -439,7 +439,7 @@ def lighthouse_lines(c):
         return [f"**Lighthouse: selected.** A DIDAS decision, recorded in the batch and by the `lighthouse` label. "
                 + (f"Decision record: {record}." if record else
                    "Decision record: not linked yet; a curator adds the approver, the date and the criteria "
-                   f"assessed ([GOVERNANCE.md]({REPO_URL}/GOVERNANCE.md#lighthouse-use-cases)).")]
+                   f"assessed ([GOVERNANCE.md]({REPO_URL}/GOVERNANCE.md#lighthouses)).")]
     if lh == "lighthouse-candidate":
         return ["**Lighthouse candidate**, recorded in the batch. Selection is a separate curator decision."]
     return []

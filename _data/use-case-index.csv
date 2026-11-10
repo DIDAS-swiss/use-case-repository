@@ -1,129 +1,129 @@
 id,title,kind
-age-online-alcohol,Age verification in online sale of alcohol,candidate
-age-pos-alcohol-tobacco,"Age verification at retail point of sale (alcohol, tobacco)",candidate
-age-restricted-online-services,"Age verification for restricted online services (gambling, adult content)",candidate
-agentic-mandates,Verifiable mandates for AI agents and delegated payment initiation (agentic finance),candidate
-agov-login-eid,AGOV login and public service access with the e-ID,candidate
-agrifood-value-chain,Proofs along the agri-food value chain (DigiAgriFoodCH),candidate
-ahv-number-egov-protected,E-government processes using the AHV number from the e-ID (protected verification),candidate
-army-education-voucher,Army education voucher (Ausbildungsgutschrift) claimed with e-ID and education certificates,candidate
-bank-age-of-majority-qes,Re-identification at age of majority with qualified signature,candidate
-bank-asset-confirmations,Bank-issued bank confirmations and asset proofs,candidate
-bank-branch-walk-in-eid,Identification of customers in a bank branch with the e-ID ('walk-in'),candidate
-bank-credential-discounts,"Bank-issued credential for discounts in other ecosystems (leisure, retail)",candidate
-bank-guarantees,Digital bank guarantees,candidate
-bank-income-employment-proof,Bank-issued proof of income and employment verification for lending,candidate
-bank-kyc-onboarding,E-ID based customer identification (KYC onboarding) at banks,candidate
-bank-password-reset-reidentification,Re-identification after a forgotten e-banking password,candidate
-bank-re-kyc,Periodic KYC re-evaluation,candidate
-bav-medical-examiner-decrees,Rail: credentials issued by BAV-appointed examiners,candidate
-beneficial-ownership-proofs,Data-minimal beneficial ownership proofs (transparency register),candidate
-benefit-claims,"Benefit, subsidy and insurance claims using public-authority credentials",candidate
-biss-social-insurance-access,"Social insurance portals (BISS): electronic access, organisation identity and powers of attorney",candidate
-bnpl-verified-attributes,Buy-now-pay-later and financing based on verified profile attributes,candidate
-boat-skipper-licences,Digital boat and skipper licences,candidate
-caller-id-verification,Caller ID spoofing prevention with verifiable calls,candidate
-car-rental-licence-identity,Car rental: driving licence and identity,candidate
-card-payment-3ds-eid,Approving a card payment (3-D Secure) with the e-ID,candidate
-carsharing-driving-licence,Driving licence check at carsharing onboarding,candidate
-carsharing-learner-permit,Learner driver permit verification at carsharing registration,candidate
-civil-capacity-certificate,Certificate of civil capacity (Handlungsfähigkeitszeugnis) as verifiable credential,candidate
-company-formation-one-day,Digital company formation in one day,candidate
-content-provenance-ai,Provenance and authorship of digital content,candidate
-contractor-site-access,Site access for external contractors,candidate
-corporate-carsharing-employee,Employee affiliation proof for corporate carsharing (B2B),candidate
-corporate-onboarding-signing-authority,Corporate client onboarding with verifiable signing authority,candidate
-criminal-record-extract,Digital criminal record extract,candidate
-cross-border-gov-credentials,"Cross-border government credentials: residence permits, professional licences, civil status",candidate
-cross-border-micro-credentials,Cross-border micro-credentials,candidate
-customer-credential-login,Customer credential to simplify logins and customer relationships,candidate
-death-certificate-digital,Digital death certificate issued by the certifying doctor,candidate
-debt-certificate-secondary-market,Secondary market for certificates of loss (Verlustscheine) issued by the debt enforcement office,candidate
-debt-enforcement-extract,Digital debt enforcement register extract,candidate
-digital-product-passport,EU digital product passport,candidate
-diploma-employer-verification,Diploma and qualification verification by employers,candidate
-drone-aviation-licences,Drone pilot exams and civil aviation licences (BAZL),candidate
-e-collecting,E-collecting: electronic support for federal popular initiatives and referendums,candidate
-e-prescription,"E-prescription issued, held and redeemed",candidate
-easygov-org-onboarding,Organisation onboarding and identification in EasyGov 2.0,candidate
-employee-member-id,Employee and member ID cards,candidate
-epd-access-eid-agov,Access to the electronic patient record (EPD): identity verified with the e-ID via AGOV,candidate
-eur1-certificates-of-origin,Electronic certificates of origin (EUR.1 and chamber certificates),candidate
-fishing-licence,Fishing licence (Fischerpatent) as verifiable credential,candidate
-fleet-management-org-wallets,Fleet management with organisational wallets,candidate
-further-education-credentials,Enrolment and certificates in further education,candidate
-ga-partner-benefits,GA as proof for partner benefits,candidate
-guardianship-delegation,Parental and legal-representative delegation,candidate
-health-consent-secondary-use,Consent management for health data reuse,candidate
-health-facility-identity,Verified health facility identity for data platforms and AI agents,candidate
-health-insurance-card,Health insurance card as verifiable credential,candidate
-health-professional-credential,Health professional and provider credential,candidate
-heimatschein-credential,Certificate of place of origin (Heimatschein) as verifiable credential,candidate
-hotel-check-in,Identity check at hotel check-in,candidate
-household-composition,Household composition credential,candidate
-iata-aviation-security,Aviation security programme approvals (IATA ASTF),candidate
-insurance-certificate,Electronic insurance certificate,candidate
-insurance-claims,Insurance claims with verifiable evidence,candidate
-insurance-life-beneficiaries,Life insurance: beneficiaries and health declarations with selective disclosure,candidate
-insurance-microinsurance,Microinsurance and parametric cover,candidate
-insurance-onboarding-kyc,Insurance onboarding and underwriting with reusable identity data,candidate
-insurance-partner-ecosystem,"Broker, provider and companion-app ecosystem",candidate
-insurance-property-valuation,Property insurance: ownership and value proofs,candidate
-justitia-court-authentication,Authentication for the justice platform (Justitia 4.0 / BEKJ),candidate
-kita-eligibility,Childcare (KITA) eligibility proofs,candidate
-kyc-update-kyc-credential,Re-identification and update of KYC data with issuance of a KYC credential,candidate
-letter-of-credit,Trade finance letter of credit,candidate
-life-insurance-gwg-family-relations,AML-compliant life insurance payouts with a verifiable family register (Familienbüchlein),candidate
-local-resident-card-gr,Local resident card (Einheimischenausweis) in Graubünden,candidate
-marketplace-merchant-verification,"Verified merchant, brand and product attributes on marketplaces",candidate
-matura-university-admission,University admission with a digital Matura certificate,candidate
-mdl-age-bridge,Electronic driving licence as age proof until the e-ID is available,candidate
-medical-certificates,"Verifiable medical certificates (sick notes, accident reports)",candidate
-medication-plan-wallet,Medication plan held in the patient's wallet,candidate
-mobile-contract-identity,Identity check for a mobile phone contract,candidate
-motor-vehicle-claims-processing,Motor vehicle claims processing,candidate
-moving-renting,Moving to a new municipality with a new lease,candidate
-open-pension,Open Pension: consent-based sharing of pension data across all pillars,candidate
-organ-donation-register-eid,Organ and tissue donation register: recording the decision with the e-ID,candidate
-patient-summary-ips,International Patient Summary from held credentials,candidate
-payments-lei-matching,Automated counterparty matching in payments with LEI / vLEI,candidate
-practice-check-in,Patient identification at practice / hospital admission,candidate
-product-authenticity-labels,Product authenticity via tamper-proof labels linked to manufacturer credentials,candidate
-public-procurement,Public procurement with verifiable supplier proofs,candidate
-pupil-id-card,Pupil ID card issued by the canton,candidate
-qes-everyday,Everyday qualified electronic signature with the E-ID,candidate
-rail-operating-licences,Rail operating licences with validity check and revocation,candidate
-real-person-proof,Proof that a real person is behind a request (expiry date only),candidate
-refugee-status-s-documents,Electronic identity documents for refugees (status S),candidate
-regulatory-reporting-vc,Regulatory reporting to supervisors with verifiable credentials,candidate
-representation-power-of-attorney,Verifiable representation and power of attorney (banks and insurers),candidate
-residence-confirmation,Digital residence confirmation (municipal) accepted by banks and other verifiers,candidate
-retail-account-onboarding,Frictionless customer account onboarding in retail,candidate
-retail-loyalty-networks,Loyalty networks,candidate
-retail-proof-of-purchase,Proof of purchase,candidate
-retail-warranty-claims,Warranty claims management,candidate
-rigger-licence-insurance,Parachute rigger licence with insurance cover confirmation,candidate
-salary-statement-lohnausweis,Salary statement (Lohnausweis) as digital credential,candidate
-sbb-disability-card-fares,Disability (IV) card for reduced public transport fares,candidate
-sbb-ga-familia-residence,Residence confirmation for SBB GA Familia (family travelcard),candidate
-sca-ebanking-wallet,Strong customer authentication for e-banking with the swiyu wallet,candidate
-skydiving-licence-insurance,Skydiving licence with insurance cover confirmation,candidate
-social-security-a1-ehic,Social security credentials for cross-border work: Portable Document A1 and European Health Insurance Card (DC4EU),candidate
-student-discount-online,Student discount in online retail,candidate
-student-status-confirmation,Student status confirmation (Studi VC),candidate
-supplier-qualification,"Supplier qualification against accreditations (pharma GMP, aerospace)",candidate
-supply-chain-finance-recognition,Cross-border recognition of companies in supply chain finance,candidate
-tax-assessment-credential,Tax assessment as verifiable credential,candidate
-tickets,Event and transport tickets,candidate
-tobacco-ads-adults,Showing online tobacco advertising only to adults,candidate
-tobacco-age-kiosk,Age verification at kiosks and points of sale (tobacco),candidate
-tobacco-age-online,Age verification for online sale of tobacco products,candidate
-tobacco-age-vending,Age verification at tobacco vending machines,candidate
-tourism-guest-mobility,Guest mobility discounts in tourism regions,candidate
-traffic-control-licence,Digital driving licence at traffic control,candidate
-vaccination-record,Vaccination record with minimal disclosure and backup,candidate
-vehicle-leasing,Vehicle leasing,candidate
-vehicle-provisional-registration,Provisional traffic authorisation for a vehicle,candidate
-vehicle-registration-document,Digital vehicle registration document for rental and change of holder,candidate
-vet-certificate-efz,Federal VET certificate (EFZ) issuance,candidate
-wallet-ownership-institutional,Linking wallets and accounts to verified institutional owners across traditional and tokenised rails,candidate
+age-online-alcohol,Check age at online alcohol checkout,candidate
+age-pos-alcohol-tobacco,Check age before selling restricted goods,candidate
+age-restricted-online-services,Verify eligibility for an online gambling account,candidate
+agentic-mandates,Verify an automated system's payment mandate,candidate
+agov-login-eid,Use the e-ID to verify identity and log in with AGOV,candidate
+agrifood-value-chain,Select an agri-food proof exchange to investigate,candidate
+ahv-number-egov-protected,Use an authorised AHV claim for record matching,candidate
+army-education-voucher,Verify course completion and payment for an army education credit,candidate
+bank-age-of-majority-qes,Identify the bank action needed at majority,candidate
+bank-asset-confirmations,Verify a bank's capital-deposit confirmation for incorporation,candidate
+bank-branch-walk-in-eid,Verify a customer's identity in a bank branch,candidate
+bank-credential-discounts,Verify eligibility for a bank-customer partner benefit,candidate
+bank-guarantees,Verify and invoke a bank guarantee,candidate
+bank-income-employment-proof,Verify income and employment evidence for a consumer credit application,candidate
+bank-kyc-onboarding,Identify a customer during digital bank onboarding,candidate
+bank-password-reset-reidentification,Re-establish identity before restoring e-banking access,candidate
+bank-re-kyc,Refresh customer evidence during a KYC review,candidate
+bav-medical-examiner-decrees,Verify an examiner's appointment for an assessment,candidate
+beneficial-ownership-proofs,Verify dated beneficial-ownership evidence from the transparency register,candidate
+benefit-claims,Define one benefit-eligibility check using authority-issued facts,candidate
+biss-social-insurance-access,Verify an insured person's identity for the BISS «E-Plattform 1. Säule»,candidate
+bnpl-verified-attributes,Verify income and debt evidence for an instalment-credit decision,candidate
+boat-skipper-licences,Verify a skipper's licence during a control,candidate
+caller-id-verification,Verify an organisation's authority to place a call,candidate
+car-rental-licence-identity,Verify driving entitlement before vehicle rental,candidate
+card-payment-3ds-eid,Evaluate wallet-based approval of a card payment,candidate
+carsharing-driving-licence,Verify a driving licence at carsharing registration,candidate
+carsharing-learner-permit,Verify eligibility for learner-driver carsharing,candidate
+civil-capacity-certificate,Verify a KESB statement on adult-protection measures,candidate
+company-formation-one-day,Reuse evidence during company formation,candidate
+content-provenance-ai,Verify content provenance and signer identity,candidate
+contractor-site-access,Verify a contractor's eligibility for site access,candidate
+corporate-carsharing-employee,Authorise a driver for corporate carsharing,candidate
+corporate-onboarding-signing-authority,Verify authority to open a corporate bank relationship online,candidate
+criminal-record-extract,Verify a criminal-record extract for a stated purpose,candidate
+cross-border-gov-credentials,Define a cross-border residence-status check,candidate
+cross-border-micro-credentials,Verify a short-course qualification across borders,candidate
+customer-credential-login,Present a company-issued customer credential in a defined channel,candidate
+death-certificate-digital,Submit a medical death notification,candidate
+debt-certificate-secondary-market,Establish the evidence needed to assign a debt claim,candidate
+debt-enforcement-extract,Present a debt-enforcement extract for a decision,candidate
+digital-product-passport,Verify a claim within a battery product passport,candidate
+diploma-employer-verification,Verify a qualification during recruitment,candidate
+drone-aviation-licences,Verify a remote pilot's qualification,candidate
+e-collecting,Verify eligibility for electronic initiative support,candidate
+e-prescription,Verify a prescription before dispensing medicine,candidate
+easygov-org-onboarding,Verify representation of a business in EasyGov,candidate
+employee-member-id,Verify employment affiliation for an external service,candidate
+epd-access-eid-agov,Verify identity when opening an electronic patient record,candidate
+eur1-certificates-of-origin,Verify a digital EUR.1 certificate,candidate
+fishing-licence,Verify a fishing permit during inspection,candidate
+fleet-management-org-wallets,Authorise a fleet driver for a vehicle,candidate
+further-education-credentials,Verify prior learning for further-education admission,candidate
+ga-partner-benefits,Explore GA status as evidence for a partner benefit,candidate
+guardianship-delegation,Verify a legal representative's authority,candidate
+health-consent-secondary-use,Check consent before reusing health data for research,candidate
+health-facility-identity,Establish an authoritative health-facility identity check,candidate
+health-insurance-card,Present insurance billing details at patient admission,candidate
+health-professional-credential,Verify a prescriber's professional authority,candidate
+heimatschein-credential,Assess whether a Heimatschein exchange is still needed,candidate
+hotel-check-in,Use accepted identity data at hotel check-in,candidate
+household-composition,Define the household fact needed for a benefit decision,candidate
+iata-aviation-security,Verify approval of an aviation security programme version,candidate
+insurance-certificate,Verify insurance cover for an external decision,candidate
+insurance-claims,Organise insurance-evidence cases by claim type,candidate
+insurance-life-beneficiaries,Authenticate a life-insurance beneficiary instruction,candidate
+insurance-microinsurance,Check an event before a parametric payout,candidate
+insurance-onboarding-kyc,Verify identity when applying for insurance,candidate
+insurance-partner-ecosystem,Explore acceptance of a broker's customer mandate,candidate
+insurance-property-valuation,Verify a property interest for an insurance decision,candidate
+justitia-court-authentication,Verify identity and lawyer role for court-platform access,candidate
+kita-eligibility,Verify eligibility and amount for a childcare voucher,candidate
+kyc-update-kyc-credential,Refresh KYC evidence and assess its reuse,candidate
+letter-of-credit,Authenticate a trade document under a letter of credit,candidate
+life-insurance-gwg-family-relations,Verify entitlement to a life-insurance benefit,candidate
+local-resident-card-gr,Verify eligibility for a local-resident tariff,candidate
+marketplace-merchant-verification,Verify a merchant when joining a marketplace,candidate
+matura-university-admission,Authenticate a Matura qualification for admission,candidate
+mdl-age-bridge,Assess a driving credential as an age-proof option,candidate
+medical-certificates,Verify a medical incapacity certificate for an employer,candidate
+medication-plan-wallet,Present a medication plan for clinical reconciliation,candidate
+mobile-contract-identity,Verify identity before activating a mobile service,candidate
+motor-vehicle-claims-processing,Verify a garage's repair assessment for a collision claim,candidate
+moving-renting,Prove tenancy when registering a new residence,candidate
+open-pension,Share pension information with an authorised tool,candidate
+organ-donation-register-eid,Identify a person making a donation declaration,candidate
+patient-summary-ips,Present a clinically curated patient summary,candidate
+payments-lei-matching,Match payment parties to legal entities using the LEI,candidate
+practice-check-in,Identify a patient and match the correct record,candidate
+product-authenticity-labels,Check a product attestation bound to an item,candidate
+public-procurement,Verify supplier evidence for a public tender,candidate
+pupil-id-card,Verify pupil status for a defined benefit,candidate
+qes-everyday,Use the e-ID to trigger remote signing,candidate
+rail-operating-licences,Verify a train driver's operating entitlement,candidate
+real-person-proof,Check a valid e-ID while disclosing only its expiry date,candidate
+refugee-status-s-documents,Verify protection status S when applying for support,candidate
+regulatory-reporting-vc,Authenticate the submission of a regulatory report,candidate
+representation-power-of-attorney,Verify authority for a bank or insurance instruction,candidate
+residence-confirmation,Issue residence evidence for an external check,candidate
+retail-account-onboarding,Use necessary verified attributes at retail registration,candidate
+retail-loyalty-networks,Verify loyalty status for a partner benefit,candidate
+retail-proof-of-purchase,Issue purchase evidence for later use,candidate
+retail-warranty-claims,Authenticate purchase evidence for a warranty claim,candidate
+rigger-licence-insurance,Establish the evidence needed for rigger approval,candidate
+salary-statement-lohnausweis,Verify salary figures for a specified year,candidate
+sbb-disability-card-fares,Verify entitlement to a reduced transport fare,candidate
+sbb-ga-familia-residence,Verify residence for a GA Familia or Duo application,candidate
+sca-ebanking-wallet,Use identity evidence to enrol or recover bank login factors,candidate
+skydiving-licence-insurance,Verify qualification and cover before a skydive,candidate
+social-security-a1-ehic,Verify an A1 during a posted-worker check,candidate
+student-discount-online,Verify student status at online checkout,candidate
+student-status-confirmation,Issue current student-status evidence for external use,candidate
+supplier-qualification,Verify a supplier site's GMP or GDP certification,candidate
+supply-chain-finance-recognition,Verify parties and a confirmed payable before supply-chain financing,candidate
+tax-assessment-credential,Present tax-assessment facts for an eligibility decision,candidate
+tickets,Verify a ticket at event entry,candidate
+tobacco-ads-adults,Check adulthood before showing tobacco advertising,candidate
+tobacco-age-kiosk,Check age at a tobacco checkout,candidate
+tobacco-age-online,Check adulthood at online tobacco checkout,candidate
+tobacco-age-vending,Check adulthood before dispensing tobacco,candidate
+tourism-guest-mobility,Verify a guest's mobility entitlement,candidate
+traffic-control-licence,Verify driving entitlement at a traffic stop,candidate
+vaccination-record,Present a verified vaccination-dose record,candidate
+vehicle-leasing,Verify applicant evidence for a private vehicle lease,candidate
+vehicle-provisional-registration,Present provisional vehicle registration to an external verifier,candidate
+vehicle-registration-document,Verify a vehicle's current registration at a control,candidate
+vet-certificate-efz,Issue an EFZ for external verification,candidate
+wallet-ownership-institutional,Verify an institution's relationship to an account or wallet,candidate
