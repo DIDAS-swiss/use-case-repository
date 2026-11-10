@@ -28,7 +28,7 @@
 
   var STEPS = [
     ['candidate', 'Candidate'], ['taken', 'Taken'], ['drafting', 'Drafting'],
-    ['published', 'Published'], ['not-pursued', 'Not pursued']
+    ['published', 'Published entry'], ['not-pursued', 'Not pursued']
   ];
 
   function getAll(path) {
@@ -48,12 +48,29 @@
     return page(1);
   }
 
-  function field(body, label) {
-    var parts = (body || '').split('### ' + label);
-    if (parts.length < 2) return '';
-    var v = parts[1].split('\n### ')[0].replace(/<!--[\s\S]*?-->/g, '').trim();
-    return v === '_No response_' ? '' : v;
+  // A form field of an issue body. Labels of earlier versions of the form are
+  // listed too (scripts/use_case_form.py, LEGACY_LABELS), so older bodies still read.
+  var LABELS = {
+    entry_id: ['Short id (optional)'],
+    sectors: ['Sector(s)'],
+    summary: ['Summary'],
+    actors: ['Actors and roles'],
+    outcome: ['Facts to prove', 'Outcome: what must be proven (optional)'],
+    demand: ['Demand and value', 'Demand and value (optional)'],
+    evidence: ['Evidence status']
+  };
+  function field(body, id) {
+    var labels = LABELS[id] || [id];
+    for (var k = 0; k < labels.length; k++) {
+      var parts = ('\n' + (body || '')).split('\n### ' + labels[k] + '\n');
+      if (parts.length < 2) continue;
+      var v = parts[1].split('\n### ')[0].replace(/<!--[\s\S]*?-->/g, '').trim();
+      return v === '_No response_' ? '' : v;
+    }
+    return '';
   }
+  // The English part of a field (the German follows a **DE:** line).
+  function english(v) { return v.split(/\n\*\*DE:\*\*/)[0].trim(); }
 
   function esc(s) {
     return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; });
@@ -73,8 +90,14 @@
 
       var items = issues.map(function (i) {
         var labels = i.labels.map(function (l) { return l.name; });
-        var id = field(i.body, 'Short id (optional)');
-        var secIds = (field(i.body, 'Sector(s)').match(/ISIC-[A-Z0-9]+/g) || []);
+        var id = field(i.body, 'entry_id');
+        var secIds = (field(i.body, 'sectors').match(/ISIC-[A-Z0-9]+/g) || []);
+        var evidence = (field(i.body, 'evidence').split(':')[0] || '').trim();
+        // the reader sees the fields that hold something; empty ones are left out
+        var details = [['Summary', 'summary'], ['Actors and roles', 'actors'], ['Facts to prove', 'outcome'],
+                       ['Demand and value', 'demand']]
+          .map(function (d) { return [d[0], english(field(i.body, d[1]))]; })
+          .filter(function (d) { return d[1]; });
         var secs = [];
         secIds.forEach(function (x) {
           var s = sectionOf(x), letter = s && s.id.replace('ISIC-', '');
@@ -92,10 +115,12 @@
         else step = 'candidate';
         if (entry) seen[entry.id] = true;
         return { number: i.number, url: i.html_url, title: i.title, id: id, sectors: secs, wg: wg,
-                 lighthouse: lighthouse, step: step, entry: entry, draft: drafts[id] };
+                 lighthouse: lighthouse, step: step, entry: entry, draft: drafts[id],
+                 evidence: evidence, details: details };
       });
       entries.forEach(function (e) {   // published entries without an issue
         if (!seen[e.id]) items.push({ title: e.title, id: e.id, sectors: [], wg: '', step: 'published', entry: e,
+                                      evidence: e.evidence || '', details: [],
                                       lighthouse: e.lighthouse === 'selected' ? 'Lighthouse' : e.lighthouse === 'candidate' ? 'Candidate' : '' });
       });
       render(items);
@@ -125,7 +150,7 @@
       '<label>Search <input type="search" data-f="q" placeholder="title or id"></label>' +
       '<span class="shown" aria-live="polite"></span>' +
       '</div>' +
-      '<table class="backlog-table"><thead><tr><th>#</th><th>Use case</th><th>Sector</th><th>Working group</th><th>Lighthouse</th><th>Step</th></tr></thead><tbody></tbody></table>';
+      '<table class="backlog-table"><thead><tr><th>#</th><th>Use case</th><th>Sector</th><th>Working group</th><th>Lighthouse</th><th>Evidence</th><th>Step</th></tr></thead><tbody></tbody></table>';
 
     var tbody = box.querySelector('tbody');
     function update() {
@@ -151,10 +176,14 @@
           it.draft ? ' <a href="' + esc(it.draft.html_url) + '">draft #' + it.draft.number + '</a>' : '';
         return '<tr>' +
           '<td>' + (it.number ? '<a href="' + esc(it.url) + '">#' + it.number + '</a>' : '') + '</td>' +
-          '<td>' + (it.url ? '<a href="' + esc(it.url) + '">' + esc(it.title) + '</a>' : esc(it.title)) + (it.id ? '<br><code>' + esc(it.id) + '</code>' : '') + '</td>' +
+          '<td>' + (it.url ? '<a href="' + esc(it.url) + '">' + esc(it.title) + '</a>' : esc(it.title)) + (it.id ? '<br><code>' + esc(it.id) + '</code>' : '') +
+          (it.details.length ? '<details class="uc-details"><summary>Details</summary>' + it.details.map(function (d) {
+            return '<p><strong>' + esc(d[0]) + '</strong><br>' + esc(d[1]).replace(/\n/g, '<br>') + '</p>';
+          }).join('') + '</details>' : '') + '</td>' +
           '<td>' + esc(it.sectors.join(', ')) + '</td>' +
           '<td>' + esc(groups[it.wg] || it.wg || '') + '</td>' +
           '<td>' + (it.lighthouse ? '<span class="pill ' + (it.lighthouse === 'Lighthouse' ? 'supply-available' : 'supply-emerging') + '">' + it.lighthouse + '</span>' : '') + '</td>' +
+          '<td>' + esc(it.evidence || '') + '</td>' +
           '<td><span class="pill step-' + it.step + '">' + label + '</span>' + extra + '</td>' +
           '</tr>';
       }).join('');

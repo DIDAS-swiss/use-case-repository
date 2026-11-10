@@ -17,7 +17,11 @@ insurance activities* also finds the divisions and classes inside it.
 | _None yet_ | | | | | |
 
 Stages: `signal` → `candidate` → `qualified` → `active` → `maintained`, or
-`deprecated`. See [GOVERNANCE.md](../GOVERNANCE.md#lifecycle-stages).
+`deprecated`. See [GOVERNANCE.md](../GOVERNANCE.md#lifecycle-stages). Being
+published here is not qualification, endorsement or production readiness; each
+entry says how far its evidence goes (`evidence_status`). *Check data* fails when
+this table and the files in this folder disagree, so the site cannot show an
+entry this list does not have.
 
 Candidates still in intake are the
 [open `use-case` issues](https://github.com/DIDAS-swiss/use-case-repository/issues?q=is%3Aissue+is%3Aopen+label%3Ause-case).

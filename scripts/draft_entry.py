@@ -75,7 +75,11 @@ def draft(body, number, labels=()):
     related, related_c = relations("related_use_cases")
     upstream, upstream_c = relations("upstream_use_cases")
     downstream, downstream_c = relations("downstream_use_cases")
-    lighthouse = "selected" if "lighthouse" in labels else "candidate" if "lighthouse-candidate" in labels else ""
+    # the decision is the curator's label; the form only carries a proposal
+    lighthouse = links.form.lighthouse(f, labels)[1]
+    status = links.form.evidence_status(f.get("evidence_status"))
+    dependencies = [d for d, key in (("e-id", "state e-ID"), ("trust-infrastructure", "trust infrastructure (swiyu)"))
+                    if key in (f.get("background") or "")][:1]
     group = next((l[4:] for l in labels if l.startswith("wg: ")), None)
     today = datetime.date.today()
 
@@ -88,6 +92,8 @@ def draft(body, number, labels=()):
         "credentials_reused": reused, "credentials_new": new, "credentials_excluded": excluded,
         "related_use_cases": related, "upstream_use_cases": upstream, "downstream_use_cases": downstream,
         "lighthouse": lighthouse or None, "lighthouse_basis": f.get("lighthouse_basis") or None,
+        "lighthouse_decision_record": None,
+        "evidence_status": status or None, "dependencies": dependencies,
         "trust_flows": links.chosen("trust_flows", f.get("trust_flows")),
         "ifm_patterns": links.chosen("ifm_patterns", f.get("ifm_patterns")),
         "implementations": [l.strip("- ").strip() for l in (f.get("implementations") or "").split("\n") if "http" in l],
@@ -102,21 +108,26 @@ def draft(body, number, labels=()):
 
     rel_text = "\n".join(x for x in (candidates("Upstream", upstream_c), candidates("Downstream", downstream_c),
                                      candidates("Related", related_c)) if x)
-    process = f.get("process_flow") or "Not yet known."
+    process = f.get("process_flow") or ""
     if f.get("design_basis"):
-        process += "\n\n**Design basis**: " + f["design_basis"]
-    creds = f.get("credentials") or "Not yet known."
+        process += ("\n\n" if process else "") + "**Design basis**: " + f["design_basis"]
+    creds = f.get("credentials") or ""
     if f.get("schemas"):
-        creds += "\n\n**Emerging or other schemas**: " + f["schemas"]
-    open_q = f.get("open_questions") or "Not yet known."
+        creds += ("\n\n" if creds else "") + "**Emerging or other schemas**: " + f["schemas"]
+    open_q = f.get("open_questions") or ""
     if rel_text:
-        open_q += "\n\n**Relations to candidates**\n\n" + rel_text
+        open_q += ("\n\n" if open_q else "") + "**Relations to candidates**\n\n" + rel_text
+    # (heading, text, kept when empty): the core of a signal stays visible as "Not yet known.";
+    # other empty sections are left out of the entry
     sections = [
-        ("Summary", f.get("summary")), ("Outcome: what must be proven", f.get("outcome")),
-        ("Actors and roles", f.get("actors")), ("Process flow", process), ("Credentials", creds),
-        ("Governance and trust context", f.get("governance")), ("Demand and value", f.get("demand")),
-        ("Coordination needs and open questions", open_q), ("Sources", f.get("sources")),
+        ("Summary", f.get("summary"), True), ("Facts to prove", f.get("outcome"), True),
+        ("Actors and roles", f.get("actors"), True), ("Demand and value", f.get("demand"), True),
+        ("Evidence status", f.get("evidence_status"), True), ("Background", f.get("background"), False),
+        ("Process flow", process, False), ("Credentials", creds, True),
+        ("Governance and trust context", f.get("governance"), False),
+        ("Open questions", open_q, False), ("Sources", f.get("sources"), True),
     ]
+    sections = [(h, v) for h, v, keep in sections if (v or "").strip() or keep]
     class Dumper(yaml.SafeDumper):
         def ignore_aliases(self, data):   # write repeated values (created, updated) out in full
             return True
@@ -126,7 +137,7 @@ def draft(body, number, labels=()):
     text = (f"---\n{head}---\n\n# {title}\n\n"
             f"> **Draft from #{number}.** Written from the issue's form fields; the working group "
             f"refines it before a curator advances its stage.\n\n"
-            + "\n\n".join(f"## {h}\n\n{(v or 'Not yet known.').strip()}" for h, v in sections) + "\n")
+            + "\n\n".join(f"## {h}\n\n{(v or '').strip() or 'Not yet known.'}" for h, v in sections) + "\n")
     (ROOT / "use-cases" / f"{uid}.md").write_text(text, encoding="utf-8")
 
     def add_to_list(path, field, value):

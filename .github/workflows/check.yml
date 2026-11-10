@@ -1,6 +1,8 @@
 # Checks that the data holds together: the working-group assignment follows its
 # rules, and every entry refers only to sectors, flows, patterns, credentials,
-# use cases and I14Y datasets that exist. See scripts/check_data.py.
+# use cases and I14Y datasets that exist. See scripts/check_data.py. The tests
+# in tests/ check that the issue form, the intake and the links comment agree
+# (current and earlier bodies parse, regeneration is stable, reconcile is read only).
 name: Check data
 
 on:
@@ -10,6 +12,9 @@ on:
       - "use-cases/**"
       - "credentials/**"
       - "scripts/**"
+      - "intake/**"
+      - "tests/**"
+      - ".github/ISSUE_TEMPLATE/**"
   push:
     branches: [main]
     paths:
@@ -17,6 +22,9 @@ on:
       - "use-cases/**"
       - "credentials/**"
       - "scripts/**"
+      - "intake/**"
+      - "tests/**"
+      - ".github/ISSUE_TEMPLATE/**"
   workflow_dispatch:
 
 permissions:
@@ -31,3 +39,5 @@ jobs:
         run: python3 -m pip install --quiet pyyaml
       - name: Check
         run: python3 scripts/check_data.py
+      - name: Form, intake and links tests
+        run: python3 -m unittest discover -s tests -v

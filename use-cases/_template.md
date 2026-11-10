@@ -16,8 +16,11 @@ credentials_excluded: [] # credential ids deliberately not requested (data minim
 related_use_cases: []      # related use cases with no sequence
 upstream_use_cases: []     # use cases that must happen first: they issue a credential this one verifies
 downstream_use_cases: []   # use cases that reuse a credential this one issues
-lighthouse:                # selected | candidate | empty (see GOVERNANCE.md, Lighthouses)
-lighthouse_basis:          # one line on why, e.g. "DIDAS selection" or "meets 5 of 6 criteria"
+lighthouse:                # selected | candidate | empty: the curator-recorded decision (see GOVERNANCE.md, Lighthouses)
+lighthouse_basis:          # one line on why, e.g. "meets 5 of 6 criteria"
+lighthouse_decision_record: # for selected: link to the decision (approver, date, criteria assessed)
+evidence_status:           # hypothesis | documented need | design | prototype | pilot | production
+dependencies: []           # shared dependencies on dependencies.md, e.g. [e-id]
 trust_flows: []        # Trust Flow ids from _data/trust-flows.csv, e.g. health/immunization/F-02
 ifm_patterns: []       # Industry Function Graph pattern ids from _data/ifm-patterns.csv
 implementations: []    # "<url> (<how far: demo, sandbox, pilot, production>)"
@@ -30,15 +33,16 @@ updated: YYYY-MM-DD
 
 ## Summary
 
-Two or three sentences: the situation, the decision taken, and what changes when
-the data arrives as verifiable credentials instead of paper, uploads or
-self-declaration.
+In up to 70 words: who decides what, which evidence they need, and what is
+difficult today. Keep a proposed change conditional ("could") unless it is
+demonstrated.
 
-## Outcome: what must be proven
+## Facts to prove
 
-The decision the verifier takes, and the facts it needs proven to take it.
-State each fact as a claim, for example "the applicant has no open debt
-enforcement proceedings", rather than as a document.
+The decision the verifier takes, and the minimum facts it needs proven to take
+it. State each fact as a claim, for example "the applicant has no open debt
+enforcement proceedings", rather than as a document. Say what the evidence does
+not establish (freshness, completeness, authority, legal title) where it matters.
 
 ## Actors and roles
 
@@ -76,13 +80,28 @@ A credential without an entry in `credentials/` gets one in the same pull reques
 
 ## Demand and value
 
+- **Expected benefit (hypothesis | reported | measured)**: the current activity that would change
 - **Relying parties**: who would verify
-- **Indicative scale**: interactions per year, with source or "estimate"
-- **Value**: what gets faster, cheaper, safer or newly possible
+- **Indicative scale**: interactions per year, with source and date; leave out if not known
+- **Value**: anything else that becomes possible
 
-## Coordination needs and open questions
+## Evidence status
 
-What has to happen, and who has to act, for this use case to move to the next stage.
+One of hypothesis, documented need, design, prototype, pilot, production, for
+the proposed exchange (not the existing paper process), with the source that
+shows it. Publication of this entry is not evidence of qualification or
+production readiness.
+
+## Background
+
+Legal and programme context, project-specific dates. Shared dependencies such as
+the timing of the state e-ID are on [dependencies.md](../dependencies.md), not
+repeated here.
+
+## Open questions
+
+What remains unknown, asked once, and who has to act for this use case to move
+to the next stage.
 
 ## Sources
 
