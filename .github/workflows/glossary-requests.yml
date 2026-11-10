@@ -2,8 +2,9 @@
 # requests in the glossary: one "[Term] …" issue per term, shared by every use
 # case that asks for it, with a comment on each side linking the other. See
 # scripts/glossary_requests.py and CONTRIBUTING.md, Glossary requests.
-# Needs the repository secret GLOSSARY_TOKEN (Issues: Read and write on
-# DIDAS-swiss/didas-glossary). Without it the run only warns.
+# Writes to the glossary with GLOSSARY_TOKEN if that secret exists, otherwise
+# with PROJECT_TOKEN; either needs Issues: Read and write on
+# DIDAS-swiss/didas-glossary. Without a token the run only warns.
 name: Glossary requests
 
 on:
@@ -32,5 +33,6 @@ jobs:
       - name: Open or update the glossary requests
         env:
           GITHUB_TOKEN: ${{ github.token }}
-          GLOSSARY_TOKEN: ${{ secrets.GLOSSARY_TOKEN }}
+          # a dedicated GLOSSARY_TOKEN if set, else the existing PROJECT_TOKEN
+          GLOSSARY_TOKEN: ${{ secrets.GLOSSARY_TOKEN || secrets.PROJECT_TOKEN }}
         run: python3 scripts/glossary_requests.py

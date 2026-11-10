@@ -20,8 +20,9 @@ Run from the repository root:
   python3 scripts/glossary_requests.py --dry-run     read only: print the plan
   GITHUB_TOKEN=… GLOSSARY_TOKEN=… python3 scripts/glossary_requests.py
 
-GITHUB_TOKEN writes the comments in this repository; GLOSSARY_TOKEN needs
-Issues: Read and write on DIDAS-swiss/didas-glossary. Needs PyYAML.
+GITHUB_TOKEN writes the comments in this repository; GLOSSARY_TOKEN (in the
+workflow: the GLOSSARY_TOKEN secret, else PROJECT_TOKEN) needs Issues: Read and
+write on DIDAS-swiss/didas-glossary. Needs PyYAML.
 """
 
 import csv
@@ -200,7 +201,7 @@ def upsert_comment(api, repo, number, marker, text, dry, log):
 def main():
     dry = "--dry-run" in sys.argv
     if not dry and not os.environ.get("GLOSSARY_TOKEN"):
-        print("::warning::GLOSSARY_TOKEN is not set, so no glossary request is opened. See CONTRIBUTING.md, Glossary requests.")
+        print("::warning::No token for the glossary (GLOSSARY_TOKEN or PROJECT_TOKEN), so no glossary request is opened. See CONTRIBUTING.md, Glossary requests.")
         return 0
     here = client("GITHUB_TOKEN", dry)
     there = client("GLOSSARY_TOKEN", dry)

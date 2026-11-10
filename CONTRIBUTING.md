@@ -63,20 +63,23 @@ every intake run, weekly, and by hand (*Actions* → *Glossary requests*). It
 never closes, reopens or deletes an issue; the glossary decides about the term
 as it does for any proposal.
 
-**One-time setup.** The workflow writes to the glossary with a fine-grained
-token stored as the repository secret **`GLOSSARY_TOKEN`**:
+**One-time setup.** The workflow writes to the glossary with the existing
+`PROJECT_TOKEN` (see [PROJECT.md](PROJECT.md)), extended once:
 
 1. GitHub → *Settings* → *Developer settings* → *Personal access tokens* →
-   *Fine-grained tokens* → *Generate new token*.
-   - Resource owner: **DIDAS-swiss**
-   - Repository access: *Only select repositories* → `didas-glossary`
-   - Repository permissions → *Issues*: **Read and write** (*Metadata* read-only
-     is added automatically). Nothing else.
-2. In this repository: *Settings* → *Secrets and variables* → *Actions* → *New
-   repository secret*, name `GLOSSARY_TOKEN`.
+   *Fine-grained tokens* → the token stored as `PROJECT_TOKEN` → *Edit*.
+2. *Repository access*: add `didas-glossary` to the selected repositories.
+3. *Repository permissions* → *Issues*: **Read and write**. A fine-grained
+   token's repository permissions apply to every selected repository, so this
+   also lets the token write issues in `use-case-repository`.
+4. *Update*. The token value does not change, so the secret stays as it is.
+
+To keep the two apart instead, create a separate token with only
+`didas-glossary` and *Issues: Read and write*, and store it as the secret
+`GLOSSARY_TOKEN`; the workflow uses it in preference to `PROJECT_TOKEN`.
 
 Issues and comments in the glossary appear under the account that owns the
-token. Without the secret the workflow only warns.
+token. Without either secret the workflow only warns.
 
 ## Two kinds of entry
 
