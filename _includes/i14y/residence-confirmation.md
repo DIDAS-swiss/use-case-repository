@@ -6,7 +6,7 @@
 | Access rights | Restricted |
 | Personal data | Contains personal data |
 | Structure version | 1.0.0, valid from 2026-07-01 |
-| Last modified on I14Y | 2026-07-02 |
+| Last modified on I14Y | 2026-11-13 |
 
 | Attribute | Label (EN · DE · FR · IT) | Type | Card. | I14Y concept |
 |---|---|---|---|---|
