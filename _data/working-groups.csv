@@ -1,15 +1,18 @@
-id,name,description
-banking,Banking,DIDAS working group for banking and financial services
-insurance,Insurance,DIDAS working group for insurance and pension funding
-health,Health,DIDAS working group for health and care
-pharma,Pharma,DIDAS working group for the pharmaceutical industry and its supply chain
-public-sector,Public Sector,"DIDAS working group for public administration at federal, cantonal and municipal level"
-education,Education,DIDAS working group for education and training
-retail,Retail,DIDAS working group for retail and online commerce
-mobility,Mobility,"DIDAS working group for mobility, transport and vehicles"
-hospitality,Hospitality,DIDAS working group for accommodation and food services
-industry,Industry & Manufacturing,DIDAS working group for manufacturing and industrial supply chains
-digital,Digital & Telecom,DIDAS working group for telecommunications and information services
-energy,Energy & Utilities,"DIDAS working group for energy, water and waste"
-real-estate,Real Estate,DIDAS working group for real estate and housing
-sport,Sport,"DIDAS working group for sport, arts and recreation"
+id,name,description,kind,status
+banking,Banking,DIDAS working group for banking and financial services,sector,active
+insurance,Insurance,DIDAS working group for insurance and pension funding,sector,open
+health,Health,DIDAS working group for health and care,sector,active
+pharma,Pharma,DIDAS working group for the pharmaceutical industry and its supply chain,sector,open
+public-sector,Public Sector (eGov),"DIDAS working group for public administration and eGovernment at federal, cantonal and municipal level",sector,active
+education,Education,DIDAS working group for education and training,sector,active
+retail,Retail,DIDAS working group for retail and online commerce,sector,open
+mobility,Mobility,"DIDAS working group for mobility, transport and vehicles",sector,active
+hospitality,Hospitality,DIDAS working group for accommodation and food services,sector,open
+industry,Industry & Manufacturing,DIDAS working group for manufacturing and industrial supply chains,sector,open
+digital,Digital & Telecom,DIDAS working group for telecommunications and information services,sector,open
+energy,Energy & Utilities,"DIDAS working group for energy, water and waste",sector,open
+real-estate,Real Estate,DIDAS working group for real estate and housing,sector,open
+sport,Sport,"DIDAS working group for sport, arts and recreation",sector,open
+technology,Technology,"Horizontal DIDAS working group for technology across sectors: trust infrastructure, wallets, protocols and credential formats",horizontal,active
+governance-standards,Governance & Standards,Horizontal DIDAS working group for governance frameworks and standards across sectors,horizontal,open
+adoption,Adoption,"Horizontal DIDAS working group for adoption across sectors: relying parties, issuers and users",horizontal,open

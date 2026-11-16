@@ -9,6 +9,12 @@ per (group, sector). The rules that keep it manageable:
   - a sector without an assignment of its own inherits the group of the nearest
     broader sector that has one; if none has, no group is responsible
 
+_data/working-groups.csv lists the groups. `kind` is `sector` (responsible for
+sectors) or `horizontal` (works across sectors, for example Technology, and
+holds no sectors); `status` is `active` (the group exists and takes candidates)
+or `open` (planned, not set up yet). An open sector group keeps its sectors, so
+they are already mapped when it starts.
+
 Standard library only.
 """
 
@@ -31,6 +37,14 @@ SECTORS = {r["id"]: r for r in _rows("sectors.csv")}
 GROUPS = {r["id"]: r for r in _rows("working-groups.csv")}
 ASSIGNMENTS = _rows("working-group-sectors.csv")
 BY_SECTOR = {a["sector"]: a["group"] for a in ASSIGNMENTS}
+
+
+KINDS = ("sector", "horizontal")
+STATUSES = ("active", "open")
+
+
+def is_active(group):
+    return (group or {}).get("status", "active") == "active"
 
 
 def chain(sector_id):
@@ -66,8 +80,15 @@ def check():
         elif a["sector"] in seen:
             errors.append(f"{where}: duplicate row for {a['group']} / {a['sector']}")
         seen.setdefault(a["sector"], a["group"])
-    for g in GROUPS:
-        if g not in {a["group"] for a in ASSIGNMENTS}:
+    held = {a["group"] for a in ASSIGNMENTS}
+    for g, row in GROUPS.items():
+        if row.get("kind", "sector") not in KINDS:
+            errors.append(f"_data/working-groups.csv: {g}: kind must be sector or horizontal")
+        if row.get("status", "active") not in STATUSES:
+            errors.append(f"_data/working-groups.csv: {g}: status must be active or open")
+        if row.get("kind") == "horizontal" and g in held:
+            errors.append(f"_data/working-group-sectors.csv: {g} is a horizontal group and holds no sectors")
+        elif row.get("kind", "sector") == "sector" and g not in held:
             notes.append(f"group {g!r} has no sector assigned")
     for s in SECTORS.values():
         if s["level"] == "section" and responsible(s["id"])[0] is None:

@@ -46,7 +46,7 @@ import yaml
 
 import issue_links
 import use_case_form as form
-from working_groups import responsible
+from working_groups import is_active, responsible
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 API = "https://api.github.com"
@@ -462,9 +462,13 @@ def intake_comment(c, batch, published_path, numbers=None):
                      f"bring what is new into the entry in a pull request.")
     sectors = [s for s in c.get("sectors") or [] if s in SECTORS]
     suggested = None if c.get("working_group") else (responsible(sectors[0])[0] if sectors else None)
-    if suggested:
+    if suggested and is_active(suggested):
         lines.append(f"**Suggested working group**: {suggested['name']}, from the primary sector. "
                      f"The group takes the candidate by adding `wg: {suggested['id']}`.")
+    elif suggested:
+        lines.append(f"**Working group**: none active for the primary sector yet; {suggested['name']} is planned "
+                     f"([working groups]({SITE}/working-groups.html)). Until it starts, an active group or a curator "
+                     f"can take the candidate.")
     lines += lighthouse_lines(c)
     review = review_section(c, numbers)
     if review:
