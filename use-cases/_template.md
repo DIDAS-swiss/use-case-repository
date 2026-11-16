@@ -19,6 +19,8 @@ downstream_use_cases: []   # use cases that reuse a credential this one issues
 lighthouse:                # selected | candidate | empty: the curator-recorded decision (see GOVERNANCE.md, Lighthouses)
 lighthouse_basis:          # one line on why, e.g. "meets 5 of 6 criteria"
 lighthouse_decision_record: # for selected: link to the decision (approver, date, criteria assessed)
+verifier: ""        # the relying party whose decision this is, as a role, e.g. retailer, driving school
+verifier_question:  # identity | qualification | attestation | permission | membership (see CONTRIBUTING.md); one value each: an entry whose verifiers ask different questions is a candidate for a split
 evidence_status:           # hypothesis | documented need | design | prototype | pilot | production
 dependencies: []           # shared dependencies on dependencies.md, e.g. [e-id]
 trust_flows: []        # Trust Flow ids from _data/trust-flows.csv, e.g. health/immunization/F-02

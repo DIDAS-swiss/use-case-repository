@@ -4,7 +4,8 @@
 GitHub issue forms are static YAML, so the dropdowns that offer the anchor
 vocabularies are written into the form from the lists the repository keeps:
 sectors, trust flows, Industry Function Graph patterns, I14Y credential datasets
-and DIDAS Glossary terms (kept current by the sync scripts), the credentials
+and DIDAS Glossary terms (kept current by the sync scripts), the verifier
+questions (_data/verifier-questions.csv), the credentials
 described in credentials/, and the use cases (published entries and the
 candidates of the intake batches, written to _data/use-case-index.csv here).
 Only the `options:` block of those dropdowns is replaced; the rest of the form
@@ -87,6 +88,7 @@ def options():
         "ifm_patterns": [f"{r['id']} · {r['name']}" for r in rows("ifm-patterns.csv")]
         + ["No pattern fits yet"],
         "described_credentials": credential_options(),
+        "verifier_question": [f"{r['id']}: {r['question']}" for r in rows("verifier-questions.csv")],
         "glossary_terms": [f"{r['id']} · {r['term']}" for r in rows("glossary-terms.csv")],
         "i14y_credentials": [
             f"{r['identifier']} · {r['title']} ({r['publisher']}, {r['registration_status']})"

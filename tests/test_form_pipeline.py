@@ -104,6 +104,26 @@ class Parsing(unittest.TestCase):
         self.assertNotIn("Background (optional)", sections)
 
 
+class Verifier(unittest.TestCase):
+    def test_question_options_come_from_the_data_list(self):
+        import csv
+        ids = [r["id"] for r in csv.DictReader(open(ROOT / "_data" / "verifier-questions.csv", encoding="utf-8"))]
+        self.assertEqual([o.split(":")[0] for o in form.options("verifier_question")], ids)
+
+    def test_batch_columns_render_and_parse(self):
+        b = batch()
+        c = dict(b["candidates"][0], verifier="driving school", verifier_question="qualification")
+        f = form.parse(intake.issue(c, b, [])["body"])
+        self.assertEqual(f["verifier"], "driving school")
+        self.assertEqual(form.verifier_question(f["verifier_question"]), "qualification")
+
+    def test_unknown_or_missing_question_stays_empty(self):
+        b = batch()
+        c = dict(b["candidates"][0], verifier_question="maybe")
+        self.assertEqual(form.parse(intake.issue(c, b, [])["body"])["verifier_question"], "")
+        self.assertEqual(form.verifier_question(""), "")
+
+
 class Ownership(unittest.TestCase):
     def test_rendered_body_is_owned_and_edit_is_not(self):
         body = form.render({"title": "T", "summary": "S"})
