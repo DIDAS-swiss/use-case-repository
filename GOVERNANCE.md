@@ -91,7 +91,15 @@ DIDAS working groups take candidates and develop them into entries.
   groups, is filed as one file in [`intake/`](intake/README.md). The *Intake
   candidates* workflow opens one candidate issue per entry, labelled
   `intake-batch`, and puts them on the [project board](PROJECT.md) by sector.
-- **Groups by sector**: each working group is responsible for one or more ISIC
+- **Active and open groups**: active today are the sector groups Mobility,
+  Banking, Education, Health and Public Sector (eGov), and the horizontal group
+  Technology. Governance & Standards and Adoption (horizontal) and the other
+  sector groups are open: planned, not set up yet. `status` in
+  `_data/working-groups.csv` records which; the intake suggests only active
+  groups.
+- **Horizontal groups** hold no sectors. They take a candidate when its open work
+  is about their topic, alongside or instead of the sector group.
+- **Groups by sector**: each sector working group is responsible for one or more ISIC
   sectors. The assignment is one table,
   [`_data/working-group-sectors.csv`](https://github.com/DIDAS-swiss/use-case-repository/blob/main/_data/working-group-sectors.csv),
   one row per group and sector code, shown in both directions on the

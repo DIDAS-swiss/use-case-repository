@@ -18,7 +18,7 @@ entries. The list is read live from GitHub each time the page opens.
 {%- for e in entries -%}{"id":{{ e.name | remove: ".md" | jsonify }},"title":{{ e.title | jsonify }},"stage":{{ e.stage | jsonify }},"evidence":{{ e.evidence_status | default: "" | jsonify }},"lighthouse":{{ e.lighthouse | default: "" | jsonify }},"url":{{ e.url | relative_url | jsonify }}}{% unless forloop.last %},{% endunless %}{%- endfor -%}]
 </script>
 <script id="backlog-groups" type="application/json">
-[{%- for g in site.data["working-groups"] -%}{"id":{{ g.id | jsonify }},"name":{{ g.name | jsonify }}}{% unless forloop.last %},{% endunless %}{%- endfor -%}]
+[{%- for g in site.data["working-groups"] -%}{"id":{{ g.id | jsonify }},"name":{{ g.name | jsonify }},"status":{{ g.status | default: "active" | jsonify }}}{% unless forloop.last %},{% endunless %}{%- endfor -%}]
 </script>
 <script src="{{ '/assets/backlog.js' | relative_url }}"></script>
 

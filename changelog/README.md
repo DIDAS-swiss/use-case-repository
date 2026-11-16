@@ -9,6 +9,7 @@ To document a change, add a new dated file here as part of the same pull request
 
 ## Entries
 
+- [2026-11-16: Active and open working groups; horizontal groups](2026-11-16-working-groups-status.md)
 - [2026-11-16: The website is the entry point](2026-11-16-website-entry-point.md)
 - [2026-11-10: Glossary requests from use cases](2026-11-10-glossary-requests.md)
 - [2026-11-10: Editorial review of the backlog; a shorter form](2026-11-10-editorial-review.md)
