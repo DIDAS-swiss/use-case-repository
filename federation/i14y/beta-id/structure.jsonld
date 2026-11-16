@@ -286,45 +286,22 @@
    "http://www.w3.org/2002/07/owl#DatatypeProperty",
    "http://purl.org/linked-data/cube#AttributeProperty"
   ],
-  "http://purl.org/dc/terms/conformsTo": [
-   {
-    "@id": "https://www.i14y.admin.ch/catalog/concepts/08dd6a9d-53dd-71d4-a3e7-852ff5503f7c/description"
-   }
-  ],
-  "http://purl.org/dc/terms/description": [
-   {
-    "@language": "de",
-    "@value": "Geburtsjahr der Person. Von Geburtsdatum abgeleiteter Wert, bei welchem nur das Jahr (YYYY) beibehalten wird."
-   },
-   {
-    "@language": "en",
-    "@value": "Year of birth of the person. Value derived from the date of birth, where only the year (YYYY) is retained."
-   },
-   {
-    "@language": "fr",
-    "@value": "Année de naissance de la personne. Valeur dérivée de la date de naissance, dont seule l'année (YYYY) est conservée."
-   },
-   {
-    "@language": "it",
-    "@value": "Anno di nascita della persona. Valore derivato dalla data di nascita, in cui viene mantenuto solo l'anno (YYYY)."
-   }
-  ],
   "http://purl.org/dc/terms/title": [
    {
-    "@language": "it",
-    "@value": "Annata"
-   },
-   {
-    "@language": "fr",
-    "@value": "Né(e) en"
+    "@language": "de",
+    "@value": "Geburtsjahr"
    },
    {
     "@language": "en",
     "@value": "Born in"
    },
    {
-    "@language": "de",
-    "@value": "Geburtsjahr"
+    "@language": "fr",
+    "@value": "Né(e) en"
+   },
+   {
+    "@language": "it",
+    "@value": "Annata"
    }
   ],
   "http://www.w3.org/2000/01/rdf-schema#comment": [
@@ -337,30 +314,12 @@
     "@value": "Année de naissance de la personne. Valeur dérivée de la date de naissance, dont seule l'année (YYYY) est conservée."
    },
    {
-    "@language": "en",
-    "@value": "Year of birth of the person. Value derived from the date of birth, where only the year (YYYY) is retained."
-   },
-   {
     "@language": "de",
     "@value": "Geburtsjahr der Person. Von Geburtsdatum abgeleiteter Wert, bei welchem nur das Jahr (YYYY) beibehalten wird."
-   }
-  ],
-  "http://www.w3.org/2000/01/rdf-schema#label": [
-   {
-    "@language": "de",
-    "@value": "Geburtsjahr"
    },
    {
     "@language": "en",
-    "@value": "Born in"
-   },
-   {
-    "@language": "fr",
-    "@value": "Né(e) en"
-   },
-   {
-    "@language": "it",
-    "@value": "Annata"
+    "@value": "Year of birth of the person. Value derived from the date of birth, where only the year (YYYY) is retained."
    }
   ],
   "http://www.w3.org/ns/shacl#datatype": [
@@ -371,19 +330,31 @@
   "http://www.w3.org/ns/shacl#description": [
    {
     "@language": "it",
-    "@value": "Anno di nascita della persona. Valore derivato dalla data di nascita, in cui viene mantenuto solo l'anno (YYYY)."
-   },
-   {
-    "@language": "fr",
-    "@value": "Année de naissance de la personne. Valeur dérivée de la date de naissance, dont seule l'année (YYYY) est conservée."
-   },
-   {
-    "@language": "en",
-    "@value": "Year of birth of the person. Value derived from the date of birth, where only the year (YYYY) is retained."
+    "@value": "Anno di nascita della persona. Valore derivato dalla data di nascita, in cui viene mantenuto solo l'anno (YYYY). Esempio \\\"1974\\\""
    },
    {
     "@language": "de",
-    "@value": "Geburtsjahr der Person. Von Geburtsdatum abgeleiteter Wert, bei welchem nur das Jahr (YYYY) beibehalten wird."
+    "@value": "Geburtsjahr der Person. Von Geburtsdatum abgeleiteter Wert, bei welchem nur das Jahr (YYYY) beibehalten wird. Beispiel \\\"1974\\\""
+   },
+   {
+    "@language": "fr",
+    "@value": "Année de naissance de la personne. Valeur dérivée de la date de naissance, dont seule l'année (YYYY) est conservée. Example \\\"1974\\\""
+   },
+   {
+    "@language": "en",
+    "@value": "Year of birth of the person. Value derived from the date of birth, where only the year (YYYY) is retained. Example \\\"1974\\\""
+   }
+  ],
+  "http://www.w3.org/ns/shacl#maxLength": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "4"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#minLength": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "4"
    }
   ],
   "http://www.w3.org/ns/shacl#name": [
@@ -439,12 +410,12 @@
     "@value": "Over the age of 16"
    },
    {
-    "@language": "fr",
-    "@value": "Age plus de 16 ans"
-   },
-   {
     "@language": "it",
     "@value": "Età superiore a 16 anni"
+   },
+   {
+    "@language": "fr",
+    "@value": "Age plus de 16 ans"
    }
   ],
   "http://www.w3.org/2000/01/rdf-schema#comment": [
@@ -472,30 +443,30 @@
   ],
   "http://www.w3.org/ns/shacl#description": [
    {
-    "@language": "de",
-    "@value": "Aussage, ob die Person ihr 15. Lebensjahr vollendet hat."
+    "@language": "it",
+    "@value": "Informazioni sull'età della persona, se ha compiuto 16 anni."
    },
    {
-    "@language": "it",
-    "@value": "Dichiarazione che attesti che la persona ha compiuto 16 anni."
+    "@language": "de",
+    "@value": "Hinweis zum Alter der Person, ob sie das 16. Lebensjahr vollendet hat."
    },
    {
     "@language": "fr",
-    "@value": "Déclaration indiquant si la personne a atteint l'âge de 16 ans révolus."
+    "@value": "Indication de l'âge de la personne, si elle a atteint l'âge de 16 ans."
    },
    {
     "@language": "en",
-    "@value": "Declaration that the person has reached the age of 16."
+    "@value": "Information on the age of the person, whether the person has reached the age of 16."
    }
   ],
   "http://www.w3.org/ns/shacl#in": [
    {
     "@list": [
      {
-      "@value": "false"
+      "@value": "true"
      },
      {
-      "@value": "true"
+      "@value": "false"
      }
     ]
    }
@@ -522,12 +493,12 @@
     "@value": "Over the age of 16"
    },
    {
-    "@language": "fr",
-    "@value": "Age plus de 16 ans"
-   },
-   {
     "@language": "it",
     "@value": "Età superiore a 16 anni"
+   },
+   {
+    "@language": "fr",
+    "@value": "Age de plus de 16 ans"
    }
   ],
   "http://www.w3.org/ns/shacl#order": [
@@ -550,40 +521,27 @@
    "http://purl.org/linked-data/cube#CodedProperty",
    "http://purl.org/linked-data/cube#AttributeProperty"
   ],
-  "http://purl.org/dc/terms/description": [
+  "http://purl.org/dc/terms/conformsTo": [
    {
-    "@language": "de",
-    "@value": "Aussage, ob die Person ihr 18. Altersjahr vollendet hat."
-   },
-   {
-    "@language": "en",
-    "@value": "Declaration that the person has reached the age of 18."
-   },
-   {
-    "@language": "fr",
-    "@value": "Déclaration indiquant si la personne a atteint l'âge de 18 ans révolus."
-   },
-   {
-    "@language": "it",
-    "@value": "Dichiarazione che attesti che la persona ha compiuto 18 anni."
+    "@id": "https://register.ld.admin.ch/i14y/concept/PID_AGE_OVER_18/version/1.0.0"
    }
   ],
   "http://purl.org/dc/terms/title": [
    {
-    "@language": "it",
-    "@value": "Età superiore a 18 anni"
+    "@language": "de",
+    "@value": "Älter als 18 Jahre"
    },
    {
-    "@language": "fr",
-    "@value": "Age plus de 18 ans"
+    "@language": "it",
+    "@value": "Età superiore a 18 anni"
    },
    {
     "@language": "en",
     "@value": "Over the age of 18"
    },
    {
-    "@language": "de",
-    "@value": "Älter als 18 Jahre"
+    "@language": "fr",
+    "@value": "Age plus de 18 ans"
    }
   ],
   "http://www.w3.org/2000/01/rdf-schema#comment": [
@@ -604,58 +562,69 @@
     "@value": "Aussage, ob die Person ihr 18. Altersjahr vollendet hat."
    }
   ],
-  "http://www.w3.org/2000/01/rdf-schema#label": [
+  "http://www.w3.org/ns/shacl#datatype": [
    {
-    "@language": "de",
-    "@value": "Älter als 18 Jahre"
-   },
-   {
-    "@language": "en",
-    "@value": "Over the age of 18"
-   },
-   {
-    "@language": "fr",
-    "@value": "Age plus de 18 ans"
-   },
-   {
-    "@language": "it",
-    "@value": "Età superiore a 18 anni"
+    "@id": "http://www.w3.org/2001/XMLSchema#string"
    }
   ],
   "http://www.w3.org/ns/shacl#description": [
    {
     "@language": "it",
-    "@value": "Dichiarazione che attesti che la persona ha compiuto 18 anni."
-   },
-   {
-    "@language": "fr",
-    "@value": "Déclaration indiquant si la personne a atteint l'âge de 18 ans révolus."
-   },
-   {
-    "@language": "en",
-    "@value": "Declaration that the person has reached the age of 18."
+    "@value": "Informazioni sull'età della persona, se ha compiuto 18 anni."
    },
    {
     "@language": "de",
-    "@value": "Aussage, ob die Person ihr 18. Altersjahr vollendet hat."
+    "@value": "Hinweis zum Alter der Person, ob sie das 18. Lebensjahr vollendet hat."
+   },
+   {
+    "@language": "fr",
+    "@value": "Indication de l'âge de la personne, si elle a atteint l'âge de 18 ans."
+   },
+   {
+    "@language": "en",
+    "@value": "Information on the age of the person, whether the person has reached the age of 18."
+   }
+  ],
+  "http://www.w3.org/ns/shacl#in": [
+   {
+    "@list": [
+     {
+      "@value": "true"
+     },
+     {
+      "@value": "false"
+     }
+    ]
+   }
+  ],
+  "http://www.w3.org/ns/shacl#maxLength": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "5"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#minLength": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "4"
    }
   ],
   "http://www.w3.org/ns/shacl#name": [
+   {
+    "@language": "en",
+    "@value": "Over the age of 16"
+   },
    {
     "@language": "de",
     "@value": "Älter als 18 Jahre"
    },
    {
-    "@language": "en",
-    "@value": "Over the age of 18"
+    "@language": "it",
+    "@value": "Età superiore a 18 anni"
    },
    {
     "@language": "fr",
-    "@value": "Age plus de 18 ans"
-   },
-   {
-    "@language": "it",
-    "@value": "Età superiore a 18 anni"
+    "@value": "Age de plus de 18 ans"
    }
   ],
   "http://www.w3.org/ns/shacl#order": [
@@ -678,25 +647,20 @@
    "http://purl.org/linked-data/cube#CodedProperty",
    "http://purl.org/linked-data/cube#AttributeProperty"
   ],
-  "http://purl.org/dc/terms/description": [
+  "http://purl.org/dc/terms/conformsTo": [
    {
-    "@language": "de",
-    "@value": "Aussage, ob die Person ihr 65. Altersjahr vollendet hat."
-   },
-   {
-    "@language": "en",
-    "@value": "Declaration that the person has reached the age of 65."
-   },
-   {
-    "@language": "fr",
-    "@value": "Déclaration indiquant si la personne a atteint l'âge de 65 ans révolus."
-   },
-   {
-    "@language": "it",
-    "@value": "Dichiarazione che attesti che la persona ha compiuto 65 anni."
+    "@id": "https://register.ld.admin.ch/i14y/concept/PID_AGE_OVER_65/version/1.0.0"
    }
   ],
   "http://purl.org/dc/terms/title": [
+   {
+    "@language": "de",
+    "@value": "Älter als 65 Jahre"
+   },
+   {
+    "@language": "en",
+    "@value": "Over the age of 65"
+   },
    {
     "@language": "it",
     "@value": "Età superiore a 65 anni"
@@ -704,14 +668,6 @@
    {
     "@language": "fr",
     "@value": "Age plus de 65 ans"
-   },
-   {
-    "@language": "en",
-    "@value": "Over the age of 65"
-   },
-   {
-    "@language": "de",
-    "@value": "Älter als 65 Jahre"
    }
   ],
   "http://www.w3.org/2000/01/rdf-schema#comment": [
@@ -732,40 +688,51 @@
     "@value": "Aussage, ob die Person ihr 65. Altersjahr vollendet hat."
    }
   ],
-  "http://www.w3.org/2000/01/rdf-schema#label": [
+  "http://www.w3.org/ns/shacl#datatype": [
    {
-    "@language": "de",
-    "@value": "Älter als 65 Jahre"
-   },
-   {
-    "@language": "en",
-    "@value": "Over the age of 65"
-   },
-   {
-    "@language": "fr",
-    "@value": "Age plus de 65 ans"
-   },
-   {
-    "@language": "it",
-    "@value": "Età superiore a 65 anni"
+    "@id": "http://www.w3.org/2001/XMLSchema#string"
    }
   ],
   "http://www.w3.org/ns/shacl#description": [
    {
     "@language": "it",
-    "@value": "Dichiarazione che attesti che la persona ha compiuto 65 anni."
-   },
-   {
-    "@language": "fr",
-    "@value": "Déclaration indiquant si la personne a atteint l'âge de 65 ans révolus."
-   },
-   {
-    "@language": "en",
-    "@value": "Declaration that the person has reached the age of 65."
+    "@value": "Informazioni sull'età della persona, se ha compiuto 65 anni."
    },
    {
     "@language": "de",
-    "@value": "Aussage, ob die Person ihr 65. Altersjahr vollendet hat."
+    "@value": "Hinweis zum Alter der Person, ob sie das 65. Lebensjahr vollendet hat."
+   },
+   {
+    "@language": "fr",
+    "@value": "Indication de l'âge de la personne, si elle a atteint l'âge de 65 ans."
+   },
+   {
+    "@language": "en",
+    "@value": "Information on the age of the person, whether the person has reached the age of 65."
+   }
+  ],
+  "http://www.w3.org/ns/shacl#in": [
+   {
+    "@list": [
+     {
+      "@value": "true"
+     },
+     {
+      "@value": "false"
+     }
+    ]
+   }
+  ],
+  "http://www.w3.org/ns/shacl#maxLength": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "5"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#minLength": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "4"
    }
   ],
   "http://www.w3.org/ns/shacl#name": [
@@ -778,12 +745,12 @@
     "@value": "Over the age of 65"
    },
    {
-    "@language": "fr",
-    "@value": "Age plus de 65 ans"
-   },
-   {
     "@language": "it",
     "@value": "Età superiore a 65 anni"
+   },
+   {
+    "@language": "fr",
+    "@value": "Age de plus de 65 ans"
    }
   ],
   "http://www.w3.org/ns/shacl#order": [
@@ -1878,40 +1845,22 @@
     "@id": "https://register.ld.admin.ch/i14y/concept/ST_ISO_3166_ALPHA_2_2024/version/1.0.0"
    }
   ],
-  "http://purl.org/dc/terms/description": [
-   {
-    "@language": "de",
-    "@value": "Nationalität der Person (Einzelwert) im Format ISO 3166-1 Alpha 2"
-   },
-   {
-    "@language": "en",
-    "@value": "Nationality of the person (single value) in ISO 3166-1 Alpha 2 format"
-   },
-   {
-    "@language": "fr",
-    "@value": "Nationalité de la personne (valeur unique) au format ISO 3166-1 Alpha 2"
-   },
-   {
-    "@language": "it",
-    "@value": "Nazionalità della persona (valore singolo) nel formato ISO 3166-1 Alpha 2"
-   }
-  ],
   "http://purl.org/dc/terms/title": [
    {
-    "@language": "it",
-    "@value": "Cittadinanza"
-   },
-   {
-    "@language": "en",
-    "@value": "Nationality"
+    "@language": "fr",
+    "@value": "Nationalité"
    },
    {
     "@language": "de",
     "@value": "Nationalität"
    },
    {
-    "@language": "fr",
-    "@value": "Nationalité"
+    "@language": "en",
+    "@value": "Nationality"
+   },
+   {
+    "@language": "it",
+    "@value": "Cittadinanza"
    }
   ],
   "http://www.w3.org/2000/01/rdf-schema#comment": [
@@ -1932,22 +1881,9 @@
     "@value": "Nationalität der Person (Einzelwert) im Format ISO 3166-1 Alpha 2"
    }
   ],
-  "http://www.w3.org/2000/01/rdf-schema#label": [
+  "http://www.w3.org/ns/shacl#datatype": [
    {
-    "@language": "fr",
-    "@value": "Nationalité"
-   },
-   {
-    "@language": "de",
-    "@value": "Nationalität"
-   },
-   {
-    "@language": "en",
-    "@value": "Nationality"
-   },
-   {
-    "@language": "it",
-    "@value": "Cittadinanza"
+    "@id": "http://www.w3.org/2001/XMLSchema#string"
    }
   ],
   "http://www.w3.org/ns/shacl#description": [
@@ -1966,6 +1902,18 @@
    {
     "@language": "de",
     "@value": "Nationalität der Person (Einzelwert) im Format ISO 3166-1 Alpha 2"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#maxLength": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "2"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#minLength": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "2"
    }
   ],
   "http://www.w3.org/ns/shacl#name": [
@@ -2187,40 +2135,22 @@
     "@id": "https://register.ld.admin.ch/i14y/concept/PID_FACIAL_IMAGE/version/1.0.0"
    }
   ],
-  "http://purl.org/dc/terms/description": [
-   {
-    "@language": "de",
-    "@value": "Gesichtsbild (Portrait) der Person im Format image/png base46 encoded"
-   },
-   {
-    "@language": "en",
-    "@value": "Face image (portrait) of the person in image/png base46 encoded format"
-   },
-   {
-    "@language": "fr",
-    "@value": "Portrait de la personne au format image/png base46 encoded"
-   },
-   {
-    "@language": "it",
-    "@value": "Immagine del volto (ritratto) della persona in formato immagine/png base46 encoded"
-   }
-  ],
   "http://purl.org/dc/terms/title": [
    {
-    "@language": "it",
-    "@value": "Immagine facciale"
-   },
-   {
-    "@language": "fr",
-    "@value": "Image faciale"
+    "@language": "de",
+    "@value": "Gesichtsbild"
    },
    {
     "@language": "en",
     "@value": "Face image"
    },
    {
-    "@language": "de",
-    "@value": "Gesichtsbild"
+    "@language": "fr",
+    "@value": "Image faciale"
+   },
+   {
+    "@language": "it",
+    "@value": "Immagine facciale"
    }
   ],
   "http://www.w3.org/2000/01/rdf-schema#comment": [
@@ -2233,53 +2163,47 @@
     "@value": "Portrait de la personne au format image/png base46 encoded"
    },
    {
-    "@language": "en",
-    "@value": "Face image (portrait) of the person in image/png base46 encoded format"
-   },
-   {
     "@language": "de",
     "@value": "Gesichtsbild (Portrait) der Person im Format image/png base46 encoded"
-   }
-  ],
-  "http://www.w3.org/2000/01/rdf-schema#label": [
-   {
-    "@language": "de",
-    "@value": "Gesichtsbild"
    },
    {
     "@language": "en",
-    "@value": "Face image"
-   },
-   {
-    "@language": "fr",
-    "@value": "Image faciale"
-   },
-   {
-    "@language": "it",
-    "@value": "Immagine facciale"
+    "@value": "Face image (portrait) of the person in image/png base46 encoded format"
    }
   ],
   "http://www.w3.org/ns/shacl#datatype": [
    {
-    "@id": "http://www.w3.org/2001/XMLSchema#string"
+    "@id": "http://www.w3.org/2001/XMLSchema#base64binary"
    }
   ],
   "http://www.w3.org/ns/shacl#description": [
    {
     "@language": "it",
-    "@value": "Immagine del volto (ritratto) della persona in formato immagine/png base46 encoded"
-   },
-   {
-    "@language": "fr",
-    "@value": "Portrait de la personne au format image/png base46 encoded"
-   },
-   {
-    "@language": "en",
-    "@value": "Face image (portrait) of the person in image/png base46 encoded format"
+    "@value": "Immagine del volto (ritratto) della persona nel formato image/jpeg codificato in base46. Formato: altezza 462 px, larghezza 342 px."
    },
    {
     "@language": "de",
-    "@value": "Gesichtsbild (Portrait) der Person im Format image/png base46 encoded"
+    "@value": "Gesichtsbild (Portrait) der Person im Format image/jpeg base46 encoded. Format: Höhe 462 px, Breite 342 px."
+   },
+   {
+    "@language": "fr",
+    "@value": "Photo du visage (portrait) de la personne au format image/jpeg encodé en base46. Format : hauteur 462 px, largeur 342 px."
+   },
+   {
+    "@language": "en",
+    "@value": "Facial image (portrait) of the person in image/jpeg format, base46 encoded. Format: height 462 px, width 342 px."
+   }
+  ],
+  "http://www.w3.org/ns/shacl#maxLength": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1000000"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#minLength": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "1"
    }
   ],
   "http://www.w3.org/ns/shacl#name": [

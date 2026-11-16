@@ -66,50 +66,68 @@
       "version": "1.0.0"
      },
      "datatype": "string",
-     "description": "Declaration that the person has reached the age of 16.",
+     "description": "Information on the age of the person, whether the person has reached the age of 16.",
      "key": "age_over_16",
      "label": {
       "de": "Älter als 16 Jahre",
       "en": "Over the age of 16",
-      "fr": "Age plus de 16 ans",
+      "fr": "Age de plus de 16 ans",
       "it": "Età superiore a 16 anni"
      },
      "max": null,
      "min": null,
      "values": [
-      "false",
-      "true"
+      "true",
+      "false"
      ]
     },
     {
-     "datatype": null,
-     "description": "Declaration that the person has reached the age of 18.",
+     "concept": {
+      "identifier": "PID_AGE_OVER_18",
+      "url": "https://www.i14y.admin.ch/de/catalog/concepts/08dd4c86-4945-2c38-bf94-1eaf9db9dc2d/description",
+      "version": "1.0.0"
+     },
+     "datatype": "string",
+     "description": "Information on the age of the person, whether the person has reached the age of 18.",
      "key": "age_over_18",
      "label": {
       "de": "Älter als 18 Jahre",
-      "en": "Over the age of 18",
-      "fr": "Age plus de 18 ans",
+      "en": "Over the age of 16",
+      "fr": "Age de plus de 18 ans",
       "it": "Età superiore a 18 anni"
      },
      "max": null,
-     "min": null
+     "min": null,
+     "values": [
+      "true",
+      "false"
+     ]
     },
     {
-     "datatype": null,
-     "description": "Declaration that the person has reached the age of 65.",
+     "concept": {
+      "identifier": "PID_AGE_OVER_65",
+      "url": "https://www.i14y.admin.ch/de/catalog/concepts/08dd6a9b-148b-9e0b-8832-06a0228c29b1/description",
+      "version": "1.0.0"
+     },
+     "datatype": "string",
+     "description": "Information on the age of the person, whether the person has reached the age of 65.",
      "key": "age_over_65",
      "label": {
       "de": "Älter als 65 Jahre",
       "en": "Over the age of 65",
-      "fr": "Age plus de 65 ans",
+      "fr": "Age de plus de 65 ans",
       "it": "Età superiore a 65 anni"
      },
      "max": null,
-     "min": null
+     "min": null,
+     "values": [
+      "true",
+      "false"
+     ]
     },
     {
      "datatype": "decimal",
-     "description": "Year of birth of the person. Value derived from the date of birth, where only the year (YYYY) is retained.",
+     "description": "Year of birth of the person. Value derived from the date of birth, where only the year (YYYY) is retained. Example \\\"1974\\\"",
      "key": "age_birth_year",
      "label": {
       "de": "Geburtsjahr",
@@ -180,7 +198,7 @@
       "url": "https://www.i14y.admin.ch/de/catalog/concepts/08dc79aa-981b-7d9b-a00c-63519522b3c3/description",
       "version": "1.0.0"
      },
-     "datatype": null,
+     "datatype": "string",
      "description": "Nationality of the person (single value) in ISO 3166-1 Alpha 2 format",
      "key": "nationality",
      "label": {
@@ -198,8 +216,8 @@
       "url": null,
       "version": "1.0.0"
      },
-     "datatype": "string",
-     "description": "Face image (portrait) of the person in image/png base46 encoded format",
+     "datatype": "base64binary",
+     "description": "Facial image (portrait) of the person in image/jpeg format, base46 encoded. Format: height 462 px, width 342 px.",
      "key": "portrait",
      "label": {
       "de": "Gesichtsbild",
