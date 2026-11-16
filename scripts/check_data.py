@@ -89,6 +89,60 @@ def check_batches(use_cases, errors, warnings):
                     warnings.append(f"{where}: {rid} names {v} in {field}, but {v} does not name {rid} in {other}")
 
 
+STAGES = ("signal", "candidate", "qualified", "active", "maintained", "deprecated")
+
+
+def verifier_questions():
+    path = ROOT / "_data" / "verifier-questions.csv"
+    with open(path, encoding="utf-8", newline="") as f:
+        return {r["id"] for r in csv.DictReader(f)}
+
+
+def boundary_findings(records, questions):
+    """Use-case boundaries: same verifier role and same verifier question = one use case.
+    records: dicts with id, where, verifier, verifier_question, related (list), stage.
+    Returns (errors, warnings, notes)."""
+    errors, warnings, notes = [], [], []
+    seen = {}
+    for r in records:
+        q = (r.get("verifier_question") or "").strip()
+        v = (r.get("verifier") or "").strip().lower()
+        if q and q not in questions:
+            errors.append(f"{r['where']}: verifier_question {q!r} must be one of {', '.join(sorted(questions))}")
+        stage = (r.get("stage") or "signal").strip()
+        if stage in STAGES and STAGES.index(stage) >= 1 and stage != "deprecated" and not (v and q):
+            notes.append(f"{r['where']}: {r['id']} is at stage {stage} but lacks verifier or verifier_question")
+        if v and q in questions:
+            seen.setdefault((v, q), []).append(r)
+    related = {r["id"]: set(r.get("related") or []) for r in records}
+    for (v, q), group in seen.items():
+        for i, a in enumerate(group):
+            for b in group[i + 1:]:
+                if a["id"] == b["id"] or b["id"] in related.get(a["id"], ()) or a["id"] in related.get(b["id"], ()):
+                    continue
+                warnings.append(f"`{a['id']}` and `{b['id']}` have the same verifier and verifier question: "
+                                f"one use case or a documented variant?")
+    return errors, warnings, notes
+
+
+def boundary_records(use_cases):
+    """Verifier fields of the published entries and of the batch candidates."""
+    out = []
+    for cid, (where, fm) in use_cases.items():
+        out.append({"id": cid, "where": str(where), "verifier": fm.get("verifier"),
+                    "verifier_question": fm.get("verifier_question"), "related": fm.get("related_use_cases") or [],
+                    "stage": fm.get("stage")})
+    for path in sorted((ROOT / "intake").glob("*.csv")):
+        with open(path, encoding="utf-8-sig", newline="") as f:
+            for n, r in enumerate(csv.DictReader(f), start=2):
+                if r.get("id") and r["id"] not in use_cases:
+                    out.append({"id": r["id"], "where": f"{path.relative_to(ROOT)} line {n}",
+                                "verifier": r.get("verifier"), "verifier_question": r.get("verifier_question"),
+                                "related": [x.strip() for x in re.split(r"[;,]", r.get("related_use_cases") or "") if x.strip()],
+                                "stage": r.get("stage")})
+    return out
+
+
 def batch_ids():
     out = set()
     for path in sorted((ROOT / "intake").glob("*.csv")):
@@ -194,6 +248,10 @@ def main():
     check_batches(use_cases, errors, warnings)
     check_reviews(batch_ids() | set(use_cases), errors, warnings)
     check_published_list(use_cases, errors)
+    e, w, n = boundary_findings(boundary_records(use_cases), verifier_questions())
+    errors += e
+    warnings += w
+    notes += n
     for cid, (where, fm) in use_cases.items():
         if str(fm.get("evidence_status") or "") not in EVIDENCE:
             errors.append(f"{where}: evidence_status must be one of {', '.join(EVIDENCE[1:])} or empty")

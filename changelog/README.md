@@ -9,6 +9,7 @@ To document a change, add a new dated file here as part of the same pull request
 
 ## Entries
 
+- [2026-11-16: Boundary check for use cases](2026-11-16-boundary-check.md)
 - [2026-11-16: Verifier and verifier question](2026-11-16-verifier-question.md)
 - [2026-11-16: The source of each use case](2026-11-16-use-case-source.md)
 - [2026-11-16: Active and open working groups; horizontal groups](2026-11-16-working-groups-status.md)
