@@ -91,6 +91,8 @@
         {%- endfor -%}
       </dd></div>{% endif -%}
       {%- if page.likely_issuer %}<div class="wide"><dt>Likely issuer</dt><dd>{{ page.likely_issuer }}</dd></div>{% endif -%}
+      {%- if page.kind == "use-case" %}<div><dt>Proposed on behalf of</dt><dd>{{ page.proposed_by | default: "an individual" }}</dd></div>{% endif -%}
+      {%- if page.evidence_status %}<div><dt>Evidence</dt><dd>{{ page.evidence_status }}</dd></div>{% endif -%}
       {%- if page.domain_steward %}<div><dt>Domain steward</dt><dd>{{ page.domain_steward }}</dd></div>{% endif -%}
       {%- if page.title_de or page.title_fr or page.title_it %}<div class="wide"><dt>DE · FR · IT</dt><dd>{{ page.title_de }} · {{ page.title_fr }} · {{ page.title_it }}</dd></div>{% endif -%}
       {%- if page.lighthouse %}<div><dt>Lighthouse</dt><dd><span class="pill {% if page.lighthouse == 'selected' %}supply-available{% else %}supply-emerging{% endif %}">{% if page.lighthouse == 'selected' %}lighthouse{% else %}candidate{% endif %}</span>{% if page.lighthouse_basis %}<br><span class="note">{{ page.lighthouse_basis }}</span>{% endif %}</dd></div>{% endif -%}

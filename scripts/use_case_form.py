@@ -37,7 +37,6 @@ LEGACY_LABELS = {
     "demand": ["Demand and value (optional)"],
     "open_questions": ["Coordination needs and open questions (optional)"],
     "sources": ["Sources (optional)"],
-    "organisation": ["Proposed on behalf of (optional)"],
 }
 
 # Retired dropdown options: still understood when reading an earlier body.

@@ -57,7 +57,7 @@ Further columns:
 |---|---|
 | `upstream_use_cases` | ids of use cases that must happen first, because they issue a credential this one verifies, separated by `;` |
 | `downstream_use_cases` | ids of use cases that reuse a credential this one issues, separated by `;` |
-| `proposed_by` | the source of the use case, for example `DIDAS` or another organisation; it fills the form field *Source of the use case* (a batch-wide `proposed_by` in a YAML file does the same for every entry) |
+| `proposed_by` | the source of the use case, for example `DIDAS` or another organisation; it fills the form field *Proposed on behalf of* (a batch-wide `proposed_by` in a YAML file does the same for every entry) |
 | `lighthouse` | `yes` or `selected` sets the label `lighthouse`; `candidate` sets `lighthouse-candidate`; empty leaves the labels alone |
 | `lighthouse_basis` | one line on why |
 | `lighthouse_decision_record` | for a selection: link to the decision (approver, date, criteria); the comment says when it is missing |

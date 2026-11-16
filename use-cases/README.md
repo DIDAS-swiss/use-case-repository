@@ -12,9 +12,9 @@ On the [published site](https://didas-swiss.github.io/use-case-repository/use-ca
 the table can be filtered by sector; picking a section such as *L — Financial and
 insurance activities* also finds the divisions and classes inside it.
 
-| Use case | Stage | Ambition levels | Sectors | Credentials: reused · new · excluded | Steward |
-|---|---|---|---|---|---|
-| _None yet_ | | | | | |
+| Use case | Stage | Proposed on behalf of | Ambition levels | Sectors | Credentials: reused · new · excluded | Steward |
+|---|---|---|---|---|---|---|
+| _None yet_ | | | | | | |
 
 Stages: `signal` → `candidate` → `qualified` → `active` → `maintained`, or
 `deprecated`. See [GOVERNANCE.md](../GOVERNANCE.md#lifecycle-stages). Being

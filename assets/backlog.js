@@ -58,7 +58,7 @@
     outcome: ['Facts to prove', 'Outcome: what must be proven (optional)'],
     demand: ['Demand and value', 'Demand and value (optional)'],
     evidence: ['Evidence status'],
-    source: ['Source of the use case', 'Proposed on behalf of (optional)']
+    source: ['Proposed on behalf of (optional)']
   };
   function field(body, id) {
     var labels = LABELS[id] || [id];
@@ -151,11 +151,11 @@
       '<label>Sector <select data-f="sector"><option value="">All</option>' + opts(sectionRows.map(function (s) { return [s.id.replace('ISIC-', ''), s.id.replace('ISIC-', '') + ' — ' + s.label]; })) + '</select></label>' +
       '<label>Working group <select data-f="wg"><option value="">All</option><option value="-">None yet</option>' + opts(Object.keys(groups).map(function (g) { return [g, groups[g]]; })) + '</select></label>' +
       '<label>Lighthouse <select data-f="lighthouse"><option value="">All</option>' + opts([['Lighthouse', 'Lighthouse'], ['Candidate', 'Candidate'], ['-', 'Neither']]) + '</select></label>' +
-      '<label>Source <select data-f="source"><option value="">All</option>' + opts(Object.keys(sourcesUsed).sort().map(function (s) { return [s, s]; })) + '<option value="-">Not stated</option></select></label>' +
+      '<label>Proposed on behalf of <select data-f="source"><option value="">All</option>' + opts(Object.keys(sourcesUsed).sort().map(function (s) { return [s, s]; })) + '<option value="-">Not stated</option></select></label>' +
       '<label>Search <input type="search" data-f="q" placeholder="title or id"></label>' +
       '<span class="shown" aria-live="polite"></span>' +
       '</div>' +
-      '<table class="backlog-table"><thead><tr><th>#</th><th>Use case</th><th>Sector</th><th>Working group</th><th>Source</th><th>Lighthouse</th><th>Evidence</th><th>Step</th></tr></thead><tbody></tbody></table>';
+      '<table class="backlog-table"><thead><tr><th>#</th><th>Use case</th><th>Sector</th><th>Working group</th><th>Proposed on behalf of</th><th>Lighthouse</th><th>Evidence</th><th>Step</th></tr></thead><tbody></tbody></table>';
 
     var tbody = box.querySelector('tbody');
     function update() {
