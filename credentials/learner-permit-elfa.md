@@ -32,7 +32,9 @@ The cantonal road traffic offices issue it into the swiyu wallet, by QR code or
 SMS link, after the theory test. The eLFA is a pilot of the Confederation,
 developed with the association of road traffic offices (asa) under an ASTRA
 directive in effect since 1 September 2024; its evaluation runs until the end
-of March 2027.
+of March 2027. Under that directive (section C) the eLFA alone proves the entitlement to
+drive within Switzerland and Liechtenstein, not across other borders; the paper
+permit need not be carried.
 
 ## Claims
 
@@ -79,7 +81,10 @@ What the schema means for the use cases:
 - **Not on [I14Y](https://www.i14y.admin.ch/):** no learner's permit or driving
   licence dataset is in the I14Y catalogue (rechecked 2026-11-16, 2,673
   datasets; still only two credential datasets). So `schema_status` is
-  `emerging`: a schema is published, but not on the national catalogue. Once it
+  `emerging`: a schema is published, but not on the national catalogue.
+  Publication on I14Y is being clarified (noted on
+  [#76](https://github.com/DIDAS-swiss/use-case-repository/issues/76),
+  13 November 2026). Once it
   is on I14Y, set `i14y_dataset` and `i14y_id` and the schema is federated into
   this repository.
 
