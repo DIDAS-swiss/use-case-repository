@@ -17,7 +17,7 @@
   };
   var entries = read('backlog-entries');
   var groups = {};
-  read('backlog-groups').forEach(function (g) { groups[g.id] = g.name; });
+  read('backlog-groups').forEach(function (g) { groups[g.id] = g.name + (g.status === 'open' ? ' (open)' : ''); });
   var sectors = {};
   read('sector-data').forEach(function (s) { sectors[s.id] = s; });
   var sectionOf = function (id) {
