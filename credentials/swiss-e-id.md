@@ -14,7 +14,7 @@ schema_refs: []
 used_by: []
 demand_issues: []
 created: 2026-10-30
-updated: 2026-11-05
+updated: 2026-11-10
 ---
 
 # Swiss e-ID
@@ -60,4 +60,4 @@ Used by every seeded use case. It is reused, not newly requested, in each of the
 ## Sources
 
 - [Pre-Study: Swiss Ecosystem Discovery Catalog](https://www.amministrazionedigitalesvizzera.ch/application/files/8317/8999/7309/Pre-Study_Swiss_Ecosystem_Discovery_Catalog_DPSS_June_2026.pdf), DPSS iSVC / Accelerate.swiss, June 2026: §1, §9.6
-- [e-ID (eid.admin.ch)](https://www.eid.admin.ch/)
+- [swiyu – e-ID](https://swiyu.admin.ch/de/elektronische-identitaet), the federal site for the e-ID and the trust infrastructure since 27 October 2026 (eid.admin.ch is no longer maintained)
