@@ -11,6 +11,7 @@ ambition_level: AL3
 likely_issuer: Employer, with schema coordination by a sector body (the pre-study mockup names an eCH working group, SAV and SGV)
 issuer_type: private
 schema_refs: []
+claims: [employer, employment_status, income_band]
 used_by: []
 demand_issues: []
 created: 2026-10-30
@@ -31,9 +32,9 @@ The employer holds the data. A shared schema needs sector coordination, so that 
 
 | Claim | Description | Needed by |
 |---|---|---|
-| Employer | Name and identifier of the employer | vehicle leasing |
-| Employment status | Employed since, permanent or temporary | vehicle leasing |
-| Income band | Income range rather than the exact salary | vehicle leasing |
+| `employer` | Name and identifier of the employer | vehicle leasing |
+| `employment_status` | Employed since, permanent or temporary | vehicle leasing |
+| `income_band` | Income range rather than the exact salary | vehicle leasing |
 
 These claims are indicative. The authoritative schema is defined in I14Y, eCH or
 a sectoral repository, not here.

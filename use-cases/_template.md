@@ -13,6 +13,7 @@ intake_issue:          # number of the use-case candidate issue
 credentials_reused: []   # credential ids from credentials/, taken over from another use case or issuer
 credentials_new: []      # credential ids this use case newly requires
 credentials_excluded: [] # credential ids deliberately not requested (data minimisation)
+claims_needed: []        # the claims the verifier needs, as <credential-id>#<claim-id>, e.g. [beta-id#age_over_18]; several credentials are several items
 related_use_cases: []      # related use cases with no sequence
 upstream_use_cases: []     # use cases that must happen first: they issue a credential this one verifies
 downstream_use_cases: []   # use cases that reuse a credential this one issues
@@ -68,7 +69,10 @@ example "(F-02)".
 
 | Credential | In this use case | Claims needed | Supply | Why |
 |---|---|---|---|---|
-| [name](../credentials/id.md) · [I14Y](https://www.i14y.admin.ch/de/catalog/datasets/urn:vct:…/description) | reused / new / excluded | | available / emerging / missing | |
+| [name](../credentials/id.md) · [I14Y](https://www.i14y.admin.ch/de/catalog/datasets/urn:vct:…/description) | reused / new / excluded | `claim_id`, … | available / emerging / missing | |
+
+The «Claims needed» column lists, per credential, the claim ids of
+`claims_needed`; the draft script fills it from that field.
 
 Link the credential's I14Y dataset next to it wherever it is published there.
 A credential without an entry in `credentials/` gets one in the same pull request.

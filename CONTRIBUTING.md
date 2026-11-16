@@ -156,6 +156,7 @@ detail belongs in the body.
 | `credentials_reused` | no | credential ids taken over from another use case or from an existing issuer |
 | `credentials_new` | no | credential ids this use case newly requires |
 | `credentials_excluded` | no | credential ids deliberately **not** requested, which makes data minimisation explicit |
+| `claims_needed` | no | the claims the verifier needs, as `<credential-id>#<claim-id>`, for example `beta-id#age_over_18`; a combination across credentials is several items. Each credential must be in `credentials_reused` or `credentials_new`, each claim id in that credential's `claims` |
 | `related_use_cases` | no | use-case ids, for relations with no sequence |
 | `upstream_use_cases` | no | use-case ids that must happen first, because they issue a credential this use case verifies |
 | `downstream_use_cases` | no | use-case ids that reuse a credential this use case issues |
@@ -184,6 +185,7 @@ detail belongs in the body.
 | `i14y_dataset` | where published | the I14Y dataset identifier, usually the credential type (`vct`), for example `urn:vct:ch.admin.bcs.betaid` |
 | `i14y_id` | where published | the dataset's I14Y id (a uuid, the `id` in the I14Y API). With it, the schema is federated (see *Credentials on I14Y* below) |
 | `schema_refs` | no | further links: eCH standards, sectoral schemas, specifications. **Never** invent an identifier |
+| `claims` | no | the credential's claim ids, snake_case, one per row of «Claims (indicative)» (its first column); where the credential is on I14Y, the schema's attribute names |
 | `used_by` | yes | use-case ids |
 | `demand_issues` | no | `credential-need` issue numbers |
 | `created`, `updated` | yes | `YYYY-MM-DD` |

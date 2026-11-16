@@ -11,6 +11,7 @@ ambition_level: AL3
 likely_issuer: Motor vehicle liability insurers; schema coordination by the Swiss Insurance Association (SVV)
 issuer_type: private
 schema_refs: []
+claims: [insurer, policy_number, vehicle, cover_period]
 used_by: []
 demand_issues: []
 created: 2026-10-30
@@ -31,10 +32,10 @@ Insurers issue the cover. Liability insurance is mandatory under the Road Traffi
 
 | Claim | Description | Needed by |
 |---|---|---|
-| Insurer | | both use cases |
-| Policy | Policy number | both use cases |
-| Vehicle | Plate or vehicle identification | both use cases |
-| Validity | Period of cover | both use cases |
+| `insurer` | Insurer | both use cases |
+| `policy_number` | Policy number | both use cases |
+| `vehicle` | Plate or vehicle identification | both use cases |
+| `cover_period` | Period of cover | both use cases |
 
 These claims are indicative. The authoritative schema is defined in I14Y, eCH or
 a sectoral repository, not here.

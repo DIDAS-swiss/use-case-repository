@@ -11,6 +11,7 @@ ambition_level: AL2
 likely_issuer: Cantonal road traffic office (Strassenverkehrsamt); federal coordination by FEDRO (ASTRA)
 issuer_type: cantonal
 schema_refs: []
+claims: [holder, vehicle_identification, plate]
 used_by: []
 demand_issues: []
 created: 2026-10-30
@@ -31,9 +32,9 @@ The cantonal road traffic offices register vehicles under the Road Traffic Act (
 
 | Claim | Description | Needed by |
 |---|---|---|
-| Holder | Registered holder of the vehicle | both use cases |
-| Vehicle identification | VIN, make, model | both use cases |
-| Plate | Licence plate | both use cases |
+| `holder` | Registered holder of the vehicle | both use cases |
+| `vehicle_identification` | VIN, make, model | both use cases |
+| `plate` | Licence plate | both use cases |
 
 These claims are indicative. The authoritative schema is defined in I14Y, eCH or
 a sectoral repository, not here.

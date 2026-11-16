@@ -11,6 +11,7 @@ ambition_level: AL2
 likely_issuer: Cantonal or regional debt enforcement office (Betreibungsamt)
 issuer_type: cantonal
 schema_refs: []
+claims: [open_proceedings, loss_certificates]
 used_by: []
 demand_issues: []
 created: 2026-10-30
@@ -31,8 +32,8 @@ The debt enforcement office competent for the person's place of residence keeps 
 
 | Claim | Description | Needed by |
 |---|---|---|
-| Open proceedings | Whether, or how many, proceedings are open | vehicle leasing |
-| Loss certificates | Whether loss certificates exist | vehicle leasing |
+| `open_proceedings` | Whether, or how many, proceedings are open | vehicle leasing |
+| `loss_certificates` | Whether loss certificates exist | vehicle leasing |
 
 These claims are indicative. The authoritative schema is defined in I14Y, eCH or
 a sectoral repository, not here.

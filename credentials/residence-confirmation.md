@@ -13,6 +13,7 @@ issuer_type: municipal
 i14y_dataset: urn:vct:ch.egovernment.residency-permit-simple
 i14y_id: 49ad2ad8-6792-4902-bc0c-c2c3b41fb909
 schema_refs: []
+claims: [dwellingAddress, arrival_date]
 used_by: []
 demand_issues: []
 created: 2026-10-30
@@ -33,8 +34,8 @@ The municipal residents' registration office keeps the residents' register. Depe
 
 | Claim | Description | Needed by |
 |---|---|---|
-| Current address | Street, postcode, municipality (`dwellingAddress`) | vehicle leasing |
-| Residence since | Date of moving in (`moveData/arrival_date`) | vehicle leasing |
+| `dwellingAddress` | Current address: street, house number, postcode, locality (I14Y structure dwellingAddress) | vehicle leasing |
+| `arrival_date` | Date of moving in (I14Y moveData/arrival_date) | vehicle leasing |
 
 The attribute names in brackets are those of the I14Y schema below.
 

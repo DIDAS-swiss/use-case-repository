@@ -13,6 +13,7 @@ issuer_type:
 i14y_dataset:   # I14Y dataset identifier, usually the vct, e.g. urn:vct:ch.admin.bcs.betaid
 i14y_id:        # the dataset's I14Y id (uuid); the federation-sync workflow federates its schema
 schema_refs: []
+claims: []      # stable claim ids, snake_case, the first column of «Claims (indicative)»; on I14Y: the schema's attribute names
 used_by: []
 demand_issues: []
 created: YYYY-MM-DD
@@ -35,7 +36,11 @@ For a `missing` credential, say who could plausibly issue it.
 
 | Claim | Description | Needed by |
 |---|---|---|
-| | | |
+| `claim_id` | | |
+
+One row per claim. The first column is the claim's stable id, the same as in
+`claims:` above; use cases refer to it as `<credential-id>#<claim-id>`. Where the
+credential is on I14Y, the id is the schema's attribute name.
 
 These claims are indicative. The authoritative schema is defined in I14Y, eCH or
 a sectoral repository, not here.
