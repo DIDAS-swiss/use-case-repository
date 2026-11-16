@@ -8,7 +8,7 @@ stage: signal          # new entries start at signal; see GOVERNANCE.md for the 
 ambition_levels: [AL2] # one or more of AL1, AL2, AL3
 sectors: []   # ISIC Rev. 5 ids from _data/sectors.csv, e.g. [ISIC-65, ISIC-84]
 domain_steward: vacant # a name from STEWARDS.md, or vacant
-proposed_by:
+proposed_by:           # the source: the organisation the use case comes from, e.g. DIDAS; empty for an individual
 intake_issue:          # number of the use-case candidate issue
 credentials_reused: []   # credential ids from credentials/, taken over from another use case or issuer
 credentials_new: []      # credential ids this use case newly requires

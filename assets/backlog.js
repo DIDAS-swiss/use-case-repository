@@ -57,7 +57,8 @@
     actors: ['Actors and roles'],
     outcome: ['Facts to prove', 'Outcome: what must be proven (optional)'],
     demand: ['Demand and value', 'Demand and value (optional)'],
-    evidence: ['Evidence status']
+    evidence: ['Evidence status'],
+    source: ['Proposed on behalf of (optional)']
   };
   function field(body, id) {
     var labels = LABELS[id] || [id];
@@ -93,6 +94,7 @@
         var id = field(i.body, 'entry_id');
         var secIds = (field(i.body, 'sectors').match(/ISIC-[A-Z0-9]+/g) || []);
         var evidence = (field(i.body, 'evidence').split(':')[0] || '').trim();
+        var source = field(i.body, 'source').split('\n')[0].trim();
         // the reader sees the fields that hold something; empty ones are left out
         var details = [['Summary', 'summary'], ['Actors and roles', 'actors'], ['Facts to prove', 'outcome'],
                        ['Demand and value', 'demand']]
@@ -116,11 +118,11 @@
         if (entry) seen[entry.id] = true;
         return { number: i.number, url: i.html_url, title: i.title, id: id, sectors: secs, wg: wg,
                  lighthouse: lighthouse, step: step, entry: entry, draft: drafts[id],
-                 evidence: evidence, details: details };
+                 evidence: evidence, details: details, source: source };
       });
       entries.forEach(function (e) {   // published entries without an issue
         if (!seen[e.id]) items.push({ title: e.title, id: e.id, sectors: [], wg: '', step: 'published', entry: e,
-                                      evidence: e.evidence || '', details: [],
+                                      evidence: e.evidence || '', details: [], source: e.source || '',
                                       lighthouse: e.lighthouse === 'selected' ? 'Lighthouse' : e.lighthouse === 'candidate' ? 'Candidate' : '' });
       });
       render(items);
@@ -132,7 +134,9 @@
     });
 
   function render(items) {
-    var state = { step: '', sector: '', wg: '', lighthouse: '', q: '' };
+    var state = { step: '', sector: '', wg: '', lighthouse: '', source: '', q: '' };
+    var sourcesUsed = {};
+    items.forEach(function (it) { if (it.source) sourcesUsed[it.source] = true; });
     var sectionsUsed = {};
     items.forEach(function (it) { it.sectors.forEach(function (s) { sectionsUsed[s] = true; }); });
     var sectionRows = Object.keys(sectors).map(function (k) { return sectors[k]; })
@@ -147,10 +151,11 @@
       '<label>Sector <select data-f="sector"><option value="">All</option>' + opts(sectionRows.map(function (s) { return [s.id.replace('ISIC-', ''), s.id.replace('ISIC-', '') + ' — ' + s.label]; })) + '</select></label>' +
       '<label>Working group <select data-f="wg"><option value="">All</option><option value="-">None yet</option>' + opts(Object.keys(groups).map(function (g) { return [g, groups[g]]; })) + '</select></label>' +
       '<label>Lighthouse <select data-f="lighthouse"><option value="">All</option>' + opts([['Lighthouse', 'Lighthouse'], ['Candidate', 'Candidate'], ['-', 'Neither']]) + '</select></label>' +
+      '<label>Proposed on behalf of <select data-f="source"><option value="">All</option>' + opts(Object.keys(sourcesUsed).sort().map(function (s) { return [s, s]; })) + '<option value="-">Not stated</option></select></label>' +
       '<label>Search <input type="search" data-f="q" placeholder="title or id"></label>' +
       '<span class="shown" aria-live="polite"></span>' +
       '</div>' +
-      '<table class="backlog-table"><thead><tr><th>#</th><th>Use case</th><th>Sector</th><th>Working group</th><th>Lighthouse</th><th>Evidence</th><th>Step</th></tr></thead><tbody></tbody></table>';
+      '<table class="backlog-table"><thead><tr><th>#</th><th>Use case</th><th>Sector</th><th>Working group</th><th>Proposed on behalf of</th><th>Lighthouse</th><th>Evidence</th><th>Step</th></tr></thead><tbody></tbody></table>';
 
     var tbody = box.querySelector('tbody');
     function update() {
@@ -159,6 +164,7 @@
         if (state.sector && it.sectors.indexOf(state.sector) < 0) return false;
         if (state.wg && (state.wg === '-' ? it.wg : it.wg !== state.wg)) return false;
         if (state.lighthouse && (state.lighthouse === '-' ? it.lighthouse : it.lighthouse !== state.lighthouse)) return false;
+        if (state.source && (state.source === '-' ? it.source : it.source !== state.source)) return false;
         if (state.q && (it.title + ' ' + it.id).toLowerCase().indexOf(state.q.toLowerCase()) < 0) return false;
         return true;
       };
@@ -182,6 +188,7 @@
           }).join('') + '</details>' : '') + '</td>' +
           '<td>' + esc(it.sectors.join(', ')) + '</td>' +
           '<td>' + esc(groups[it.wg] || it.wg || '') + '</td>' +
+          '<td>' + esc(it.source || '') + '</td>' +
           '<td>' + (it.lighthouse ? '<span class="pill ' + (it.lighthouse === 'Lighthouse' ? 'supply-available' : 'supply-emerging') + '">' + it.lighthouse + '</span>' : '') + '</td>' +
           '<td>' + esc(it.evidence || '') + '</td>' +
           '<td><span class="pill step-' + it.step + '">' + label + '</span>' + extra + '</td>' +

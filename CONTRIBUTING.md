@@ -25,7 +25,11 @@ files it. Everything after builds on those fields:
 The form asks first for the six things a signal needs: the **use case** (one
 decision), a **summary** of up to 70 words, the **actors**, the **facts to
 prove**, the **demand and value** (measured, reported or a hypothesis) and the
-**evidence status** with its **sources**. Catalogue choices, flows and
+**evidence status** with its **sources**, and then *Proposed on behalf of*:
+the **source of the use case**, the organisation it comes from, for example
+DIDAS, a member organisation, an authority or a company (empty for an
+individual). It is published as the source on the backlog page, which can
+filter by it, and on the use case's page. Catalogue choices, flows and
 credentials follow under *Details* and can be added by a curator or the working
 group later.
 

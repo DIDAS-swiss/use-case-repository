@@ -9,6 +9,7 @@ To document a change, add a new dated file here as part of the same pull request
 
 ## Entries
 
+- [2026-11-16: The source of each use case](2026-11-16-use-case-source.md)
 - [2026-11-16: Active and open working groups; horizontal groups](2026-11-16-working-groups-status.md)
 - [2026-11-16: The website is the entry point](2026-11-16-website-entry-point.md)
 - [2026-11-10: eLFA live; driving-licence credentials; swiyu.admin.ch sources](2026-11-10-swiyu-pilots.md)
