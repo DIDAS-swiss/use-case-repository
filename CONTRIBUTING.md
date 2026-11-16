@@ -98,6 +98,32 @@ A use case lists the credentials it relies on by their `id`. A credential lists
 the use cases that rely on it in `used_by`. Keep both sides in step in the same
 pull request.
 
+## Where one use case ends
+
+**Same verifier role and same verifier question = one use case.** A different
+context of the same decision, for example four kinds of contract signed with a
+QES, is a variant inside the entry, not a new entry. An entry whose verifiers
+ask different questions is a candidate for a split.
+
+The verifier question says what the verifier needs to know:
+
+| `verifier_question` | Question | Typical claims |
+|---|---|---|
+| `identity` | Who are you? | e-ID, re-identification |
+| `qualification` | What are you capable of? | diploma, driving licence, professional licence |
+| `attestation` | Is this claim true? | age threshold, vaccination, residence, bank confirmation |
+| `permission` | Are you allowed to do or receive something? | ticket, voucher, access card, vehicle registration |
+| `membership` | Are you part of a group? | employee card, club membership, student status |
+
+The question set is adapted from the BJ e-ID team's credential use case
+classification. The list lives in
+[`_data/verifier-questions.csv`](https://github.com/DIDAS-swiss/use-case-repository/blob/main/_data/verifier-questions.csv);
+the issue form's dropdown is generated from it.
+
+Both fields are optional at `signal` and required from `candidate` on. Existing
+entries and issues are not backfilled; curators fill the fields during the
+editorial follow-up.
+
 ## File names and ids
 
 - The file name is the `id` plus `.md`, in lowercase kebab case and in English:
@@ -135,6 +161,8 @@ detail belongs in the body.
 | `downstream_use_cases` | no | use-case ids that reuse a credential this use case issues |
 | `lighthouse` | no | `selected`, `candidate` or empty; see [GOVERNANCE.md](GOVERNANCE.md#lighthouses) |
 | `lighthouse_basis` | with `lighthouse` | one line on why, for example "DIDAS selection" or "meets 5 of 6 criteria" |
+| `verifier` | from `candidate` on (optional at `signal`) | the relying party whose decision this is, as a role, for example `retailer` or `driving school`; one value |
+| `verifier_question` | from `candidate` on (optional at `signal`) | `identity` · `qualification` · `attestation` · `permission` · `membership`; one value. See *Where one use case ends* |
 | `trust_flows` | no | Trust Flow ids, `<sector>/<family>/<flow>`, from [`_data/trust-flows.csv`](https://github.com/DIDAS-swiss/use-case-repository/blob/main/_data/trust-flows.csv). See *Anchors* below |
 | `ifm_patterns` | no | Industry Function Graph pattern ids from [`_data/ifm-patterns.csv`](https://github.com/DIDAS-swiss/use-case-repository/blob/main/_data/ifm-patterns.csv) |
 | `implementations` | no | `"<url> (<how far: demo, sandbox, pilot, production>)"`, one per implementation |

@@ -68,7 +68,9 @@ provisional stewardship until one is confirmed (pre-study §7.3).
 1. **Intake**: the proposer files a *Use-case candidate* issue (label `use-case`,
    `stage: signal`).
 2. **Triage** within two weeks: a curator checks scope (does verifiable data play a
-   role?), looks for duplicates, checks the ISIC sector labels the form applied and adds
+   role?), looks for duplicates, checks `verifier` and `verifier_question` (a match
+   with an existing entry is a duplicate or a variant, see
+   [CONTRIBUTING.md](CONTRIBUTING.md#where-one-use-case-ends)), checks the ISIC sector labels the form applied and adds
    ambition-level labels (`AL2`, `AL3`). The curator may also apply `needs-work`, `duplicate` or
    `out-of-scope`, with reasons.
 3. **Drafting**: the form is the structure everything builds on. Adding the

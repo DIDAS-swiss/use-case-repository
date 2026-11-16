@@ -94,6 +94,8 @@ def draft(body, number, labels=()):
         "lighthouse": lighthouse or None, "lighthouse_basis": f.get("lighthouse_basis") or None,
         "lighthouse_decision_record": None,
         "evidence_status": status or None, "dependencies": dependencies,
+        "verifier": (f.get("verifier") or "").strip() or None,
+        "verifier_question": links.form.verifier_question(f.get("verifier_question")) or None,
         "trust_flows": links.chosen("trust_flows", f.get("trust_flows")),
         "ifm_patterns": links.chosen("ifm_patterns", f.get("ifm_patterns")),
         "implementations": [l.strip("- ").strip() for l in (f.get("implementations") or "").split("\n") if "http" in l],
