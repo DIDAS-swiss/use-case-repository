@@ -5,8 +5,9 @@
 - Credential entries:
   - **Electronic learner's permit (eLFA)**: supply *available*. It is in live
     use in all cantons, and DIDAS reports about 100,000 active as of 10
-    November 2026. The Confederation calls it a pilot. Its schema exists on the
-    issuer side but is not on I14Y.
+    November 2026. The Confederation calls it a pilot. Its claims are
+    taken from the [JSON Schema ASTRA publishes](https://vz-api.astra.admin.ch/public/issuer/oid4vci/json-schema/elfa) at its OpenID4VCI
+    issuer; the schema is not on I14Y.
   - **Digital driving licence**: supply *emerging*, announced as "soon
     available" on swiyu.admin.ch. It joins the gap board, needed by 7
     candidates.
