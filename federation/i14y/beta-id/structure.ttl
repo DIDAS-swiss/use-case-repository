@@ -132,15 +132,15 @@
                                                                                                                             "Dichiarazione che attesti che la persona ha compiuto 16 anni."@it,
                                                                                                                             "Déclaration indiquant si la personne a atteint l'âge de 16 ans révolus."@fr;
                                                                                                                sh:datatype xsd:string;
-                                                                                                               sh:description "Aussage, ob die Person ihr 15. Lebensjahr vollendet hat."@de,
-                                                                                                                              "Declaration that the person has reached the age of 16."@en,
-                                                                                                                              "Dichiarazione che attesti che la persona ha compiuto 16 anni."@it,
-                                                                                                                              "Déclaration indiquant si la personne a atteint l'âge de 16 ans révolus."@fr;
-                                                                                                               sh:in ("false"
-                                                                                                                      "true");
+                                                                                                               sh:description "Hinweis zum Alter der Person, ob sie das 16. Lebensjahr vollendet hat."@de,
+                                                                                                                              "Indication de l'âge de la personne, si elle a atteint l'âge de 16 ans."@fr,
+                                                                                                                              "Information on the age of the person, whether the person has reached the age of 16."@en,
+                                                                                                                              "Informazioni sull'età della persona, se ha compiuto 16 anni."@it;
+                                                                                                               sh:in ("true"
+                                                                                                                      "false");
                                                                                                                sh:maxLength 5 ;
                                                                                                                sh:minLength 4 ;
-                                                                                                               sh:name "Age plus de 16 ans"@fr,
+                                                                                                               sh:name "Age de plus de 16 ans"@fr,
                                                                                                                        "Età superiore a 16 anni"@it,
                                                                                                                        "Over the age of 16"@en,
                                                                                                                        "Älter als 16 Jahre"@de;
@@ -150,10 +150,7 @@
                                                                                                                  <http://purl.org/linked-data/cube#CodedProperty>,
                                                                                                                  owl:DatatypeProperty,
                                                                                                                  sh:PropertyShape;
-                                                                                                               dcterms:description "Aussage, ob die Person ihr 18. Altersjahr vollendet hat."@de,
-                                                                                                                                   "Declaration that the person has reached the age of 18."@en,
-                                                                                                                                   "Dichiarazione che attesti che la persona ha compiuto 18 anni."@it,
-                                                                                                                                   "Déclaration indiquant si la personne a atteint l'âge de 18 ans révolus."@fr;
+                                                                                                               dcterms:conformsTo <https://register.ld.admin.ch/i14y/concept/PID_AGE_OVER_18/version/1.0.0>;
                                                                                                                dcterms:title "Age plus de 18 ans"@fr,
                                                                                                                              "Età superiore a 18 anni"@it,
                                                                                                                              "Over the age of 18"@en,
@@ -162,17 +159,18 @@
                                                                                                                             "Declaration that the person has reached the age of 18."@en,
                                                                                                                             "Dichiarazione che attesti che la persona ha compiuto 18 anni."@it,
                                                                                                                             "Déclaration indiquant si la personne a atteint l'âge de 18 ans révolus."@fr;
-                                                                                                               rdfs:label "Age plus de 18 ans"@fr,
-                                                                                                                          "Età superiore a 18 anni"@it,
-                                                                                                                          "Over the age of 18"@en,
-                                                                                                                          "Älter als 18 Jahre"@de;
-                                                                                                               sh:description "Aussage, ob die Person ihr 18. Altersjahr vollendet hat."@de,
-                                                                                                                              "Declaration that the person has reached the age of 18."@en,
-                                                                                                                              "Dichiarazione che attesti che la persona ha compiuto 18 anni."@it,
-                                                                                                                              "Déclaration indiquant si la personne a atteint l'âge de 18 ans révolus."@fr;
-                                                                                                               sh:name "Age plus de 18 ans"@fr,
+                                                                                                               sh:datatype xsd:string;
+                                                                                                               sh:description "Hinweis zum Alter der Person, ob sie das 18. Lebensjahr vollendet hat."@de,
+                                                                                                                              "Indication de l'âge de la personne, si elle a atteint l'âge de 18 ans."@fr,
+                                                                                                                              "Information on the age of the person, whether the person has reached the age of 18."@en,
+                                                                                                                              "Informazioni sull'età della persona, se ha compiuto 18 anni."@it;
+                                                                                                               sh:in ("true"
+                                                                                                                      "false");
+                                                                                                               sh:maxLength 5 ;
+                                                                                                               sh:minLength 4 ;
+                                                                                                               sh:name "Age de plus de 18 ans"@fr,
                                                                                                                        "Età superiore a 18 anni"@it,
-                                                                                                                       "Over the age of 18"@en,
+                                                                                                                       "Over the age of 16"@en,
                                                                                                                        "Älter als 18 Jahre"@de;
                                                                                                                sh:order 5 ;
                                                                                                                sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/age_over_18>.
@@ -180,10 +178,7 @@
                                                                                                                  <http://purl.org/linked-data/cube#CodedProperty>,
                                                                                                                  owl:DatatypeProperty,
                                                                                                                  sh:PropertyShape;
-                                                                                                               dcterms:description "Aussage, ob die Person ihr 65. Altersjahr vollendet hat."@de,
-                                                                                                                                   "Declaration that the person has reached the age of 65."@en,
-                                                                                                                                   "Dichiarazione che attesti che la persona ha compiuto 65 anni."@it,
-                                                                                                                                   "Déclaration indiquant si la personne a atteint l'âge de 65 ans révolus."@fr;
+                                                                                                               dcterms:conformsTo <https://register.ld.admin.ch/i14y/concept/PID_AGE_OVER_65/version/1.0.0>;
                                                                                                                dcterms:title "Age plus de 65 ans"@fr,
                                                                                                                              "Età superiore a 65 anni"@it,
                                                                                                                              "Over the age of 65"@en,
@@ -192,15 +187,16 @@
                                                                                                                             "Declaration that the person has reached the age of 65."@en,
                                                                                                                             "Dichiarazione che attesti che la persona ha compiuto 65 anni."@it,
                                                                                                                             "Déclaration indiquant si la personne a atteint l'âge de 65 ans révolus."@fr;
-                                                                                                               rdfs:label "Age plus de 65 ans"@fr,
-                                                                                                                          "Età superiore a 65 anni"@it,
-                                                                                                                          "Over the age of 65"@en,
-                                                                                                                          "Älter als 65 Jahre"@de;
-                                                                                                               sh:description "Aussage, ob die Person ihr 65. Altersjahr vollendet hat."@de,
-                                                                                                                              "Declaration that the person has reached the age of 65."@en,
-                                                                                                                              "Dichiarazione che attesti che la persona ha compiuto 65 anni."@it,
-                                                                                                                              "Déclaration indiquant si la personne a atteint l'âge de 65 ans révolus."@fr;
-                                                                                                               sh:name "Age plus de 65 ans"@fr,
+                                                                                                               sh:datatype xsd:string;
+                                                                                                               sh:description "Hinweis zum Alter der Person, ob sie das 65. Lebensjahr vollendet hat."@de,
+                                                                                                                              "Indication de l'âge de la personne, si elle a atteint l'âge de 65 ans."@fr,
+                                                                                                                              "Information on the age of the person, whether the person has reached the age of 65."@en,
+                                                                                                                              "Informazioni sull'età della persona, se ha compiuto 65 anni."@it;
+                                                                                                               sh:in ("true"
+                                                                                                                      "false");
+                                                                                                               sh:maxLength 5 ;
+                                                                                                               sh:minLength 4 ;
+                                                                                                               sh:name "Age de plus de 65 ans"@fr,
                                                                                                                        "Età superiore a 65 anni"@it,
                                                                                                                        "Over the age of 65"@en,
                                                                                                                        "Älter als 65 Jahre"@de;
@@ -209,11 +205,6 @@
 <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.admin.bcs.betaid/structure/ch_admin_beta_id/age_birth_year> a <http://purl.org/linked-data/cube#AttributeProperty>,
                                                                                                                     owl:DatatypeProperty,
                                                                                                                     sh:PropertyShape;
-                                                                                                                  dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08dd6a9d-53dd-71d4-a3e7-852ff5503f7c/description>;
-                                                                                                                  dcterms:description "Anno di nascita della persona. Valore derivato dalla data di nascita, in cui viene mantenuto solo l'anno (YYYY)."@it,
-                                                                                                                                      "Année de naissance de la personne. Valeur dérivée de la date de naissance, dont seule l'année (YYYY) est conservée."@fr,
-                                                                                                                                      "Geburtsjahr der Person. Von Geburtsdatum abgeleiteter Wert, bei welchem nur das Jahr (YYYY) beibehalten wird."@de,
-                                                                                                                                      "Year of birth of the person. Value derived from the date of birth, where only the year (YYYY) is retained."@en;
                                                                                                                   dcterms:title "Annata"@it,
                                                                                                                                 "Born in"@en,
                                                                                                                                 "Geburtsjahr"@de,
@@ -222,15 +213,13 @@
                                                                                                                                "Année de naissance de la personne. Valeur dérivée de la date de naissance, dont seule l'année (YYYY) est conservée."@fr,
                                                                                                                                "Geburtsjahr der Person. Von Geburtsdatum abgeleiteter Wert, bei welchem nur das Jahr (YYYY) beibehalten wird."@de,
                                                                                                                                "Year of birth of the person. Value derived from the date of birth, where only the year (YYYY) is retained."@en;
-                                                                                                                  rdfs:label "Annata"@it,
-                                                                                                                             "Born in"@en,
-                                                                                                                             "Geburtsjahr"@de,
-                                                                                                                             "Né(e) en"@fr;
                                                                                                                   sh:datatype xsd:decimal;
-                                                                                                                  sh:description "Anno di nascita della persona. Valore derivato dalla data di nascita, in cui viene mantenuto solo l'anno (YYYY)."@it,
-                                                                                                                                 "Année de naissance de la personne. Valeur dérivée de la date de naissance, dont seule l'année (YYYY) est conservée."@fr,
-                                                                                                                                 "Geburtsjahr der Person. Von Geburtsdatum abgeleiteter Wert, bei welchem nur das Jahr (YYYY) beibehalten wird."@de,
-                                                                                                                                 "Year of birth of the person. Value derived from the date of birth, where only the year (YYYY) is retained."@en;
+                                                                                                                  sh:description """Anno di nascita della persona. Valore derivato dalla data di nascita, in cui viene mantenuto solo l'anno (YYYY). Esempio \\\"1974\\\""""@it,
+                                                                                                                                 """Année de naissance de la personne. Valeur dérivée de la date de naissance, dont seule l'année (YYYY) est conservée. Example \\\"1974\\\""""@fr,
+                                                                                                                                 """Geburtsjahr der Person. Von Geburtsdatum abgeleiteter Wert, bei welchem nur das Jahr (YYYY) beibehalten wird. Beispiel \\\"1974\\\""""@de,
+                                                                                                                                 """Year of birth of the person. Value derived from the date of birth, where only the year (YYYY) is retained. Example \\\"1974\\\""""@en;
+                                                                                                                  sh:maxLength 4 ;
+                                                                                                                  sh:minLength 4 ;
                                                                                                                   sh:name "Annata"@it,
                                                                                                                           "Born in"@en,
                                                                                                                           "Geburtsjahr"@de,
@@ -311,10 +300,6 @@
                                                                                                                  owl:DatatypeProperty,
                                                                                                                  sh:PropertyShape;
                                                                                                                dcterms:conformsTo <https://register.ld.admin.ch/i14y/concept/ST_ISO_3166_ALPHA_2_2024/version/1.0.0>;
-                                                                                                               dcterms:description "Nationality of the person (single value) in ISO 3166-1 Alpha 2 format"@en,
-                                                                                                                                   "Nationalität der Person (Einzelwert) im Format ISO 3166-1 Alpha 2"@de,
-                                                                                                                                   "Nationalité de la personne (valeur unique) au format ISO 3166-1 Alpha 2"@fr,
-                                                                                                                                   "Nazionalità della persona (valore singolo) nel formato ISO 3166-1 Alpha 2"@it;
                                                                                                                dcterms:title "Cittadinanza"@it,
                                                                                                                              "Nationality"@en,
                                                                                                                              "Nationalität"@de,
@@ -323,14 +308,13 @@
                                                                                                                             "Nationalität der Person (Einzelwert) im Format ISO 3166-1 Alpha 2"@de,
                                                                                                                             "Nationalité de la personne (valeur unique) au format ISO 3166-1 Alpha 2"@fr,
                                                                                                                             "Nazionalità della persona (valore singolo) nel formato ISO 3166-1 Alpha 2"@it;
-                                                                                                               rdfs:label "Cittadinanza"@it,
-                                                                                                                          "Nationality"@en,
-                                                                                                                          "Nationalität"@de,
-                                                                                                                          "Nationalité"@fr;
+                                                                                                               sh:datatype xsd:string;
                                                                                                                sh:description "Nationality of the person (single value) in ISO 3166-1 Alpha 2 format"@en,
                                                                                                                               "Nationalität der Person (Einzelwert) im Format ISO 3166-1 Alpha 2"@de,
                                                                                                                               "Nationalité de la personne (valeur unique) au format ISO 3166-1 Alpha 2"@fr,
                                                                                                                               "Nazionalità della persona (valore singolo) nel formato ISO 3166-1 Alpha 2"@it;
+                                                                                                               sh:maxLength 2 ;
+                                                                                                               sh:minLength 2 ;
                                                                                                                sh:name "Cittadinanza"@it,
                                                                                                                        "Nationality"@en,
                                                                                                                        "Nationalität"@de,
@@ -341,10 +325,6 @@
                                                                                                               owl:DatatypeProperty,
                                                                                                               sh:PropertyShape;
                                                                                                             dcterms:conformsTo <https://register.ld.admin.ch/i14y/concept/PID_FACIAL_IMAGE/version/1.0.0>;
-                                                                                                            dcterms:description "Face image (portrait) of the person in image/png base46 encoded format"@en,
-                                                                                                                                "Gesichtsbild (Portrait) der Person im Format image/png base46 encoded"@de,
-                                                                                                                                "Immagine del volto (ritratto) della persona in formato immagine/png base46 encoded"@it,
-                                                                                                                                "Portrait de la personne au format image/png base46 encoded"@fr;
                                                                                                             dcterms:title "Face image"@en,
                                                                                                                           "Gesichtsbild"@de,
                                                                                                                           "Image faciale"@fr,
@@ -353,15 +333,13 @@
                                                                                                                          "Gesichtsbild (Portrait) der Person im Format image/png base46 encoded"@de,
                                                                                                                          "Immagine del volto (ritratto) della persona in formato immagine/png base46 encoded"@it,
                                                                                                                          "Portrait de la personne au format image/png base46 encoded"@fr;
-                                                                                                            rdfs:label "Face image"@en,
-                                                                                                                       "Gesichtsbild"@de,
-                                                                                                                       "Image faciale"@fr,
-                                                                                                                       "Immagine facciale"@it;
-                                                                                                            sh:datatype xsd:string;
-                                                                                                            sh:description "Face image (portrait) of the person in image/png base46 encoded format"@en,
-                                                                                                                           "Gesichtsbild (Portrait) der Person im Format image/png base46 encoded"@de,
-                                                                                                                           "Immagine del volto (ritratto) della persona in formato immagine/png base46 encoded"@it,
-                                                                                                                           "Portrait de la personne au format image/png base46 encoded"@fr;
+                                                                                                            sh:datatype xsd:base64binary;
+                                                                                                            sh:description "Facial image (portrait) of the person in image/jpeg format, base46 encoded. Format: height 462 px, width 342 px."@en,
+                                                                                                                           "Gesichtsbild (Portrait) der Person im Format image/jpeg base46 encoded. Format: Höhe 462 px, Breite 342 px."@de,
+                                                                                                                           "Immagine del volto (ritratto) della persona nel formato image/jpeg codificato in base46. Formato: altezza 462 px, larghezza 342 px."@it,
+                                                                                                                           "Photo du visage (portrait) de la personne au format image/jpeg encodé en base46. Format : hauteur 462 px, largeur 342 px."@fr;
+                                                                                                            sh:maxLength 1000000 ;
+                                                                                                            sh:minLength 1 ;
                                                                                                             sh:name "Face image"@en,
                                                                                                                     "Gesichtsbild"@de,
                                                                                                                     "Image faciale"@fr,
