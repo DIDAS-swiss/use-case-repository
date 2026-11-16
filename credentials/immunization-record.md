@@ -11,6 +11,7 @@ ambition_level: AL3
 likely_issuer: The vaccinator that administered the dose (GP practice, pharmacy with a vaccination permit, company medical service)
 issuer_type: private
 schema_refs: [https://github.com/DIDAS-swiss/digital-health_swiyu/blob/main/docs/credentials/immunization.md, https://github.com/DIDAS-swiss/digital-health_swiyu/blob/main/config/praxis/credentials/health-immunization-sd-jwt/schema.json, http://fhir.ch/ig/ch-vacd/StructureDefinition/ch-vacd-immunization]
+claims: [target_disease, occurrence_date, dose_number, doses_in_series, vaccine_code, vaccine_name, lot_number, route, site, next_dose_due, patient_given_name, patient_family_name, patient_birth_date, performer_name, performer_gln, organization_name, country, immunization_id]
 used_by: []
 demand_issues: []
 created: 2026-11-05
@@ -41,10 +42,22 @@ trust infrastructure (see the use case).
 |---|---|---|
 | `target_disease` | Diseases protected against (SNOMED CT) | vaccination record (travel clinic) |
 | `occurrence_date` | Date given | vaccination record (travel clinic) |
-| `dose_number`, `doses_in_series` | Position in the series | vaccination record (travel clinic) |
-| `vaccine_code`, `vaccine_name`, `lot_number`, `route`, `site`, `next_dose_due` | The product and its administration | practice, pharmacy |
-| `patient_given_name`, `patient_family_name`, `patient_birth_date` | The subject | practice |
-| `performer_name`, `performer_gln`, `organization_name`, `country`, `immunization_id` | Who recorded it, where | practice |
+| `dose_number` | Position in the series | vaccination record (travel clinic) |
+| `doses_in_series` | Position in the series | vaccination record (travel clinic) |
+| `vaccine_code` | The product and its administration | practice, pharmacy |
+| `vaccine_name` | The product and its administration | practice, pharmacy |
+| `lot_number` | The product and its administration | practice, pharmacy |
+| `route` | The product and its administration | practice, pharmacy |
+| `site` | The product and its administration | practice, pharmacy |
+| `next_dose_due` | The product and its administration | practice, pharmacy |
+| `patient_given_name` | The subject | practice |
+| `patient_family_name` | The subject | practice |
+| `patient_birth_date` | The subject | practice |
+| `performer_name` | Who recorded it, where | practice |
+| `performer_gln` | Who recorded it, where | practice |
+| `organization_name` | Who recorded it, where | practice |
+| `country` | Who recorded it, where | practice |
+| `immunization_id` | Who recorded it, where | practice |
 
 18 claims in all, every one selectively disclosable under the Swiss Profile.
 

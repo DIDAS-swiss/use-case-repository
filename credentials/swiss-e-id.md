@@ -11,6 +11,7 @@ ambition_level: AL1
 likely_issuer: Federal Office of Police (fedpol)
 issuer_type: federal
 schema_refs: []
+claims: [family_name, given_name, birth_date, age_over_18]
 used_by: []
 demand_issues: []
 created: 2026-10-30
@@ -34,8 +35,10 @@ swiyu, which the Federal Office of Justice (FOJ) is building.
 
 | Claim | Description | Needed by |
 |---|---|---|
-| Name, given names | | vehicle leasing, motor vehicle claims |
-| Date of birth | | vehicle leasing, motor vehicle claims |
+| `family_name` | Family name (attribute set as the Beta-ID) | vehicle leasing, motor vehicle claims |
+| `given_name` | Given names | vehicle leasing, motor vehicle claims |
+| `birth_date` | Date of birth | vehicle leasing, motor vehicle claims |
+| `age_over_18` | Over 18 (derived age attribute) | age checks |
 
 The authoritative attribute set is defined by the BGEID and its ordinance.
 

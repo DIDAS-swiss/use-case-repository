@@ -11,6 +11,7 @@ ambition_level: AL2
 likely_issuer: Cantonal police (the pre-study mockup names FDJP and cantonal police)
 issuer_type: cantonal
 schema_refs: []
+claims: [date_and_place, parties_and_vehicles, circumstances]
 used_by: []
 demand_issues: []
 created: 2026-10-30
@@ -31,9 +32,9 @@ The cantonal police record accidents they attend. For accidents without police i
 
 | Claim | Description | Needed by |
 |---|---|---|
-| Date and place | | motor vehicle claims |
-| Parties and vehicles | | motor vehicle claims |
-| Circumstances | Summary of what happened | motor vehicle claims |
+| `date_and_place` | Date and place of the accident | motor vehicle claims |
+| `parties_and_vehicles` | Parties and vehicles involved | motor vehicle claims |
+| `circumstances` | Summary of what happened | motor vehicle claims |
 
 These claims are indicative. The authoritative schema is defined in I14Y, eCH or
 a sectoral repository, not here.

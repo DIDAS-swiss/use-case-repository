@@ -11,6 +11,7 @@ ambition_level: AL2
 likely_issuer: Cantonal road traffic office (Strassenverkehrsamt); federal coordination by FEDRO (ASTRA)
 issuer_type: cantonal
 schema_refs: []
+claims: [holder_name, date_of_birth, photo, categories, restrictions, first_issue_date, licence_status]
 used_by: []
 demand_issues: []
 created: 2026-11-10
@@ -36,10 +37,13 @@ was transferred to the Federal Council on 3 June 2026.
 
 | Claim | Description | Needed by |
 |---|---|---|
-| Holder identity | Name, date of birth, photo | all |
-| Categories | Licence categories and restrictions | traffic control, carsharing, rental, fleet |
-| Issue date | Date of first issue per category | rental (licence tenure) |
-| Status | Valid, suspended, withdrawn | all |
+| `holder_name` | Holder's name | all |
+| `date_of_birth` | Holder's date of birth | all |
+| `photo` | Holder's photo | all |
+| `categories` | Licence categories | traffic control, carsharing, rental, fleet |
+| `restrictions` | Restrictions per category | traffic control, carsharing, rental, fleet |
+| `first_issue_date` | Date of first issue per category | rental (licence tenure) |
+| `licence_status` | Valid, suspended, withdrawn | all |
 
 These claims are indicative. The authoritative schema is defined in I14Y, eCH or
 by the issuer, not here.
