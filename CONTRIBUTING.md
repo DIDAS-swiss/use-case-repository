@@ -25,7 +25,9 @@ files it. Everything after builds on those fields:
 The form asks first for the six things a signal needs: the **use case** (one
 decision), a **summary** of up to 70 words, the **actors**, the **facts to
 prove**, the **demand and value** (measured, reported or a hypothesis) and the
-**evidence status** with its **sources**. Catalogue choices, flows and
+**evidence status** with its **sources**, and then the **source of the use
+case**: who brings it, for example DIDAS, a member organisation, an authority or
+a company. The backlog page shows and filters by it. Catalogue choices, flows and
 credentials follow under *Details* and can be added by a curator or the working
 group later.
 

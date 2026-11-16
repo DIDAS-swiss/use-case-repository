@@ -65,6 +65,13 @@ class Parsing(unittest.TestCase):
         self.assertEqual(form.short_id(LEGACY), f["entry_id"])
         self.assertNotIn("evidence_status", f)   # the earlier form had no such field
 
+    def test_legacy_source_label_reads_as_organisation(self):
+        self.assertIn("### Proposed on behalf of (optional)", LEGACY)
+        self.assertEqual(form.parse(LEGACY).get("organisation"), "DIDAS")
+        body = form.render({"title": "t", "organisation": "Example AG"})
+        self.assertIn("### Source of the use case\n\nExample AG", body)
+        self.assertEqual(form.parse(body)["organisation"], "Example AG")
+
     def test_legacy_lighthouse_option_is_a_proposal_and_the_label_the_decision(self):
         f = form.parse(LEGACY)
         self.assertEqual(form.lighthouse(f, ["use-case", "lighthouse"]), ("candidate", "selected"))
