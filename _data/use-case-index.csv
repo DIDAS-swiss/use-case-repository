@@ -29,6 +29,7 @@ carsharing-driving-licence,Verify a driving licence at carsharing registration,c
 carsharing-learner-permit,Verify eligibility for learner-driver carsharing,candidate
 civil-capacity-certificate,Verify a KESB statement on adult-protection measures,candidate
 company-formation-one-day,Reuse evidence during company formation,candidate
+competition-age-check,Check an entrant's age for a competition,candidate
 content-provenance-ai,Verify content provenance and signer identity,candidate
 contractor-site-access,Verify a contractor's eligibility for site access,candidate
 corporate-carsharing-employee,Authorise a driver for corporate carsharing,candidate
@@ -42,6 +43,7 @@ debt-certificate-secondary-market,Establish the evidence needed to assign a debt
 debt-enforcement-extract,Present a debt-enforcement extract for a decision,candidate
 digital-product-passport,Verify a claim within a battery product passport,candidate
 diploma-employer-verification,Verify a qualification during recruitment,candidate
+driving-school-learner-permit-check,Check a learner permit at the driving school,candidate
 drone-aviation-licences,Verify a remote pilot's qualification,candidate
 e-collecting,Verify eligibility for electronic initiative support,candidate
 e-prescription,Verify a prescription before dispensing medicine,candidate
@@ -83,12 +85,15 @@ medication-plan-wallet,Present a medication plan for clinical reconciliation,can
 mobile-contract-identity,Verify identity before activating a mobile service,candidate
 motor-vehicle-claims-processing,Verify a garage's repair assessment for a collision claim,candidate
 moving-renting,Prove tenancy when registering a new residence,candidate
+online-exam-admission,Admit the registered candidate to an online exam,candidate
 open-pension,Share pension information with an authorised tool,candidate
 organ-donation-register-eid,Identify a person making a donation declaration,candidate
 patient-summary-ips,Present a clinically curated patient summary,candidate
 payments-lei-matching,Match payment parties to legal entities using the LEI,candidate
+pet-vaccination-check,Check a pet's vaccination status,candidate
 practice-check-in,Identify a patient and match the correct record,candidate
 product-authenticity-labels,Check a product attestation bound to an item,candidate
+professional-driver-qualification,Check a professional driver's qualification,candidate
 public-procurement,Verify supplier evidence for a public tender,candidate
 pupil-id-card,Verify pupil status for a defined benefit,candidate
 qes-everyday,Use the e-ID to trigger remote signing,candidate
@@ -96,6 +101,7 @@ rail-operating-licences,Verify a train driver's operating entitlement,candidate
 real-person-proof,Check a valid e-ID while disclosing only its expiry date,candidate
 refugee-status-s-documents,Verify protection status S when applying for support,candidate
 regulatory-reporting-vc,Authenticate the submission of a regulatory report,candidate
+remittance-party-check,Verify sender and recipient before a money transfer,candidate
 representation-power-of-attorney,Verify authority for a bank or insurance instruction,candidate
 residence-confirmation,Issue residence evidence for an external check,candidate
 retail-account-onboarding,Use necessary verified attributes at retail registration,candidate
@@ -109,6 +115,7 @@ sbb-ga-familia-residence,Verify residence for a GA Familia or Duo application,ca
 sca-ebanking-wallet,Use identity evidence to enrol or recover bank login factors,candidate
 skydiving-licence-insurance,Verify qualification and cover before a skydive,candidate
 social-security-a1-ehic,Verify an A1 during a posted-worker check,candidate
+sport-licence-check,Check an athlete's licence at competition registration,candidate
 student-discount-online,Verify student status at online checkout,candidate
 student-status-confirmation,Issue current student-status evidence for external use,candidate
 supplier-qualification,Verify a supplier site's GMP or GDP certification,candidate
@@ -127,3 +134,4 @@ vehicle-provisional-registration,Present provisional vehicle registration to an 
 vehicle-registration-document,Verify a vehicle's current registration at a control,candidate
 vet-certificate-efz,Issue an EFZ for external verification,candidate
 wallet-ownership-institutional,Verify an institution's relationship to an account or wallet,candidate
+webshop-legitimacy-check,Check that an online shop belongs to a registered company,candidate
