@@ -213,7 +213,7 @@
     {
      "concept": {
       "identifier": "PID_FACIAL_IMAGE",
-      "url": null,
+      "url": "https://www.i14y.admin.ch/de/catalog/concepts/08dd4c83-b88a-b454-905f-73ae47bf62d0/description",
       "version": "1.0.0"
      },
      "datatype": "base64binary",
@@ -267,11 +267,11 @@
     {
      "concept": {
       "identifier": "EID_NUMBER",
-      "url": null,
+      "url": "https://www.i14y.admin.ch/de/catalog/concepts/08dd4c84-d893-ca84-8c8e-7bec90d69c8b/description",
       "version": "1.0.0"
      },
      "datatype": "string",
-     "description": "Unique number of Beta-ID",
+     "description": "Unique number of Beta-ID. Deviation of length from the underlying concept.",
      "key": "document_number",
      "label": {
       "de": "Beta-ID-Nummer",

@@ -216,7 +216,7 @@
  },
  "qualifiedAttributions": [],
  "qualifiedRelations": [],
- "registrationStatus": "Recorded",
+ "registrationStatus": "Qualified",
  "relations": [
   {
    "label": {
@@ -234,7 +234,7 @@
  "spatial": [],
  "system": {
   "createdAt": "2025-02-13T21:17:01.601548+00:00",
-  "modifiedAt": "2026-01-23T08:26:55.63772+00:00"
+  "modifiedAt": "2026-11-17T06:52:15.504344+00:00"
  },
  "temporalCoverage": [],
  "themes": [

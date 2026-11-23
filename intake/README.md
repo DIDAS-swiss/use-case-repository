@@ -69,6 +69,7 @@ Further columns:
 | `open_question`, `open_question_de` | the one question that holds the use case up; rendered first under *Open questions* |
 | `background`, `background_de` | legal and programme context, project-specific dates |
 | `missing_terms` | terms the DIDAS Glossary does not define yet, each as `term — meaning`, separated by ` \| `; they become glossary requests (see [CONTRIBUTING.md](../CONTRIBUTING.md#glossary-requests)) |
+| `external_refs` | entries in other use-case lists, `<reference> (<status>)`, separated by `;`, for example `BJ-v41-001 (LAUNCH); FB-EID-E21-044`; only lists in `_data/external-sources.csv` |
 | `dependencies` | `e-id` or `trust-infrastructure`: links the [dependencies page](../dependencies.md) instead of repeating the shared timing |
 
 Placeholders such as "no official figure" stay in the file but are left out of
@@ -96,6 +97,10 @@ the issue.
 - Files whose names start with `_`, and this README, are ignored.
 
 ## Editorial reviews
+
+Relations (`related_use_cases`, `upstream_use_cases`, `downstream_use_cases`)
+may name a use case in any batch file, staged files whose names start with `_`
+included. An id may appear in only one batch file.
 
 `intake/reviews/` holds editorial reviews of the backlog; they are not batches,
 and no issue is opened from them.
