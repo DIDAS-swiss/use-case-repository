@@ -9,6 +9,7 @@ To document a change, add a new dated file here as part of the same pull request
 
 ## Entries
 
+- [2026-11-23: References to other use-case lists; relations across batch files](2026-11-23-external-refs.md)
 - [2026-11-16: Claims referenced by id (iteration 1)](2026-11-16-claim-ids.md)
 - [2026-11-16: Boundary check for use cases](2026-11-16-boundary-check.md)
 - [2026-11-16: Verifier and verifier question](2026-11-16-verifier-question.md)

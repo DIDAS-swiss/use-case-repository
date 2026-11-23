@@ -167,6 +167,7 @@ detail belongs in the body.
 | `trust_flows` | no | Trust Flow ids, `<sector>/<family>/<flow>`, from [`_data/trust-flows.csv`](https://github.com/DIDAS-swiss/use-case-repository/blob/main/_data/trust-flows.csv). See *Anchors* below |
 | `ifm_patterns` | no | Industry Function Graph pattern ids from [`_data/ifm-patterns.csv`](https://github.com/DIDAS-swiss/use-case-repository/blob/main/_data/ifm-patterns.csv) |
 | `implementations` | no | `"<url> (<how far: demo, sandbox, pilot, production>)"`, one per implementation |
+| `external_refs` | no | entries that describe the use case in other lists, `"<reference> (<status at the source>)"`, for example `"BJ-v41-001 (LAUNCH)"`. Only lists in [`_data/external-sources.csv`](https://github.com/DIDAS-swiss/use-case-repository/blob/main/_data/external-sources.csv), whose owners agreed to be named; *Check data* rejects other references. One reference may appear on several use cases |
 | `glossary_terms` | no | DIDAS Glossary term ids from [`_data/glossary-terms.csv`](https://github.com/DIDAS-swiss/use-case-repository/blob/main/_data/glossary-terms.csv), for example `issuer`, `verifier`; linked on the entry page |
 | `created`, `updated` | yes | `YYYY-MM-DD` |
 

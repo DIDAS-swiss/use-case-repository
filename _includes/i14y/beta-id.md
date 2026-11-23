@@ -2,11 +2,11 @@
 |---|---|
 | Title | Beta-ID |
 | Publisher | Federal Office of Polizei (fedpol) (`CH_FEDPOL`) |
-| Registration status | Recorded |
+| Registration status | Qualified |
 | Access rights | Restricted |
 | Personal data | Contains particularly sensitive personal data |
 | Structure version | 1.0.0, valid from 2025-02-17 |
-| Last modified on I14Y | 2026-01-23 |
+| Last modified on I14Y | 2026-11-17 |
 
 | Attribute | Label (EN · DE · FR · IT) | Type | Card. | I14Y concept |
 |---|---|---|---|---|
@@ -21,10 +21,10 @@
 | `place_of_origin` | Place of origin · Heimatort · Lieu d'origine · Luogo di attinenza | string | 0..n | PID_PLACE_OF_ORIGIN 1.0.0 |
 | `birth_place` | Place of birth · Geburtsort · Lieu de naissance · Luogo di nascita | string | 0..n | PID_PLACE_OF_BIRTH 1.0.0 |
 | `nationality` | Nationality · Nationalität · Nationalité · Cittadinanza | string | 0..n | [ST_ISO_3166_ALPHA_2_2024 1.0.0](https://www.i14y.admin.ch/de/catalog/concepts/08dc79aa-981b-7d9b-a00c-63519522b3c3/description) |
-| `portrait` | Face image · Gesichtsbild · Image faciale · Immagine facciale | base64binary | 0..n | PID_FACIAL_IMAGE 1.0.0 |
+| `portrait` | Face image · Gesichtsbild · Image faciale · Immagine facciale | base64binary | 0..n | [PID_FACIAL_IMAGE 1.0.0](https://www.i14y.admin.ch/de/catalog/concepts/08dd4c83-b88a-b454-905f-73ae47bf62d0/description) |
 | `personal_administrative_number` | Insurance number · AHV-Nummer · Numéro AVS · Numero AVS | string | 1..1 | [AHVN13 1.0.0](https://www.i14y.admin.ch/de/catalog/concepts/08dbcbbc-6826-fad6-973d-c76ab6ff6579/description) |
 | `additional_person_info` | Additional information about the person · Zusätzliche Angaben zur Person · Mentions supplémentaires concernant la personne · Informazioni supplementari sulla persona | string | 0..n | PID_ADDITIONAL_PERSON_INFORMATION 1.0.0 |
-| `document_number` | Beta-ID Number · Beta-ID-Nummer · Numéro de Beta-ID · Numero di Beta-ID | string | 0..n | EID_NUMBER 1.0.0 |
+| `document_number` | Beta-ID Number · Beta-ID-Nummer · Numéro de Beta-ID · Numero di Beta-ID | string | 0..n | [EID_NUMBER 1.0.0](https://www.i14y.admin.ch/de/catalog/concepts/08dd4c84-d893-ca84-8c8e-7bec90d69c8b/description) |
 | `issuance_date` | Date of issuance · Ausstellungsdatum · Délivré le · Rilasciato il | date | 0..n | EID_ISSUANCE_DATE 1.0.0 |
 | `expiry_date` | Date of expiry · Gültig bis · Date d'expiration · Data di scadenza | date | 0..n | EID_EXPIRY_DATE 1.0.0 |
 | `reference_id_type` | Identification document type · Ausweistyp · Type de document d'identité · Tipo di documento |  | 0..n | EID_REFERENCE_ID_TYPE 1.0.0 |

@@ -11,7 +11,7 @@ ecosystem,ecosystem,ecosystems; Ökosystem; Ökosysteme; écosystème; ecosistem
 governance,governance,gouvernance,https://didas-swiss.github.io/didas-glossary/#term:governance
 governing-authority,governing authority,governing authorities; autorité de gouvernance; autorità di governance,https://didas-swiss.github.io/didas-glossary/#term:governing-authority
 international-patient-summary,International Patient Summary,IPS; patient summary,https://didas-swiss.github.io/didas-glossary/#term:international-patient-summary
-issuer,issuer,issuers; Aussteller; Ausstellerin; émetteur; émettrice; emittente; emittenti,https://didas-swiss.github.io/didas-glossary/#term:issuer
+issuer,issuer,issuers; Aussteller; Ausstellerin; ausstellende Organisation; émetteur; émettrice; organisation émettrice; emittente; emittenti; organizzazione emittente,https://didas-swiss.github.io/didas-glossary/#term:issuer
 minute-of-agreement,Minute of Agreement,,https://didas-swiss.github.io/didas-glossary/#term:minute-of-agreement
 protocol,protocol,protocols; Protokoll; protocole; protocollo,https://didas-swiss.github.io/didas-glossary/#term:protocol
 selective-disclosure,selective disclosure,selektive Bekanntgabe; divulgation sélective; divulgazione selettiva,https://didas-swiss.github.io/didas-glossary/#term:selective-disclosure
@@ -21,6 +21,6 @@ trust-infrastructure,trust infrastructure,Vertrauensinfrastruktur; infrastructur
 trust-marker,trust marker,trust markers; Vertrauensmerkmal; Vertrauensmerkmale; marqueur de confiance; marcatore di fiducia,https://didas-swiss.github.io/didas-glossary/#term:trust-marker
 trust-protocol,trust protocol,trust protocols; Vertrauensprotokoll; protocole de confiance; protocollo di fiducia,https://didas-swiss.github.io/didas-glossary/#term:trust-protocol
 trust-statement,trust statement,trust statements; Vertrauensaussage; Vertrauensaussagen; déclaration de confiance; dichiarazione di fiducia,https://didas-swiss.github.io/didas-glossary/#term:trust-statement
-verifiable-credential,verifiable credential,verifiable credentials; VC; VCs; verifizierbarer Nachweis; attestation vérifiable; attestato verificabile,https://didas-swiss.github.io/didas-glossary/#term:verifiable-credential
-verifier,verifier,verifiers; Verifikator; Verifikatorin; vérificateur; vérificatrice; verificatore; verificatrice,https://didas-swiss.github.io/didas-glossary/#term:verifier
-wallet,wallet,wallets; Wallet; portefeuille; portefeuilles; portafoglio; portafogli,https://didas-swiss.github.io/didas-glossary/#term:wallet
+verifiable-credential,verifiable credential,verifiable credentials; VC; VCs; verifizierbarer Nachweis; attestation vérifiable; attestato verificabile; document vérifiable; documento verificabile,https://didas-swiss.github.io/didas-glossary/#term:verifiable-credential
+verifier,verifier,verifiers; Verifikator; Verifikatorin; prüfende Organisation; vérificateur; vérificatrice; organisation vérificatrice; verificatore; verificatrice; organizzazione verificatrice,https://didas-swiss.github.io/didas-glossary/#term:verifier
+wallet,wallet,wallets; Wallet; digitales Portemonnaie; portefeuille; portefeuilles; portefeuille électronique; portafoglio; portafogli; portafoglio elettronico,https://didas-swiss.github.io/didas-glossary/#term:wallet

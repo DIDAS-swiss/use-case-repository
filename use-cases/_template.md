@@ -27,6 +27,7 @@ dependencies: []           # shared dependencies on dependencies.md, e.g. [e-id]
 trust_flows: []        # Trust Flow ids from _data/trust-flows.csv, e.g. health/immunization/F-02
 ifm_patterns: []       # Industry Function Graph pattern ids from _data/ifm-patterns.csv
 implementations: []    # "<url> (<how far: demo, sandbox, pilot, production>)"
+external_refs: []      # entries in other use-case lists, "<reference> (<status at the source>)", e.g. "BJ-v41-001 (LAUNCH)"; only lists in _data/external-sources.csv
 glossary_terms: []     # DIDAS Glossary term anchors, e.g. issuer, verifier
 created: YYYY-MM-DD
 updated: YYYY-MM-DD
