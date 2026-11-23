@@ -10,7 +10,7 @@ with the same paths:
 
 | Registry | Production | Sandbox |
 |---|---|---|
-| Trust registry: signed trust statements ([Swiss Profile Trust 1.0](https://swiyu-admin-ch.github.io/specifications/trust-protocol-v2-0/), read endpoints of Trust Protocol 2.0, status: draft) | `trust-reg.trust-infra.swiyu.admin.ch` | `trust-reg.trust-infra.swiyu-int.admin.ch` |
+| Trust registry: signed trust statements ([Trust Protocol 2.0](https://swiyu-admin-ch.github.io/specifications/trust-protocol-v2-0/), status: draft) | `trust-reg.trust-infra.swiyu.admin.ch` | `trust-reg.trust-infra.swiyu-int.admin.ch` |
 | Base registry (identifier registry): DID logs, `did:webvh` | `identifier-reg.trust-infra.swiyu.admin.ch` | `identifier-reg.trust-infra.swiyu-int.admin.ch` |
 
 The *Sync federated sources* workflow queries both every week
@@ -55,11 +55,9 @@ check compares this with the entry's `supply`.
 
 ## Organisations
 
-Organisations with an identity trust statement, with name and UID as the trust
-registry publishes them. Production lists every identity. The sandbox lists only
-identities with a UID or marked as state actor, because it also holds test
-accounts named after persons; the others are counted below. An entry in the
-sandbox shows that an organisation tests on swiyu, not that it runs a service.
+Every identity trust statement of both environments, with name and UID exactly
+as the trust registry publishes them. An entry in the sandbox shows that an
+organisation tests on swiyu, not that it runs a service.
 Credentials are those of this repository that the organisation's verification
 query statements ask for.
 
@@ -74,9 +72,4 @@ query statements ask for.
 {%- endif %}{% endfor %}
 </tbody>
 </table>
-
-Not listed: {{ env.unlisted_identities }} identity trust statement(s).
 {% endfor %}
-
-A name that should not appear, for example a person's, goes into
-`_data/swiyu-unlisted.csv`; the next sync leaves it out.

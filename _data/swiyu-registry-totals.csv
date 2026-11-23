@@ -1,3 +1,3 @@
-environment,identity_trust_statements,verification_query_statements,verifiers,protected_verification_authorizations,active_identity_dids,unlisted_identities
-production,8,1697,4,0,5,0
-sandbox,138,283,40,1,108,90
+environment,identity_trust_statements,verification_query_statements,verifiers,protected_verification_authorizations,active_identity_dids
+production,8,1697,4,0,5
+sandbox,138,283,40,1,108
