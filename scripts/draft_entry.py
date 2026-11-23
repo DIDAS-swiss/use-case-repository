@@ -100,6 +100,7 @@ def draft(body, number, labels=()):
         "ifm_patterns": links.chosen("ifm_patterns", f.get("ifm_patterns")),
         "implementations": [l.strip("- ").strip() for l in (f.get("implementations") or "").split("\n") if "http" in l],
         "glossary_terms": links.chosen("glossary_terms", f.get("glossary_terms")),
+        "external_refs": [l.strip("- ").strip() for l in (f.get("external_refs") or "").split("\n") if l.strip()],
         "created": today, "updated": today,
     }
     if group:

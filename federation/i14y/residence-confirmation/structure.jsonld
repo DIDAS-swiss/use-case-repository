@@ -669,19 +669,19 @@
   ],
   "http://www.w3.org/ns/shacl#property": [
    {
-    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/dwellingAddress"
-   },
-   {
     "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/simpleProofOfResidence"
-   },
-   {
-    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/issuingMunicipality"
    },
    {
     "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/personInformation"
    },
    {
-    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/moveData"
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/dwelling_address"
+   },
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/issuing_municipality"
+   },
+   {
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/move_data"
    }
   ],
   "https://schema.org/validFrom": [
@@ -697,18 +697,12 @@
   ]
  },
  {
-  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/dwellingAddress",
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/dwelling_address",
   "@type": [
    "http://www.w3.org/2002/07/owl#ObjectProperty",
    "http://www.w3.org/ns/shacl#PropertyShape"
   ],
   "http://purl.org/dc/terms/title": [
-   {
-    "@language": "de",
-    "@value": "dwellingAddress"
-   }
-  ],
-  "http://www.w3.org/2000/01/rdf-schema#label": [
    {
     "@language": "de",
     "@value": "dwellingAddress"
@@ -729,7 +723,7 @@
   "http://www.w3.org/ns/shacl#name": [
    {
     "@language": "de",
-    "@value": "dwellingAddress"
+    "@value": "dwelling_address"
    }
   ],
   "http://www.w3.org/ns/shacl#node": [
@@ -739,23 +733,17 @@
   ],
   "http://www.w3.org/ns/shacl#path": [
    {
-    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/dwellingAddress"
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/dwelling_address"
    }
   ]
  },
  {
-  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/issuingMunicipality",
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/issuing_municipality",
   "@type": [
    "http://www.w3.org/2002/07/owl#ObjectProperty",
    "http://www.w3.org/ns/shacl#PropertyShape"
   ],
   "http://purl.org/dc/terms/title": [
-   {
-    "@language": "de",
-    "@value": "issuingMunicipality"
-   }
-  ],
-  "http://www.w3.org/2000/01/rdf-schema#label": [
    {
     "@language": "de",
     "@value": "issuingMunicipality"
@@ -776,7 +764,7 @@
   "http://www.w3.org/ns/shacl#name": [
    {
     "@language": "de",
-    "@value": "issuingMunicipality"
+    "@value": "issuing_municipality"
    }
   ],
   "http://www.w3.org/ns/shacl#node": [
@@ -786,23 +774,17 @@
   ],
   "http://www.w3.org/ns/shacl#path": [
    {
-    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/issuingMunicipality"
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/issuing_municipality"
    }
   ]
  },
  {
-  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/moveData",
+  "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/move_data",
   "@type": [
    "http://www.w3.org/2002/07/owl#ObjectProperty",
    "http://www.w3.org/ns/shacl#PropertyShape"
   ],
   "http://purl.org/dc/terms/title": [
-   {
-    "@language": "de",
-    "@value": "moveData"
-   }
-  ],
-  "http://www.w3.org/2000/01/rdf-schema#label": [
    {
     "@language": "de",
     "@value": "moveData"
@@ -833,7 +815,7 @@
   ],
   "http://www.w3.org/ns/shacl#path": [
    {
-    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/moveData"
+    "@id": "https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/move_data"
    }
   ]
  },

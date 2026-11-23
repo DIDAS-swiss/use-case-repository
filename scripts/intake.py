@@ -326,6 +326,7 @@ def issue(c, batch, warnings, published_path=None, numbers=None):
         "ifm_patterns": [o for p in patterns if (o := option("ifm_patterns", p))],
         "other_flows": text("other_flows"),
         "implementations": text("implementations"),
+        "external_refs": "\n".join(x.strip() for x in text("external_refs").split(";") if x.strip()),
         "related_use_cases": relations("related_use_cases"),
         "upstream_use_cases": relations("upstream_use_cases"),
         "downstream_use_cases": relations("downstream_use_cases"),
