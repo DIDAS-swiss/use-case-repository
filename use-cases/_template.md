@@ -17,6 +17,7 @@ claims_needed: []        # the claims the verifier needs, as <credential-id>#<cl
 related_use_cases: []      # related use cases with no sequence
 upstream_use_cases: []     # use cases that must happen first: they issue a credential this one verifies
 downstream_use_cases: []   # use cases that reuse a credential this one issues
+variant_of: []             # the use case this one is a variant of: same verifier role and question, another context
 lighthouse:                # selected | candidate | empty: the curator-recorded decision (see GOVERNANCE.md, Lighthouses)
 lighthouse_basis:          # one line on why, e.g. "meets 5 of 6 criteria"
 lighthouse_decision_record: # for selected: link to the decision (approver, date, criteria assessed)
@@ -27,7 +28,7 @@ dependencies: []           # shared dependencies on dependencies.md, e.g. [e-id]
 trust_flows: []        # Trust Flow ids from _data/trust-flows.csv, e.g. health/immunization/F-02
 ifm_patterns: []       # Industry Function Graph pattern ids from _data/ifm-patterns.csv
 implementations: []    # "<url> (<how far: demo, sandbox, pilot, production>)"
-external_refs: []      # entries in other use-case lists, "<reference> (<status at the source>)", e.g. "BJ-v41-001 (LAUNCH)"; only lists in _data/external-sources.csv
+external_refs: []      # entries in other use-case lists, "<reference> (<status at the source>) [variant]", e.g. "BJ-v41-001 (LAUNCH)"; [variant] where the entry describes a variant; only lists in _data/external-sources.csv
 glossary_terms: []     # DIDAS Glossary term anchors, e.g. issuer, verifier
 created: YYYY-MM-DD
 updated: YYYY-MM-DD

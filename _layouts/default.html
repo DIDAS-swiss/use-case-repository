@@ -148,6 +148,19 @@
           {%- endfor -%}
         </ul></dd>
         {%- endif %}
+        {%- assign variants = site.pages | where: "kind", "use-case" | where_exp: "p", "p.variant_of contains page.id" %}
+        {%- if page.variant_of.size > 0 or variants.size > 0 %}
+        <dt>Variants</dt>
+        <dd><ul>
+          {%- for bid in page.variant_of -%}
+            {%- assign bpath = "use-cases/" | append: bid | append: ".md" -%}{%- assign b = site.pages | where: "path", bpath | first -%}
+            <li><span class="tag">variant of</span> <a href="{{ '/use-cases/' | append: bid | append: '.html' | relative_url }}">{{ b.title | default: bid }}</a>: same verifier role and question, another context</li>
+          {%- endfor -%}
+          {%- for v in variants -%}
+            <li><span class="tag">variant</span> <a href="{{ v.url | relative_url }}">{{ v.title }}</a></li>
+          {%- endfor -%}
+        </ul></dd>
+        {%- endif %}
         <dt>Trust flows</dt>
         <dd>
           {%- if page.trust_flows and page.trust_flows.size > 0 -%}

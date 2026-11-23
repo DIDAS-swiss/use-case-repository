@@ -93,6 +93,7 @@ def draft(body, number, labels=()):
     related, related_c = relations("related_use_cases")
     upstream, upstream_c = relations("upstream_use_cases")
     downstream, downstream_c = relations("downstream_use_cases")
+    variant_of, variant_c = relations("variant_of")
     # the decision is the curator's label; the form only carries a proposal
     lighthouse = links.form.lighthouse(f, labels)[1]
     status = links.form.evidence_status(f.get("evidence_status"))
@@ -110,6 +111,7 @@ def draft(body, number, labels=()):
         "credentials_reused": reused, "credentials_new": new, "credentials_excluded": excluded,
         "claims_needed": [],
         "related_use_cases": related, "upstream_use_cases": upstream, "downstream_use_cases": downstream,
+        "variant_of": variant_of,
         "lighthouse": lighthouse or None, "lighthouse_basis": f.get("lighthouse_basis") or None,
         "lighthouse_decision_record": None,
         "evidence_status": status or None, "dependencies": dependencies,
@@ -129,7 +131,7 @@ def draft(body, number, labels=()):
         return f"- **{label}** (candidates, not yet published): " + ", ".join(f"`{x}`" for x in ids_) if ids_ else ""
 
     rel_text = "\n".join(x for x in (candidates("Upstream", upstream_c), candidates("Downstream", downstream_c),
-                                     candidates("Related", related_c)) if x)
+                                     candidates("Variant of", variant_c), candidates("Related", related_c)) if x)
     process = f.get("process_flow") or ""
     if f.get("design_basis"):
         process += ("\n\n" if process else "") + "**Design basis**: " + f["design_basis"]
