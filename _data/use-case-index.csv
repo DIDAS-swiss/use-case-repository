@@ -51,6 +51,7 @@ easygov-org-onboarding,Verify representation of a business in EasyGov,candidate
 employee-member-id,Verify employment affiliation for an external service,candidate
 epd-access-eid-agov,Verify identity when opening an electronic patient record,candidate
 eur1-certificates-of-origin,Verify a digital EUR.1 certificate,candidate
+event-entry-age-check,Check age at event or club entry,candidate
 fishing-licence,Verify a fishing permit during inspection,candidate
 fleet-management-org-wallets,Authorise a fleet driver for a vehicle,candidate
 further-education-credentials,Verify prior learning for further-education admission,candidate

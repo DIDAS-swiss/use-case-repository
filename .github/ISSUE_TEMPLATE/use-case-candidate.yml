@@ -155,7 +155,7 @@ body:
       description: Credential datasets published on I14Y, the Swiss interoperability platform, whatever their registration status. Pick those this use case relies on.
       multiple: true
       options:
-        - "urn:vct:ch.admin.bcs.betaid · Beta-ID (CH_FEDPOL, Recorded)"
+        - "urn:vct:ch.admin.bcs.betaid · Beta-ID (CH_FEDPOL, Qualified)"
         - "urn:vct:ch.egovernment.residency-permit-simple · Einfache Wohnsitzbestätigung (CH_DVS, Candidate)"
   - type: textarea
     id: schemas
