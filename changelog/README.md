@@ -9,6 +9,7 @@ To document a change, add a new dated file here as part of the same pull request
 
 ## Entries
 
+- [2026-11-23: Page introductions](2026-11-23-page-intros.md)
 - [2026-11-23: Candidates from the Fachbereich E-ID published](2026-11-23-fachbereich-candidates.md)
 - [2026-11-23: Verifier questions decided by DIDAS; boat permit split off](2026-11-23-verifier-questions-boat-split.md)
 - [2026-11-23: Variants](2026-11-23-variants.md)

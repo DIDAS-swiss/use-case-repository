@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {%- assign page_title = page.title | default: site.title -%}
   <title>{% if page_title != site.title %}{{ page_title }} · {% endif %}{{ site.title }}</title>
-  <meta name="description" content="{{ site.description | strip }}">
+  <meta name="description" content="{{ page.description | default: site.description | strip }}">
   <script>
     /* Applied before first paint so the page does not flash the wrong theme.
        The key is shared with the other DIDAS sites on this origin. */
@@ -68,8 +68,8 @@
     {%- if page.url == '/' %}
     <section class="hero" aria-label="Get involved">
       <div>
-        <p class="hero-title">Have a use case for verifiable credentials?</p>
-        <p class="hero-text">Register it in a short form. Plain prose is enough: a curator helps turn it into a structured entry, linked to trust flows, I14Y schemas and the credentials it needs.</p>
+        <p class="hero-title">Register a use case for verifiable credentials</p>
+        <p class="hero-text">The form asks for a summary, the actors, the facts to prove and the sources; plain prose is enough. A curator turns the issue into a structured entry.</p>
       </div>
       <div class="hero-actions">
         <a class="button primary" href="https://github.com/{{ site.repository }}/issues/new?template=use-case-candidate.yml">+ Register your use case</a>

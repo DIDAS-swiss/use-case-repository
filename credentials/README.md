@@ -1,12 +1,18 @@
+---
+title: Credentials
+permalink: /credentials/
+description: The credential types the use cases rely on, with supply status, likely issuer and schema reference, and the gap board.
+---
+
 # Credentials
 
-Every credential type that a use case relies on, published or still a
-candidate in the [backlog](../backlog.md), with its supply status, plus test
-credentials to build them with. Schemas are **not** defined
-here. Where a credential is published on [I14Y](https://www.i14y.admin.ch/),
-the entry references the I14Y dataset and its schema is federated into
-[`federation/i14y/`](../federation/i14y/); otherwise it links eCH or a sectoral
-repository once a schema is published.
+The credential types the use cases in the [backlog](../backlog.md) rely on,
+with supply status, likely issuer and schema reference, and test credentials.
+The repository defines no schemas. Where a credential is published on
+[I14Y](https://www.i14y.admin.ch/), the entry references the I14Y dataset and
+the weekly sync copies its schema into [`federation/i14y/`](../federation/i14y/);
+otherwise the entry links the eCH standard or sector repository that publishes
+the schema, once there is one.
 
 Supply status: **available** means issued in production; **emerging** means
 announced, piloted or in build; **missing** means no known issuer.

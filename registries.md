@@ -1,5 +1,6 @@
 ---
 title: swiyu registries
+description: Weekly snapshot of the swiyu trust and base registries, production and sandbox, per credential and organisation.
 ---
 
 # swiyu registries

@@ -1,14 +1,15 @@
 ---
 title: Shared dependencies
+description: Status and timing of the state e-ID and the federal trust infrastructure, with sources and the date last checked.
 ---
 
 # Shared dependencies
 
-Many use cases depend on the same infrastructure. Its timing is kept here once,
-with its source and the date it was last checked, instead of in every use case.
-A use case names the dependency in its batch row (`dependencies`) and its issue
-links this page; dependencies that only concern one project stay in that use
-case.
+The status of the state e-ID and of the federal trust infrastructure (swiyu),
+with its source and the date it was last checked. A use case that depends on
+either names it in `dependencies`, and its issue links this page instead of
+repeating the dates. A dependency that concerns one use case only stays in that
+use case.
 
 ## E-ID and trust infrastructure
 

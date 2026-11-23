@@ -1,14 +1,12 @@
 # DIDAS Use Case Repository
 
-A community repository for collecting, describing and assembling **business use
-cases for the Swiss verifiable data ecosystem**: what needs to be proven, by
-whom, using which credentials and under which governance conditions. It is
-maintained by the DIDAS community.
+**Business use cases for the Swiss verifiable data ecosystem**: what a verifier
+needs to know, from whom, with which credentials and under which governance.
+DIDAS maintains the repository.
 
-Our aim is for this repository to grow into an early, working version of the
-**use-case section of the Swiss Ecosystem Discovery Catalog**, the coordination and
-discovery layer proposed in the DPSS pre-study of June 2026. See
-[VISION.md](VISION.md) for how the two relate.
+It is intended as an early version of the **use-case section of the Swiss
+Ecosystem Discovery Catalog** proposed in the DPSS pre-study of June 2026.
+[VISION.md](VISION.md) describes how the two relate.
 
 <p align="center" class="gh-only">
   <a href="https://didas-swiss.github.io/use-case-repository/"><img alt="Open the website" src="https://img.shields.io/badge/Open%20the%20website-0b7285?style=for-the-badge"></a>
@@ -46,10 +44,7 @@ sources current.
 - **[Anchors](anchors.md)**: every trust flow of the
   [Trust Flow Diagram Repository](https://github.com/DIDAS-swiss/Trust-Flow-Diagram-Repository),
   every pattern of the [Industry Function Graph](https://github.com/DIDAS-swiss/industry-function-graph)
-  and every credential dataset on I14Y, with the use cases that point to it. Each
-  use case links what models it, what it realises, the schemas of its
-  credentials and its implementations, so this repository is where the DIDAS
-  work meets
+  and every credential dataset on I14Y, with the use cases that reference it
 - **[Federated schemas](federation/i14y/)**: credential schemas federated from
   [I14Y](https://www.i14y.admin.ch/), such as the Beta-ID and the simple residence
   confirmation, refreshed weekly by a workflow
