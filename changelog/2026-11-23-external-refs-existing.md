@@ -6,8 +6,8 @@
   for 78 existing use cases: 173 references to the BJ list «Credential Use
   Cases» v41 (`BJ-v41-…`, with its availability status where the list gives
   one) and to the use-case collections of the Fachbereich E-ID (`FB-EID-…`).
-  Each reference was matched to the use case as the same use case or a
-  variant of it.
+  DIDAS matched each entry to the use case as the same use case or a variant
+  of it, in its mapping of 23 November 2026 (219 rows on 88 issues).
 
 ## Not included
 
