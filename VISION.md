@@ -33,7 +33,7 @@ Markdown files, issue forms, labels and pull requests.
 | Demand signals | Stored natively | `credential-need` issues, plus `credentials/*.md` with `supply: missing` or `emerging`. Together they form the gap board |
 | Use-case lifecycle and maturity state | Stored natively | the `stage` field and `stage:` label, advanced by pull request |
 | Schema metadata | Federated from I14Y | **referenced only** (`schema_refs`) |
-| Trust registry references | Linked to the swiyu Trust Registry | **referenced only** |
+| Trust registry references | Linked to the swiyu Trust Registry | **referenced**, with a weekly snapshot of counts and organisations as evidence ([swiyu registries](registries.md)) |
 | Governance framework references | Linked, with summary metadata stored | `governance` block: link plus one-line summary |
 | OCA overlays | Linked to source repository | **referenced only** |
 
@@ -51,7 +51,10 @@ It covers five of the MVP's functional priorities (§9.3) at repository scale:
    in a use case is marked `reused`, `new` or `excluded`
 
 Issuer and verifier discovery and live federation with I14Y and the swiyu Trust
-Registry need a running system. In this repository they appear only as links.
+Registry need a running system. This repository takes weekly snapshots instead:
+I14Y schemas, and from the swiyu trust and base registries the counts per
+credential and the organisations with an identity trust statement, each
+proposed as a pull request. The registries remain the source.
 
 ## The use case as anchor
 

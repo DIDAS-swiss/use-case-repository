@@ -10,6 +10,7 @@ schema_status: i14y
 ambition_level: AL1
 likely_issuer: Federal Office of Police (fedpol), through the Beta Credential Service (BCS)
 issuer_type: federal
+vct_values: ["urn:vct:ch.admin.bcs.betaid", "betaid-sdjwt"]
 i14y_dataset: urn:vct:ch.admin.bcs.betaid
 i14y_id: f7223759-b198-41eb-96be-3f3bd54689fb
 schema_refs: [https://swiyu-admin-ch.github.io/cookbooks/how-to-use-beta-id/]

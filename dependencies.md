@@ -33,6 +33,10 @@ changed, the table; the use cases follow through their link.
 | Electronic learner's permit (eLFA) | **In live use** in all cantons since 1 December 2025, issued by the cantonal road traffic offices into the swiyu wallet and checkable with ASTRA's [LicenceCheck](https://licencecheck.astra.admin.ch/). The Confederation calls it a pilot (with asa; evaluation until end of March 2027). DIDAS reports about 100,000 active eLFA as of 10 November 2026. | [eid.admin.ch, eLFA](https://www.eid.admin.ch/de/pilotprojekte) (no longer maintained since 27 October 2026); DIDAS |
 | e-ID, residence confirmation, debt enforcement register extract, digital driving licence | Announced as "soon available" for organisations to integrate. | [swiyu – Ökosystem](https://swiyu.admin.ch/de/oekosystem) |
 
+Which credential types verifiers ask for on the trust infrastructure, in
+production and in the sandbox, is on the [swiyu registries](registries.md) page,
+from a weekly snapshot of the trust and base registries.
+
 The federal site moved from eid.admin.ch to [swiyu.admin.ch](https://swiyu.admin.ch/de) on 27 October 2026; sources here point to swiyu.admin.ch where the page exists there.
 
 ### What this means for a use case

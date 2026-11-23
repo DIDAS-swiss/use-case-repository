@@ -10,6 +10,7 @@ schema_status: none
 ambition_level: AL2
 likely_issuer: Cantonal road traffic office (Strassenverkehrsamt); federal coordination by FEDRO (ASTRA)
 issuer_type: cantonal
+vct_values: ["urn:vct:ch.admin.astra.vz.mdl"]
 schema_refs: []
 claims: [holder_name, date_of_birth, photo, categories, restrictions, first_issue_date, licence_status]
 used_by: []

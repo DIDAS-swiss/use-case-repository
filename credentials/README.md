@@ -11,6 +11,12 @@ repository once a schema is published.
 Supply status: **available** means issued in production; **emerging** means
 announced, piloted or in build; **missing** means no known issuer.
 
+A credential on the swiyu trust infrastructure names its credential types in
+`vct_values`. The weekly sync counts, per environment, the verification query
+statements that ask for them ([swiyu registries](../registries.md)); the data
+check warns when `supply: available` has no such evidence in production, or
+`supply: missing` has.
+
 ## Gap board
 
 These credentials are needed by use cases in the backlog but have no issuer in

@@ -8,6 +8,8 @@
     datasets, working groups
   - the batch files and editorial reviews in intake/ use known values and ids
   - the published-entry list (use-cases/README.md) agrees with use-cases/
+  - a credential's `supply` agrees with the swiyu Trust Registry snapshot
+    (_data/swiyu-registry.csv, written by scripts/swiyu_sync.py): warnings only
 
 Errors fail the check; notes are printed for information. Runs in CI on every
 pull request that touches data or entries.
@@ -81,6 +83,44 @@ def external_ref_findings(where, value, sources):
             warnings.append(f"{where}: external_refs names {ref!r} twice")
         seen.add(ref)
     return errors, warnings
+
+
+def registry_rows():
+    """{(credential, environment): row} from the swiyu Trust Registry snapshot."""
+    path = ROOT / "_data" / "swiyu-registry.csv"
+    if not path.exists():
+        return {}
+    with open(path, encoding="utf-8", newline="") as f:
+        return {(r["credential"], r["environment"]): r for r in csv.DictReader(f)}
+
+
+def registry_findings(credentials, rows):
+    """`supply` against the swiyu Trust Registry. Production evidence is a verification query
+    public statement that asks for one of the credential's types, or a type on the protected
+    issuance trust list. The registry is not the only evidence of issuance, so a disagreement
+    is a warning. Returns (errors, warnings, notes)."""
+    errors, warnings, notes = [], [], []
+    for cred, (where, fm) in credentials.items():
+        vcts = fm.get("vct_values")
+        if vcts in (None, []):
+            continue
+        if not isinstance(vcts, list) or not all(isinstance(v, str) and v.strip() for v in vcts):
+            errors.append(f"{where}: vct_values must be a list of credential types")
+            continue
+        prod = rows.get((cred, "production"))
+        if prod is None:
+            notes.append(f"{where}: not in the swiyu snapshot yet (scripts/swiyu_sync.py)")
+            continue
+        evidence = int(prod.get("verification_query_statements") or 0) > 0 or prod.get("protected_issuance_trust_list") == "yes"
+        sandbox = rows.get((cred, "sandbox")) or {}
+        if fm.get("supply") == "available" and not evidence:
+            warnings.append(f"{where}: supply is available (issued in production), but the swiyu production "
+                            f"registry shows no verification query or trust-list entry for {', '.join(vcts)} "
+                            f"(sandbox: {sandbox.get('verification_query_statements') or 0} verification queries)")
+        if fm.get("supply") == "missing" and evidence:
+            warnings.append(f"{where}: supply is missing, but the swiyu production registry has "
+                            f"{prod['verification_query_statements']} verification queries or a trust-list entry for it")
+    return errors, warnings, notes
 
 
 def check_batches(use_cases, errors, warnings):
@@ -351,6 +391,10 @@ def main():
     warnings += w
     notes += n
     credential_claim_tables(credentials, errors)
+    e, w, n = registry_findings(credentials, registry_rows())
+    errors += e
+    warnings += w
+    notes += n
     e, w, n = boundary_findings(boundary_records(use_cases), verifier_questions())
     errors += e
     warnings += w

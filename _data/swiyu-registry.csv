@@ -1,0 +1,9 @@
+credential,environment,verification_query_statements,verifiers,protected_issuance_trust_list
+beta-id,production,0,0,no
+beta-id,sandbox,129,27,no
+digital-driving-licence,production,1,1,no
+digital-driving-licence,sandbox,0,0,no
+learner-permit-elfa,production,1693,1,no
+learner-permit-elfa,sandbox,0,0,no
+swiss-e-id,production,0,0,yes
+swiss-e-id,sandbox,0,0,no
