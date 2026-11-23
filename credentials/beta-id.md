@@ -95,7 +95,7 @@ conforms to, is the federated schema below.
 
 ## Supply status
 
-`available` in the swiyu **Public Beta** (test environment): anyone can obtain a
+`available` in the swiyu **sandbox** (test environment): anyone can obtain a
 Beta-ID from the BCS. There is no production issuance, by design.
 
 ## Demand

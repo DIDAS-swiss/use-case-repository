@@ -44,7 +44,7 @@ To offer to issue one, open a
 | Credential | Ambition level | Issuer type | Supply | Stage | Needed by (candidates) | Schema |
 |---|---|---|---|---|---|---|
 | [Accident report](accident-report.md) | AL2 | cantonal | missing | signal | 1 | none |
-| [Beta-ID](beta-id.md) (test credential) | AL1 | federal | available (Public Beta) | candidate | test stand-in for the e-ID | on I14Y (Qualified): [`urn:vct:ch.admin.bcs.betaid`](https://www.i14y.admin.ch/de/catalog/datasets/urn:vct:ch.admin.bcs.betaid/description) · [schema](../federation/i14y/beta-id/) |
+| [Beta-ID](beta-id.md) (test credential) | AL1 | federal | available (sandbox) | candidate | test stand-in for the e-ID | on I14Y (Qualified): [`urn:vct:ch.admin.bcs.betaid`](https://www.i14y.admin.ch/de/catalog/datasets/urn:vct:ch.admin.bcs.betaid/description) · [schema](../federation/i14y/beta-id/) |
 | [Debt enforcement register extract](debt-enforcement-extract.md) | AL2 | cantonal | emerging | signal | 1 | none |
 | [Digital driving licence](digital-driving-licence.md) | AL2 | cantonal | emerging | signal | 7 | none; announced on [swiyu](https://swiyu.admin.ch/de/oekosystem) |
 | [Electronic learner's permit (eLFA)](learner-permit-elfa.md) | AL2 | cantonal | available (live; about 100,000 active, DIDAS 10.11.2026) | signal | 2 | emerging: [JSON Schema published by ASTRA](https://vz-api.astra.admin.ch/public/issuer/oid4vci/json-schema/elfa), not on I14Y (checked 2026-11-16) |

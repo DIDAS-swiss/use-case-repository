@@ -19,7 +19,7 @@ trust infrastructure, swiyu, without the e-ID).
 | | Status | Source |
 |---|---|---|
 | State e-ID | Introduction postponed on 30 June 2026 for further security work; the date will be announced once that work is largely complete. No new date announced. | Federal Council, [Neuer Zeitplan für die Einführung der E-ID und der Vertrauensinfrastruktur](https://www.admin.ch/de/newnsb/4ZNYpSk3J1-U), 30 June 2026; [BJ, Staatliche E-ID](https://www.bj.admin.ch/de/staatliche-e-id) |
-| Trust infrastructure (swiyu) | Expected to start operating in the first half of 2027, independently of the e-ID. Until then the swiyu Public Beta is a test environment. | Same sources |
+| Trust infrastructure (swiyu) | Expected to start operating in the first half of 2027, independently of the e-ID. Until then the swiyu sandbox is a test environment. | Same sources |
 | Electronic signatures | The e-ID is not a signing tool. It can be used to obtain electronic signatures from certified providers under ZertES, including qualified electronic signatures (QES), and so enable or trigger a remote signing flow. Remote signing capabilities are planned; which providers integrate the e-ID, and when, is not established here. | swiyu, [Hilfe zur e-ID](https://swiyu.admin.ch/de/hilfe-e-id) ("Kann ich mit der e-ID elektronisch signieren?") |
 
 **Last checked: 10 November 2026.** The BJ page lists no announcement after

@@ -29,3 +29,5 @@
 - VISION.md: trust registry references are referenced, with a weekly snapshot
   as evidence.
 - dependencies.md and credentials/README.md link the new page.
+- The swiyu test environment is called «sandbox» throughout (dependencies.md,
+  credentials/README.md, credentials/beta-id.md).
