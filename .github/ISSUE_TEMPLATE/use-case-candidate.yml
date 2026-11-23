@@ -291,6 +291,14 @@ body:
       description: Running code, demos, pilots or deployments of this use case. Link and state how far each goes (demo, sandbox, pilot, production).
       placeholder: |
         https://github.com/DIDAS-swiss/digital-health_swiyu (sandbox demo, mocked swiyu components)
+  - type: textarea
+    id: external_refs
+    attributes:
+      label: References in other use-case lists (optional)
+      description: The entries that describe this use case in other lists, one per line, as the reference and, where the list gives it, the status there, for example BJ-v41-001 (LAUNCH). Only lists named in _data/external-sources.csv, whose owners agreed to be named.
+      placeholder: |
+        BJ-v41-001 (LAUNCH)
+        FB-EID-E21-044
   - type: dropdown
     id: glossary_terms
     attributes:

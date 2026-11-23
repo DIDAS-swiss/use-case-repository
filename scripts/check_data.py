@@ -51,42 +51,85 @@ DISPOSITIONS = ("Retain", "Revise", "Split", "Merge", "Park")
 LIGHTHOUSE_VALUES = ("", "yes", "y", "ja", "x", "true", "1", "selected", "lighthouse", "candidate", "kandidat")
 
 
+def external_sources():
+    """Prefixes of the source lists whose references may appear in the repository."""
+    path = ROOT / "_data" / "external-sources.csv"
+    if not path.exists():
+        return {}
+    with open(path, encoding="utf-8", newline="") as f:
+        return {r["prefix"]: r for r in csv.DictReader(f)}
+
+
+EXTERNAL_REF = re.compile(r"^([A-Za-z][A-Za-z0-9]*(?:-[A-Za-z0-9.]+)+)(?: \(([^()]+)\))?$")
+
+
+def external_ref_findings(where, value, sources):
+    """external_refs: '<reference>' or '<reference> (<status at the source>)', separated by ';'.
+    Only references of listed sources (they agreed to be named) are allowed.
+    Returns (errors, warnings)."""
+    errors, warnings, seen = [], [], set()
+    for item in [x.strip() for x in str(value or "").split(";") if x.strip()]:
+        m = EXTERNAL_REF.match(item)
+        if not m:
+            errors.append(f"{where}: external_refs item {item!r} must be '<reference>' or '<reference> (<status>)'")
+            continue
+        ref = m.group(1)
+        if not any(ref.startswith(p + "-") for p in sources):
+            errors.append(f"{where}: external_refs {ref!r} is not from a listed source "
+                          f"(_data/external-sources.csv); unlisted sources stay outside the repository")
+        if ref in seen:
+            warnings.append(f"{where}: external_refs names {ref!r} twice")
+        seen.add(ref)
+    return errors, warnings
+
+
 def check_batches(use_cases, errors, warnings):
-    """Relations and lighthouse values in the CSV batch files of intake/."""
+    """Relations, values and external references in the CSV batch files of intake/.
+    Relations may name a use case in any batch file, staged ones (_*.csv) included."""
+    rows = []
     for path in sorted((ROOT / "intake").glob("*.csv")):
-        where = path.relative_to(ROOT)
         with open(path, encoding="utf-8-sig", newline="") as f:
-            rows = list(csv.DictReader(f))
-        ids = {r.get("id") for r in rows if r.get("id")} | set(use_cases)
-        rel = {}
-        for n, r in enumerate(rows, start=2):
-            if (r.get("lighthouse") or "").strip().lower() not in LIGHTHOUSE_VALUES:
-                errors.append(f"{where} line {n}: lighthouse must be selected (or yes), candidate or empty")
-            if (r.get("evidence_status") or "").strip().lower() not in EVIDENCE:
-                errors.append(f"{where} line {n}: evidence_status must be one of {', '.join(EVIDENCE[1:])} or empty")
-            if (r.get("benefit_basis") or "").strip().lower() not in BENEFIT_BASIS:
-                errors.append(f"{where} line {n}: benefit_basis must be hypothesis, reported, measured or empty")
-            for d in [x.strip() for x in re.split(r"[;,]", r.get("dependencies") or "") if x.strip()]:
-                if d not in DEPENDENCIES:
-                    errors.append(f"{where} line {n}: unknown dependency {d!r} (see dependencies.md)")
-            words = len((r.get("summary") or "").split())
-            if words > 90:
-                warnings.append(f"{where} line {n}: summary of {r.get('id')} has {words} words (aim for 40-70)")
-            for field in ("related_use_cases",):
-                for v in [x.strip() for x in re.split(r"[;,]", r.get(field) or "") if x.strip()]:
-                    if v not in ids:
-                        errors.append(f"{where} line {n}: {field} names unknown use case {v!r}")
-            for field in ("upstream_use_cases", "downstream_use_cases"):
-                vals = [x.strip() for x in re.split(r"[;,]", r.get(field) or "") if x.strip()]
-                rel[(r.get("id"), field)] = vals
-                for v in vals:
-                    if v not in ids:
-                        errors.append(f"{where} line {n}: {field} names unknown use case {v!r}")
-        for (rid, field), vals in rel.items():
-            other = "upstream_use_cases" if field == "downstream_use_cases" else "downstream_use_cases"
+            rows += [(path.relative_to(ROOT), n, r) for n, r in enumerate(csv.DictReader(f), start=2)]
+    first = {}
+    for where, n, r in rows:
+        rid = r.get("id")
+        if rid and rid in first and first[rid] != where:
+            errors.append(f"{where} line {n}: id {rid!r} is already used in {first[rid]}")
+        elif rid:
+            first.setdefault(rid, where)
+    ids = set(first) | set(use_cases)
+    sources = external_sources()
+    rel, place = {}, {}
+    for where, n, r in rows:
+        at = f"{where} line {n}"
+        if (r.get("lighthouse") or "").strip().lower() not in LIGHTHOUSE_VALUES:
+            errors.append(f"{at}: lighthouse must be selected (or yes), candidate or empty")
+        if (r.get("evidence_status") or "").strip().lower() not in EVIDENCE:
+            errors.append(f"{at}: evidence_status must be one of {', '.join(EVIDENCE[1:])} or empty")
+        if (r.get("benefit_basis") or "").strip().lower() not in BENEFIT_BASIS:
+            errors.append(f"{at}: benefit_basis must be hypothesis, reported, measured or empty")
+        for d in [x.strip() for x in re.split(r"[;,]", r.get("dependencies") or "") if x.strip()]:
+            if d not in DEPENDENCIES:
+                errors.append(f"{at}: unknown dependency {d!r} (see dependencies.md)")
+        words = len((r.get("summary") or "").split())
+        if words > 90:
+            warnings.append(f"{at}: summary of {r.get('id')} has {words} words (aim for 40-70)")
+        e, w = external_ref_findings(at, r.get("external_refs"), sources)
+        errors += e
+        warnings += w
+        for field in ("related_use_cases", "upstream_use_cases", "downstream_use_cases"):
+            vals = [x.strip() for x in re.split(r"[;,]", r.get(field) or "") if x.strip()]
             for v in vals:
-                if (v, other) in rel and rid not in rel[(v, other)]:
-                    warnings.append(f"{where}: {rid} names {v} in {field}, but {v} does not name {rid} in {other}")
+                if v not in ids:
+                    errors.append(f"{at}: {field} names unknown use case {v!r}")
+            if field != "related_use_cases":
+                rel[(r.get("id"), field)] = vals
+                place[r.get("id")] = where
+    for (rid, field), vals in rel.items():
+        other = "upstream_use_cases" if field == "downstream_use_cases" else "downstream_use_cases"
+        for v in vals:
+            if (v, other) in rel and rid not in rel[(v, other)]:
+                warnings.append(f"{place[rid]}: {rid} names {v} in {field}, but {v} does not name {rid} in {other}")
 
 
 def batch_ids():
@@ -197,6 +240,9 @@ def main():
     for cid, (where, fm) in use_cases.items():
         if str(fm.get("evidence_status") or "") not in EVIDENCE:
             errors.append(f"{where}: evidence_status must be one of {', '.join(EVIDENCE[1:])} or empty")
+        e, w = external_ref_findings(str(where), "; ".join(map(str, fm.get("external_refs") or [])), external_sources())
+        errors += e
+        warnings += w
         if fm.get("lighthouse") == "selected" and not fm.get("lighthouse_decision_record"):
             warnings.append(f"{where}: selected as lighthouse, but no lighthouse_decision_record links the decision")
 
