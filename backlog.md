@@ -1,13 +1,15 @@
 ---
 title: Backlog
+description: All use cases with their step, working group, source and evidence status.
 ---
 
 # Backlog
 
-Every use case, from the first signal to the published entry: the candidates
-filed through the [use-case form](https://github.com/DIDAS-swiss/use-case-repository/issues/new?template=use-case-candidate.yml),
-the ones a working group has taken, the drafts under review and the published
-entries. The list is read live from GitHub each time the page opens.
+All use cases of the repository: open candidates from the
+[use-case form](https://github.com/DIDAS-swiss/use-case-repository/issues/new?template=use-case-candidate.yml)
+or an intake batch, candidates a working group has taken, entries in drafting and
+published entries. The page reads the issues from GitHub each time it opens; the
+published entries come from the site build.
 
 <div id="backlog-app" class="backlog">
   <p class="note">Loading the use cases from GitHub…</p>

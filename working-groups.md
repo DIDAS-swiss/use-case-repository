@@ -1,5 +1,6 @@
 ---
 title: Working groups
+description: The DIDAS working groups, their status and the ISIC sectors each sector group is responsible for.
 ---
 
 # Working groups

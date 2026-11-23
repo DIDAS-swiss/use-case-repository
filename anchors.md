@@ -1,18 +1,18 @@
 ---
 title: Anchors
+description: For each trust flow, Industry Function Graph pattern and I14Y credential dataset, the use cases that reference it.
 ---
 
 # Anchors
 
-This repository is where the other DIDAS work meets. Every use case points to
-the trust flows that model it, the pattern it realises in the Industry Function
-Graph, the credentials it relies on with their schemas on I14Y, and the
-implementations that run it. This page turns that around: for each flow, pattern
-and I14Y credential dataset, which use cases point to it. **Anything without a
-use case is a candidate for one.**
+For each trust flow of the DIDAS Trust Flow Diagram Repository, each pattern of
+the DIDAS Industry Function Graph and each credential dataset on I14Y, this page
+lists the use cases that reference it. A use case records these references in
+its fields `trust_flows`, `ifm_patterns` and, through its credentials,
+`i14y_dataset`. An item that no use case references is marked *no use case yet*.
 
-The lists are synchronised weekly from their sources by the *Sync federated
-sources* workflow.
+The *Sync federated sources* workflow updates the three lists from their
+sources every week.
 
 {% assign usecases = site.pages | where: "kind", "use-case" | where_exp: "p", "p.stage" %}
 

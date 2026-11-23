@@ -1,3 +1,9 @@
+---
+title: Use cases
+permalink: /use-cases/
+description: The published use-case entries with lifecycle stage, source, ambition levels, sectors and credentials.
+---
+
 # Use cases
 
 Every published use case, with its lifecycle stage. None is published yet: all

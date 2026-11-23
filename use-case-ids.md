@@ -1,13 +1,15 @@
 ---
 title: Use-case ids
+description: The id of every published entry and candidate, for the relation fields of the use-case form.
 ---
 
 # Use-case ids
 
-Every use case by its id: the published entries and the candidates of the
-intake batches. Use these ids in the *Related*, *Upstream* and *Downstream* fields
-of the [use-case form](https://github.com/DIDAS-swiss/use-case-repository/issues/new?template=use-case-candidate.yml).
-The list is built from the repository with the form.
+The id of every use case, published entry or candidate. The fields *Related*,
+*Upstream*, *Downstream* and *Variant of* of the
+[use-case form](https://github.com/DIDAS-swiss/use-case-repository/issues/new?template=use-case-candidate.yml)
+take these ids. The list is built from `use-cases/` and the batch files in
+`intake/` whenever the form is rebuilt.
 
 <table>
 <thead><tr><th>Id</th><th>Use case</th><th></th></tr></thead>
