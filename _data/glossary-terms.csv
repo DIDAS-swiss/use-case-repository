@@ -1,19 +1,29 @@
 id,term,aliases,url
 ambition-level,ambition level,ambition levels; AN1; AN2; AN3; Ambitionsniveau; niveau d'ambition; livello di ambizione,https://didas-swiss.github.io/didas-glossary/#term:ambition-level
+base-registry,base registry,Basisregister; registre de base; registro di base,https://didas-swiss.github.io/didas-glossary/#term:base-registry
 beta-id,Beta-ID,Beta-IDs; BetaID; Beta ID; Bêta-ID,https://didas-swiss.github.io/didas-glossary/#term:beta-id
 claim,claim,claims; Angabe; Angaben; affirmation; affirmations; affermazione; affermazioni,https://didas-swiss.github.io/didas-glossary/#term:claim
 credential,credential,credentials; Nachweis; Nachweise; attestation; attestations; attestato; attestati,https://didas-swiss.github.io/didas-glossary/#term:credential
+dcql,DCQL,Digital Credentials Query Language,https://didas-swiss.github.io/didas-glossary/#term:dcql
+did-webvh,did:webvh,did webvh; did:web + Verifiable History,https://didas-swiss.github.io/didas-glossary/#term:did-webvh
 didas,DIDAS,Digital Identity and Data Sovereignty Association,https://didas-swiss.github.io/didas-glossary/#term:didas
 digital-product-passport,digital product passport,DPP; digitaler Produktpass; passeport numérique de produit; passaporto digitale del prodotto,https://didas-swiss.github.io/didas-glossary/#term:digital-product-passport
+dpop,DPoP,Demonstrating Proof of Possession,https://didas-swiss.github.io/didas-glossary/#term:dpop
 e-collecting,E-Collecting,elektronische Unterschriftensammlung; récolte électronique de signatures; raccolta elettronica delle firme,https://didas-swiss.github.io/didas-glossary/#term:e-collecting
 ebpi,EBPI,Epidemiology Biostatistics and Prevention Institute; Institut für Epidemiologie Biostatistik und Prävention,https://didas-swiss.github.io/didas-glossary/#term:ebpi
 ecosystem,ecosystem,ecosystems; Ökosystem; Ökosysteme; écosystème; ecosistema,https://didas-swiss.github.io/didas-glossary/#term:ecosystem
+electronic-attestation-of-attributes,electronic attestation of attributes,electronic attestations of attributes; EAA; EAAs,https://didas-swiss.github.io/didas-glossary/#term:electronic-attestation-of-attributes
+electronic-credential,electronic credential,electronic credentials; elektronischer Nachweis; elektronische Nachweise; attestation électronique; attestations électroniques; attestato elettronico; attestati elettronici,https://didas-swiss.github.io/didas-glossary/#term:electronic-credential
 governance,governance,gouvernance,https://didas-swiss.github.io/didas-glossary/#term:governance
 governing-authority,governing authority,governing authorities; autorité de gouvernance; autorità di governance,https://didas-swiss.github.io/didas-glossary/#term:governing-authority
+holder-binding,holder binding,key binding; Holder Binding; liaison au titulaire; vincolo al titolare,https://didas-swiss.github.io/didas-glossary/#term:holder-binding
 international-patient-summary,International Patient Summary,IPS; patient summary,https://didas-swiss.github.io/didas-glossary/#term:international-patient-summary
 issuer,issuer,issuers; Aussteller; Ausstellerin; ausstellende Organisation; émetteur; émettrice; organisation émettrice; emittente; emittenti; organizzazione emittente,https://didas-swiss.github.io/didas-glossary/#term:issuer
 minute-of-agreement,Minute of Agreement,,https://didas-swiss.github.io/didas-glossary/#term:minute-of-agreement
+oca,OCA,Overlays Capture Architecture,https://didas-swiss.github.io/didas-glossary/#term:oca
 protocol,protocol,protocols; Protokoll; protocole; protocollo,https://didas-swiss.github.io/didas-glossary/#term:protocol
+proximity-verification,proximity verification,Proximity Verification,https://didas-swiss.github.io/didas-glossary/#term:proximity-verification
+qualified-electronic-attestation-of-attributes,qualified electronic attestation of attributes,qualified electronic attestations of attributes; QEAA; QEAAs,https://didas-swiss.github.io/didas-glossary/#term:qualified-electronic-attestation-of-attributes
 selective-disclosure,selective disclosure,selektive Bekanntgabe; divulgation sélective; divulgazione selettiva,https://didas-swiss.github.io/didas-glossary/#term:selective-disclosure
 status-list,status list,status lists; Statusliste; Statuslisten; liste de statut; elenco di stato,https://didas-swiss.github.io/didas-glossary/#term:status-list
 trust-domain,trust domain,trust domains; trust space; trust spaces; Vertrauensraum; Vertrauensräume; espace de confiance; spazio di fiducia,https://didas-swiss.github.io/didas-glossary/#term:trust-domain
@@ -21,6 +31,8 @@ trust-infrastructure,trust infrastructure,Vertrauensinfrastruktur; infrastructur
 trust-marker,trust marker,trust markers; Vertrauensmerkmal; Vertrauensmerkmale; marqueur de confiance; marcatore di fiducia,https://didas-swiss.github.io/didas-glossary/#term:trust-marker
 trust-protocol,trust protocol,trust protocols; Vertrauensprotokoll; protocole de confiance; protocollo di fiducia,https://didas-swiss.github.io/didas-glossary/#term:trust-protocol
 trust-statement,trust statement,trust statements; Vertrauensaussage; Vertrauensaussagen; déclaration de confiance; dichiarazione di fiducia,https://didas-swiss.github.io/didas-glossary/#term:trust-statement
+vct,vct,Verifiable Credential Type; credential type,https://didas-swiss.github.io/didas-glossary/#term:vct
 verifiable-credential,verifiable credential,verifiable credentials; VC; VCs; verifizierbarer Nachweis; attestation vérifiable; attestato verificabile; document vérifiable; documento verificabile,https://didas-swiss.github.io/didas-glossary/#term:verifiable-credential
 verifier,verifier,verifiers; Verifikator; Verifikatorin; prüfende Organisation; vérificateur; vérificatrice; organisation vérificatrice; verificatore; verificatrice; organizzazione verificatrice,https://didas-swiss.github.io/didas-glossary/#term:verifier
+wallet-backup-container,wallet backup container,Wallet Backup Container; wbak,https://didas-swiss.github.io/didas-glossary/#term:wallet-backup-container
 wallet,wallet,wallets; Wallet; digitales Portemonnaie; portefeuille; portefeuilles; portefeuille électronique; portafoglio; portafogli; portafoglio elettronico,https://didas-swiss.github.io/didas-glossary/#term:wallet
