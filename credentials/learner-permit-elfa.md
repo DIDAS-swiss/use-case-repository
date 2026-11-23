@@ -10,6 +10,7 @@ schema_status: emerging
 ambition_level: AL2
 likely_issuer: Cantonal road traffic office (Strassenverkehrsamt), in the federal pilot run with asa
 issuer_type: cantonal
+vct_values: ["urn:vct:ch.admin.astra.vz.elfa"]
 schema_refs: ["https://vz-api.astra.admin.ch/public/issuer/oid4vci/json-schema/elfa"]
 claims: [lastName, firstName, dateOfBirth, hometown, photoImage, signatureImage, categoryCode, categoryIcon, categoryRestrictions, restrictionsA, restrictionsB, licenceNumber, faberPin, issuerEntity, issuerEntityDate, dateOfExpiration, policeQRImage, vct, iss, sub, iat, nbf, exp, cnf, status]
 used_by: []

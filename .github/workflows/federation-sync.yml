@@ -1,8 +1,9 @@
 # Keeps everything this repository anchors to current: the credential schemas
 # and the credential catalogue from I14Y, the flows of the Trust Flow Diagram
 # Repository, the patterns and sectors of the Industry Function Graph, the terms
-# of the DIDAS Glossary, and the issue-form choice lists built from them and
-# from the repository's own credentials and use cases. Runs weekly, when a credential entry
+# of the DIDAS Glossary, the counts and organisations of the swiyu trust and
+# base registries (production and sandbox), and the issue-form choice lists
+# built from them and from the repository's own credentials and use cases. Runs weekly, when a credential entry
 # or a sync script changes, and on demand. Any change arrives as a pull request
 # on the automation/federation-sync branch, so curators see the diff before it
 # is published: federated content is never updated silently.
@@ -37,6 +38,8 @@ jobs:
         run: python3 -m pip install --quiet pyyaml
       - name: Fetch from I14Y
         run: python3 scripts/i14y_sync.py
+      - name: Query the swiyu trust and base registries
+        run: python3 scripts/swiyu_sync.py
       - name: Fetch trust flows, patterns and sectors
         run: python3 scripts/sources_sync.py
       - name: Rebuild the issue-form choice lists
@@ -58,5 +61,5 @@ jobs:
           if [ -z "$(gh pr list --head automation/federation-sync --state open --json number --jq '.[].number')" ]; then
             gh pr create --head automation/federation-sync --base main \
               --title "Federated sources changed" \
-              --body "The sync found changes in one or more federated sources: I14Y credential schemas or catalogue (\`federation/i14y/\`, \`_data/i14y-credentials.csv\`), Trust Flow Diagram Repository flows, Industry Function Graph patterns or sectors (\`_data/\`). The issue-form choice lists were rebuilt from them. Review the diff, check whether affected entries need updating, then merge to publish."
+              --body "The sync found changes in one or more federated sources: I14Y credential schemas or catalogue (\`federation/i14y/\`, \`_data/i14y-credentials.csv\`), Trust Flow Diagram Repository flows, Industry Function Graph patterns or sectors (\`_data/\`), swiyu trust and base registries (\`_data/swiyu-*.csv\`). The issue-form choice lists were rebuilt from them. Review the diff, check whether affected entries need updating, then merge to publish."
           fi

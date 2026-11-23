@@ -10,6 +10,7 @@ schema_status: none   # i14y: published on I14Y · emerging: a schema exists or 
 ambition_level: AL2
 likely_issuer:
 issuer_type:
+vct_values: []   # credential types (vct) as the swiyu Trust Registry knows them; counted by scripts/swiyu_sync.py
 i14y_dataset:   # I14Y dataset identifier, usually the vct, e.g. urn:vct:ch.admin.bcs.betaid
 i14y_id:        # the dataset's I14Y id (uuid); the federation-sync workflow federates its schema
 schema_refs: []

@@ -10,6 +10,7 @@ schema_status: none
 ambition_level: AL1
 likely_issuer: Federal Office of Police (fedpol)
 issuer_type: federal
+vct_values: ["urn:vct:ch.admin.sid.eid"]
 schema_refs: []
 claims: [family_name, given_name, birth_date, age_over_18]
 used_by: []

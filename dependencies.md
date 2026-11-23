@@ -19,7 +19,7 @@ trust infrastructure, swiyu, without the e-ID).
 | | Status | Source |
 |---|---|---|
 | State e-ID | Introduction postponed on 30 June 2026 for further security work; the date will be announced once that work is largely complete. No new date announced. | Federal Council, [Neuer Zeitplan für die Einführung der E-ID und der Vertrauensinfrastruktur](https://www.admin.ch/de/newnsb/4ZNYpSk3J1-U), 30 June 2026; [BJ, Staatliche E-ID](https://www.bj.admin.ch/de/staatliche-e-id) |
-| Trust infrastructure (swiyu) | Expected to start operating in the first half of 2027, independently of the e-ID. Until then the swiyu Public Beta is a test environment. | Same sources |
+| Trust infrastructure (swiyu) | Expected to start operating in the first half of 2027, independently of the e-ID. Until then the swiyu sandbox is a test environment. | Same sources |
 | Electronic signatures | The e-ID is not a signing tool. It can be used to obtain electronic signatures from certified providers under ZertES, including qualified electronic signatures (QES), and so enable or trigger a remote signing flow. Remote signing capabilities are planned; which providers integrate the e-ID, and when, is not established here. | swiyu, [Hilfe zur e-ID](https://swiyu.admin.ch/de/hilfe-e-id) ("Kann ich mit der e-ID elektronisch signieren?") |
 
 **Last checked: 10 November 2026.** The BJ page lists no announcement after
@@ -32,6 +32,10 @@ changed, the table; the use cases follow through their link.
 |---|---|---|
 | Electronic learner's permit (eLFA) | **In live use** in all cantons since 1 December 2025, issued by the cantonal road traffic offices into the swiyu wallet and checkable with ASTRA's [LicenceCheck](https://licencecheck.astra.admin.ch/). The Confederation calls it a pilot (with asa; evaluation until end of March 2027). DIDAS reports about 100,000 active eLFA as of 10 November 2026. | [eid.admin.ch, eLFA](https://www.eid.admin.ch/de/pilotprojekte) (no longer maintained since 27 October 2026); DIDAS |
 | e-ID, residence confirmation, debt enforcement register extract, digital driving licence | Announced as "soon available" for organisations to integrate. | [swiyu – Ökosystem](https://swiyu.admin.ch/de/oekosystem) |
+
+Which credential types verifiers ask for on the trust infrastructure, in
+production and in the sandbox, is on the [swiyu registries](registries.md) page,
+from a weekly snapshot of the trust and base registries.
 
 The federal site moved from eid.admin.ch to [swiyu.admin.ch](https://swiyu.admin.ch/de) on 27 October 2026; sources here point to swiyu.admin.ch where the page exists there.
 
