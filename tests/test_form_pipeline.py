@@ -247,7 +247,8 @@ class Reconcile(unittest.TestCase):
 
 class Reviews(unittest.TestCase):
     def test_review_rows_name_batch_entries(self):
-        ids = {c["id"] for c in batch()["candidates"]}
+        ids = {c["id"] for p in intake.batch_files() if p.suffix == ".csv"
+               for c in intake.load_batch(p)["candidates"]}
         for uid in intake.REVIEWS:
             self.assertIn(uid, ids)
         for uid in intake.SCOPES:
