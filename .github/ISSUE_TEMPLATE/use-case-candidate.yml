@@ -312,10 +312,11 @@ body:
     id: external_refs
     attributes:
       label: References in other use-case lists (optional)
-      description: The entries that describe this use case in other lists, one per line, as the reference and, where the list gives it, the status there, for example BJ-v41-001 (LAUNCH). Only lists named in _data/external-sources.csv, whose owners agreed to be named.
+      description: The entries that describe this use case in other lists, one per line, as the reference and, where the list gives it, the status there, for example BJ-v41-001 (LAUNCH). Add [variant] where the entry describes a variant of this use case rather than the use case itself, for example FB-EID-E21-001 [variant]. Only lists named in _data/external-sources.csv, whose owners agreed to be named.
       placeholder: |
         BJ-v41-001 (LAUNCH)
         FB-EID-E21-044
+        FB-EID-X1-01.01 [variant]
   - type: dropdown
     id: glossary_terms
     attributes:
@@ -390,6 +391,13 @@ body:
       description: Use cases that reuse a credential this one issues. Ids from the [list of use-case ids](https://didas-swiss.github.io/use-case-repository/use-case-ids.html), one per line.
       placeholder: |
         vehicle-leasing
+  - type: textarea
+    id: variant_of
+    attributes:
+      label: Variant of (optional)
+      description: The use case this one is a variant of, if any. A variant has the same verifier role and the same verifier question as that use case, in another context (another channel, place or sector). Curators decide whether it stays separate or becomes part of that use case. Ids from the [list of use-case ids](https://didas-swiss.github.io/use-case-repository/use-case-ids.html), one per line.
+      placeholder: |
+        age-pos-alcohol-tobacco
   - type: dropdown
     id: lighthouse
     attributes:

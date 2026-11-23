@@ -151,7 +151,7 @@ def known(ids, table, what, title, warnings):
 
 LIST_FIELDS = ("sectors", "ambition_levels", "trust_flows", "ifm_patterns", "i14y_credentials",
                "credentials_reused", "credentials_new", "credentials_excluded", "related_use_cases",
-               "upstream_use_cases", "downstream_use_cases", "glossary_terms")
+               "upstream_use_cases", "downstream_use_cases", "variant_of", "glossary_terms")
 
 LIGHTHOUSE_LABELS = ("lighthouse", "lighthouse-candidate")
 
@@ -330,6 +330,7 @@ def issue(c, batch, warnings, published_path=None, numbers=None):
         "related_use_cases": relations("related_use_cases"),
         "upstream_use_cases": relations("upstream_use_cases"),
         "downstream_use_cases": relations("downstream_use_cases"),
+        "variant_of": relations("variant_of"),
         # the form records a proposal; a selection is the curator's label (see intake_comment)
         "lighthouse": "Propose as lighthouse candidate" if lh else "",
         "lighthouse_basis": text("lighthouse_basis"),

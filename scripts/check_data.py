@@ -62,18 +62,19 @@ def external_sources():
         return {r["prefix"]: r for r in csv.DictReader(f)}
 
 
-EXTERNAL_REF = re.compile(r"^([A-Za-z][A-Za-z0-9]*(?:-[A-Za-z0-9.]+)+)(?: \(([^()]+)\))?$")
+EXTERNAL_REF = re.compile(r"^([A-Za-z][A-Za-z0-9]*(?:-[A-Za-z0-9.]+)+)(?: \(([^()]+)\))?( \[variant\])?$")
 
 
 def external_ref_findings(where, value, sources):
-    """external_refs: '<reference>' or '<reference> (<status at the source>)', separated by ';'.
+    """external_refs: '<reference>', optionally followed by ' (<status at the source>)' and by
+    ' [variant]' where the entry describes a variant of the use case; separated by ';'.
     Only references of listed sources (they agreed to be named) are allowed.
     Returns (errors, warnings)."""
     errors, warnings, seen = [], [], set()
     for item in [x.strip() for x in str(value or "").split(";") if x.strip()]:
         m = EXTERNAL_REF.match(item)
         if not m:
-            errors.append(f"{where}: external_refs item {item!r} must be '<reference>' or '<reference> (<status>)'")
+            errors.append(f"{where}: external_refs item {item!r} must be '<reference>', '<reference> (<status>)', optionally followed by ' [variant]'")
             continue
         ref = m.group(1)
         if not any(ref.startswith(p + "-") for p in sources):
@@ -139,9 +140,10 @@ def check_batches(use_cases, errors, warnings):
             first.setdefault(rid, where)
     ids = set(first) | set(use_cases)
     sources = external_sources()
-    rel, place = {}, {}
+    rel, place, variants = {}, {}, {}
     for where, n, r in rows:
         at = f"{where} line {n}"
+        rid = r.get("id")
         if (r.get("lighthouse") or "").strip().lower() not in LIGHTHOUSE_VALUES:
             errors.append(f"{at}: lighthouse must be selected (or yes), candidate or empty")
         if (r.get("evidence_status") or "").strip().lower() not in EVIDENCE:
@@ -157,14 +159,24 @@ def check_batches(use_cases, errors, warnings):
         e, w = external_ref_findings(at, r.get("external_refs"), sources)
         errors += e
         warnings += w
-        for field in ("related_use_cases", "upstream_use_cases", "downstream_use_cases"):
+        for field in ("related_use_cases", "upstream_use_cases", "downstream_use_cases", "variant_of"):
             vals = [x.strip() for x in re.split(r"[;,]", r.get(field) or "") if x.strip()]
             for v in vals:
                 if v not in ids:
                     errors.append(f"{at}: {field} names unknown use case {v!r}")
+                elif field == "variant_of" and v == rid:
+                    errors.append(f"{at}: {rid} names itself in variant_of")
+            if field == "variant_of":
+                variants[rid] = (vals, where)
+                continue
             if field != "related_use_cases":
                 rel[(r.get("id"), field)] = vals
                 place[r.get("id")] = where
+    for rid, (bases, where) in variants.items():
+        for b in bases:
+            if rid < b and rid in variants.get(b, ([], None))[0]:
+                warnings.append(f"{where}: {rid} and {b} name each other in variant_of; "
+                                "one of them is the base use case")
     for (rid, field), vals in rel.items():
         other = "upstream_use_cases" if field == "downstream_use_cases" else "downstream_use_cases"
         for v in vals:
@@ -268,7 +280,8 @@ def boundary_records(use_cases):
     out = []
     for cid, (where, fm) in use_cases.items():
         out.append({"id": cid, "where": str(where), "verifier": fm.get("verifier"),
-                    "verifier_question": fm.get("verifier_question"), "related": fm.get("related_use_cases") or [],
+                    "verifier_question": fm.get("verifier_question"),
+                    "related": (fm.get("related_use_cases") or []) + (fm.get("variant_of") or []),
                     "stage": fm.get("stage")})
     for path in sorted((ROOT / "intake").glob("*.csv")):
         with open(path, encoding="utf-8-sig", newline="") as f:
@@ -276,7 +289,7 @@ def boundary_records(use_cases):
                 if r.get("id") and r["id"] not in use_cases:
                     out.append({"id": r["id"], "where": f"{path.relative_to(ROOT)} line {n}",
                                 "verifier": r.get("verifier"), "verifier_question": r.get("verifier_question"),
-                                "related": [x.strip() for x in re.split(r"[;,]", r.get("related_use_cases") or "") if x.strip()],
+                                "related": [x.strip() for x in re.split(r"[;,]", (r.get("related_use_cases") or "") + ";" + (r.get("variant_of") or "")) if x.strip()],
                                 "stage": r.get("stage")})
     return out
 
@@ -363,6 +376,9 @@ def main():
         refs(where, fm, "related_use_cases", use_cases, "use case")
         refs(where, fm, "upstream_use_cases", use_cases, "use case")
         refs(where, fm, "downstream_use_cases", use_cases, "use case")
+        refs(where, fm, "variant_of", use_cases, "use case")
+        if cid in (fm.get("variant_of") or []):
+            errors.append(f"{where}: names itself in variant_of")
         if fm.get("lighthouse") not in (None, "", "selected", "candidate"):
             errors.append(f"{where}: lighthouse must be selected, candidate or empty")
         for field in ("credentials_reused", "credentials_new", "credentials_excluded"):

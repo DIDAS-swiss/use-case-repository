@@ -105,6 +105,11 @@ context of the same decision, for example four kinds of contract signed with a
 QES, is a variant inside the entry, not a new entry. An entry whose verifiers
 ask different questions is a candidate for a split.
 
+Where a variant already exists as its own use case, it names the use case it is
+a variant of in `variant_of`. The use-case page of each shows the link, and the
+boundary check accepts the pair. Whether the variant stays separate or becomes
+part of the other use case is a curator decision.
+
 The verifier question says what the verifier needs to know:
 
 | `verifier_question` | Question | Typical claims |
@@ -160,6 +165,7 @@ detail belongs in the body.
 | `related_use_cases` | no | use-case ids, for relations with no sequence |
 | `upstream_use_cases` | no | use-case ids that must happen first, because they issue a credential this use case verifies |
 | `downstream_use_cases` | no | use-case ids that reuse a credential this use case issues |
+| `variant_of` | no | the use-case id this one is a variant of: same verifier role and same verifier question, another context. See *Where one use case ends* |
 | `lighthouse` | no | `selected`, `candidate` or empty; see [GOVERNANCE.md](GOVERNANCE.md#lighthouses) |
 | `lighthouse_basis` | with `lighthouse` | one line on why, for example "DIDAS selection" or "meets 5 of 6 criteria" |
 | `verifier` | from `candidate` on (optional at `signal`) | the relying party whose decision this is, as a role, for example `retailer` or `driving school`; one value |
@@ -167,7 +173,7 @@ detail belongs in the body.
 | `trust_flows` | no | Trust Flow ids, `<sector>/<family>/<flow>`, from [`_data/trust-flows.csv`](https://github.com/DIDAS-swiss/use-case-repository/blob/main/_data/trust-flows.csv). See *Anchors* below |
 | `ifm_patterns` | no | Industry Function Graph pattern ids from [`_data/ifm-patterns.csv`](https://github.com/DIDAS-swiss/use-case-repository/blob/main/_data/ifm-patterns.csv) |
 | `implementations` | no | `"<url> (<how far: demo, sandbox, pilot, production>)"`, one per implementation |
-| `external_refs` | no | entries that describe the use case in other lists, `"<reference> (<status at the source>)"`, for example `"BJ-v41-001 (LAUNCH)"`. Only lists in [`_data/external-sources.csv`](https://github.com/DIDAS-swiss/use-case-repository/blob/main/_data/external-sources.csv), whose owners agreed to be named; *Check data* rejects other references. One reference may appear on several use cases |
+| `external_refs` | no | entries that describe the use case in other lists, `"<reference> (<status at the source>)"`, for example `"BJ-v41-001 (LAUNCH)"`; followed by `[variant]` where the entry describes a variant of the use case, for example `"FB-EID-E21-001 [variant]"`. Only lists in [`_data/external-sources.csv`](https://github.com/DIDAS-swiss/use-case-repository/blob/main/_data/external-sources.csv), whose owners agreed to be named; *Check data* rejects other references. One reference may appear on several use cases |
 | `glossary_terms` | no | DIDAS Glossary term ids from [`_data/glossary-terms.csv`](https://github.com/DIDAS-swiss/use-case-repository/blob/main/_data/glossary-terms.csv), for example `issuer`, `verifier`; linked on the entry page |
 | `created`, `updated` | yes | `YYYY-MM-DD` |
 

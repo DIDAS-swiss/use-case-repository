@@ -57,6 +57,7 @@ Further columns:
 |---|---|
 | `upstream_use_cases` | ids of use cases that must happen first, because they issue a credential this one verifies, separated by `;` |
 | `downstream_use_cases` | ids of use cases that reuse a credential this one issues, separated by `;` |
+| `variant_of` | id of the use case this one is a variant of: same verifier role and question, another context ([CONTRIBUTING.md](../CONTRIBUTING.md#where-one-use-case-ends)) |
 | `proposed_by` | the source of the use case, for example `DIDAS` or another organisation; it fills the form field *Proposed on behalf of* (a batch-wide `proposed_by` in a YAML file does the same for every entry) |
 | `verifier` | the relying party whose decision this is, as a role, for example `driving school` |
 | `verifier_question` | `identity`, `qualification`, `attestation`, `permission` or `membership` ([CONTRIBUTING.md](../CONTRIBUTING.md#where-one-use-case-ends)) |
@@ -69,7 +70,7 @@ Further columns:
 | `open_question`, `open_question_de` | the one question that holds the use case up; rendered first under *Open questions* |
 | `background`, `background_de` | legal and programme context, project-specific dates |
 | `missing_terms` | terms the DIDAS Glossary does not define yet, each as `term — meaning`, separated by ` \| `; they become glossary requests (see [CONTRIBUTING.md](../CONTRIBUTING.md#glossary-requests)) |
-| `external_refs` | entries in other use-case lists, `<reference> (<status>)`, separated by `;`, for example `BJ-v41-001 (LAUNCH); FB-EID-E21-044`; only lists in `_data/external-sources.csv` |
+| `external_refs` | entries in other use-case lists, `<reference> (<status>)`, followed by `[variant]` where the entry describes a variant, separated by `;`, for example `BJ-v41-001 (LAUNCH); FB-EID-E21-044 [variant]`; only lists in `_data/external-sources.csv` |
 | `dependencies` | `e-id` or `trust-infrastructure`: links the [dependencies page](../dependencies.md) instead of repeating the shared timing |
 
 Placeholders such as "no official figure" stay in the file but are left out of
@@ -98,7 +99,8 @@ the issue.
 
 ## Editorial reviews
 
-Relations (`related_use_cases`, `upstream_use_cases`, `downstream_use_cases`)
+Relations (`related_use_cases`, `upstream_use_cases`, `downstream_use_cases`,
+`variant_of`)
 may name a use case in any batch file, staged files whose names start with `_`
 included. An id may appear in only one batch file.
 

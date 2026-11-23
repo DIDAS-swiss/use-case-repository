@@ -6,7 +6,7 @@ A use-case issue is written in the fields of the form
 form or the intake wrote it. This reads those fields back and keeps one comment
 on the issue with a link for everything it names: the credentials described in
 this repository, the I14Y credential datasets, trust flows, Industry Function
-Graph patterns, DIDAS Glossary terms and the related, upstream and downstream
+Graph patterns, DIDAS Glossary terms and the related, upstream, downstream and base (variant of)
 use cases (their entry, or their candidate issue).
 
 Run from the repository root, for one issue:
@@ -111,7 +111,7 @@ def comment(body, numbers):
     section("DIDAS Glossary terms",
             [f"[{TERMS[x]['term']}]({TERMS[x]['url']})" for x in chosen("glossary_terms", f.get("glossary_terms")) if x in TERMS])
     for key, title in (("upstream_use_cases", "Upstream use cases"), ("downstream_use_cases", "Downstream use cases"),
-                       ("related_use_cases", "Related use cases")):
+                       ("variant_of", "Variant of"), ("related_use_cases", "Related use cases")):
         section(title, [use_case(u) for u in ids(f.get(key), USE_CASES)])
     if not sections:
         return None

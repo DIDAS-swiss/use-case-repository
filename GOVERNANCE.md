@@ -160,6 +160,12 @@ itself an entry or candidate (the e-ID), no relation is recorded. Relations with
 sequence stay in `related_use_cases`. *Check data* warns when two entries
 disagree about a relation.
 
+Use case A is a **variant** of B (`variant_of: B`) when both have the same
+verifier role and the same verifier question and differ only in context, for
+example the age check at a tobacco kiosk (`tobacco-age-kiosk`) and at the sale of
+restricted goods in general (`age-pos-alcohol-tobacco`). Curators decide
+whether A stays a use case of its own or becomes part of B.
+
 ## Evidence status and editorial reviews
 
 A use case's **evidence status** says how far the evidence for the proposed
