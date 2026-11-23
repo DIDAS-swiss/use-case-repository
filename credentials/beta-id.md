@@ -13,6 +13,7 @@ issuer_type: federal
 i14y_dataset: urn:vct:ch.admin.bcs.betaid
 i14y_id: f7223759-b198-41eb-96be-3f3bd54689fb
 schema_refs: [https://swiyu-admin-ch.github.io/cookbooks/how-to-use-beta-id/]
+claims: [family_name, given_name, birth_date, age_over_16, age_over_18, age_over_65, age_birth_year, sex, place_of_origin, birth_place, nationality, portrait, personal_administrative_number, additional_person_info, document_number, issuance_date, expiry_date, reference_id_type, referende_id_expiry_date, verification_type, verification_organization, issuing_authority, issuing_country]
 used_by: []
 demand_issues: []
 created: 2026-11-05
@@ -46,9 +47,29 @@ Beta-ID number, for revocation; revocation cannot be reverted.
 
 | Claim | Description | Needed by |
 |---|---|---|
-| Person attributes | `given_name`, `family_name`, `birth_date`, `birth_place`, `place_of_origin`, `sex`, `nationality`, `personal_administrative_number`, `portrait`, `additional_person_info` | testing the identification step of any use case |
-| Derived age attributes | `age_over_16`, `age_over_18`, `age_over_65`, `age_birth_year` | testing age checks |
-| Document and verification metadata | `document_number`, `issuance_date`, `expiry_date`, `issuing_authority`, `issuing_country`, `reference_id_type`, `reference_id_expiry_date`, `verification_organization`, `verification_type` | |
+| `family_name` | Surname | testing the identification step of any use case |
+| `given_name` | Given name(s) | testing the identification step of any use case |
+| `birth_date` | Date of birth | testing the identification step of any use case |
+| `age_over_16` | Over the age of 16 | testing age checks |
+| `age_over_18` | Over the age of 18 | testing age checks |
+| `age_over_65` | Over the age of 65 | testing age checks |
+| `age_birth_year` | Year of birth | testing age checks |
+| `sex` | Sex |  |
+| `place_of_origin` | Place of origin |  |
+| `birth_place` | Place of birth |  |
+| `nationality` | Nationality |  |
+| `portrait` | Face image | testing the identification step of any use case |
+| `personal_administrative_number` | AHV number (protected field) |  |
+| `additional_person_info` | Additional information about the person |  |
+| `document_number` | Beta-ID number |  |
+| `issuance_date` | Date of issuance |  |
+| `expiry_date` | Date of expiry |  |
+| `reference_id_type` | Identification document type |  |
+| `referende_id_expiry_date` | Identification document date of expiry (I14Y spelling) |  |
+| `verification_type` | Identity verification process |  |
+| `verification_organization` | Identity verification by |  |
+| `issuing_authority` | Issuing authority |  |
+| `issuing_country` | Issuing country |  |
 
 The full attribute list, with labels, types and the I14Y concepts each attribute
 conforms to, is the federated schema below.

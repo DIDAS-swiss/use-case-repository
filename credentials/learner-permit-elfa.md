@@ -11,6 +11,7 @@ ambition_level: AL2
 likely_issuer: Cantonal road traffic office (Strassenverkehrsamt), in the federal pilot run with asa
 issuer_type: cantonal
 schema_refs: ["https://vz-api.astra.admin.ch/public/issuer/oid4vci/json-schema/elfa"]
+claims: [lastName, firstName, dateOfBirth, hometown, photoImage, signatureImage, categoryCode, categoryIcon, categoryRestrictions, restrictionsA, restrictionsB, licenceNumber, faberPin, issuerEntity, issuerEntityDate, dateOfExpiration, policeQRImage, vct, iss, sub, iat, nbf, exp, cnf, status]
 used_by: []
 demand_issues: []
 created: 2026-11-10
@@ -43,21 +44,29 @@ From the issuer's published JSON Schema (draft 2020-12), as fetched on
 
 | Claim | Type | Required | Meaning (DIDAS reading of the name) |
 |---|---|---|---|
-| `lastName`, `firstName` | string | yes | Holder's name |
+| `lastName` | string | yes | Holder's name |
+| `firstName` | string | yes | Holder's name |
 | `dateOfBirth` | string | yes | Holder's date of birth |
 | `hometown` | string | yes | Place of origin (Heimatort) |
 | `photoImage` | string | yes | Holder's photo |
 | `signatureImage` | string | yes | Holder's signature image |
 | `categoryCode` | string | yes | Vehicle category of the permit, for example B |
 | `categoryIcon` | string | yes | Pictogram of the category |
-| `categoryRestrictions`, `restrictionsA`, `restrictionsB` | string | yes | Restrictions on the permit |
+| `categoryRestrictions` | string | yes | Restrictions on the permit |
+| `restrictionsA` | string | yes | Restrictions on the permit |
+| `restrictionsB` | string | yes | Restrictions on the permit |
 | `licenceNumber` | string | yes | Permit number |
 | `faberPin` | number | yes | Holder's number in the federal register of driving licences (FABER) |
-| `issuerEntity`, `issuerEntityDate` | string | yes | Issuing road traffic office and issue date |
+| `issuerEntity` | string | yes | Issuing road traffic office and issue date |
+| `issuerEntityDate` | string | yes | Issuing road traffic office and issue date |
 | `dateOfExpiration` | string | yes | End of validity |
 | `policeQRImage` | string | no | QR code for police checks |
-| `vct`, `iss` | string | yes | Credential type and issuer (SD-JWT VC registered claims) |
-| `sub`, `iat`, `nbf`, `exp` | string / number | no | Subject, issued at, not before, expiry |
+| `vct` | string | yes | Credential type and issuer (SD-JWT VC registered claims) |
+| `iss` | string | yes | Credential type and issuer (SD-JWT VC registered claims) |
+| `sub` | string / number | no | Subject, issued at, not before, expiry |
+| `iat` | string / number | no | Subject, issued at, not before, expiry |
+| `nbf` | string / number | no | Subject, issued at, not before, expiry |
+| `exp` | string / number | no | Subject, issued at, not before, expiry |
 | `cnf` | object | no | Holder key binding |
 | `status` | object | no | Status reference (revocation) |
 

@@ -11,6 +11,7 @@ ambition_level: AL3
 likely_issuer: Certified garage or vehicle damage expert
 issuer_type: private
 schema_refs: []
+claims: [vehicle, damage, estimated_cost, assessor]
 used_by: []
 demand_issues: []
 created: 2026-10-30
@@ -31,10 +32,10 @@ Garages and independent experts carry out the assessment. Which body certifies t
 
 | Claim | Description | Needed by |
 |---|---|---|
-| Vehicle | Plate or vehicle identification | motor vehicle claims |
-| Damage | Description of the damage | motor vehicle claims |
-| Estimated cost | | motor vehicle claims |
-| Assessor | Who assessed, and their certification | motor vehicle claims |
+| `vehicle` | Plate or vehicle identification | motor vehicle claims |
+| `damage` | Description of the damage | motor vehicle claims |
+| `estimated_cost` | Estimated repair cost | motor vehicle claims |
+| `assessor` | Who assessed, and their certification | motor vehicle claims |
 
 These claims are indicative. The authoritative schema is defined in I14Y, eCH or
 a sectoral repository, not here.

@@ -50,6 +50,24 @@ def credentials_named(text, label):
     return [a or b for a, b in found]
 
 
+def credentials_table(reused, new, excluded, claims_needed):
+    """The entry's «Credentials» table. Its «Claims needed» column is generated from
+    claims_needed (<credential-id>#<claim-id>), so the two cannot drift apart."""
+    if not (reused or new or excluded):
+        return ""
+    by_cred = {}
+    for item in claims_needed:
+        cred, _, claim = str(item).partition("#")
+        by_cred.setdefault(cred, []).append(claim)
+    rows = ["| Credential | In this use case | Claims needed |", "|---|---|---|"]
+    for role, ids_ in (("reused", reused), ("new", new), ("excluded", excluded)):
+        for c in ids_:
+            title = links.CREDENTIALS.get(c, c)
+            claims = ", ".join(f"`{x}`" for x in by_cred.get(c, [])) or ("to be defined" if role != "excluded" else "")
+            rows.append(f"| [{title}](../credentials/{c}.md) | {role} | {claims} |")
+    return "\n".join(rows)
+
+
 def draft(body, number, labels=()):
     f = links.fields(body)
     title = f.get("title", "").strip()
@@ -90,6 +108,7 @@ def draft(body, number, labels=()):
         "stage": "signal", "ambition_levels": als, "sectors": sectors,
         "domain_steward": "vacant", "proposed_by": f.get("organisation") or None, "intake_issue": number,
         "credentials_reused": reused, "credentials_new": new, "credentials_excluded": excluded,
+        "claims_needed": [],
         "related_use_cases": related, "upstream_use_cases": upstream, "downstream_use_cases": downstream,
         "lighthouse": lighthouse or None, "lighthouse_basis": f.get("lighthouse_basis") or None,
         "lighthouse_decision_record": None,
@@ -114,7 +133,9 @@ def draft(body, number, labels=()):
     process = f.get("process_flow") or ""
     if f.get("design_basis"):
         process += ("\n\n" if process else "") + "**Design basis**: " + f["design_basis"]
-    creds = f.get("credentials") or ""
+    creds = credentials_table(reused, new, excluded, fm.get("claims_needed") or [])
+    if f.get("credentials"):
+        creds += ("\n\n" if creds else "") + f["credentials"]
     if f.get("schemas"):
         creds += ("\n\n" if creds else "") + "**Emerging or other schemas**: " + f["schemas"]
     open_q = f.get("open_questions") or ""

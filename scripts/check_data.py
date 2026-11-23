@@ -168,6 +168,61 @@ def boundary_findings(records, questions):
     return errors, warnings, notes
 
 
+def claim_table_ids(path):
+    """The claim ids in the first column of a credential's «Claims» table."""
+    text = path.read_text(encoding="utf-8")
+    m = re.search(r"^## Claims[^\n]*\n(.*?)(?=^## |\Z)", text, re.S | re.M)
+    if not m:
+        return []
+    return [c for c in re.findall(r"^\|\s*`([^`]+)`", m.group(1), re.M)]
+
+
+def claim_findings(use_cases, credentials):
+    """Claims referenced by id. use_cases / credentials: {id: (where, front matter)}.
+    Returns (errors, warnings, notes)."""
+    errors, warnings, notes = [], [], []
+    needed = set()
+    groups = {}
+    for cid, (where, fm) in use_cases.items():
+        relied = set((fm.get("credentials_reused") or []) + (fm.get("credentials_new") or []))
+        items = [str(x) for x in fm.get("claims_needed") or []]
+        for item in items:
+            cred, sep, claim = item.partition("#")
+            if not sep or not claim:
+                errors.append(f"{where}: claims_needed item {item!r} must be <credential-id>#<claim-id>")
+                continue
+            if cred not in relied:
+                errors.append(f"{where}: claims_needed names {cred!r}, which is not in credentials_reused or credentials_new")
+                continue
+            known = (credentials.get(cred, (None, {}))[1].get("claims") or [])
+            if claim not in known:
+                warnings.append(f"{where}: claim {claim!r} is not in the claims of credential {cred!r}")
+            needed.add(item)
+        v = (fm.get("verifier") or "").strip().lower()
+        q = (fm.get("verifier_question") or "").strip()
+        if v and q and items:
+            groups.setdefault((v, q, frozenset(items)), []).append(cid)
+    for (v, q, _), ids_ in groups.items():
+        for i, a in enumerate(ids_):
+            for b in ids_[i + 1:]:
+                warnings.append(f"`{a}` and `{b}` have the same verifier, verifier question and claims needed: "
+                                f"probably one use case")
+    for cred, (where, fm) in credentials.items():
+        unused = [c for c in fm.get("claims") or [] if f"{cred}#{c}" not in needed]
+        if unused and fm.get("claims"):
+            notes.append(f"{where}: {len(unused)} of {len(fm['claims'])} claims are not needed by any use case")
+    return errors, warnings, notes
+
+
+def credential_claim_tables(credentials, errors):
+    """A credential's claims: list and the first column of its Claims table must agree."""
+    for cred, (where, fm) in credentials.items():
+        table = claim_table_ids(ROOT / where)
+        listed = [str(c) for c in fm.get("claims") or []]
+        if (listed or table) and listed != table:
+            errors.append(f"{where}: claims {listed} do not match the first column of «Claims» {table}")
+
+
 def boundary_records(use_cases):
     """Verifier fields of the published entries and of the batch candidates."""
     out = []
@@ -291,6 +346,11 @@ def main():
     check_batches(use_cases, errors, warnings)
     check_reviews(batch_ids() | set(use_cases), errors, warnings)
     check_published_list(use_cases, errors)
+    e, w, n = claim_findings(use_cases, credentials)
+    errors += e
+    warnings += w
+    notes += n
+    credential_claim_tables(credentials, errors)
     e, w, n = boundary_findings(boundary_records(use_cases), verifier_questions())
     errors += e
     warnings += w
