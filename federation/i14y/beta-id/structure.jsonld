@@ -1051,40 +1051,22 @@
     "@id": "https://register.ld.admin.ch/i14y/concept/EID_NUMBER/version/1.0.0"
    }
   ],
-  "http://purl.org/dc/terms/description": [
-   {
-    "@language": "de",
-    "@value": "Eindeutige Nummer der Beta-ID"
-   },
-   {
-    "@language": "en",
-    "@value": "Unique number of Beta-ID"
-   },
-   {
-    "@language": "fr",
-    "@value": "Numéro unique de Beta-ID"
-   },
-   {
-    "@language": "it",
-    "@value": "Numero univoco della Beta-ID"
-   }
-  ],
   "http://purl.org/dc/terms/title": [
    {
-    "@language": "it",
-    "@value": "Numero di Beta-ID"
-   },
-   {
-    "@language": "fr",
-    "@value": "Numéro de Beta-ID"
+    "@language": "de",
+    "@value": "Beta-ID-Nummer"
    },
    {
     "@language": "en",
     "@value": "Beta-ID Number"
    },
    {
-    "@language": "de",
-    "@value": "Beta-ID-Nummer"
+    "@language": "fr",
+    "@value": "Numéro de Beta-ID"
+   },
+   {
+    "@language": "it",
+    "@value": "Numero di Beta-ID"
    }
   ],
   "http://www.w3.org/2000/01/rdf-schema#comment": [
@@ -1097,30 +1079,12 @@
     "@value": "Numéro unique de Beta-ID"
    },
    {
-    "@language": "en",
-    "@value": "Unique number of Beta-ID"
-   },
-   {
     "@language": "de",
     "@value": "Eindeutige Nummer der Beta-ID"
-   }
-  ],
-  "http://www.w3.org/2000/01/rdf-schema#label": [
-   {
-    "@language": "de",
-    "@value": "Beta-ID-Nummer"
    },
    {
     "@language": "en",
-    "@value": "Beta-ID Number"
-   },
-   {
-    "@language": "fr",
-    "@value": "Numéro de Beta-ID"
-   },
-   {
-    "@language": "it",
-    "@value": "Numero di Beta-ID"
+    "@value": "Unique number of Beta-ID"
    }
   ],
   "http://www.w3.org/ns/shacl#datatype": [
@@ -1131,19 +1095,31 @@
   "http://www.w3.org/ns/shacl#description": [
    {
     "@language": "it",
-    "@value": "Numero univoco della Beta-ID"
-   },
-   {
-    "@language": "fr",
-    "@value": "Numéro unique de Beta-ID"
-   },
-   {
-    "@language": "en",
-    "@value": "Unique number of Beta-ID"
+    "@value": "Numero univoco della Beta-ID. Scostamento di lunghezza rispetto al concetto."
    },
    {
     "@language": "de",
-    "@value": "Eindeutige Nummer der Beta-ID"
+    "@value": "Eindeutige Nummer der Beta-ID. Längenabweichung zum Konzept."
+   },
+   {
+    "@language": "en",
+    "@value": "Unique number of Beta-ID. Deviation of length from the underlying concept."
+   },
+   {
+    "@language": "fr",
+    "@value": "Numéro unique de Beta-ID. Déviation de la longeur par rapport au concept."
+   }
+  ],
+  "http://www.w3.org/ns/shacl#maxLength": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "16"
+   }
+  ],
+  "http://www.w3.org/ns/shacl#minLength": [
+   {
+    "@type": "http://www.w3.org/2001/XMLSchema#integer",
+    "@value": "16"
    }
   ],
   "http://www.w3.org/ns/shacl#name": [

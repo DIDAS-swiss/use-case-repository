@@ -151,40 +151,37 @@
                                                                                                                       <http://purl.org/pav/version> "1.0.0";
                                                                                                                       rdfs:comment "Dataset imported from ech-0104.xsd"@de;
                                                                                                                       rdfs:label "Imported Dataset"@de;
-                                                                                                                      sh:property <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/dwellingAddress>,
-                                                                                                                                  <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/issuingMunicipality>,
-                                                                                                                                  <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/moveData>,
+                                                                                                                      sh:property <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/dwelling_address>,
+                                                                                                                                  <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/issuing_municipality>,
+                                                                                                                                  <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/move_data>,
                                                                                                                                   <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/personInformation>,
                                                                                                                                   <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/simpleProofOfResidence>;
                                                                                                                       <https://schema.org/validFrom> "2026-07-01"^^xsd:date;
                                                                                                                       <https://schema.org/version> "1.0.0".
-<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/dwellingAddress> a owl:ObjectProperty,
-                                                                                                                                        sh:PropertyShape;
-                                                                                                                                      dcterms:title "dwellingAddress"@de;
-                                                                                                                                      rdfs:label "dwellingAddress"@de;
-                                                                                                                                      sh:maxCount 1 ;
-                                                                                                                                      sh:minCount 1 ;
-                                                                                                                                      sh:name "dwellingAddress"@de;
-                                                                                                                                      sh:node <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/dwellingAddressType>;
-                                                                                                                                      sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/dwellingAddress>.
-<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/issuingMunicipality> a owl:ObjectProperty,
-                                                                                                                                            sh:PropertyShape;
-                                                                                                                                          dcterms:title "issuingMunicipality"@de;
-                                                                                                                                          rdfs:label "issuingMunicipality"@de;
-                                                                                                                                          sh:maxCount 1 ;
-                                                                                                                                          sh:minCount 1 ;
-                                                                                                                                          sh:name "issuingMunicipality"@de;
-                                                                                                                                          sh:node <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/issuingMunicipalityType>;
-                                                                                                                                          sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/issuingMunicipality>.
-<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/moveData> a owl:ObjectProperty,
-                                                                                                                                 sh:PropertyShape;
-                                                                                                                               dcterms:title "moveData"@de;
-                                                                                                                               rdfs:label "moveData"@de;
-                                                                                                                               sh:maxCount 1 ;
-                                                                                                                               sh:minCount 1 ;
-                                                                                                                               sh:name "moveData"@de;
-                                                                                                                               sh:node <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/moveDataType>;
-                                                                                                                               sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/moveData>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/dwelling_address> a owl:ObjectProperty,
+                                                                                                                                         sh:PropertyShape;
+                                                                                                                                       dcterms:title "dwellingAddress"@de;
+                                                                                                                                       sh:maxCount 1 ;
+                                                                                                                                       sh:minCount 1 ;
+                                                                                                                                       sh:name "dwelling_address"@de;
+                                                                                                                                       sh:node <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/dwellingAddressType>;
+                                                                                                                                       sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/dwelling_address>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/issuing_municipality> a owl:ObjectProperty,
+                                                                                                                                             sh:PropertyShape;
+                                                                                                                                           dcterms:title "issuingMunicipality"@de;
+                                                                                                                                           sh:maxCount 1 ;
+                                                                                                                                           sh:minCount 1 ;
+                                                                                                                                           sh:name "issuing_municipality"@de;
+                                                                                                                                           sh:node <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/issuingMunicipalityType>;
+                                                                                                                                           sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/issuing_municipality>.
+<https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/move_data> a owl:ObjectProperty,
+                                                                                                                                  sh:PropertyShape;
+                                                                                                                                dcterms:title "moveData"@de;
+                                                                                                                                sh:maxCount 1 ;
+                                                                                                                                sh:minCount 1 ;
+                                                                                                                                sh:name "moveData"@de;
+                                                                                                                                sh:node <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/moveDataType>;
+                                                                                                                                sh:path <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/move_data>.
 <https://register.ld.admin.ch/i14y/dataset/urn:vct:ch.egovernment.residency-permit-simple/structure/imported_dataset/personInformation> a owl:ObjectProperty,
                                                                                                                                           sh:PropertyShape;
                                                                                                                                         dcterms:title "personInformation"@de;
