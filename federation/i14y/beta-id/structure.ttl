@@ -401,10 +401,6 @@
                                                                                                                      owl:DatatypeProperty,
                                                                                                                      sh:PropertyShape;
                                                                                                                    dcterms:conformsTo <https://register.ld.admin.ch/i14y/concept/EID_NUMBER/version/1.0.0>;
-                                                                                                                   dcterms:description "Eindeutige Nummer der Beta-ID"@de,
-                                                                                                                                       "Numero univoco della Beta-ID"@it,
-                                                                                                                                       "Numéro unique de Beta-ID"@fr,
-                                                                                                                                       "Unique number of Beta-ID"@en;
                                                                                                                    dcterms:title "Beta-ID Number"@en,
                                                                                                                                  "Beta-ID-Nummer"@de,
                                                                                                                                  "Numero di Beta-ID"@it,
@@ -413,15 +409,13 @@
                                                                                                                                 "Numero univoco della Beta-ID"@it,
                                                                                                                                 "Numéro unique de Beta-ID"@fr,
                                                                                                                                 "Unique number of Beta-ID"@en;
-                                                                                                                   rdfs:label "Beta-ID Number"@en,
-                                                                                                                              "Beta-ID-Nummer"@de,
-                                                                                                                              "Numero di Beta-ID"@it,
-                                                                                                                              "Numéro de Beta-ID"@fr;
                                                                                                                    sh:datatype xsd:string;
-                                                                                                                   sh:description "Eindeutige Nummer der Beta-ID"@de,
-                                                                                                                                  "Numero univoco della Beta-ID"@it,
-                                                                                                                                  "Numéro unique de Beta-ID"@fr,
-                                                                                                                                  "Unique number of Beta-ID"@en;
+                                                                                                                   sh:description "Eindeutige Nummer der Beta-ID. Längenabweichung zum Konzept."@de,
+                                                                                                                                  "Numero univoco della Beta-ID. Scostamento di lunghezza rispetto al concetto."@it,
+                                                                                                                                  "Numéro unique de Beta-ID. Déviation de la longeur par rapport au concept."@fr,
+                                                                                                                                  "Unique number of Beta-ID. Deviation of length from the underlying concept."@en;
+                                                                                                                   sh:maxLength 16 ;
+                                                                                                                   sh:minLength 16 ;
                                                                                                                    sh:name "Beta-ID Number"@en,
                                                                                                                            "Beta-ID-Nummer"@de,
                                                                                                                            "Numero di Beta-ID"@it,

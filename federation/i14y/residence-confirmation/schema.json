@@ -9,9 +9,9 @@
      "datatype": null,
      "description": "",
      "group": "dwellingAddressType",
-     "key": "dwellingAddress",
+     "key": "dwelling_address",
      "label": {
-      "de": "dwellingAddress"
+      "de": "dwelling_address"
      },
      "max": "1",
      "min": "1"
@@ -20,9 +20,9 @@
      "datatype": null,
      "description": "",
      "group": "issuingMunicipalityType",
-     "key": "issuingMunicipality",
+     "key": "issuing_municipality",
      "label": {
-      "de": "issuingMunicipality"
+      "de": "issuing_municipality"
      },
      "max": "1",
      "min": "1"
@@ -31,7 +31,7 @@
      "datatype": null,
      "description": "",
      "group": "moveDataType",
-     "key": "moveData",
+     "key": "move_data",
      "label": {
       "de": "moveData"
      },

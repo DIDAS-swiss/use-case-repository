@@ -10,9 +10,9 @@
 
 | Attribute | Label (EN · DE · FR · IT) | Type | Card. | I14Y concept |
 |---|---|---|---|---|
-| `dwellingAddress` | dwellingAddress | → `dwellingAddressType` | 1..1 |  |
-| `issuingMunicipality` | issuingMunicipality | → `issuingMunicipalityType` | 1..1 |  |
-| `moveData` | moveData | → `moveDataType` | 1..1 |  |
+| `dwelling_address` | dwelling_address | → `dwellingAddressType` | 1..1 |  |
+| `issuing_municipality` | issuing_municipality | → `issuingMunicipalityType` | 1..1 |  |
+| `move_data` | moveData | → `moveDataType` | 1..1 |  |
 | `personInformation` | personInformation | → `personInformationType` | 1..1 |  |
 | `simpleProofOfResidence` | simpleProofOfResidence | → `simpleProofOfResidenceType` | 1..1 |  |
 
