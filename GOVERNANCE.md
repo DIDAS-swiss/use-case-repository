@@ -162,7 +162,8 @@ disagree about a relation.
 
 Use case A is a **variant** of B (`variant_of: B`) when both have the same
 verifier role and the same verifier question and differ only in context, for
-example the age check at a kiosk and at a supermarket checkout. Curators decide
+example the age check at a tobacco kiosk (`tobacco-age-kiosk`) and at the sale of
+restricted goods in general (`age-pos-alcohol-tobacco`). Curators decide
 whether A stays a use case of its own or becomes part of B.
 
 ## Evidence status and editorial reviews
