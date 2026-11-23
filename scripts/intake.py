@@ -307,6 +307,9 @@ def issue(c, batch, warnings, published_path=None, numbers=None):
         "outcome": both("outcome", "outcome_de", points),
         "actors": listed_text("actors"),
         "evidence_status": option("evidence_status", status) if status else "",
+        "verifier": text("verifier"),
+        "verifier_question": (option("verifier_question", form.verifier_question(text("verifier_question")))
+                              if form.verifier_question(text("verifier_question")) else ""),
         "background": background,
         "process_flow": flow,
         "design_basis": text("design_basis"),

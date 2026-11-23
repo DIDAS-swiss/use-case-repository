@@ -1,0 +1,6 @@
+id,question,typical_claims
+identity,Who are you?,"e-ID, re-identification"
+qualification,What are you capable of?,"diploma, driving licence, professional licence"
+attestation,Is this claim true?,"age threshold, vaccination, residence, bank confirmation"
+permission,Are you allowed to do or receive something?,"ticket, voucher, access card, vehicle registration"
+membership,Are you part of a group?,"employee card, club membership, student status"

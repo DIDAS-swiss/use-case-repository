@@ -105,6 +105,16 @@ def evidence_status(text):
     return next((s for s in EVIDENCE_STATUS if t.startswith(s)), "")
 
 
+def verifier_question(text):
+    """The verifier question a field's text names (its leading id), or ''."""
+    t = (text or "").strip().lower()
+    for o in options("verifier_question"):
+        vid = o.split(":")[0].strip().lower()
+        if t == vid or t.startswith(vid + ":"):
+            return vid
+    return ""
+
+
 def lighthouse(fields, labels_=()):
     """(proposal, decision) for an issue: proposal from the form ('candidate' or ''),
     decision from the curator's labels ('selected', 'candidate' or ''). A body written

@@ -86,6 +86,23 @@ body:
       label: Proposed on behalf of (optional)
       description: The source of the use case, meaning the organisation it comes from, for example DIDAS, a member organisation, an authority or a company. Leave empty if you propose it as an individual. It is published as the source on the backlog and on the use case's page.
       placeholder: e.g. DIDAS
+  - type: input
+    id: verifier
+    attributes:
+      label: Verifier (role) (optional)
+      description: The relying party whose decision this is, as a role, for example retailer or driving school. One role per use case.
+      placeholder: e.g. driving school
+  - type: dropdown
+    id: verifier_question
+    attributes:
+      label: What does the verifier need to know? (optional)
+      description: The question the verifier asks. Same verifier and same question means one use case; another context of the same decision is a variant of it (see CONTRIBUTING.md, Where one use case ends).
+      options:
+        - "identity: Who are you?"
+        - "qualification: What are you capable of?"
+        - "attestation: Is this claim true?"
+        - "permission: Are you allowed to do or receive something?"
+        - "membership: Are you part of a group?"
   - type: markdown
     attributes:
       value: |
