@@ -70,22 +70,16 @@ class Snapshot(unittest.TestCase):
         self.assertEqual(by["eid"]["protected_issuance_trust_list"], "yes")
         self.assertEqual(by["permit"]["protected_issuance_trust_list"], "no")
 
-    def test_production_lists_all_identities(self):
+    def test_every_environment_lists_all_identities(self):
+        for env in ("production", "sandbox"):
+            _, _, orgs = self.snap(env)
+            self.assertEqual({o["organisation"] for o in orgs}, {"Road Office", "Example AG", "Jane Tester"}, env)
+
+    def test_organisation_row(self):
         totals, _, orgs = self.snap("production")
-        self.assertEqual({o["organisation"] for o in orgs}, {"Road Office", "Example AG", "Jane Tester"})
         road = next(o for o in orgs if o["organisation"] == "Road Office")
         self.assertEqual((road["dids"], road["active_dids"], road["credentials"]), (1, 1, "permit"))
         self.assertEqual(totals["active_identity_dids"], 1)
-
-    def test_sandbox_lists_only_uid_or_state_actor(self):
-        totals, _, orgs = self.snap("sandbox")
-        self.assertEqual([o["organisation"] for o in orgs], ["Example AG"])
-        self.assertEqual(totals["unlisted_identities"], 2)
-
-    def test_curator_can_keep_a_name_off(self):
-        _, _, orgs = swiyu_sync.snapshot("production", "https://reg/api/v2", TYPES, FETCH, resolve=lambda d: True,
-                                         hidden={("production", "Jane Tester")})
-        self.assertNotIn("Jane Tester", {o["organisation"] for o in orgs})
 
     def test_no_dids_in_the_output(self):
         totals, rows, orgs = self.snap("production")

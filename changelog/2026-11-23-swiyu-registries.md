@@ -14,8 +14,8 @@
   - `swiyu-organisations.csv`: organisations with an identity trust
     statement, with name and UID as published, DIDs and active DIDs in the
     base registry, verification query statements and the credentials asked
-    for. Production lists every identity; the sandbox only those with a UID
-    or marked as state actor. `_data/swiyu-unlisted.csv` keeps a name off.
+    for. Every identity of both environments is listed, with its name as
+    published.
 - The *Sync federated sources* workflow runs it weekly and proposes changes as
   a pull request.
 - `vct_values` in the credential front matter: set for the Beta-ID, the eLFA,

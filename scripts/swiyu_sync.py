@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Take a snapshot of the swiyu Trust Registry and base registry as evidence for the entries.
 
-The swiyu Trust Registry publishes signed trust statements (Swiss Profile Trust
-1.0, read endpoints of Trust Protocol 2.0) without authentication, in two
+The swiyu Trust Registry publishes signed trust statements (read endpoints of
+Trust Protocol 2.0) without authentication, in two
 environments with the same paths:
 
   production  https://trust-reg.trust-infra.swiyu.admin.ch
@@ -20,11 +20,8 @@ _data/swiyu-registry.csv.
 The organisations with an identity trust statement go to
 _data/swiyu-organisations.csv, with the name and UID as the registry publishes
 them, the number of their verification query statements and the credentials of
-this repository those ask for. Production lists every identity; the sandbox
-only those with a UID or marked as state actor, because it holds test accounts
-named after persons. Names in _data/swiyu-unlisted.csv are never listed, so a
-curator can keep a person's name out. The others are counted
-(`unlisted_identities`).
+this repository those ask for. Every identity of both environments is listed,
+with its name exactly as published.
 
 For every identity, the script also resolves its DID in the base registry
 (identifier registry, did:webvh): https://<host>/api/v1/did/<uuid>/did.jsonl.
@@ -62,9 +59,7 @@ TOTALS = ROOT / "_data" / "swiyu-registry-totals.csv"
 BY_CREDENTIAL = ROOT / "_data" / "swiyu-registry.csv"
 ORGANISATIONS = ROOT / "_data" / "swiyu-organisations.csv"
 TOTAL_FIELDS = ["environment", "identity_trust_statements", "verification_query_statements",
-                "verifiers", "protected_verification_authorizations", "active_identity_dids",
-                "unlisted_identities"]
-UNLISTED = ROOT / "_data" / "swiyu-unlisted.csv"
+                "verifiers", "protected_verification_authorizations", "active_identity_dids"]
 ORGANISATION_FIELDS = ["environment", "organisation", "uid", "state_actor", "dids", "active_dids",
                        "verification_query_statements", "credentials"]
 CREDENTIAL_FIELDS = ["credential", "environment", "verification_query_statements", "verifiers",
@@ -163,22 +158,14 @@ def did_active(did, fetch_text=None):
         return False
 
 
-def unlisted_names():
-    """{(environment, name)} that a curator keeps off the list."""
-    return {(r["environment"], r["organisation"]) for r in read(UNLISTED)}
-
-
-def organisations(env, identity, vqps, types, active, hidden=frozenset()):
-    """(rows, number of identities left out): one row per organisation (name and UID), over all its DIDs.
+def organisations(env, identity, vqps, types, active):
+    """One row per organisation (name and UID), over all its DIDs.
     `active` is the set of DIDs that resolve as active in the base registry."""
     by_sub = {}
     for s in vqps:
         by_sub.setdefault(s.get("sub"), []).append(s)
-    orgs, unlisted = {}, set()
+    orgs = {}
     for s in identity:
-        if (env, name(s)) in hidden or not (env == "production" or uid(s) or s.get("is_state_actor")):
-            unlisted.add(s.get("sub"))
-            continue
         key = (name(s), uid(s))
         o = orgs.setdefault(key, {"subs": set(), "state": False})
         o["subs"].add(s.get("sub"))
@@ -190,10 +177,10 @@ def organisations(env, identity, vqps, types, active, hidden=frozenset()):
         rows.append({"environment": env, "organisation": org, "uid": u, "state_actor": "yes" if o["state"] else "no",
                      "dids": len(o["subs"]), "active_dids": len(o["subs"] & active),
                      "verification_query_statements": len(asked), "credentials": "; ".join(creds)})
-    return sorted(rows, key=lambda r: r["organisation"].lower()), len(unlisted)
+    return sorted(rows, key=lambda r: r["organisation"].lower())
 
 
-def snapshot(env, base, types, fetch=get, resolve=did_active, hidden=frozenset()):
+def snapshot(env, base, types, fetch=get, resolve=did_active):
     """(totals row, [credential rows], [organisation rows]) for one environment."""
     identity = statements(base, "identity-trust-statement", fetch)
     vqps = statements(base, "verification-query-public-statement", fetch)
@@ -207,7 +194,7 @@ def snapshot(env, base, types, fetch=get, resolve=did_active, hidden=frozenset()
               "protected_verification_authorizations": len(pva)}
     active = {d for d in {s.get("sub") for s in identity} if resolve(d)}
     totals["active_identity_dids"] = len(active)
-    orgs, totals["unlisted_identities"] = organisations(env, identity, vqps, types, active, hidden)
+    orgs = organisations(env, identity, vqps, types, active)
     rows = []
     for cred, vcts in sorted(types.items()):
         asking = [s for s in vqps if queried_types(s) & vcts]
@@ -235,10 +222,9 @@ def main():
     types = credential_types()
     old_totals, old_rows, old_orgs = read(TOTALS), read(BY_CREDENTIAL), read(ORGANISATIONS)
     totals, rows, orgs = [], [], []
-    hidden = unlisted_names()
     for env, base in ENVIRONMENTS.items():
         try:
-            t, r, o = snapshot(env, base, types, hidden=hidden)
+            t, r, o = snapshot(env, base, types)
         except Exception as e:  # keep the earlier snapshot of this environment
             print(f"::warning::swiyu {env}: could not read the Trust Registry ({e}); earlier rows kept")
             totals += [x for x in old_totals if x["environment"] == env]
