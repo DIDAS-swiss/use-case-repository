@@ -9,6 +9,7 @@ To document a change, add a new dated file here as part of the same pull request
 
 ## Entries
 
+- [2026-11-23: References from the Fachbereich E-ID on existing use cases](2026-11-23-external-refs-existing.md)
 - [2026-11-23: swiyu trust and base registries](2026-11-23-swiyu-registries.md)
 - [2026-11-23: Beta-ID qualified on I14Y](2026-11-23-beta-id-qualified.md)
 - [2026-11-23: References to other use-case lists; relations across batch files](2026-11-23-external-refs.md)
