@@ -3,10 +3,10 @@
 A list of candidates, for example collected in a workshop or commissioned for the
 DIDAS working groups, is filed here as one YAML or CSV file. When the file reaches
 `main`, the **Intake candidates** workflow opens one *use-case candidate* issue per
-entry, written in the fields of the use-case form, exactly as if each had been
-submitted through it: labelled
-`use-case`, `stage: signal`, with its ISIC section and ambition-level labels, and
-added to the [project board](https://github.com/orgs/DIDAS-swiss/projects/6).
+entry, in the fields of the use-case form, as if each had been submitted through
+it. Each issue is labelled `use-case` and `stage: signal`, gets its ISIC section
+and ambition-level labels, and is added to the
+[project board](https://github.com/orgs/DIDAS-swiss/projects/6).
 
 From there the normal funnel applies ([GOVERNANCE.md](../GOVERNANCE.md)): a
 working group takes a candidate (label `wg: <group>`), details it and drafts the
@@ -79,11 +79,11 @@ the issue.
 ## What happens
 
 - A candidate whose title matches an existing use-case issue is not opened again.
-  Its issue is kept in step with the file instead: its title and description in
-  the form's fields, unless someone has edited the description by hand (an
-  invisible checksum tells); the lighthouse label; one comment with where it came
-  from, the suggested working group and the points to fix; and one comment with
-  links. Comments are updated, not repeated. The issue's stage, status and other
+  The workflow keeps its issue in step with the file instead. It updates the
+  title, the description in the form's fields and the lighthouse label. It skips
+  a description edited by hand, which it detects by a hidden checksum. It keeps
+  one comment with the origin, the suggested working group and the points to
+  fix, and one comment with links. Comments are updated, not repeated. The issue's stage, status and other
   labels are left as they are.
 - A candidate that is already published in `use-cases/` (same title or id) is
   opened as an **update issue**, labelled `change`, that links the entry so the
@@ -127,10 +127,10 @@ python3 scripts/intake.py --reconcile --write /tmp/intake-plan
 ```
 
 It reads the existing use-case issues (GET requests only, optionally with
-`GITHUB_TOKEN`; `--issues FILE` reads a saved JSON list instead), matches them
-by short id and writes `plan.json` with, per issue, whether its title, body,
-lighthouse label, comment and links comment would change, plus the current and
-new body side by side. A description edited by hand is reported and left as it
+`GITHUB_TOKEN`; `--issues FILE` reads a saved JSON list instead) and matches
+them by short id. It writes `plan.json`. For each issue, the plan says whether
+its title, body, lighthouse label, comment and links comment would change, and
+shows the current and new body side by side. A description edited by hand is reported and left as it
 is. `--with-comments` (or `--comments DIR` with saved `<number>.json` files)
 also compares the comments. `--dry-run` only renders the batches and does not
 look at existing issues.

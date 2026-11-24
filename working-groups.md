@@ -8,7 +8,7 @@ description: The DIDAS working groups, their status and the ISIC sectors each se
 DIDAS working groups take use-case candidates and develop them into entries
 ([GOVERNANCE.md](GOVERNANCE.md#working-groups)). **Sector groups** are each
 responsible for one or more ISIC Rev. 5 sectors. **Horizontal groups** work
-across sectors on topics every use case shares.
+across sectors on topics that are not specific to one sector.
 
 {%- assign groups = site.data["working-groups"] -%}
 {%- assign assignments = site.data["working-group-sectors"] -%}

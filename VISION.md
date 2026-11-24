@@ -7,19 +7,20 @@ Credentials*) published the
 [Pre-Study: Swiss Ecosystem Discovery Catalog](https://www.amministrazionedigitalesvizzera.ch/application/files/8317/8999/7309/Pre-Study_Swiss_Ecosystem_Discovery_Catalog_DPSS_June_2026.pdf).
 Accelerate.swiss wrote it on the working group's mandate. It recommends building an **Ecosystem
 Discovery Catalog** as Switzerland's coordination, discovery and transparency
-layer for the verifiable data ecosystem, across all three ambition levels (AL1 for the e-ID,
-AL2 for public-sector credentials and AL3 for private and other non-state
-credentials).
+layer for the verifiable data ecosystem. The Catalog covers all three ambition
+levels: AL1 for the e-ID, AL2 for public-sector credentials and AL3 for private
+and other non-state credentials.
 
-The pre-study's central finding is that **the primary bottleneck is coordination,
-not core technology** (§4.4). Verifiers cannot see which credentials exist, and issuers
-cannot see who needs one. Reuse happens only when it is made explicit at use-case level.
+The pre-study finds that the primary bottleneck is coordination, not core
+technology (§4.4). According to the pre-study, verifiers cannot see which
+credentials exist, and issuers cannot see who needs one. It finds that reuse
+happens only when it is made explicit at use-case level.
 
 It also notes that the term "credential catalog" is interpreted inconsistently
-(§2.4), and that **concrete use-case flows were what made the Catalog tangible**.
+(§2.4), and that concrete use-case flows made the Catalog tangible.
 
-This repository starts on the use-case side now, in the open, before the Catalog
-is procured.
+This repository starts on the use-case side before the Catalog is procured, as
+a public GitHub repository.
 
 ## What this repository is
 
@@ -66,11 +67,11 @@ sector-neutral patterns in the
 [Industry Function Graph](https://github.com/DIDAS-swiss/industry-function-graph),
 schemas on I14Y, and showcases such as
 [digital-health_swiyu](https://github.com/DIDAS-swiss/digital-health_swiyu).
-Each use case here links to all of them, and the
+Each use case here links to the ones that apply to it, and the
 [Anchors page](https://didas-swiss.github.io/use-case-repository/anchors.html)
 shows, for every flow, pattern and I14Y credential dataset, which use cases point
-to it. The use case is where the pieces meet, as the pre-study's Part 1
-(decision context) is where its conceptual model starts.
+to it. The pre-study's conceptual model also starts with the use case, in Part 1
+(decision context).
 
 ## How the entry format maps to the conceptual model
 
@@ -100,12 +101,12 @@ AL2 credentials and use cases in Phase 1, and at least 10 structured use-case
 entries with full actor, credential and governance context as an MVP acceptance
 criterion (§9.4.3).
 
-This repository can be that input. The entry format is meant to be **importable**:
+This repository is intended as that input. The entry format is designed for import:
 each file opens with plain YAML front matter in fixed fields (see
 [CONTRIBUTING.md](CONTRIBUTING.md)), so whichever system is procured can ingest
 the entries rather than re-collecting them.
 
-Version one deliberately stays within GitHub. Tooling such as validation, a
+Version one stays within GitHub. Tooling such as validation, a
 rendered catalog or an automatically computed gap board comes later, once the
 format has proven itself on real entries.
 

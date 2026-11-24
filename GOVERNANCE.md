@@ -21,8 +21,8 @@ repository, and follows the intake model of the
    proposes for schema metadata (§6.1).
 4. **The use case is the anchor.** Trust flows, Industry Function Graph patterns,
    I14Y credential datasets and implementations are maintained in their own
-   places. Each use case here links to them, so that the use case is where they
-   meet, and the [Anchors page](https://didas-swiss.github.io/use-case-repository/anchors.html)
+   places. Each use case here links to the ones that apply to it, and the
+   [Anchors page](https://didas-swiss.github.io/use-case-repository/anchors.html)
    shows which of them still lack a use case.
 5. **Use-case and schema lifecycles are separate.** This repository tracks how use
    cases mature. Schemas mature in I14Y, eCH or sectoral repositories, and an
@@ -73,8 +73,8 @@ provisional stewardship until one is confirmed (pre-study §7.3).
    [CONTRIBUTING.md](CONTRIBUTING.md#where-one-use-case-ends)), checks the ISIC sector labels the form applied and adds
    ambition-level labels (`AL2`, `AL3`). The curator may also apply `needs-work`, `duplicate` or
    `out-of-scope`, with reasons.
-3. **Drafting**: the form is the structure everything builds on. Adding the
-   label `drafting` to the issue opens a pull request with `use-cases/<id>.md`,
+3. **Drafting**: adding the label `drafting` to the issue opens a pull request
+   with `use-cases/<id>.md`,
    written from the issue's form fields by the *Draft entry* workflow
    (`scripts/draft_entry.py`). The pull request does not close the issue. The
    proposer, a curator or the working group refines the draft in it; credentials
@@ -139,10 +139,10 @@ Anyone can **propose** a lighthouse in the use-case form. A **candidate** meets
 most criteria (label `lighthouse-candidate`, front matter `lighthouse:
 candidate`). **Selection** (label `lighthouse`, `lighthouse: selected`) is a
 decision of DIDAS, together with the Federal Office of Justice (BJ) for cases
-from its agenda. The form does not offer selection: a curator records it with the
+from its agenda. The form does not offer selection. A curator records it with the
 label and a **decision record** (`lighthouse_decision_record` in the batch or the
-entry): a link to the decision with the approver, the date and the criteria
-assessed. `lighthouse_basis` summarises why, in one line. A selection recorded
+entry). The record links to the decision and names the approver, the date and the
+criteria assessed. `lighthouse_basis` summarises why, in one line. A selection recorded
 before decision records were kept (backlog v2, 9 November 2026) stays as it is;
 its issue comment says that the record is still to be linked. Being a lighthouse
 does not change an entry's lifecycle stage.
@@ -154,7 +154,7 @@ example a residence confirmation, a debt enforcement extract, a driving licence
 or an insurance confirmation; B is then **downstream** of A. The relation needs
 an actual credential that A issues and B verifies, for example the learner
 permit before the driving licence. A similar earlier business transaction is not
-enough: most drivers making a motor claim have not leased their car, so leasing
+enough: a driver making a motor claim need not have leased the car, so leasing
 is *related* to claims, not upstream of them. Where the issuing use case is not
 itself an entry or candidate (the e-ID), no relation is recorded. Relations with no
 sequence stay in `related_use_cases`. *Check data* warns when two entries

@@ -25,11 +25,11 @@ files it. Everything after builds on those fields:
 The form asks first for the six things a signal needs: the **use case** (one
 decision), a **summary** of up to 70 words, the **actors**, the **facts to
 prove**, the **demand and value** (measured, reported or a hypothesis) and the
-**evidence status** with its **sources**, and then *Proposed on behalf of*:
-the **source of the use case**, the organisation it comes from, for example
-DIDAS, a member organisation, an authority or a company (empty for an
-individual). It is published as the source on the backlog page, which can
-filter by it, and on the use case's page. Catalogue choices, flows and
+**evidence status** with its **sources**. It then asks for *Proposed on behalf
+of*: the **source of the use case**. This is the organisation the use case
+comes from, for example DIDAS, a member organisation, an authority or a
+company. The field stays empty for an individual. The backlog page publishes
+it as the source and can filter by it; the use case's page also shows it. Catalogue choices, flows and
 credentials follow under *Details* and can be added by a curator or the working
 group later.
 
@@ -141,8 +141,8 @@ editorial follow-up.
 ## Front matter
 
 Each file opens with YAML front matter. GitHub renders it as a table at the top of
-the page, and it is the part a future Catalog would import, so keep the field names
-exactly as in the template. Keep values flat (text, or a list of text); the
+the page. [VISION.md](VISION.md) describes it as the part a future Catalog
+would import, so keep the field names exactly as in the template. Keep values flat (text, or a list of text); the
 detail belongs in the body.
 
 ### Use case
@@ -199,8 +199,8 @@ detail belongs in the body.
 
 ## Anchors
 
-A use case here is the anchor that the other DIDAS work meets at. Link what
-already exists, so that nobody has to find it again:
+A use case links the existing DIDAS work and external sources that concern it.
+Set these fields where the item exists:
 
 | Anchor | Field | Source |
 |---|---|---|
@@ -259,8 +259,7 @@ code.
 - The list in `_data/sectors.csv` is a copy of the graph's `data/sectors.csv`.
   If a code is missing, propose it in the graph first, then refresh the copy here.
   Do not add codes only here.
-- Sector is context, not identity: the same use case in two sectors stays one
-  entry with two sector codes.
+- The same use case in two sectors stays one entry with two sector codes.
 
 The division number is also the join key to NOGA 2025, the Swiss implementation
 of NACE Rev. 2.1, at section and division level.
@@ -270,7 +269,7 @@ of NACE Rev. 2.1, at section and division level.
 Use the headings in the template, in that order, so every entry reads the same
 way. The core headings (Summary, Facts to prove, Actors and roles, Demand and
 value, Evidence status, Credentials, Sources) stay even when empty and say "Not
-yet known": the gaps are what this repository is meant to show. Other headings
+yet known", so that the gaps are visible. Other headings
 are left out when there is nothing to say.
 
 Write for the decision:
