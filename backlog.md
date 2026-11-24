@@ -34,8 +34,8 @@ published entries come from the site build.
 | **Published entry** | The entry is in the catalogue, at its lifecycle stage | a curator merges the pull request |
 | **Not pursued** | Closed as out of scope, duplicate or withdrawn | a curator closes the issue |
 
-Publication is not qualification, endorsement or production readiness: a
-published entry starts at stage `signal`, and the **Evidence** column shows how far
+Publication is not qualification, endorsement or production readiness. A
+published entry starts at stage `signal`. The **Evidence** column shows how far
 the evidence for the proposed exchange goes (hypothesis, documented need, design,
 prototype, pilot, production). Only the files in
 [`use-cases/`](use-cases/README.md) count as published; the page lists them from

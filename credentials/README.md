@@ -25,9 +25,8 @@ check warns when `supply: available` has no such evidence in production, or
 
 ## Gap board
 
-These credentials are needed by use cases in the backlog but have no issuer in
-production. They are the open opportunities for potential issuers, ranked by the
-number of use cases they block. Live demand signals are the
+Use cases in the backlog need these credentials, and no issuer issues them in
+production. The last column gives the number of use cases each one blocks. Live demand signals are the
 [open `credential-need` issues](https://github.com/DIDAS-swiss/use-case-repository/issues?q=is%3Aissue+is%3Aopen+label%3Acredential-need).
 To offer to issue one, open a
 [Credential need / supply signal](https://github.com/DIDAS-swiss/use-case-repository/issues/new?template=credential-signal.yml) issue.

@@ -23,16 +23,17 @@ the website with the <a href="https://didas-swiss.github.io/use-case-repository/
 the published use cases, the credentials and gap board, and the anchors to the
 other DIDAS repositories.</p>
 
-**[➕ Register your use case](https://github.com/DIDAS-swiss/use-case-repository/issues/new?template=use-case-candidate.yml)**: a short form is enough; a curator helps
-turn it into a structured entry. Half a page of plain prose will do.
+**[➕ Register your use case](https://github.com/DIDAS-swiss/use-case-repository/issues/new?template=use-case-candidate.yml)**: half a page of plain prose is enough.
+A curator helps turn it into a structured entry.
 
 **🗂 For curators and working groups: the [project board](https://github.com/orgs/DIDAS-swiss/projects/6)** ([how it works](PROJECT.md))
 
 Everything runs on GitHub itself, with no separate server. Entries are Markdown
 files, intake runs through issue forms, and the lifecycle is tracked with labels
 and pull requests. GitHub Pages publishes the same files as the website, with its
-built-in Jekyll, and a few GitHub Actions manage labels and keep the federated
-sources current.
+built-in Jekyll. GitHub Actions workflows open issues from intake batches, open
+draft entries, check the data, sync labels and the project board, and keep the
+federated sources current.
 
 ## Browse
 
