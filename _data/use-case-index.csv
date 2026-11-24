@@ -21,6 +21,7 @@ beneficial-ownership-proofs,Verify dated beneficial-ownership evidence from the 
 benefit-claims,Define one benefit-eligibility check using authority-issued facts,candidate
 biss-social-insurance-access,Verify an insured person's identity for the BISS «E-Plattform 1. Säule»,candidate
 bnpl-verified-attributes,Verify income and debt evidence for an instalment-credit decision,candidate
+boat-permit-check,Verify a boat's permit during a control,candidate
 boat-skipper-licences,Verify a skipper's licence during a control,candidate
 caller-id-verification,Verify an organisation's authority to place a call,candidate
 car-rental-licence-identity,Verify driving entitlement before vehicle rental,candidate
